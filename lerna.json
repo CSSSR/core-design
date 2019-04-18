@@ -3,5 +3,5 @@
   "npmClient": "yarn",
   "version": "0.0.1",
   "useWorkspaces": true,
-  "lerna": "3.8.0"
+  "lerna": "3.13.3"
 }

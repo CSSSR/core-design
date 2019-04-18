@@ -18,15 +18,18 @@ const Button: React.FC<IProps> = props => {
       {...rest}
       css={css`
         background-color: #0072bc;
+        border: none;
+        box-sizing: border-box;
+        outline: none;
         color: white;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        margin-top: 0px;
+        padding: .5rem 1.5rem;
       `}
     >
       {children}
     </button>
   )
 }
+
+export { Button }
 
 export default Button

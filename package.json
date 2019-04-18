@@ -1,6 +1,6 @@
 {
   "name": "core-design",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "private": true,
@@ -9,6 +9,6 @@
     "examples/*"
   ],
   "devDependencies": {
-    "lerna": "^3.13.2"
+    "lerna": "^3.13.3"
   }
 }
