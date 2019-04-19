@@ -5,10 +5,13 @@
   "license": "MIT",
   "types": "lib/typings",
   "scripts": {
-    "start:storybook": "yarn run start-storybook",
-    "build:typings": "tsc --emitDeclarationOnly",
+    "build": "yarn run clean && concurrently 'yarn run build:compile' 'yarn run build:typings' 'yarn run copy:assets'",
     "build:compile": "babel --out-dir ./lib -x .tsx,.ts src",
-    "dev": "concurrently 'yarn run build:typings --watch' 'yarn run build:compile --watch'"
+    "build:typings": "tsc --emitDeclarationOnly",
+    "clean": "cleandir ./lib",
+    "copy:assets": "cpx './src/**/*.{png,jpg,jpeg,svg,woff,woff2,eot,ttf,otf}' lib",
+    "dev": "yarn run clean && concurrently 'yarn run build:typings --watch' 'yarn run build:compile --watch' 'yarn run copy:assets --watch'",
+    "start:storybook": "yarn run start-storybook"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.10",
@@ -31,7 +34,9 @@
     "@types/react-dom": "^16.8.4",
     "@types/storybook__react": "^4.0.1",
     "babel-loader": "^8.0.5",
+    "clean-dir": "^1.0.3",
     "concurrently": "^4.1.0",
+    "cpx": "^1.5.0",
     "cross-env": "^5.2.0",
     "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
