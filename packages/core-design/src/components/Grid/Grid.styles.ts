@@ -2,6 +2,8 @@ import { css } from '@emotion/core'
 
 export default {
   base: css`
+    margin-right: auto;
+    margin-left: auto;
     display: grid;
     align-content: start;
     grid-template-columns: repeat(12, 120px);

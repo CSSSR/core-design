@@ -1,20 +1,30 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
+import { Text } from '@csssr/core-design'
+import {  } from '@csssr/core-design'
+import { css } from '@emotion/core'
 
-const StyledLogo = styled.span`
-  font-weight: bold;
-  font-size: 20px;
-  color: #2f2f2f;
-`
 
 interface ILogoProps {
   className?: string
 }
 
 const Logo: React.FC<ILogoProps> = props => {
-  const { className } = props
-
-  return <StyledLogo className={className}>Core Design</StyledLogo>
+  return (
+    <Text 
+      fontStyle='font_roboto_slab_light'
+      css={css`
+        margin-top: 0;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-size: 32px;
+        line-height: 28px;
+        font-weight: 600;
+      `}
+      {...props}
+    >
+      Core Design
+    </Text>
+  )
 }
 
 export { Logo }

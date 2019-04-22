@@ -11,6 +11,7 @@ const IndexPage = () => (
         margin-top: 20px;
       `}
       theme="primary"
+      onClick={() => alert('SDADASDASDAS')}
     >
       This is a button from Core Design
     </Button>
@@ -28,8 +29,6 @@ const IndexPage = () => (
     <Grid
       css={css`
         margin-top: 20px;
-        margin-right: auto;
-        margin-left: auto;
       `}
       withGuidelines
     >
