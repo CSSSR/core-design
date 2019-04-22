@@ -1,1 +1,1 @@
-export { default } from './ButtonLink'
+export { default, Props, ButtonLink } from './ButtonLink'

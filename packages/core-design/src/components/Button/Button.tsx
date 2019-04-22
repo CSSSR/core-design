@@ -1,38 +1,33 @@
-import * as React from 'react'
+import styled from '@emotion/styled'
 
 import styles from './Button.styles'
 
-import { IntrinsicPropsOf } from '../../utils/types'
-
-interface Props extends IntrinsicPropsOf<'button'> {
-  theme: 'primary' | 'secondary',
-  children: React.ReactNode,
-  className?: string,
-  disabled?: boolean,
-  onClick?: (event?: React.MouseEvent) => void,
+export interface Props {
+  kind: 'secondary' | 'primary'
 }
 
+function byKind(props: Props) {
+  const { kind } = props
 
-const Button: React.FC<Props> = props => {
-  const { children, ...rest } = props
+  switch (kind) {
+    case 'primary': {
+      return styles.themes.primary
+    }
+  }
 
-  return (
-    <button
-      css={[
-        styles.base, 
-        styles.font, 
-        styles.themes[props.theme]
-      ]}
-      {...rest}
-    >
-      {children}
-    </button>
-  )
+  return styles.themes.secondary
 }
+
+const Button = styled.button`
+  ${styles.base}
+  ${styles.font}
+  ${byKind}
+`
 
 Button.defaultProps = {
-  theme: 'primary',
-}
+  kind: 'primary',
+} as Props
 
 export { Button }
+
 export default Button

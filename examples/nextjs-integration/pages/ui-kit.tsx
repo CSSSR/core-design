@@ -10,7 +10,7 @@ const IndexPage = () => (
       css={css`
         margin-top: 20px;
       `}
-      theme="primary"
+      kind="primary"
     >
       This is a button from Core Design
     </Button>
@@ -20,7 +20,7 @@ const IndexPage = () => (
       css={css`
         margin-top: 20px;
       `}
-      theme="secondary"
+      kind="secondary"
     >
       This is a Link looking like Button from Core Design
     </ButtonLink>
@@ -57,7 +57,7 @@ const IndexPage = () => (
         css={css`
           grid-column: 1 / span 6;
         `}
-        theme="primary"
+        kind="primary"
       >
         Same Button
       </Button>
@@ -67,7 +67,7 @@ const IndexPage = () => (
         css={css`
           grid-column: 7 / span 6;
         `}
-        theme="secondary"
+        kind="secondary"
       >
         Same Button
       </Button>
@@ -78,7 +78,7 @@ const IndexPage = () => (
           grid-column: 1 / span 4;
           margin-top: 20px;
         `}
-        theme="secondary"
+        kind="secondary"
       >
         Same Button
       </Button>
@@ -89,7 +89,7 @@ const IndexPage = () => (
           grid-column: 5 / span 4;
           margin-top: 20px;
         `}
-        theme="secondary"
+        kind="secondary"
       >
         Same Button
       </Button>
@@ -100,7 +100,7 @@ const IndexPage = () => (
           grid-column: 9 / span 4;
           margin-top: 20px;
         `}
-        theme="secondary"
+        kind="secondary"
       >
         Same Button
       </Button>
@@ -111,7 +111,7 @@ const IndexPage = () => (
           grid-column: 1 / span 3;
           margin-top: 20px;
         `}
-        theme="primary"
+        kind="primary"
       >
         Same Button
       </Button>
@@ -122,7 +122,7 @@ const IndexPage = () => (
           grid-column: 4 / span 3;
           margin-top: 20px;
         `}
-        theme="primary"
+        kind="primary"
       >
         Same Button
       </Button>
@@ -133,7 +133,7 @@ const IndexPage = () => (
           grid-column: 7 / span 3;
           margin-top: 20px;
         `}
-        theme="primary"
+        kind="primary"
       >
         Same Button
       </Button>
@@ -144,90 +144,82 @@ const IndexPage = () => (
           grid-column: 10 / span 3;
           margin-top: 20px;
         `}
-        theme="primary"
+        kind="primary"
       >
         Same Button
       </Button>
     </Grid>
 
-    <Heading
-      as='h1'
+    <Heading.H1
       css={css`
         margin-top: 20px !important;
       `}
     >
       H1 Slab
-    </Heading>
+    </Heading.H1>
 
-    <Heading
-      as='h2'
+    <Heading.H2
       fontStyle='font_h1_regular'
       css={css`
         margin-top: 20px !important;
       `}
     >
-      H1 Regular
-    </Heading>
+      H Regular
+    </Heading.H2>
 
-    <Heading
-      as='h2'
+    <Heading.H2
       fontStyle='font_h2_slab'
       css={css`
         margin-top: 20px !important;
       `}
     >
       H2 Slab
-    </Heading>
+    </Heading.H2>
 
-    <Heading
-      as='h2'
+    <Heading.H2
       fontStyle='font_h2_regular'
       css={css`
         margin-top: 20px !important;
       `}
     >
       H2 Regular
-    </Heading>
+    </Heading.H2>
 
-    <Heading
-      as='h3'
+    <Heading.H3
       fontStyle='font_h3_slab'
       css={css`
         margin-top: 20px !important;
       `}
     >
       H3 Slab
-    </Heading>
+    </Heading.H3>
 
-    <Heading
-      as='h3'
+    <Heading.H3
       fontStyle='font_h3_regular'
       css={css`
         margin-top: 20px !important;
       `}
     >
       H3 Regular
-    </Heading>
+    </Heading.H3>
 
-    <Heading
-      as='h4'
+    <Heading.H4
       fontStyle='font_subhead_slab'
       css={css`
         margin-top: 20px !important;
       `}
     >
       Subhead Slab
-    </Heading>
+    </Heading.H4>
     
-    <Heading
-      as='h5'
+    <Heading.H5
       fontStyle='font_subhead_regular'
       css={css`
         margin-top: 20px !important;
       `}
     >
       Subhead Regular
-    </Heading>
+    </Heading.H5>
 
     <Text
       css={css`

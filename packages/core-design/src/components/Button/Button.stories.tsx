@@ -11,7 +11,7 @@ import fonts from '../../styles/fonts'
 import { Button } from './Button'
 
 const knobs = {
-  theme: select('theme', ['primary', 'secondary'], 'primary'),
+  kind: select('kind',  ['primary', 'secondary'], 'primary'),
   className: text('className', 'button'),
   disabled: boolean('disabled', false),
   children: text('children', 'Кнопка'),

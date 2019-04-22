@@ -1,30 +1,20 @@
-import * as React from 'react'
+import styled from '@emotion/styled'
 
 import styles from './Grid.styles'
 
-import { IntrinsicPropsOf } from '../../utils/types'
-
-interface Props extends IntrinsicPropsOf<'div'> {
-  children: React.ReactNode,
-  className?: string,
-  withGuidelines?: boolean,
+export interface Props {
+  withGuidelines?: boolean
 }
 
+const Grid = styled.div<Props>`
+  ${styles.base}
+  ${({ withGuidelines }) => withGuidelines && styles.guidelines}
+`
 
-const Grid: React.FC<Props> = props => {
-  const { children, withGuidelines, ...rest } = props
+Grid.defaultProps = {
+  withGuidelines: false,
+} as Partial<Props>
 
-  return (
-    <div
-      css={[
-        styles.base,
-        withGuidelines && styles.guidelines,
-      ]}
-      {...rest}
-    >
-      {children}
-    </div>
-  )
-}
+export { Grid }
 
 export default Grid
