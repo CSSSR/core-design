@@ -1,9 +1,10 @@
 import { Global as EmotionGlobal, css } from '@emotion/core'
 
-import { normalize } from '@csssr/core-design'
+import { normalize, fonts } from '@csssr/core-design'
 
 const globalStyles = css`
   ${normalize}
+  ${fonts}
   html,
   body {
     margin: 0;
