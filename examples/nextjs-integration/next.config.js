@@ -1,4 +1,6 @@
 const { print } = require('q-i')
+const withPlugins = require('next-compose-plugins');
+const withFonts = require('next-fonts');
 
 const withTypescript = require('@zeit/next-typescript')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
@@ -17,7 +19,7 @@ const patchDefaultNextExternalsFn = defaultNextExternalsFn => {
   }
 }
 
-module.exports = withTypescript({
+module.exports = withPlugins([[withTypescript, {
   webpack(config, options) {
     if (options.isServer) {
       if (options.dev) {
@@ -29,4 +31,6 @@ module.exports = withTypescript({
 
     return config
   },
-})
+}], withFonts]);
+
+// module.exports = withTypescript()

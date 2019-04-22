@@ -1,35 +1,38 @@
 import * as React from 'react'
 
-import { css } from '@emotion/core'
+import styles from './Button.styles'
 
-interface IProps
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
-    something?: string
-  }
+import { IntrinsicPropsOf } from '../../utils/types'
 
-const Button: React.FC<IProps> = props => {
+interface Props extends IntrinsicPropsOf<'button'> {
+  theme: 'primary' | 'secondary',
+  children: React.ReactNode,
+  className?: string,
+  disabled?: boolean,
+  onClick?: (event?: React.MouseEvent) => void,
+}
+
+
+const Button: React.FC<Props> = props => {
   const { children, ...rest } = props
 
   return (
     <button
+      css={[
+        styles.base, 
+        styles.font, 
+        styles.themes[props.theme]
+      ]}
       {...rest}
-      css={css`
-        background-color: #0072bc;
-        border: none;
-        box-sizing: border-box;
-        outline: none;
-        color: white;
-        padding: .5rem 1.5rem;
-      `}
     >
       {children}
     </button>
   )
 }
 
-export { Button }
+Button.defaultProps = {
+  theme: 'primary',
+}
 
+export { Button }
 export default Button

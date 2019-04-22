@@ -1,13 +1,12 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-
 import { Button } from '@csssr/core-design'
-
 import { ProjectLayout } from '../components/ProjectLayout'
 
 const IndexPage = () => (
   <ProjectLayout>
     Hello world!
+    
     <Button
       type="button"
       css={css`
