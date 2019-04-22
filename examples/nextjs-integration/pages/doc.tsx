@@ -43,9 +43,6 @@ const Pre = styled.pre`
   background-color: #f2f2f2;
 `
 
-const H1 = Heading.withComponent('h1')
-const H2 = Heading.withComponent('h2')
-
 const DocumentationPage = () => (
   <ProjectLayout>
     <Grid
@@ -55,14 +52,14 @@ const DocumentationPage = () => (
         margin-left: auto;
       `}
     >
-      <H1
+      <Heading.H1
         fontStyle='font_h1_slab'
         css={css`
           grid-column: 1 / span 12;
         `}
       >
         Кнопка
-      </H1>
+      </Heading.H1>
 
       <Button
         type="button"
@@ -120,14 +117,14 @@ const DocumentationPage = () => (
         Компонент кнопки, используется как триггер для выполнения определённого действия. Кнопка однозначно сообщает пользователю, что произойдёт после нажатия на неё.
       </Text>
 
-      <H2
+      <Heading.H2
         fontStyle='font_h2_slab'
         css={css`
           grid-column: 1 / span 12;
         `}
       >
         Свойства
-      </H2>
+      </Heading.H2>
 
       <Table>
           <tr>
@@ -162,7 +159,7 @@ const DocumentationPage = () => (
           </tr>
       </Table>
 
-      <H2
+      <Heading.H2
         fontStyle='font_h2_slab'
         css={css`
           margin-top: 40px;
@@ -170,7 +167,7 @@ const DocumentationPage = () => (
         `}
       >
         Код
-      </H2>
+      </Heading.H2>
 
       <Pre>
         <code>
