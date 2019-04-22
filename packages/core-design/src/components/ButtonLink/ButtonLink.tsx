@@ -1,38 +1,42 @@
 import * as React from 'react'
 
-import styles from './Button.styles'
+import styles from './ButtonLink.styles'
 
 import { IntrinsicPropsOf } from '../../utils/types'
 
-interface Props extends IntrinsicPropsOf<'button'> {
+interface Props extends IntrinsicPropsOf<'a'> {
   theme: 'primary' | 'secondary',
-  children: React.ReactNode,
+  href: string,
   className?: string,
+  children: React.ReactNode,
   disabled?: boolean,
+  external?: boolean,
+
   onClick?: (event?: React.MouseEvent) => void,
 }
 
 
-const Button: React.FC<Props> = props => {
-  const { children, ...rest } = props
+const ButtonLink: React.FC<Props> = props => {
+  const { children, external, ...rest } = props
 
   return (
-    <button
+    <a
       css={[
         styles.base, 
         styles.font, 
         styles.themes[props.theme]
       ]}
+      target={external ? '_blank' : undefined}
+      rel='noopener'
       {...rest}
     >
       {children}
-    </button>
+    </a>
   )
 }
 
-Button.defaultProps = {
+ButtonLink.defaultProps = {
   theme: 'primary',
 }
 
-export { Button }
-export default Button
+export default ButtonLink

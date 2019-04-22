@@ -61,6 +61,9 @@ const normalize = css`
   img {
     border-style: none;
   }
+  a {
+    text-decoration: none;
+  }
   button,
   input,
   optgroup,
