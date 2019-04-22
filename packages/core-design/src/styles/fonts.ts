@@ -177,7 +177,12 @@ const font_p24_strong = css`
   }
 `
 
-const fontFaces = css`
+const fontFaces = () => {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  return css`
   @font-face {
     font-family: 'Roboto';
     font-style: normal;
@@ -424,6 +429,7 @@ const fontFaces = css`
     font-display: swap;
   }
 `
+}
 
 export {
   font_button_label,
