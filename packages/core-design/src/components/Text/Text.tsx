@@ -1,32 +1,19 @@
-import * as React from 'react'
+import styled from '@emotion/styled'
 
 import styles from './Text.styles'
 
-interface Props {
-  fontStyle?: 'font_p16_regular' | 'font_roboto_slab_light' | 'font_p24_strong',
-  as?: any, //!TODO: найти подходящий тип (keyof JSX.IntrinsicElements сильно нагружают систему)
-  className?: string,
-  children: React.ReactNode,
+export interface Props {
+  fontStyle?: keyof typeof styles['font']
 }
 
-
-const Text: React.FC<Props> = props => {
-  const { children, fontStyle, as,  ...rest } = props
-  const Tag = as
-
-  return (
-    <Tag
-      css={styles.font[fontStyle]}
-      {...rest}
-    >
-      {children}
-    </Tag>
-  )
-}
+const Text = styled.div<Props>`
+  ${({ fontStyle }) => styles.font[fontStyle]}
+`
 
 Text.defaultProps = {
-  as: 'p',
   fontStyle: 'font_p16_regular',
-}
+} as Partial<Props>
+
+export { Text }
 
 export default Text

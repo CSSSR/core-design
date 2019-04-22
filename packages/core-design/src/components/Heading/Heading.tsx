@@ -1,39 +1,33 @@
-import * as React from 'react'
+import styled from '@emotion/styled'
 
 import styles from './Heading.styles'
 
-interface Props {
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
-  fontStyle?: 
-    'font_h1_slab' 
-    | 'font_h1_regular' 
-    | 'font_h2_slab' 
-    | 'font_h2_regular' 
-    | 'font_h3_slab' 
-    | 'font_h3_regular' 
-    | 'font_subhead_slab' 
-    | 'font_subhead_regular',
-  className?: string,
-  children: React.ReactNode,
+export interface Props {
+  fontStyle?: keyof typeof styles['font']
 }
 
-const Heading: React.FC<Props> = props => {
-  const { children, as, fontStyle,  ...rest } = props
-  const Tag = as
+let PureHeading = styled.h1<Props>`
+  ${({ fontStyle }) => styles.font[fontStyle]}
+`
 
-  return (
-    <Tag
-      css={styles.font[fontStyle]}
-      {...rest}
-    >
-      {children}
-    </Tag>
-  )
+const subComponents = {
+  H1: PureHeading.withComponent('h1'),
+  H2: PureHeading.withComponent('h2'),
+  H3: PureHeading.withComponent('h3'),
+  H4: PureHeading.withComponent('h4'),
+  H5: PureHeading.withComponent('h5'),
+}
+
+let Heading: typeof PureHeading & typeof subComponents = PureHeading as any
+
+for (const subComponentKey in subComponents) {
+  Heading[subComponentKey] = subComponents[subComponentKey]
 }
 
 Heading.defaultProps = {
-  as: 'h1',
   fontStyle: 'font_h1_slab',
-}
+} as Partial<Props>
+
+export { Heading }
 
 export default Heading

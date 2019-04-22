@@ -158,23 +158,23 @@ const font_roboto_slab_light = css`
   font-stretch: normal;
   line-height: 3.125rem;
   letter-spacing: 0.03125rem;
-  color: #000000
+  color: #000000;
 `
 
 const font_p24_strong = css`
-    /* margin-top: -0.1875rem;
+  /* margin-top: -0.1875rem;
     padding-bottom: 0.1875rem; */
+  font-family: Roboto;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: #4a4a4a;
+
+  @media (max-width: 1279px) {
     font-family: Roboto;
-    font-size: 1.5rem;
-    line-height: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     color: #4a4a4a;
-    
-    @media (max-width: 1279px) {
-      font-family: Roboto;
-      font-size: 1rem;
-      line-height: 1.5rem;
-      color: #4a4a4a;
-    }
+  }
 `
 
 const fontFaces = css`
@@ -424,7 +424,6 @@ const fontFaces = css`
     font-display: swap;
   }
 `
-
 
 export {
   font_button_label,

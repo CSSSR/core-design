@@ -42,22 +42,21 @@ const DocumentationPage = () => (
         margin-top: 20px;
       `}
     >
-      <Heading
-        as='h1'
+      <Heading.H1
         fontStyle='font_h1_slab'
         css={css`
           grid-column: 1 / span 12;
         `}
       >
         Кнопка
-      </Heading>
+      </Heading.H1>
 
       <Button
         type="button"
         css={css`
           grid-column: 1 / span 3;
         `}
-        theme="primary"
+        kind="primary"
         onClick={handleClick}
       >
         Кнопка
@@ -68,7 +67,7 @@ const DocumentationPage = () => (
         css={css`
           grid-column: 4 / span 3;
         `}
-        theme="primary"
+        kind="primary"
         onClick={handleClick}
         disabled
       >
@@ -80,7 +79,7 @@ const DocumentationPage = () => (
         css={css`
           grid-column: 7 / span 3;
         `}
-        theme="secondary"
+        kind="secondary"
         onClick={handleClick}
       >
         Кнопка
@@ -91,7 +90,7 @@ const DocumentationPage = () => (
         css={css`
           grid-column: 10 / span 3;
         `}
-        theme="secondary"
+        kind="secondary"
         onClick={handleClick}
         disabled
       >
@@ -108,15 +107,14 @@ const DocumentationPage = () => (
         Компонент кнопки, используется как триггер для выполнения определённого действия. Кнопка однозначно сообщает пользователю, что произойдёт после нажатия на неё.
       </Text>
 
-      <Heading
-        as='h2'
+      <Heading.H2
         fontStyle='font_h2_slab'
         css={css`
           grid-column: 1 / span 12;
         `}
       >
         Свойства
-      </Heading>
+      </Heading.H2>
 
       <Table 
         css={css`
@@ -179,9 +177,7 @@ const DocumentationPage = () => (
           </tr>
       </Table>
 
-
-      <Heading
-        as='h2'
+      <Heading.H2
         fontStyle='font_h2_slab'
         css={css`
           margin-top: 40px;
@@ -189,7 +185,7 @@ const DocumentationPage = () => (
         `}
       >
         Код
-      </Heading>
+      </Heading.H2>
 
       <Pre>
         <code>
@@ -201,7 +197,7 @@ const DocumentationPage = () => (
             css={css\`
               grid-column: 10 / span 3;
             \`}
-            theme="secondary"
+            kind="secondary"
             onClick={handleClick}
             disabled
           >
