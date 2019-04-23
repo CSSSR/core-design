@@ -1,11 +1,11 @@
 # core-scripts
-Утилита для развертывания нового проекта на (Next.js)[https://nextjs.org/] c использованием библиотеки (Core Design)[https://github.com/CSSSR/core-design].
+Утилита для развертывания нового проекта на [Next.js](https://nextjs.org/) c использованием библиотеки [Core Design](https://github.com/CSSSR/core-design).
 
 ## Требования
-1. Для работы необходимо установить (Node.js)[https://nodejs.org]. Если не установлено, лучше установить LTS версию.
-2. (Git)[https://git-scm.com/]. На macOS и Ubuntu он уже должен быть предустановлен по-умолчанию.
-3. Редактор кода. Советуем использовать (VSCode)[https://code.visualstudio.com/].
-4. Для удобной работы со стилями советуется установить (плагин vscode-styled-components)[https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components].
+1. Для работы необходимо установить [Node.js](https://nodejs.org). Если не установлено, лучше установить LTS версию.
+2. [Git](https://git-scm.com/). На macOS и Ubuntu он уже должен быть предустановлен по-умолчанию.
+3. Редактор кода. Советуем использовать [VSCode](https://code.visualstudio.com/).
+4. Для удобной работы со стилями советуется установить [плагин vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components).
 
 ## Развертывание проекта
 1. С помощью терминала перейти в директорию, в которой будут храниться проекты;
