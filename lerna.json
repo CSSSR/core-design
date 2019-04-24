@@ -1,7 +1,7 @@
 {
   "packages": ["packages/*", "examples/*"],
   "npmClient": "yarn",
-  "version": "0.0.1",
+  "version": "independent",
   "useWorkspaces": true,
   "lerna": "3.13.3"
 }
