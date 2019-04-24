@@ -14,9 +14,7 @@ interface IPreProps {
 const Pre: React.FC<IPreProps> = props => {
   return (
     <StyledPre {...props}>
-      <tbody>
-        {props.children}
-      </tbody>
+      {props.children}
     </StyledPre>
   )
 }

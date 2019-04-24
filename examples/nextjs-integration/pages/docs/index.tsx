@@ -25,7 +25,7 @@ const DocumentationPage = () => (
 
       <ul>
       {coreComponents.map(componentName => 
-        <li>
+        <li key={componentName}>
           <Link href={`/docs/${componentName.toLowerCase()}`}>
             <a>{componentName}</a>
           </Link>
