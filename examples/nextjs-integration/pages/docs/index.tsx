@@ -1,10 +1,8 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { ButtonLink, Grid, Text, Heading } from '@asmy/core-design'
+import { Grid, Heading } from '@asmy/core-design'
 import * as coreExports from '@asmy/core-design'
 import { ProjectLayout } from '../../components/ProjectLayout'
-import { Table } from '../../components/Table'
-import { Pre } from '../../components/Pre'
 import Link from 'next/link'
 
 const coreComponents = Object.keys(coreExports).filter(coreExport => coreExport[0] === coreExport[0].toUpperCase())
