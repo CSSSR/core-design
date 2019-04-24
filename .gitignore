@@ -1,6 +1,6 @@
 node_modules/
 lib/
 *.log
-.next
+.next/
 .sonarlint
 report.*.json
