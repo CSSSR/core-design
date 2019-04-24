@@ -1,6 +1,6 @@
 {
   "name": "@asmy/core-design-nextjs-integration-example",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
