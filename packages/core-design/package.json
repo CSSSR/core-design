@@ -44,5 +44,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "typescript": "^3.4.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
