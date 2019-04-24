@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 
-import { font_p24_strong } from '@csssr/core-design'
+import { font_p24_strong } from '@asmy/core-design'
 
 const StyledTable = styled.table`
   grid-column: 1 / span 12;

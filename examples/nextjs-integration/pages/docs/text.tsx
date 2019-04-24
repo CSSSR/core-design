@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { Grid, Text, Heading } from '@csssr/core-design'
+import { Grid, Text, Heading } from '@asmy/core-design'
 import { ProjectLayout } from '../../components/ProjectLayout'
 import { Table } from '../../components/Table'
 import { Pre } from '../../components/Pre'
@@ -144,7 +144,7 @@ const DocumentationPage = () => (
       <Pre>
         <code>
           {`
-            import { Text } from '@csssr/core-design'
+            import { Text } from '@asmy/core-design'
 
             <Text fontStyle="font_p24_strong">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer at

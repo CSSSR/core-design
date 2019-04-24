@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 
-import { Grid } from '@csssr/core-design'
+import { Grid } from '@asmy/core-design'
 import { css } from '@emotion/core'
 
 import { Logo } from '../Logo'

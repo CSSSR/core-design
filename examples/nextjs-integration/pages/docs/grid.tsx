@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { Grid, Text, Heading } from '@csssr/core-design'
+import { Grid, Text, Heading } from '@asmy/core-design'
 import { ProjectLayout } from '../../components/ProjectLayout'
 import { Table } from '../../components/Table'
 import { Pre } from '../../components/Pre'
@@ -141,7 +141,7 @@ const DocumentationPage = () => (
       <Pre>
         <code>
           {`
-            import { Grid } from '@csssr/core-design'
+            import { Grid } from '@asmy/core-design'
 
             <Grid withGuidelines>
               Грид

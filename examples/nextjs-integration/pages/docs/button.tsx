@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { Button, Grid, Text, Heading } from '@csssr/core-design'
+import { Button, Grid, Text, Heading } from '@asmy/core-design'
 import { ProjectLayout } from '../../components/ProjectLayout'
 import { Table } from '../../components/Table'
 import { Pre } from '../../components/Pre'
@@ -116,7 +116,7 @@ const DocumentationPage = () => (
           </tr>
       </Table>
 
-      <Heading
+      <Heading.H2>
         as='h2'
         fontStyle='font_h2_slab'
         css={css`
@@ -125,7 +125,7 @@ const DocumentationPage = () => (
         `}
       >
         Хендлеры
-      </Heading>
+      </Heading.H2>
 
       <Table>
           <tr>
@@ -153,7 +153,7 @@ const DocumentationPage = () => (
       <Pre>
         <code>
         {`
-          import { Button } from '@csssr/core-design'
+          import { Button } from '@asmy/core-design'
 
           <Button
             kind="secondary"

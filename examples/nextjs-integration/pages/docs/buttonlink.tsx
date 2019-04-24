@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { ButtonLink, Grid, Text, Heading } from '@csssr/core-design'
+import { ButtonLink, Grid, Text, Heading } from '@asmy/core-design'
 import { ProjectLayout } from '../../components/ProjectLayout'
 import { Table } from '../../components/Table'
 import { Pre } from '../../components/Pre'
@@ -119,8 +119,7 @@ const DocumentationPage = () => (
           </tr>
       </Table>
 
-      <Heading
-        as='h2'
+      <Heading.H2
         fontStyle='font_h2_slab'
         css={css`
           margin-top: 40px;
@@ -128,7 +127,7 @@ const DocumentationPage = () => (
         `}
       >
         Хендлеры
-      </Heading>
+      </Heading.H2>
 
       <Table>
           <tr>
@@ -156,7 +155,7 @@ const DocumentationPage = () => (
       <Pre>
         <code>
         {`
-          import { ButtonLink } from '@csssr/core-design'
+          import { ButtonLink } from '@asmy/core-design'
 
           <ButtonLink
             href='https://www.google.com/'

@@ -9,7 +9,7 @@ const patchDefaultNextExternalsFn = defaultNextExternalsFn => {
   return (context, request, callback) => {
     const myCallback = (error, as) => {
 
-      if (as === 'commonjs @csssr/core-design') {
+      if (as === 'commonjs @asmy/core-design') {
         return callback()
       }
 
