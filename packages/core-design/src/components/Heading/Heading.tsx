@@ -16,6 +16,7 @@ const subComponents = {
   H3: PureHeading.withComponent('h3'),
   H4: PureHeading.withComponent('h4'),
   H5: PureHeading.withComponent('h5'),
+  H6: PureHeading.withComponent('h6'),
 }
 
 let Heading: typeof PureHeading & typeof subComponents = PureHeading as any

@@ -1,12 +1,16 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { Button, Grid, Text, Heading } from '@csssr/core-design'
+import { ButtonLink, Grid, Text, Heading } from '@csssr/core-design'
 import { ProjectLayout } from '../../components/ProjectLayout'
 import { Table } from '../../components/Table'
 import { Pre } from '../../components/Pre'
+import Link from 'next/link'
 
-
-const handleClick = () => alert('Ты кликнул кнопку')
+const todayDate = new Date()
+const currentDate = todayDate.getDate()
+const currentMonth = todayDate.getMonth() + 1
+const formateNumberToTwoDigets = number => number < 10 ? 0 + '' + number : number
+const formatedTodayDate = `${formateNumberToTwoDigets(currentDate)}${formateNumberToTwoDigets(currentMonth)}`
 
 const DocumentationPage = () => (
   <ProjectLayout>
@@ -17,54 +21,46 @@ const DocumentationPage = () => (
     >
       <Heading.H1
         fontStyle='font_h1_slab'
-        css={css`
-          grid-column: 1 / span 12;
-        `}
+        css={css` grid-column: 1 / span 12;`}
       >
-        Button
+        ButtonLink
       </Heading.H1>
 
-      <Button
-        css={css`
-          grid-column: 1 / span 3;
-        `}
+      <ButtonLink
+        href='https://yandex.ru/'
+        css={css`grid-column: 1 / span 3;`}
         kind="primary"
-        onClick={handleClick}
+        external
       >
-        Кнопка
-      </Button>
+        На Яндекс
+      </ButtonLink>
 
-      <Button
-        css={css`
-          grid-column: 4 / span 3;
-        `}
+      <ButtonLink
+        href='https://www.google.ru/'
+        css={css`grid-column: 4 / span 3;`}
+        kind="secondary"
+        external
+      >
+        На Google
+      </ButtonLink>
+
+      <ButtonLink
+        href='https://www.yahoo.com/'
+        css={css`grid-column: 7 / span 3;`}
         kind="primary"
-        onClick={handleClick}
-        disabled
+        external
       >
-        Кнопка
-      </Button>
+        На Yahoo
+      </ButtonLink>
 
-      <Button
-        css={css`
-          grid-column: 7 / span 3;
-        `}
+      <ButtonLink
+        href={`https://www.aviasales.ru/search/MOW${formatedTodayDate}BER1`}
+        css={css`grid-column: 10 / span 3;`}
         kind="secondary"
-        onClick={handleClick}
+        external
       >
-        Кнопка
-      </Button>
-
-      <Button
-        css={css`
-          grid-column: 10 / span 3;
-        `}
-        kind="secondary"
-        onClick={handleClick}
-        disabled
-      >
-        Кнопка
-      </Button>
+        На Берлин  
+      </ButtonLink>
 
       <Text
         fontStyle='font_p24_strong'
@@ -73,7 +69,8 @@ const DocumentationPage = () => (
           grid-column: 1 / span 12;
         `}
       >
-        Компонент кнопки. Используется как триггер для выполнения определённого действия. Кнопка однозначно сообщает пользователю, что произойдёт после нажатия на неё.
+        Компонент ссылки, который выглядит как существующий компонент <Link href="/docs/button"><a>кнопки</a></Link>. 
+        Используется для переходов на други страницы.
       </Text>
 
       <Heading.H2
@@ -103,16 +100,22 @@ const DocumentationPage = () => (
             <th>Комментарий</th>
           </tr>
           <tr>
+            <td>href</td>
+            <td>string</td>
+            <td></td>
+            <td>Путь на который должна вести ссылка</td>
+          </tr>
+          <tr>
             <td>kind</td>
             <td>primary | secondary</td>
             <td>primary</td>
-            <td>Тема кнопки</td>
+            <td>Тема ссылки</td>
           </tr>
           <tr>
-            <td>disabled</td>
+            <td>external</td>
             <td>true | false</td>
             <td>false</td>
-            <td>Отвечает за disabled состояние кнопки</td>
+            <td>Отвечает за то будет открываться ссылка в новом окне или в существующем</td>
           </tr>
       </Table>
 
@@ -136,7 +139,7 @@ const DocumentationPage = () => (
           <tr>
             <td>onClick</td>
             <td>event</td>
-            <td>Функция, которая будет исполнятся при клике на кнопку</td>
+            <td>Функция, которая будет исполнятся при клике на ссылку</td>
           </tr>
       </Table>
 
@@ -153,15 +156,15 @@ const DocumentationPage = () => (
       <Pre>
         <code>
         {`
-          import { Button } from '@csssr/core-design'
+          import { ButtonLink } from '@csssr/core-design'
 
-          <Button
+          <ButtonLink
+            href='https://www.google.com/'
             kind="secondary"
-            onClick={handleClick}
-            disabled
+            external
           >
-            Кнопка
-          </Button>
+            Ссылка
+          </ButtonLink>
         `}
         </code>
       </Pre>
