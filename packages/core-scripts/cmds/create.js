@@ -67,7 +67,7 @@ function handler(argv) {
   console.log(`$ cd ${basename}`)
   console.log(`$ npm run dev\n`)
   console.log(
-    'После того, как запустится сервер нужно открыть в браузере вот эту станицу: http://localhost:3000'
+    'После того, как запустится сервер нужно открыть в браузере эту станицу: http://localhost:3000'
   )
   console.log('-----------------------')
 }
