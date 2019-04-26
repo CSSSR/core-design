@@ -15,8 +15,8 @@ export default {
     user-select: none;
 
     &:disabled {
-        pointer-events: none;
-        opacity: 0.3;
+      pointer-events: none;
+      opacity: 0.3;
     }
 
     @media (min-width: 768px) and (max-width: 1279px) {
@@ -44,6 +44,6 @@ export default {
       &:active {
         color: #000;
       }
-    `
-  }
+    `,
+  },
 }

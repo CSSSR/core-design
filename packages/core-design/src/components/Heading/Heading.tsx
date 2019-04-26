@@ -6,7 +6,7 @@ export interface Props {
   fontStyle?: keyof typeof styles['font']
 }
 
-let PureHeading = styled.h1<Props>`
+const PureHeading = styled.h1<Props>`
   ${({ fontStyle }) => styles.font[fontStyle]}
 `
 
@@ -19,11 +19,11 @@ const subComponents = {
   H6: PureHeading.withComponent('h6'),
 }
 
-let Heading: typeof PureHeading & typeof subComponents = PureHeading as any
+const Heading: typeof PureHeading & typeof subComponents = PureHeading as any
 
-for (const subComponentKey in subComponents) {
-  Heading[subComponentKey] = subComponents[subComponentKey]
-}
+Object.entries(subComponents).forEach(([key, value]) => {
+  Heading[key] = value
+})
 
 Heading.defaultProps = {
   fontStyle: 'font_h1_slab',

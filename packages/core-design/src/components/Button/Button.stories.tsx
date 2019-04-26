@@ -21,13 +21,18 @@ storiesOf('Button', module)
       onClick: action('click'),
     }
 
-    const cssKnob = text('CSS', 'width: 120px;' )
+    const cssKnob = text('CSS', 'width: 120px;')
 
     return (
       <>
         <Global styles={normalize} />
         <Global styles={fonts} />
-        <Button {...knobs} css={css`${cssKnob}`}/>
+        <Button
+          {...knobs}
+          css={css`
+            ${cssKnob}
+          `}
+        />
       </>
     )
   })

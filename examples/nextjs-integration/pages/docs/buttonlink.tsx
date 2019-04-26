@@ -9,7 +9,7 @@ import Link from 'next/link'
 const todayDate = new Date()
 const currentDate = todayDate.getDate()
 const currentMonth = todayDate.getMonth() + 1
-const formateNumberToTwoDigets = number => number < 10 ? 0 + '' + number : number
+const formateNumberToTwoDigets = (num: number) => num < 10 ? 0 + '' + num : num
 const formatedTodayDate = `${formateNumberToTwoDigets(currentDate)}${formateNumberToTwoDigets(currentMonth)}`
 
 const DocumentationPage = () => (

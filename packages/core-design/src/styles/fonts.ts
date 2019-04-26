@@ -1,3 +1,5 @@
+/* tslint:disable:variable-name */
+
 import { css } from '@emotion/core'
 
 const font_button_label = css`
