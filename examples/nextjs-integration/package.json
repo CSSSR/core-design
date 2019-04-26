@@ -5,10 +5,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "lint": "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} ./{pages,components}/**/*"
+    "dev": "next",
+    "lint": "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} ./{pages,components}/**/*",
+    "precommit:": "lint-staged",
+    "start": "next start"
   },
   "dependencies": {
     "@asmy/core-design": "^0.0.2",
