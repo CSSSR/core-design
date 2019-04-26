@@ -1,6 +1,6 @@
 import { Global as EmotionGlobal, css } from '@emotion/core'
 
-import { normalize, fonts } from '@csssr/core-design'
+import { normalize, fonts } from '@asmy/core-design'
 
 const globalStyles = css`
   ${normalize}

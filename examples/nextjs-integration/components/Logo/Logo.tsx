@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Text } from '@csssr/core-design'
-import {  } from '@csssr/core-design'
+import { Text } from '@asmy/core-design'
+import {  } from '@asmy/core-design'
 import { css } from '@emotion/core'
 import Link from 'next/link'
 
@@ -16,6 +16,7 @@ const Logo: React.FC<ILogoProps> = props => {
     <Link href='/docs'>
       <TextLink 
         fontStyle='font_roboto_slab_light'
+        theme={{dark: {}}}
         css={css`
           margin-top: 0;
           margin-bottom: 0;
@@ -28,6 +29,11 @@ const Logo: React.FC<ILogoProps> = props => {
 
           :hover {
             color: rgba(0, 0, 0, 0.7);
+
+          ${({ theme }) => theme.dark && css`
+            color: white;
+            background-color: black;
+          `}
           }
         `}
         {...props}

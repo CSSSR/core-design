@@ -11,7 +11,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
-      "@csssr/core-design": ["../../packages/core-design/src"]
+      "@asmy/core-design": ["../../packages/core-design/src"]
     },
     "preserveConstEnums": true,
     "removeComments": false,

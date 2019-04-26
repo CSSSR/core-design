@@ -1,6 +1,7 @@
 const { print } = require('q-i')
 const withPlugins = require('next-compose-plugins');
 const withFonts = require('next-fonts');
+const withMDX = require('@zeit/next-mdx')();
 
 const withTypescript = require('@zeit/next-typescript')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
@@ -9,7 +10,7 @@ const patchDefaultNextExternalsFn = defaultNextExternalsFn => {
   return (context, request, callback) => {
     const myCallback = (error, as) => {
 
-      if (as === 'commonjs @csssr/core-design') {
+      if (as === 'commonjs @asmy/core-design') {
         return callback()
       }
 
@@ -31,6 +32,4 @@ module.exports = withPlugins([[withTypescript, {
 
     return config
   },
-}], withFonts]);
-
-// module.exports = withTypescript()
+}], [withMDX, { pageExtensions: ['tsx', 'mdx'] }], withFonts]);

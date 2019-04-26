@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { Button, ButtonLink, Grid, Text, Heading } from '@csssr/core-design'
+import { Button, ButtonLink, Grid, Text, Heading } from '@asmy/core-design'
 import { ProjectLayout } from '../components/ProjectLayout'
 
 const IndexPage = () => (
