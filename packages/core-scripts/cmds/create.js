@@ -8,18 +8,27 @@ const FILES_TO_CREATE = [
     path: './package.json',
     locals: ['name'],
   },
-  './next.config.js',
   './babel.config.js',
-  './pages/index.jsx',
-  './pages/docs/button.jsx',
-  './components/Logo/index.js',
-  './components/Logo/Logo.jsx',
-  './components/Global/index.js',
   './components/Global/Global.jsx',
-  './components/ProjectLayout/index.js',
-  './components/ProjectLayout/ProjectLayout.jsx',
-  './components/Header/index.js',
+  './components/Global/index.js',
   './components/Header/Header.jsx',
+  './components/Header/index.js',
+  './components/Logo/Logo.jsx',
+  './components/Logo/index.js',
+  './components/Pre/Pre.jsx',
+  './components/Pre/index.js',
+  './components/ProjectLayout/ProjectLayout.jsx',
+  './components/ProjectLayout/index.js',
+  './components/Table/Table.jsx',
+  './components/Table/index.js',
+  './next.config.js',
+  './pages/docs/button.jsx',
+  './pages/docs/buttonlink.jsx',
+  './pages/docs/grid.jsx',
+  './pages/docs/heading.jsx',
+  './pages/docs/index.jsx',
+  './pages/docs/text.jsx',
+  './pages/index.jsx',
 ]
 
 const pick = (source, ...fields) =>
@@ -67,7 +76,7 @@ function handler(argv) {
   console.log(`$ cd ${basename}`)
   console.log(`$ npm run dev\n`)
   console.log(
-    'После того, как запустится сервер нужно открыть в браузере вот эту станицу: http://localhost:3000'
+    'После того, как запустится сервер нужно открыть в браузере эту станицу: http://localhost:3000'
   )
   console.log('-----------------------')
 }

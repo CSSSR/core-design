@@ -4,7 +4,7 @@ import { normalize, fonts } from '@asmy/core-design'
 
 const globalStyles = css`
   ${normalize}
-  ${fonts}
+  ${fonts()}
   html,
   body {
     margin: 0;

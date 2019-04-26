@@ -1,9 +1,7 @@
 import * as React from 'react'
 import { Text } from '@asmy/core-design'
-import {  } from '@asmy/core-design'
 import { css } from '@emotion/core'
 import Link from 'next/link'
-
 
 interface ILogoProps {
   className?: string

@@ -1,15 +1,18 @@
 {
   "name": "@asmy/core-design-nextjs-integration-example",
-  "version": "0.0.1",
+  "version": "0.1.5",
   "main": "index.js",
   "license": "MIT",
+  "private": true,
   "scripts": {
-    "dev": "next",
     "build": "next build",
+    "dev": "next",
+    "lint": "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} ./{pages,components}/**/*",
+    "precommit:": "lint-staged",
     "start": "next start"
   },
   "dependencies": {
-    "@asmy/core-design": "0.0.1-alpha.2",
+    "@asmy/core-design": "^0.0.2",
     "@babel/plugin-transform-modules-commonjs": "^7.4.3",
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "@emotion/core": "^10.0.10",
@@ -25,6 +28,16 @@
   "devDependencies": {
     "@zeit/next-mdx": "^1.2.0",
     "fork-ts-checker-webpack-plugin": "^1.0.2",
-    "q-i": "^2.0.1"
+    "prettier": "^1.17.0",
+    "q-i": "^2.0.1",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

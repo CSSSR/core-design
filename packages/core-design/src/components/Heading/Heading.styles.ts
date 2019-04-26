@@ -1,4 +1,4 @@
-import { 
+import {
   font_h1_slab,
   font_h1_regular,
   font_h2_slab,
@@ -19,5 +19,5 @@ export default {
     font_h3_regular,
     font_subhead_slab,
     font_subhead_regular,
-  }
+  },
 }

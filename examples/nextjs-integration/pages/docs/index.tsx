@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
-import { Grid, Heading } from '@asmy/core-design'
+import * as coreExports from '@asmy/core-design'
 import Link from 'next/link'
 
 const componentsNames = [
@@ -10,6 +10,8 @@ const componentsNames = [
   'Text',
   'Heading',
 ]
+
+const  { Grid, Heading } = coreExports
 
 const DocumentationPage = () => (
   <Grid
