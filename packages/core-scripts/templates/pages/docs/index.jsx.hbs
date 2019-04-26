@@ -1,12 +1,11 @@
-import * as React from 'react'
+import React from 'react'
 import { css } from '@emotion/core'
+import { Grid, Heading } from '@asmy/core-design'
 import * as coreExports from '@asmy/core-design'
 import { ProjectLayout } from '../../components/ProjectLayout'
 import Link from 'next/link'
 
 const coreComponents = Object.keys(coreExports).filter(coreExport => coreExport[0] === coreExport[0].toUpperCase())
-
-const  { Grid, Heading } = coreExports
 
 const DocumentationPage = () => (
   <ProjectLayout>

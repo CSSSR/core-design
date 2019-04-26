@@ -5,8 +5,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next",
     "build": "next build",
+    "dev": "next",
+    "lint": "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} ./{pages,components}/**/*",
+    "precommit:": "lint-staged",
     "start": "next start"
   },
   "dependencies": {
@@ -25,6 +27,16 @@
   },
   "devDependencies": {
     "fork-ts-checker-webpack-plugin": "^1.0.2",
-    "q-i": "^2.0.1"
+    "prettier": "^1.17.0",
+    "q-i": "^2.0.1",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
