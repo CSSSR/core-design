@@ -26,6 +26,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@zeit/next-mdx": "^1.2.0",
     "fork-ts-checker-webpack-plugin": "^1.0.2",
     "prettier": "^1.17.0",
     "q-i": "^2.0.1",

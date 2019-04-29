@@ -1,6 +1,7 @@
 const { print } = require('q-i')
 const withPlugins = require('next-compose-plugins');
 const withFonts = require('next-fonts');
+const withMDX = require('@zeit/next-mdx')();
 
 const withTypescript = require('@zeit/next-typescript')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
@@ -31,6 +32,4 @@ module.exports = withPlugins([[withTypescript, {
 
     return config
   },
-}], withFonts]);
-
-// module.exports = withTypescript()
+}], [withMDX, { pageExtensions: ['tsx', 'mdx'] }], withFonts]);
