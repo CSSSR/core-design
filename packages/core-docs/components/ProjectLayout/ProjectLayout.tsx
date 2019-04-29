@@ -10,9 +10,7 @@ const StyledProjectLayout = styled.div`
   flex-direction: column;
 `
 
-interface IProjectLayoutProps {}
-
-const ProjectLayout: React.FC<IProjectLayoutProps> = props => (
+const ProjectLayout: React.FC<{}> = props => (
   <StyledProjectLayout {...props}>
     <Global />
     <Header>Something</Header>
