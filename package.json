@@ -11,8 +11,7 @@
     "test": "echo 'Nothing to test'"
   },
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",

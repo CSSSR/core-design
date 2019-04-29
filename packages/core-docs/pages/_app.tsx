@@ -11,7 +11,6 @@ import { ProjectLayout } from '../components/ProjectLayout'
 
 import { Grid } from '@asmy/core-design'
 
-
 const components = {
   h1: H1,
   h2: H2,
@@ -19,8 +18,8 @@ const components = {
   h4: H4,
   h5: H5,
   h6: H6,
-  p:  Paragraph,
-  table: Table,  
+  p: Paragraph,
+  table: Table,
   tr: TableRow,
   td: TD,
   th: TH,
@@ -28,39 +27,42 @@ const components = {
   wrapper: Grid,
 }
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
+interface Props {
+  pageProps: {
+    isDocsPage: boolean
+  }
+}
+
+class MyApp extends App<Props> {
+  public static async getInitialProps({ Component, ctx }) {
+    let pageProps: Partial<Props['pageProps']> = {}
 
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+      pageProps = await Component.getInitialProps(ctx)
     }
 
     if (ctx.pathname.slice(0, 5) === '/docs') {
       pageProps.isDocsPage = true
     }
 
-    return { pageProps };
+    return { pageProps }
   }
 
-  render() {
-    const { Component, pageProps } = this.props;
+  public render() {
+    const { Component, pageProps } = this.props
 
     return (
       <Container>
-          {pageProps.isDocsPage 
-            ? <ProjectLayout>
-                <Component 
-                  components={components} 
-                  {...pageProps} 
-                />
-              </ProjectLayout>
-
-            : <Component {...pageProps} />
-          }
+        {pageProps.isDocsPage ? (
+          <ProjectLayout>
+            <Component components={components} {...pageProps} />
+          </ProjectLayout>
+        ) : (
+          <Component {...pageProps} />
+        )}
       </Container>
-    );
+    )
   }
 }
 
-export default MyApp;
+export default MyApp

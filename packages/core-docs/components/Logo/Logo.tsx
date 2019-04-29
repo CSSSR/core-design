@@ -11,10 +11,10 @@ const TextLink = Text.withComponent('a')
 
 const Logo: React.FC<ILogoProps> = props => {
   return (
-    <Link href='/docs'>
-      <TextLink 
-        fontStyle='font_roboto_slab_light'
-        theme={{dark: {}}}
+    <Link href="/docs">
+      <TextLink
+        fontStyle="font_roboto_slab_light"
+        theme={{ dark: {} }}
         css={css`
           margin-top: 0;
           margin-bottom: 0;
@@ -27,11 +27,6 @@ const Logo: React.FC<ILogoProps> = props => {
 
           :hover {
             color: rgba(0, 0, 0, 0.7);
-
-          ${({ theme }) => theme.dark && css`
-            color: white;
-            background-color: black;
-          `}
           }
         `}
         {...props}

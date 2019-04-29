@@ -32,10 +32,10 @@ jobs:
           - master
     - stage: 'docs'
       install:
-        - npm install --prefix=./examples/nextjs-integration --registry https://registry.npmjs.org/
+        - npm install --prefix=./packages/core-docs --registry https://registry.npmjs.org/
       script:
-        - npm run build --prefix=./examples/nextjs-integration
-        - cat './examples/nextjs-integration/node_modules/@asmy/core-design/package.json' | grep version
+        - npm run build --prefix=./packages/core-docs
+        - cat './packages/core-docs/node_modules/@asmy/core-design/package.json' | grep version
 
 stages:
   - name: libraries
