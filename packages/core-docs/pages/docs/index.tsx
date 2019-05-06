@@ -9,6 +9,7 @@ const componentsNames = [
   'Grid',
   'Text',
   'Heading',
+  'Picture',
 ]
 
 const  { Grid, Heading } = coreExports
