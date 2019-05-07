@@ -1,7 +1,7 @@
 const { print } = require('q-i')
-const withPlugins = require('next-compose-plugins');
-const withFonts = require('next-fonts');
-const withMDX = require('@zeit/next-mdx')();
+const withPlugins = require('next-compose-plugins')
+const withFonts = require('next-fonts')
+const withMDX = require('@zeit/next-mdx')()
 
 const withTypescript = require('@zeit/next-typescript')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
@@ -9,7 +9,6 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const patchDefaultNextExternalsFn = defaultNextExternalsFn => {
   return (context, request, callback) => {
     const myCallback = (error, as) => {
-
       if (as === 'commonjs @asmy/core-design') {
         return callback()
       }
@@ -20,16 +19,23 @@ const patchDefaultNextExternalsFn = defaultNextExternalsFn => {
   }
 }
 
-module.exports = withPlugins([[withTypescript, {
-  webpack(config, options) {
-    if (options.isServer) {
-      if (options.dev) {
-        config.externals[0] = patchDefaultNextExternalsFn(config.externals[0])
-      }
+module.exports = withPlugins([
+  [
+    withTypescript,
+    {
+      webpack(config, options) {
+        if (options.isServer) {
+          if (options.dev) {
+            config.externals[0] = patchDefaultNextExternalsFn(config.externals[0])
+            config.plugins.push(new ForkTsCheckerWebpackPlugin())
+          }
 
-      config.plugins.push(new ForkTsCheckerWebpackPlugin())
-    }
+        }
 
-    return config
-  },
-}], [withMDX, { pageExtensions: ['tsx', 'mdx'] }], withFonts]);
+        return config
+      },
+    },
+  ],
+  [withMDX, { pageExtensions: ['tsx', 'mdx'] }],
+  withFonts,
+])
