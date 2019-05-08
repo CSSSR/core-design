@@ -1,34 +1,27 @@
 import styled from '@emotion/styled'
-
 import styles from './Heading.styles'
 
 export interface Props {
-  fontStyle?: keyof typeof styles['font']
+  type: keyof typeof styles['font']
+  size: 's' | 'm' | 'l'
 }
 
-const PureHeading = styled.h1<Props>`
-  ${({ fontStyle }) => styles.font[fontStyle]}
+const OriginHeading = styled.h1<Props>`
+  ${({ type, size }) => styles.font[type][size]}
 `
-
-const subComponents = {
-  H1: PureHeading.withComponent('h1'),
-  H2: PureHeading.withComponent('h2'),
-  H3: PureHeading.withComponent('h3'),
-  H4: PureHeading.withComponent('h4'),
-  H5: PureHeading.withComponent('h5'),
-  H6: PureHeading.withComponent('h6'),
+const OriginHeadings = {
+  H1: OriginHeading.withComponent('h1'),
+  H2: OriginHeading.withComponent('h2'),
+  H3: OriginHeading.withComponent('h3'),
+  H4: OriginHeading.withComponent('h4'),
+  H5: OriginHeading.withComponent('h5'),
+  H6: OriginHeading.withComponent('h6'),
 }
+const Heading: typeof OriginHeading & typeof OriginHeadings = OriginHeading as any
 
-const Heading: typeof PureHeading & typeof subComponents = PureHeading as any
-
-Object.entries(subComponents).forEach(([key, value]) => {
-  Heading[key] = value
+Object.entries(OriginHeadings).forEach(([headingTag, headingComponent]) => {
+  Heading[headingTag] = headingComponent
 })
 
-Heading.defaultProps = {
-  fontStyle: 'font_h1_slab',
-} as Partial<Props>
-
 export { Heading }
-
 export default Heading

@@ -10,6 +10,9 @@ const componentsNames = [
   'Text',
   'Heading',
   'Picture',
+  'SubHeading',
+  'Link',
+  'Picture',
 ]
 
 const  { Grid, Heading } = coreExports

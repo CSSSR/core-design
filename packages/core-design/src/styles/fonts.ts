@@ -2,48 +2,23 @@
 
 import { css } from '@emotion/core'
 
-const font_button_label = css`
-  font-family: Roboto;
-  font-size: 1rem;
-  font-weight: 900;
-  line-height: 1.5rem;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-`
-
-const font_h1_slab = css`
+const heading_slab_s = css`
   font-family: Roboto Slab;
-  font-size: 4rem;
-  font-weight: 300;
-  line-height: 5rem;
-  color: #000000;
-
-  @media (max-width: 1279px) {
-    /* margin-top: -0.1875rem;
-    padding-bottom: 0.1875rem; */
-    font-size: 2rem;
-    line-height: 3rem;
-  }
-`
-
-const font_h1_regular = css`
-  font-family: Roboto;
-  font-size: 2.5rem;
-  font-weight: 900;
-  line-height: 3.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5rem;
+  letter-spacing: normal;
   color: #4a4a4a;
 
   @media (max-width: 1279px) {
-    /* margin-top: -0.375rem;
-    padding-bottom: 0.375rem; */
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-size: 1rem;
+    line-height: 2rem;
   }
 `
 
-const font_h2_slab = css`
-  /* margin-top: -0.0625rem;
-  padding-bottom: 0.0625rem; */
+const heading_slab_m = css`
   font-family: Roboto Slab;
   font-size: 3rem;
   line-height: 4rem;
@@ -51,76 +26,67 @@ const font_h2_slab = css`
   color: #000000;
 
   @media (max-width: 1279px) {
-    /* margin-top: 0;
-    padding-bottom: 0; */
     font-size: 1.5rem;
     font-weight: normal;
     line-height: 2rem;
     color: #000000;
   }
 `
-const font_h2_regular = css`
-  /* margin-top: -0.4375rem;
-  padding-bottom: 0.4375rem; */
-  font-family: Roboto;
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 2rem;
-  color: #4a4a4a;
+
+const heading_slab_l = css`
+  font-family: Roboto Slab;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 5rem;
+  color: #000000;
 
   @media (max-width: 1279px) {
-    /* margin-top: -0.09375rem;
-    padding-bottom: 0.09375rem; */
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+    font-size: 2rem;
+    line-height: 3rem;
   }
 `
 
-const font_h3_slab = css`
-  /* margin-top: -0.3125rem;
-  padding-bottom: 0.3125rem; */
-  font-family: Roboto Slab;
-  font-size: 1rem;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2rem;
-  letter-spacing: normal;
-  color: #4a4a4a;
-`
-
-const font_h3_regular = css`
+const heading_regular_s = css`
   font-family: Roboto;
   font-size: 1rem;
   font-weight: 900;
   line-height: 1.5rem;
   color: #4a4a4a;
+
   @media (max-width: 1279px) {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     line-height: 1.5rem;
   }
 `
 
-const font_subhead_slab = css`
-  /* margin-top: -0.1875rem;
-  padding-bottom: 0.1875rem; */
-  font-family: Roboto Slab;
-  font-size: 2rem;
-  font-weight: 300;
+const heading_regular_m = css`
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-weight: 900;
   line-height: 3rem;
   color: #4a4a4a;
 
   @media (max-width: 1279px) {
-    /* margin-top: -0.375rem;
-    padding-bottom: 0.375rem; */
-    font-size: 1.125rem;
-    line-height: 2rem;
+    font-size: 1.1875rem;
+    line-height: 1.5rem;
   }
 `
 
-const font_subhead_regular = css`
-  /* margin-top: -0.125rem;
-  padding-bottom: 0.125rem; */
+const heading_regular_l = css`
+  font-family: Roboto;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 3rem;
+  color: #4a4a4a;
+
+  @media (max-width: 1279px) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+`
+
+const subhead_regular = css`
+  margin-top: 1.5rem;
   font-family: Roboto;
   font-size: 2rem;
   font-weight: 100;
@@ -128,55 +94,203 @@ const font_subhead_regular = css`
   color: #4a4a4a;
 
   @media (max-width: 1279px) {
-    /* margin-top: -0.375rem;
-    padding-bottom: 0.375rem; */
-    font-size: 1.25rem;
+    margin-top: 1rem;
+    font-size: 1.1875rem;
     line-height: 2rem;
   }
 `
 
-const font_p16_regular = css`
+const paragraph_regular = css`
+  margin-top: 1rem;
   font-family: Roboto;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.5rem;
   color: #4a4a4a;
+`
+
+const paragraph_strong = css`
+  margin-top: 1.5rem;
+  font-family: Roboto;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: #4a4a4a;
+`
+const paragraph_strong_s = css`
+  ${paragraph_strong}
 
   @media (max-width: 1279px) {
-    /* margin-top: -0.1875rem;
-    padding-bottom: 0.1875rem; */
+    margin-top: 0.75rem;
     font-size: 0.75rem;
     line-height: 1rem;
   }
 `
 
-const font_roboto_slab_light = css`
-  /* margin-top: -4px;
-  padding-bottom: 4px; */
-  font-family: Roboto Slab;
-  font-size: 1rem;
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 3.125rem;
-  letter-spacing: 0.03125rem;
-  color: #000000;
-`
-
-const font_p24_strong = css`
-  /* margin-top: -0.1875rem;
-    padding-bottom: 0.1875rem; */
-  font-family: Roboto;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  color: #4a4a4a;
+const paragraph_strong_m = css`
+  ${paragraph_strong}
 
   @media (max-width: 1279px) {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+  }
+`
+
+// const perforator = css`
+// `
+
+const perforator_s = css`
+  font-family: Roboto;
+  font-size: 0.625rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1rem;
+  letter-spacing: 0.08125rem;
+  text-transform: uppercase;
+  color: #4a4a4a;
+`
+
+const perforator_m = css`
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  color: #9b9b9b;
+
+  @media (max-width: 1279px) {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+`
+
+const link_list = css`
+  position: relative;
+  font-family: Roboto;
+  font-weight: 300;
+  text-decoration: underline;
+  color: #0076ff;
+
+  &[target='_blank']::after {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    content: '';
+  }
+
+  &:hover::after,
+  &:focus::after {
+    display: block;
+  }
+
+  @media (max-width: 1279px) {
+    position: relative;
     font-family: Roboto;
     font-size: 1rem;
+    font-weight: 300;
     line-height: 1.5rem;
-    color: #4a4a4a;
+    text-decoration: underline;
+    color: #0076ff;
+
+    &:hover::after,
+    &:focus::after {
+      display: none;
+    }
   }
+`
+
+const link_list_s = css`
+  ${link_list}
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  &[target='_blank']::after {
+    bottom: 1rem;
+    right: -0.3125rem;
+    width: 0.25rem;
+    height: 0.25rem;
+    border: 0.125rem solid #0076ff;
+  }
+`
+
+const link_list_m = css`
+  ${link_list}
+  font-size: 1.5rem;
+  line-height: 2rem;
+
+  &[target='_blank']::after {
+    bottom: 1.5625rem;
+    right: -0.625rem;
+    width: 0.375rem;
+    height: 0.375rem;
+    border: 0.0625rem solid #0076ff;
+  }
+`
+
+const link_list_l = css`
+  ${link_list}
+  position: relative;
+  font-family: Roboto;
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+  text-decoration: underline;
+  color: #0076ff;
+
+  &[target='_blank']::after {
+    bottom: 1.9375rem;
+    right: -0.625rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 0.125rem solid #0076ff;
+  }
+`
+
+const link_top_menu = css`
+  font-family: Roboto;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: #0076ff;
+
+  &:hover,
+  &:focus {
+    color: #0254d8;
+  }
+`
+
+const link_burger = css`
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: #4a4a4a;
+
+  &:hover,
+  &:focus {
+    color: #000000;
+  }
+`
+
+const button_label = css`
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 `
 
 const fontFaces = () => {
@@ -434,18 +548,24 @@ const fontFaces = () => {
 }
 
 export {
-  font_button_label,
-  font_h1_slab,
-  font_h1_regular,
-  font_h2_slab,
-  font_h2_regular,
-  font_h3_slab,
-  font_h3_regular,
-  font_subhead_slab,
-  font_subhead_regular,
-  font_p16_regular,
-  font_roboto_slab_light,
-  font_p24_strong,
+  heading_slab_s,
+  heading_slab_m,
+  heading_slab_l,
+  heading_regular_s,
+  heading_regular_m,
+  heading_regular_l,
+  subhead_regular,
+  paragraph_strong_s,
+  paragraph_strong_m,
+  paragraph_regular,
+  perforator_s,
+  perforator_m,
+  link_list_s,
+  link_list_m,
+  link_list_l,
+  link_top_menu,
+  link_burger,
+  button_label,
 }
 
 export default fontFaces
