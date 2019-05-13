@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 
-import { font_button_label } from '../../styles/fonts'
+import { button_label } from '../../styles/fonts'
 
 export default {
   base: css`
@@ -23,7 +23,7 @@ export default {
       height: 2.5rem;
     }
   `,
-  font: font_button_label,
+  font: button_label,
   themes: {
     primary: css`
       color: #ffffff;

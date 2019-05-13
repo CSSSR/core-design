@@ -1,0 +1,51 @@
+import { css } from '@emotion/core'
+import { Picture } from '@asmy/core-design'
+
+# Picture
+
+<Picture
+  src='https://nosidebar.com/images/benefits-of-minimalism@2x.jpg'
+  alt='Фотография помещения в стили минимализма'
+  css={css`
+    margin-top: 20px;
+    grid-column: 1 / span 12;
+  `}
+/>
+
+<Picture
+  src='https://nosidebar.com/images/benefits-of-minimalism@2x.jpg'
+  alt='Фотография помещения в стили минимализма'
+  css={css`
+    margin-top: 20px;
+    grid-column: 1 / span 6;
+  `}
+/>
+
+<Picture
+  src='https://nosidebar.com/images/benefits-of-minimalism@2x.jpg'
+  alt='Фотография помещения в стили минимализма'
+  css={css`
+    margin-top: 20px;
+    grid-column: 7 / span 6;
+  `}
+/>
+
+Компонент изображения. Используется для отображения картинок.
+
+---------------------------------------
+## Свойства
+Имя | Допустимые значения | Значение по умолчанию | Комментарий
+--- | ------------------- | --------------------- | ----------------
+src | string              |                       | Ссылка на изображение
+alt | string              |                       | Название изображения, используется поисковиками и читалками экрана
+
+---------------------------------------
+## Код
+```
+  import { Picture } from '@asmy/core-design'
+
+  <Picture
+    src='https://nosidebar.com/images/benefits-of-minimalism@2x.jpg'
+    alt='Фотография помещения в стили минимализма'
+  />
+```
