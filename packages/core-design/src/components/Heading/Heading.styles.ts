@@ -1,23 +1,23 @@
 import {
-  font_h1_slab,
-  font_h1_regular,
-  font_h2_slab,
-  font_h2_regular,
-  font_h3_slab,
-  font_h3_regular,
-  font_subhead_slab,
-  font_subhead_regular,
+  heading_slab_s,
+  heading_slab_m,
+  heading_slab_l,
+  heading_regular_s,
+  heading_regular_m,
+  heading_regular_l,
 } from '../../styles/fonts'
 
 export default {
   font: {
-    font_h1_slab,
-    font_h1_regular,
-    font_h2_slab,
-    font_h2_regular,
-    font_h3_slab,
-    font_h3_regular,
-    font_subhead_slab,
-    font_subhead_regular,
+    slab: {
+      s: heading_slab_s,
+      m: heading_slab_m,
+      l: heading_slab_l,
+    },
+    regular: {
+      s: heading_regular_s,
+      m: heading_regular_m,
+      l: heading_regular_l,
+    },
   },
 }

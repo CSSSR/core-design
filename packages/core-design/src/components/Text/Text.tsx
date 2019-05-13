@@ -3,17 +3,13 @@ import styled from '@emotion/styled'
 import styles from './Text.styles'
 
 export interface Props {
-  fontStyle?: keyof typeof styles['font']
+  type: keyof typeof styles['font']
+  size: 's' | 'm' | 'l'
 }
 
-const Text = styled.div<Props>`
-  ${({ fontStyle }) => styles.font[fontStyle]}
+const Text = styled.p<Props>`
+  ${({ type, size }) => styles.font[type][size]}
 `
 
-Text.defaultProps = {
-  fontStyle: 'font_p16_regular',
-} as Partial<Props>
-
 export { Text }
-
 export default Text

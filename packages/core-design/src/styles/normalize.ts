@@ -11,9 +11,14 @@ const normalize = css`
   main {
     display: block;
   }
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 0;
+    margin: 0;
   }
   hr {
     box-sizing: content-box;

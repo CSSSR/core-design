@@ -24,7 +24,7 @@ storiesOf('Button', module)
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
-      <>
+      <React.Fragment>
         <Global styles={normalize} />
         <Global styles={fonts} />
         <Button
@@ -33,6 +33,6 @@ storiesOf('Button', module)
             ${cssKnob}
           `}
         />
-      </>
+      </React.Fragment>
     )
   })

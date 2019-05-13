@@ -1,0 +1,28 @@
+import { css } from '@emotion/core'
+import { Link } from '@asmy/core-design'
+
+# Heading
+<Link type="list" size="l"> Type Slab Size L </Link>
+<Link type="list" size="m"> Type Slab Size M </Link>
+<Link type="list" size="s"> Type Slab Size S </Link>
+<Link type="top_menu" size="s"> Type Top_Menu </Link>
+<Link type="burger" size="s"> Type Burger </Link>
+
+Компонент ссылок. Используется для переходов на другие страницы. 
+
+---------------------------------------
+## Свойства
+Имя      | Допустимые значения        | Значение по умолчанию | Комментарий
+-------- | -------------------------- | --------------------- | ----------------
+type     | list \| top_menu \| burger |                       | Стиль начертания
+size     | s \| m \| l                |                       | Размер заголовка
+href     | string                     |                       | Путь на который должна вести ссылка
+external | true \| false              | false                 | Отвечает за то будет открываться ссылка в новом окне или в существующем
+
+---------------------------------------
+## Код
+```
+  import { Link } from '@asmy/core-design'
+
+  <Link type="slab" size="l"> Link </Link>
+```
