@@ -26,7 +26,7 @@ export default {
   font: button_label,
   themes: {
     primary: css`
-      color: #ffffff;
+      color: white;
       background-color: #0076ff;
       transition: background-color 0.3s ease-out;
 
