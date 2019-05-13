@@ -1,0 +1,16 @@
+import * as React from 'react'
+import styled from '@emotion/styled'
+import styles from './${componentName}.styles'
+// import { Название_компонента_из_нашей_библиотеки_компонентов } from '@asmy/core-design'
+
+const Origin{{componentName}}= props =>
+  <div className={props.className}>
+    {props.children}
+  </div>
+
+const {{componentName}} = styled(Origin{{componentName}})`
+  {styles.base}
+`
+
+export { {{componentName}} }
+export default {{componentName}}
