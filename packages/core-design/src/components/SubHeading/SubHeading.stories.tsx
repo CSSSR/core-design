@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
-import deafultTheme from '../../themes/deafult'
+import defaultTheme from '../../themes/default'
 
 import { storiesOf } from '@storybook/react'
 
@@ -12,7 +12,7 @@ import { SubHeading } from './SubHeading'
 
 storiesOf('SubHeading', module).add('SubHeading', () => {
   return (
-    <ThemeProvider theme={deafultTheme}>
+    <ThemeProvider theme={defaultTheme}>
       <Global styles={normalize} />
       <Global styles={fonts} />
       <SubHeading>SubHeading type - regular</SubHeading>

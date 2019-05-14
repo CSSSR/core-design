@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { ThemeProvider } from 'emotion-theming'
-import deafultTheme from '../../themes/deafult'
+import defaultTheme from '../../themes/default'
 
 import { storiesOf } from '@storybook/react'
 
@@ -20,7 +20,7 @@ storiesOf('Grid', module)
     const cssKnob = text('CSS', 'height: 100vh;')
 
     return (
-      <ThemeProvider theme={deafultTheme}>
+      <ThemeProvider theme={defaultTheme}>
         <Global styles={normalize} />
 
         <Grid
