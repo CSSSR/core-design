@@ -7,8 +7,9 @@ export interface Props {
 }
 
 const OriginHeading = styled.h1<Props>`
-  ${({ type, size }) => styles.font[type][size]}
+  ${({ type = 'regular', size = 's' }) => styles.font[type][size]}
 `
+
 const OriginHeadings = {
   H1: OriginHeading.withComponent('h1'),
   H2: OriginHeading.withComponent('h2'),
