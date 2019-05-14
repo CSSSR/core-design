@@ -2,6 +2,8 @@ import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
+import { ThemeProvider } from 'emotion-theming'
+import defaultTheme from '../../themes/default'
 
 import { storiesOf } from '@storybook/react'
 
@@ -24,15 +26,16 @@ storiesOf('Button', module)
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
-      <React.Fragment>
+      <ThemeProvider theme={defaultTheme}>
         <Global styles={normalize} />
         <Global styles={fonts} />
+
         <Button
           {...knobs}
           css={css`
             ${cssKnob}
           `}
         />
-      </React.Fragment>
+      </ThemeProvider>
     )
   })
