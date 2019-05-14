@@ -8,7 +8,7 @@ export interface Props {
 }
 
 const Text = styled.p<Props>`
-  ${({ type, size }) => styles.font[type][size]}
+  ${({ type = 'regular', size = 's' }) => styles.font[type][size]}
 `
 
 export { Text }
