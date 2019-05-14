@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import { button_label } from '../../styles/fonts'
 
 export default {
-  base: css`
+  base: props => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@ export default {
       opacity: 0.3;
     }
 
-    @media (min-width: 768px) and (max-width: 1279px) {
+    ${props.theme.breakpoints.tablet.all} {
       height: 2.5rem;
     }
   `,
