@@ -10,4 +10,4 @@ export { default as Text } from './components/Text'
 export { default as normalize } from './styles/normalize'
 export { default as fonts } from './styles/fonts'
 
-export { default as defaultTheme } from './themes/deafult'
+export { default as defaultTheme } from './themes/default'

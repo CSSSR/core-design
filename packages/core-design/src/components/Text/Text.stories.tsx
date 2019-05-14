@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { withKnobs, text, select } from '@storybook/addon-knobs'
 import { ThemeProvider } from 'emotion-theming'
-import deafultTheme from '../../themes/deafult'
+import defaultTheme from '../../themes/default'
 
 import { storiesOf } from '@storybook/react'
 import { normalize } from '../../styles/normalize'
@@ -21,7 +21,7 @@ storiesOf('Text', module)
     const cssKnob = text('CSS', 'display: block;')
 
     return (
-      <ThemeProvider theme={deafultTheme}>
+      <ThemeProvider theme={defaultTheme}>
         <Global styles={normalize} />
         <Global styles={fonts} />
         <Text
