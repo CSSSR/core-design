@@ -53,13 +53,9 @@ class MyApp extends App<Props> {
 
     return (
       <Container>
-        {pageProps.isDocsPage ? (
-          <ProjectLayout>
-            <Component components={components} {...pageProps} />
-          </ProjectLayout>
-        ) : (
-          <Component {...pageProps} />
-        )}
+        <ProjectLayout>
+          <Component components={pageProps.isDocsPage ? components : null} {...pageProps} />
+        </ProjectLayout>
       </Container>
     )
   }

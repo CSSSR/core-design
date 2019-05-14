@@ -8,4 +8,4 @@ export { default as SubHeading } from './components/SubHeading'
 export { default as Text } from './components/Text'
 
 export { default as normalize } from './styles/normalize'
-export { default as fonts } from './styles/fonts'
+export { default as fonts, paragraph_strong_m } from './styles/fonts'

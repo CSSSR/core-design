@@ -11,10 +11,8 @@ const TextLink = Text.withComponent('a')
 
 const Logo: React.FC<ILogoProps> = props => {
   return (
-    <Link href="/docs">
+    <Link href="/">
       <TextLink
-        fontStyle="font_roboto_slab_light"
-        theme={{ dark: {} }}
         css={css`
           margin-top: 0;
           margin-bottom: 0;

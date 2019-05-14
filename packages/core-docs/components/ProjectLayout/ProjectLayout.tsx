@@ -13,7 +13,7 @@ const StyledProjectLayout = styled.div`
 const ProjectLayout: React.FC<{}> = props => (
   <StyledProjectLayout {...props}>
     <Global />
-    <Header>Something</Header>
+    <Header />
     {props.children}
   </StyledProjectLayout>
 )

@@ -1,10 +1,44 @@
 import * as React from 'react'
-import { ProjectLayout } from '../components/ProjectLayout'
+import { css } from '@emotion/core'
+import * as coreExports from '@asmy/core-design'
+import Link from 'next/link'
 
-const IndexPage = () => (
-  <ProjectLayout>
-    Hello World!
-  </ProjectLayout>
+const componentsNames = [
+  'Button',
+  'ButtonLink',
+  'Grid',
+  'Text',
+  'Heading',
+  'Picture',
+  'SubHeading',
+  'Link',
+  'Picture',
+]
+
+const  { Grid, Heading } = coreExports
+
+const DocumentationPage = () => (
+  <Grid
+    css={css`
+      margin-top: 20px;
+    `}
+  >
+    <Heading.H1
+      css={css` grid-column: 1 / span 12;`}
+    >
+      Компоненты
+    </Heading.H1>
+
+    <ul>
+    {componentsNames.map(componentsName => 
+      <li key={componentsName}>
+        <Link href={`/docs/${componentsName.toLowerCase()}`}>
+          <a>{componentsName}</a>
+        </Link>
+      </li>
+    )}
+    </ul>
+  </Grid>
 )
 
-export default IndexPage
+export default DocumentationPage

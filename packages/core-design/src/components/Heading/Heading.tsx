@@ -2,12 +2,12 @@ import styled from '@emotion/styled'
 import styles from './Heading.styles'
 
 export interface Props {
-  type: keyof typeof styles['font']
-  size: 's' | 'm' | 'l'
+  type?: keyof typeof styles['font']
+  size?: 's' | 'm' | 'l'
 }
 
 const OriginHeading = styled.h1<Props>`
-  ${({ type = 'regular', size = 's' }) => styles.font[type][size]}
+  ${({ type, size }) => type && size && styles.font[type][size]}
 `
 
 const OriginHeadings = {
@@ -23,6 +23,11 @@ const Heading: typeof OriginHeading & typeof OriginHeadings = OriginHeading as a
 Object.entries(OriginHeadings).forEach(([headingTag, headingComponent]) => {
   Heading[headingTag] = headingComponent
 })
+
+Heading.defaultProps = {
+  type: 'slab',
+  size: 's',
+} as Props
 
 export { Heading }
 export default Heading
