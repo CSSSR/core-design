@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs'
+import { ThemeProvider } from 'emotion-theming'
+import deafultTheme from '../../themes/deafult'
 
 import { storiesOf } from '@storybook/react'
 import { normalize } from '../../styles/normalize'
@@ -21,7 +23,7 @@ storiesOf('Link', module)
     const cssKnob = text('CSS', 'display: inline-block;')
 
     return (
-      <React.Fragment>
+      <ThemeProvider theme={deafultTheme}>
         <Global styles={normalize} />
         <Global styles={fonts} />
         <Link
@@ -31,6 +33,6 @@ storiesOf('Link', module)
           `}
           children={children}
         />
-      </React.Fragment>
+      </ThemeProvider>
     )
   })

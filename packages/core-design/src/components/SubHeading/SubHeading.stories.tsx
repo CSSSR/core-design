@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { Global } from '@emotion/core'
+import { ThemeProvider } from 'emotion-theming'
+import deafultTheme from '../../themes/deafult'
 
 import { storiesOf } from '@storybook/react'
 
@@ -10,10 +12,10 @@ import { SubHeading } from './SubHeading'
 
 storiesOf('SubHeading', module).add('SubHeading', () => {
   return (
-    <React.Fragment>
+    <ThemeProvider theme={deafultTheme}>
       <Global styles={normalize} />
       <Global styles={fonts} />
       <SubHeading>SubHeading type - regular</SubHeading>
-    </React.Fragment>
+    </ThemeProvider>
   )
 })
