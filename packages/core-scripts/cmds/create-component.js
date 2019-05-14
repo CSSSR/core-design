@@ -23,7 +23,7 @@ function handler(argv) {
   const componentStylesTemplatePath = path.resolve(__dirname, '../templates/components/Component', `Component.styles.js.hbs`)
   const componentTemplate = compile(fs.readFileSync(componentTemplatePath, { encoding: 'utf8' }))
   const componentStylesTemplate = compile(fs.readFileSync(componentStylesTemplatePath, { encoding: 'utf8' }))
-  const componentPath = path.format({ dir: `components/${componentName}`, name: componentName, ext: '.js' })
+  const componentPath = path.format({ dir: `components/${componentName}`, name: componentName, ext: '.jsx' })
   const componentStylesPath = path.format({ dir: `components/${componentName}`, name: componentName, ext: '.styles.js' })
 
   fs.outputFile( componentPath, componentTemplate({componentName}), (err) => {
