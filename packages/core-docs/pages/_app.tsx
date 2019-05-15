@@ -9,7 +9,7 @@ import { Pre } from '../components/docs/Pre'
 import { TD, TH } from '../components/docs/TableCells'
 import { ProjectLayout } from '../components/ProjectLayout'
 
-import { Grid } from '@asmy/core-design'
+import { Grid, Root } from '@asmy/core-design'
 
 const components = {
   h1: H1,
@@ -53,9 +53,11 @@ class MyApp extends App<Props> {
 
     return (
       <Container>
-        <ProjectLayout>
-          <Component components={pageProps.isDocsPage ? components : null} {...pageProps} />
-        </ProjectLayout>
+        <Root>
+          <ProjectLayout>
+            <Component components={pageProps.isDocsPage ? components : null} {...pageProps} />
+          </ProjectLayout>
+        </Root>
       </Container>
     )
   }

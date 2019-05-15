@@ -3,7 +3,7 @@ import color from 'color'
 const primaryOrigin = color('#0076ff')
 const secondaryOrigin = color('#4a4a4a')
 
-export default {
+const theme = {
   colors: {
     primary: {
       origin: primaryOrigin.hex(),
@@ -34,3 +34,7 @@ export default {
     },
   },
 }
+
+export default theme
+export { theme as defaultTheme }
+export type Theme = typeof theme

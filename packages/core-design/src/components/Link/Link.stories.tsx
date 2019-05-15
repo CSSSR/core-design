@@ -1,14 +1,11 @@
 import * as React from 'react'
-import { Global, css } from '@emotion/core'
-import { withKnobs, text, select, boolean } from '@storybook/addon-knobs'
-import { ThemeProvider } from 'emotion-theming'
-import defaultTheme from '../../themes/default'
+import { css } from '@emotion/core'
 
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { normalize } from '../../styles/normalize'
-import fonts from '../../styles/fonts'
 
 import { Link } from './Link'
+import { Root } from '../Root'
 
 storiesOf('Link', module)
   .addDecorator(withKnobs)
@@ -23,9 +20,7 @@ storiesOf('Link', module)
     const cssKnob = text('CSS', 'display: inline-block;')
 
     return (
-      <ThemeProvider theme={defaultTheme}>
-        <Global styles={normalize} />
-        <Global styles={fonts} />
+      <Root>
         <Link
           {...knobs}
           css={css`
@@ -33,6 +28,6 @@ storiesOf('Link', module)
           `}
           children={children}
         />
-      </ThemeProvider>
+      </Root>
     )
   })
