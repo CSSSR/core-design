@@ -1,21 +1,19 @@
 import * as React from 'react'
-
 import styled from '@emotion/styled'
 
-import { Header } from '../Header'
+import { Grid } from '@asmy/core-design'
+import Nav from '../Nav'
 
-const StyledProjectLayout = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const ProjectLayout: React.FC<{}> = props => (
-  <StyledProjectLayout {...props}>
-    <Header />
+const OriginProjectLayout: React.FC<{}> = props => (
+  <Grid {...props}>
+    <Nav />
     {props.children}
-  </StyledProjectLayout>
+  </Grid>
 )
 
-export { ProjectLayout }
+const ProjectLayout = styled(OriginProjectLayout)`
+  height: 100%;
+`
 
+export { ProjectLayout }
 export default ProjectLayout

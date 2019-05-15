@@ -245,7 +245,9 @@ const link_top_menu = props => css`
   line-height: 2rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  color: ${props.theme.colors.primary.origin};
+  color: ${props.isActive
+    ? props.theme.colors.primary.darken15
+    : props.theme.colors.primary.origin};
 
   &:hover,
   &:focus {
@@ -262,7 +264,9 @@ const link_burger = props => css`
   line-height: 3rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  color: ${props.theme.colors.secondary.origin};
+  color: ${props.isActive
+    ? props.theme.colors.secondary.darken100
+    : props.theme.colors.secondary.origin};
 
   &:hover,
   &:focus {

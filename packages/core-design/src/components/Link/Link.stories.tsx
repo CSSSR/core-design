@@ -15,6 +15,7 @@ storiesOf('Link', module)
       size: select('size', ['s', 'm', 'l'], 's'),
       href: text('href', 'https://csssr.com/ru'),
       external: boolean('external', false),
+      isActive: boolean('isActive', false),
     }
     const children = `Ссылка типа — ${knobs.type}, размера — ${knobs.size}`
     const cssKnob = text('CSS', 'display: inline-block;')

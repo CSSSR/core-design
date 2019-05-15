@@ -19,15 +19,17 @@ const OriginHeadings = {
   H6: OriginHeading.withComponent('h6'),
 }
 const Heading: typeof OriginHeading & typeof OriginHeadings = OriginHeading as any
-
-Object.entries(OriginHeadings).forEach(([headingTag, headingComponent]) => {
-  Heading[headingTag] = headingComponent
-})
-
-Heading.defaultProps = {
+const HeadingsDefaultProps = {
   type: 'slab',
   size: 's',
 } as Props
+
+Object.entries(OriginHeadings).forEach(([headingTag, headingComponent]) => {
+  Heading[headingTag] = headingComponent
+  Heading[headingTag].defaultProps = HeadingsDefaultProps
+})
+
+Heading.defaultProps = HeadingsDefaultProps
 
 export { Heading }
 export default Heading
