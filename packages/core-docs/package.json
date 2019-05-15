@@ -9,7 +9,6 @@
     "dev": "next",
     "lint": "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} ./{pages,components}/**/*",
     "precommit:": "lint-staged",
-    "prepush": "tsc --noEmit",
     "start": "next start"
   },
   "dependencies": {
