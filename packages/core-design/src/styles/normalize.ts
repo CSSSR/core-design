@@ -5,8 +5,10 @@ const normalize = css`
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
   }
+  html,
   body {
     margin: 0;
+    padding: 0;
   }
   main {
     display: block;
