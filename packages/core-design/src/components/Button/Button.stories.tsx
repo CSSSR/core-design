@@ -1,16 +1,12 @@
 import * as React from 'react'
-import { Global, css } from '@emotion/core'
+import { css } from '@emotion/core'
+
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { ThemeProvider } from 'emotion-theming'
-import defaultTheme from '../../themes/default'
-
 import { storiesOf } from '@storybook/react'
 
-import { normalize } from '../../styles/normalize'
-import fonts from '../../styles/fonts'
-
 import { Button } from './Button'
+import { Root } from '../Root'
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
@@ -26,16 +22,13 @@ storiesOf('Button', module)
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
-      <ThemeProvider theme={defaultTheme}>
-        <Global styles={normalize} />
-        <Global styles={fonts} />
-
+      <Root>
         <Button
           {...knobs}
           css={css`
             ${cssKnob}
           `}
         />
-      </ThemeProvider>
+      </Root>
     )
   })

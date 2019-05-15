@@ -1,7 +1,7 @@
 import React from 'react'
 import App, { Container } from 'next/app'
 import { ThemeProvider } from 'emotion-theming'
-import { defaultTheme } from '@asmy/core-design'
+import { Root } from '@asmy/core-design'
 
 class MyApp extends App {
   render() {
@@ -9,9 +9,9 @@ class MyApp extends App {
 
     return (
       <Container>
-        <ThemeProvider theme={defaultTheme}>
+        <Root>
           <Component {...pageProps} />
-        </ThemeProvider>
+        </Root>
       </Container>
     )
   }
