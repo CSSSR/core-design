@@ -12,7 +12,7 @@ const heading_slab_s = props => css`
   letter-spacing: normal;
   color: ${props.theme.colors.secondary.origin};
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     font-size: 1rem;
     line-height: 2rem;
   }
@@ -25,7 +25,7 @@ const heading_slab_m = props => css`
   font-weight: normal;
   color: ${props.theme.colors.secondary.darken100};
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -38,7 +38,7 @@ const heading_slab_l = props => css`
   line-height: 5rem;
   color: ${props.theme.colors.secondary.darken100};
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     font-size: 2rem;
     line-height: 3rem;
   }
@@ -51,7 +51,7 @@ const heading_regular_s = props => css`
   line-height: 1.5rem;
   color: ${props.theme.colors.secondary.origin};
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     font-size: 0.8125rem;
     line-height: 1.5rem;
   }
@@ -64,7 +64,7 @@ const heading_regular_m = props => css`
   line-height: 3rem;
   color: ${props.theme.colors.secondary.origin};
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     font-size: 1.1875rem;
     line-height: 1.5rem;
   }
@@ -77,7 +77,7 @@ const heading_regular_l = props => css`
   line-height: 3rem;
   color: ${props.theme.colors.secondary.origin};
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     font-size: 2rem;
     line-height: 2.5rem;
   }
@@ -91,7 +91,7 @@ const subhead_regular = props => css`
   line-height: 3rem;
   color: ${props.theme.colors.secondary.origin};
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     margin-top: 1rem;
     font-size: 1.1875rem;
     line-height: 2rem;
@@ -117,7 +117,7 @@ const paragraph_strong = props => css`
 const paragraph_strong_s = props => css`
   ${paragraph_strong(props)}
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     margin-top: 0.75rem;
     font-size: 0.75rem;
     line-height: 1rem;
@@ -127,7 +127,7 @@ const paragraph_strong_s = props => css`
 const paragraph_strong_m = props => css`
   ${paragraph_strong(props)}
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     margin-top: 1rem;
     font-size: 0.875rem;
     line-height: 1.1875rem;
@@ -157,7 +157,7 @@ const perforator_m = props => css`
   text-transform: uppercase;
   color: ${props.theme.colors.secondary.origin};
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     font-size: 0.875rem;
     line-height: 1.5rem;
   }
@@ -182,7 +182,7 @@ const link_list = props => css`
     display: block;
   }
 
-  @media (max-width: 1279px) {
+  ${props.theme.breakpoints.below.desktop} {
     font-size: 1rem;
     line-height: 1.5rem;
 
