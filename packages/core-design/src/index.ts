@@ -9,3 +9,5 @@ export { default as Text } from './components/Text'
 
 export { default as normalize } from './styles/normalize'
 export { default as fonts, paragraph_strong_m } from './styles/fonts'
+
+export { default as defaultTheme } from './themes/default'

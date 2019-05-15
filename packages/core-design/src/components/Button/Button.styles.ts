@@ -1,5 +1,4 @@
 import { css } from '@emotion/core'
-
 import { button_label } from '../../styles/fonts'
 
 export default {
@@ -25,24 +24,23 @@ export default {
   `,
   font: button_label,
   themes: {
-    primary: css`
+    primary: props => css`
       color: #ffffff;
-      background-color: #0076ff;
+      background-color: ${props.theme.colors.primary.origin};
       transition: background-color 0.3s ease-out;
-
       &:hover,
       &:active {
-        background-color: #0254d8;
+        background-color: ${props.theme.colors.primary.darken15};
       }
     `,
-    secondary: css`
-      color: #4a4a4a;
-      border: solid 0.0625rem #000000;
+    secondary: props => css`
+      color: ${props.theme.colors.secondary.origin};
+      border: solid 0.0625rem ${props.theme.colors.secondary.darken100};
       transition: color 0.3s ease-out;
 
       &:hover,
       &:active {
-        color: #000;
+        color: ${props.theme.colors.secondary.darken100};
       }
     `,
   },
