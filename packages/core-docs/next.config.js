@@ -19,23 +19,44 @@ const patchDefaultNextExternalsFn = defaultNextExternalsFn => {
   }
 }
 
+const withCoreDesignHMRPatch = (nextConfig = {}) => ({
+  ...nextConfig,
+  webpack(config, options) {
+    if (options.isServer) {
+      if (options.dev) {
+        config.externals[0] = patchDefaultNextExternalsFn(config.externals[0])
+      }
+    }
+
+    if (typeof nextConfig.webpack === 'function') {
+      return nextConfig.webpack(config, options)
+    }
+
+    return config
+  },
+})
+
+const withTypeChecker = (nextConfig = {}) => ({
+  ...nextConfig,
+  webpack(config, options) {
+    if (options.isServer) {
+      if (options.dev) {
+        config.plugins.push(new ForkTsCheckerWebpackPlugin())
+      }
+    }
+
+    if (typeof nextConfig.webpack === 'function') {
+      return nextConfig.webpack(config, options)
+    }
+
+    return config
+  },
+})
+
 module.exports = withPlugins([
-  [
-    withTypescript,
-    {
-      webpack(config, options) {
-        if (options.isServer) {
-          if (options.dev) {
-            config.externals[0] = patchDefaultNextExternalsFn(config.externals[0])
-            config.plugins.push(new ForkTsCheckerWebpackPlugin())
-          }
-
-        }
-
-        return config
-      },
-    },
-  ],
+  withTypescript,
+  withTypeChecker,
+  withCoreDesignHMRPatch,
   [withMDX, { pageExtensions: ['tsx', 'mdx'] }],
   withFonts,
 ])

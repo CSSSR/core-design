@@ -8,6 +8,8 @@
     "interface-name": false,
     "no-implicit-dependencies": [true, "dev"],
     "no-submodule-imports": false,
+    "no-unused-variable": true,
+    "no-unused-expression": true,
     "no-object-literal-type-assertion": false
   },
   "rulesDirectory": []

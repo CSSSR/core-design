@@ -13,6 +13,7 @@
     "dev": "yarn run clean && concurrently 'yarn run build:typings --watch' 'yarn run build:compile --watch' 'yarn run copy:assets --watch'",
     "lint": "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} ./src/**/*.{ts,tsx}",
     "precommit": "lint-staged",
+    "prepush": "tsc --noEmit",
     "start:storybook": "yarn run start-storybook"
   },
   "peerDependencies": {
