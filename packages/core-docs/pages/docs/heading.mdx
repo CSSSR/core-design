@@ -3,13 +3,13 @@ import { Heading } from '@asmy/core-design'
 
 # Heading
 
-<Heading type="slab" size="s" css={css`grid-column: 1 / span 12;`}> Type Slab Size S </Heading>
-<Heading type="slab" size="m" css={css`grid-column: 1 / span 12;`}> Type Slab Size M </Heading>
 <Heading type="slab" size="l" css={css`grid-column: 1 / span 12;`}> Type Slab Size L </Heading>
+<Heading type="slab" size="m" css={css`grid-column: 1 / span 12;`}> Type Slab Size M </Heading>
+<Heading type="slab" size="s" css={css`grid-column: 1 / span 12;`}> Type Slab Size S </Heading>
 
-<Heading type="regular" size="s" css={css`grid-column: 1 / span 12;`}> Type Regular Size S </Heading>
-<Heading type="regular" size="m" css={css`grid-column: 1 / span 12;`}> Type Regular Size M </Heading>
 <Heading type="regular" size="l" css={css`grid-column: 1 / span 12;`}> Type Regular Size L </Heading>
+<Heading type="regular" size="m" css={css`grid-column: 1 / span 12;`}> Type Regular Size M </Heading>
+<Heading type="regular" size="s" css={css`grid-column: 1 / span 12;`}> Type Regular Size S </Heading>
 
 Компонент заголовка. Используется для отображения заголовков. Имеет 6 различных уровней.
 Заголовки разных уровней визуально никак не отличаются друг от друга, но они важны для семантики. 
@@ -19,13 +19,13 @@ import { Heading } from '@asmy/core-design'
 ## Свойства
 Имя  | Допустимые значения | Значение по умолчанию | Комментарий
 ---- | ------------------- | --------------------- | ----------------
-type | slab \| regular     |                       | Стиль начертания
-size | s \| m \| l         |                       | Размер заголовка
+type | slab \| regular     | slab                  | Стиль начертания
+size | s \| m \| l         | s                     | Размер заголовка
 
 ---------------------------------------
 ## Код
 ```
-  import { Text } from '@asmy/core-design'
+  import { Heading } from '@asmy/core-design'
 
   <Heading.H1 type='slab' size='l'>
     Заголовок первого уровня

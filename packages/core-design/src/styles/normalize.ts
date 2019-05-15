@@ -27,6 +27,11 @@ const normalize = css`
     height: 0;
     overflow: visible;
   }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
   pre {
     font-family: monospace, monospace;
     font-size: 1em;

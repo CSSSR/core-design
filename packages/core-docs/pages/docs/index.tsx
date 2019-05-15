@@ -1,6 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
-import componentsNames from '../data/componentsNames'
+import componentsNames from '../../data/componentsNames'
 
 class IndexPage extends React.PureComponent {
   public static async getInitialProps({ res }) {

@@ -1,15 +1,16 @@
 import React from 'react'
-import App, { Container } from 'next/app'
+import { css, Global } from '@emotion/core'
 
+import App, { Container } from 'next/app'
 import { H1, H2, H3, H4, H5, H6 } from '../components/docs/Headings'
 import { Paragraph } from '../components/docs/Paragraph'
 import { Table } from '../components/docs/Table'
 import { TableRow } from '../components/docs/TableRow'
 import { Pre } from '../components/docs/Pre'
 import { TD, TH } from '../components/docs/TableCells'
+import { Grid } from '../components/docs/Grid'
 import { ProjectLayout } from '../components/ProjectLayout'
-
-import { Grid, Root } from '@asmy/core-design'
+import { Root } from '@asmy/core-design'
 
 const components = {
   h1: H1,
@@ -54,6 +55,18 @@ class MyApp extends App<Props> {
     return (
       <Container>
         <Root>
+          <Global 
+            styles={css`
+              html, body { 
+                height: 100%; 
+                overflow: hidden; 
+              }
+
+              #__next {
+                height: 100%; 
+              }
+            `} 
+          />
           <ProjectLayout>
             <Component components={pageProps.isDocsPage ? components : null} {...pageProps} />
           </ProjectLayout>
