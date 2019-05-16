@@ -90,3 +90,144 @@ export default NewPage
 ```
 Обратите внимание что пропс должен css принимать функцию `css`, которая в свою очеред принимает строку с описаными css правилами. Эту функцию нужно импортировать так же как компоненты на страницу где вы её собираетесь приминять:
 `import { css } from '@emotion/core'`
+
+## Создание новых компонентов
+Вы можете создать новый компонент командой: 
+```sh
+$ npx -p @asmy/core-scripts core-design create-component _НазваниеКомпонента_
+````
+Название компонента должно быть написано в PascalCase. После исполнения команды в папке components будет создана директория с файлом компонента: 
+```
+import * as React from 'react'
+import styled from '@emotion/styled'
+import styles from './MyNewComponent.styles'
+// import { Название_компонента_из_нашей_библиотеки_компонентов } from '@asmy/core-design'
+
+const OriginMyNewComponent= props =>
+  <div className={props.className}>
+    {props.children}
+  </div>
+
+const MyNewComponent = styled(OriginMyNewComponent)`
+  ${styles.base}
+`
+
+export { MyNewComponent }
+export default MyNewComponent
+```
+и стилями для него: 
+```
+import { css } from '@emotion/core'
+
+export default {
+  base: css`
+    display: block;
+  `,
+}
+```
+
+В примере файла компонента `OriginMyNewComponent` нужен для описания верстки нового компоннета. В `MyNewComponent` указывается какие стили будут применятся для нового компонента. Стили делятся на логические блоки:
+* `base` — для общих и статичных стилей компонента, т.e. тех, которые у компонента будут всегда не смотря на передаваемые ему пропсы;
+* `font` — для стилей шрифтов;
+* `themes` — для стилей описывающие компонент при различных темах;
+* и любые другие кастомные блоки, которые вы считаете уместными (с течением времени этот список будет пополнятся укрепившимеся паттернами).
+
+
+Если вам в новом компонент понадобится какой-либо другой компонент из дизайн-системы, вы можете его импортировать и вставить в вёрстку нового компонента, например: 
+
+```
+import { Button } from '@asmy/core-design'
+
+const OriginMyNewComponent= props =>
+  <div className={props.className}>
+    <Button>Кнопка</Button>
+  </div>
+```
+
+Список всех компонентов дизайн системы и перечень их свойств вы можете найти на http://core-design.csssr.ru
+
+## Работа с темами
+
+### Объект темы
+Тема это объект в котором хранятся переменные цветов, брейкпоинтов, размеров. Все компоненты построены на основании этих переменных. Вот так выглядит дефолтная тема:
+```
+const theme = {
+  colors: {
+    primary: {
+      origin: primaryOrigin.hex(),
+      darken15: primaryOrigin.darken(0.15).hex(),
+    },
+    secondary: {
+      origin: secondaryOrigin.hex(),
+      darken100: secondaryOrigin.darken(1).hex(),
+    },
+  },
+  baseSize: 16,
+  breakpoints: {
+    desktop: {
+      all: '@media (min-width: 1280px)',
+      m: '@media (min-width: 1360px) and (max-width: 1919px)',
+      s: '@media (min-width: 1280px) and (max-width: 1359px)',
+    },
+    tablet: {
+      all: '@media (min-width: 768px) and (max-width: 1279px)',
+      m: '@media (min-width: 1024px) and (max-width: 1279px)',
+      s: '@media (min-width: 768px) and (max-width: 1023px)',
+    },
+    mobile: {
+      all: '@media (max-width: 767px)',
+    },
+    below: {
+      desktop: '@media (max-width: 1279px)',
+    },
+  },
+}
+```
+Где: 
+* `colors` — это различные цвета их оттенки, генерируемые из исходного значения цвета. 
+* `baseSize`— это размер шрифта у `html` тега страницы. Все расстояния и размеры в компонентах задаются c помощью относительной единицы `rem`.
+* `breakpoints` — это медиа-выражения. Они поделены на несколько подтипов `desktop`, `tablet`, `mobile` и `below`. Первые три содержат в себе различные медиа-выражения для соответствующих устройств и разрешений экранов. Размеры `s`, `m` условны, их можно задвать произвольно, главное что бы они между собой не пересикались, `all` охватывает все разрешения подтипа. `below` содержит в себе медиавыражения, которые охватывают разрешения от заданного и ниже.
+
+Если вы захотите поменять какой-либо из дефолтных параметров темы, то вам нужно будет создать новый файл темы в директории `themes` (если её ещё нет, то создайте в рутовской директории), а в новую переменную темы, скопировать туда старую и изменить нужные вам поля. После переменную новой темы нужно передать в пропс `theme` компонента `Root`, который находится в `pages/_app.jsx`:
+```
+<Root theme={myNewtheme}>
+  <Component {...pageProps} />
+</Root>
+```
+
+### Использование переменных темы
+Что бы использовать переменные темы в CSS вам нужно передать объект `props` и указать путь до соответствующей переменной. Например, у вас есть следующие стили: 
+```
+export default {
+  base: css`
+    color: blue;
+  `,
+}
+```
+но вы хотите что бы цвет был как `primary` из дефолтной темы, тогда вам нужно написать стили следующим образом:
+```
+export default {
+  base: props => css`
+    color: ${props.theme.colors.primary.origin};
+  `,
+}
+```
+
+## Работа с цветами
+Для манипуляций с цветами у нас используется библиотека [color](https://github.com/Qix-/color#readme). Цвета в темах можно называть как угодно, но желательно максимально абстракто без ссылок на название цвета или состояний, например: `primary`, `secondary`, `danger`, `success` и т.д. У каждого цевета должен быть объевлен `origin`, это его исходное состояние. Оттенки цветов генерируются из `origin` и называются по методу генерации и его значения, например:
+```
+const primaryOrigin = color('#0076ff')
+
+const theme = {
+  colors: {
+    primary: {
+      origin: primaryOrigin.hex(),
+      darken15: primaryOrigin.darken(0.15).hex(),
+      darken30: primaryOrigin.darken(0.3).hex(), 
+      lighten45: primaryOrigin.lighten(0.45).hex(),
+    },
+  }
+}
+```
+
+Список всех доступных методов находится [тут](https://github.com/Qix-/color#manipulation) 
