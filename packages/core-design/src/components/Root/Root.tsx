@@ -11,7 +11,7 @@ export interface Props {
 }
 
 const Root: React.FC<Props> = props => (
-  <ThemeProvider theme={defaultTheme}>
+  <ThemeProvider theme={props.theme}>
     <Global styles={normalize} />
     <Global styles={fonts} />
 
