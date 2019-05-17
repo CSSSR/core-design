@@ -19,6 +19,7 @@ module.exports = api => {
           useESModules: false,
         },
       ],
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
     ],
   }
 }
