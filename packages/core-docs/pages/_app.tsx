@@ -10,7 +10,7 @@ import { Pre } from '../components/docs/Pre'
 import { TD, TH } from '../components/docs/TableCells'
 import { Grid } from '../components/docs/Grid'
 import { ProjectLayout } from '../components/ProjectLayout'
-import { Root } from '@asmy/core-design'
+import { Root } from '@csssr/core-design'
 
 const components = {
   h1: H1,

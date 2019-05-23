@@ -9,7 +9,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const patchDefaultNextExternalsFn = defaultNextExternalsFn => {
   return (context, request, callback) => {
     const myCallback = (error, as) => {
-      if (as === 'commonjs @asmy/core-design') {
+      if (as === 'commonjs @csssr/core-design') {
         return callback()
       }
 

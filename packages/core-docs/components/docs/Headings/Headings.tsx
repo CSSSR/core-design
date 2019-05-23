@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Heading as OriginHeading } from '@asmy/core-design'
+import { Heading as OriginHeading } from '@csssr/core-design'
 
 const headingsWithFontStyle = {
   H1: props => <OriginHeading.H1 type="slab" size="l" {...props} />,

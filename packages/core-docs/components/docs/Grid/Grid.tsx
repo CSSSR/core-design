@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Grid as OriginGrid } from '@asmy/core-design'
+import { Grid as OriginGrid } from '@csssr/core-design'
 
 const Grid = styled(OriginGrid.withComponent('section'))`
   grid-template-columns: repeat(12, 1fr);

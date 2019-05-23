@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Text as OriginText } from '@asmy/core-design'
+import { Text as OriginText } from '@csssr/core-design'
 
 const Text = props => <OriginText type="strong" size="m" {...props} /> 
 

@@ -14,7 +14,7 @@ $ cd projects
 ```
 2. Выполнить команду:
 ```sh
-$ npx -p @asmy/core-scripts core-design create my-project
+$ npx -p @csssr/core-scripts core-design create my-project
 ```
 В директории `my-project` развернётся новый проект. Его нужно открыть в редакторе кода.
 
@@ -44,7 +44,7 @@ export default NewPage
 ## Создание прототипов
 После создания страницы можно приступать к прототипированию. Если вам нужен какой либо-компонент из нашей библиотеки то его нужно импортировать на страницу прототипа, для этого в начале файла нужно добавить строчку: 
 ```
-import { Button } from '@asmy/core-design'
+import { Button } from '@csssr/core-design'
 ```
 Если вам нужно несколько компонентов, то укажите их названия через запятую. 
 
@@ -94,14 +94,14 @@ export default NewPage
 ## Создание новых компонентов
 Вы можете создать новый компонент командой: 
 ```sh
-$ npx -p @asmy/core-scripts core-design create-component _НазваниеКомпонента_
+$ npx -p @csssr/core-scripts core-design create-component _НазваниеКомпонента_
 ````
 Название компонента должно быть написано в PascalCase. После исполнения команды в папке components будет создана директория с файлом компонента: 
 ```
 import * as React from 'react'
 import styled from '@emotion/styled'
 import styles from './MyNewComponent.styles'
-// import { Название_компонента_из_нашей_библиотеки_компонентов } from '@asmy/core-design'
+// import { Название_компонента_из_нашей_библиотеки_компонентов } from '@csssr/core-design'
 
 const OriginMyNewComponent= props =>
   <div className={props.className}>
@@ -136,7 +136,7 @@ export default {
 Если вам в новом компонент понадобится какой-либо другой компонент из дизайн-системы, вы можете его импортировать и вставить в вёрстку нового компонента, например: 
 
 ```
-import { Button } from '@asmy/core-design'
+import { Button } from '@csssr/core-design'
 
 const OriginMyNewComponent= props =>
   <div className={props.className}>

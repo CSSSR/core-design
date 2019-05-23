@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 
-import { Grid } from '@asmy/core-design'
+import { Grid } from '@csssr/core-design'
 import Nav from '../Nav'
 
 const OriginProjectLayout: React.FC<{}> = props => (

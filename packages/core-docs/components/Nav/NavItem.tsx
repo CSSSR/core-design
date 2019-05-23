@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { withRouter } from 'next/router'
 
-import { Link } from '@asmy/core-design'
+import { Link } from '@csssr/core-design'
 import NextLink from 'next/link'
 
 const OriginNavItem = ({ componentsName, router}) => {

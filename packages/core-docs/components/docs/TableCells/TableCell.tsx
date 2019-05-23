@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { paragraph_strong_m } from '@asmy/core-design'
+import { paragraph_strong_m } from '@csssr/core-design'
 
 const TD = styled.td`
   padding: 12px;
