@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "sleep 3 && open http://localhost:3000/ & next",
     "build": "next build",
-    "start": "next start"
+    "export": "next export && touch ./out/.nojekyll",
+    "start": "next start",
+    "deploy": "npm run build && npm run export && ./scripts/deploy.sh"
   },
   "dependencies": {
     "@csssr/core-design": "*",
