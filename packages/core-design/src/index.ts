@@ -8,6 +8,12 @@ export { default as Root } from './components/Root'
 export { default as SubHeading } from './components/SubHeading'
 export { default as Text } from './components/Text'
 
+export { default as TextFieldLight, UncontrolledTextFieldLight } from './components/TextFieldLight'
+export {
+  default as TextareaFieldLight,
+  UncontrolledTextareaFieldLight,
+} from './components/TextareaFieldLight'
+
 export { default as normalize } from './styles/normalize'
 export { default as fonts, paragraph_strong_m } from './styles/fonts'
 

@@ -7,4 +7,6 @@ export default [
   'SubHeading',
   'Text',
   'Picture',
+  'TextField',
+  'TextareaField'
 ]
