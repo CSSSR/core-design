@@ -13,6 +13,9 @@ export {
   default as TextareaFieldLight,
   UncontrolledTextareaFieldLight,
 } from './components/TextareaFieldLight'
+export { default as TextFieldRegular } from './components/TextFieldRegular'
+export { default as TextareaRegular } from './components/TextareaRegular'
+export { default as TextareaLight } from './components/TextareaLight'
 
 export { default as normalize } from './styles/normalize'
 export { default as fonts, paragraph_strong_m } from './styles/fonts'
