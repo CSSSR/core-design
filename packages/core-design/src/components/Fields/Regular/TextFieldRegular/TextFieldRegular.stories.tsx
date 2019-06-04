@@ -18,7 +18,12 @@ storiesOf('TextFieldRegular', module)
   .add('Controlled', () => {
     return (
       <Root>
-        <ControlledTextFieldRegular id="awesomeField" label="Awesome field" />
+        <ControlledTextFieldRegular
+          id="awesomeField"
+          label="Awesome field"
+          value="Hello TextFieldRegular"
+          focused={true}
+        />
       </Root>
     )
   })

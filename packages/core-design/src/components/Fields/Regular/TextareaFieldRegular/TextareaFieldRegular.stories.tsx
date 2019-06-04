@@ -9,14 +9,19 @@ import { withValueState } from '../../../../hocs'
 
 import { TextareaFieldRegular, UncontrolledTextareaFieldRegular } from '.'
 
-const ControlledTextFieldRegular = withValueState()(TextareaFieldRegular)
+const ControlledTextareaRegular = withValueState()(TextareaFieldRegular)
 
 storiesOf('TextareaFieldRegular', module)
   .addDecorator(withKnobs)
   .add('Controlled', () => {
     return (
       <Root>
-        <ControlledTextFieldRegular id="awesomeField" label="Name" />
+        <ControlledTextareaRegular
+          id="awesomeField"
+          label="Name"
+          value="Hello TextareaRegular"
+          focused={true}
+        />
       </Root>
     )
   })
