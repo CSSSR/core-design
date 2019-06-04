@@ -7,6 +7,8 @@ export default [
   'SubHeading',
   'Text',
   'Picture',
-  'TextField',
-  'TextareaField'
+  'TextFieldRegular',
+  'TextFieldLight',
+  'TextareaFieldLight',
+  'TextareaFieldRegular',
 ]
