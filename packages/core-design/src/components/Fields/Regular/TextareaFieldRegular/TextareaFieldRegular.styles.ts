@@ -1,6 +1,5 @@
 import { css } from '@emotion/core'
 import { InputLabelRegular } from '../InputLabelRegular'
-import { Textarea } from './TextareaFieldRegular'
 import isFieldActive from '../../../../utils/isFieldActive'
 
 export default {
@@ -10,10 +9,6 @@ export default {
     justify-content: center;
     align-items: center;
     position: relative;
-
-    ${Textarea} {
-      line-height: 1.75rem;
-    }
 
     ${InputLabelRegular} {
       position: absolute;

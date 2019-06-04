@@ -5,7 +5,15 @@ import { InputRegular } from '../InputRegular'
 import styles from './TextareaFieldRegular.styles'
 import isFieldActive from '../../../../utils/isFieldActive'
 
-const Textarea = InputRegular.withComponent('textarea')
+const TextareaOrigin = InputRegular.withComponent('textarea')
+const Textarea = styled(TextareaOrigin)`
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  line-height: 1.75rem;
+`
 
 export interface Props extends PropsOf<typeof Textarea> {
   label?: string
