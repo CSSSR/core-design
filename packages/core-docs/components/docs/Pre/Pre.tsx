@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 
 const OriginPre = styled.pre`
   margin: 0;
+  margin-bottom: 40px;
   padding: 40px;
   background-color: #f2f2f2;
 `

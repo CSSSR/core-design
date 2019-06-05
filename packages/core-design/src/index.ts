@@ -1,5 +1,6 @@
 export { default as Button } from './components/Button'
 export { default as ButtonLink } from './components/ButtonLink'
+export { default as AnimatedButton } from './components/AnimatedButton'
 export { default as Grid } from './components/Grid'
 export { default as Heading } from './components/Heading'
 export { default as Link } from './components/Link'
