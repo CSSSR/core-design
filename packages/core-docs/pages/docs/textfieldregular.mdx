@@ -1,0 +1,36 @@
+import { css } from '@emotion/core'
+import { UncontrolledTextFieldRegular, TextFieldRegular } from '@csssr/core-design'
+
+# TextFieldRegular
+
+Компонент, представляющий из себя поле для ввода короткого текста.
+
+<TextFieldRegular id="helloField" placeholder="World" label="Hello" css={css`grid-column: 1 / span 6;`}/>
+
+В различных состояниях (uncontrolled):
+
+<UncontrolledTextFieldRegular label="Empty Field" value="" css={css`grid-column: 1 / span 3;`}/>
+<UncontrolledTextFieldRegular label="Filled Field" value="Filled" css={css`grid-column: 4 / span 3;`}/>
+<UncontrolledTextFieldRegular label="Error Field" error={true} value="Has Error" css={css`grid-column: 7 / span 3;`}/>
+<UncontrolledTextFieldRegular label="Focused Field" focused={true} value="Focused" css={css`grid-column: 10 / span 3;`}/>
+<UncontrolledTextFieldRegular label="Hovered Field" hovered={true} value="Hovered" css={css`margin-top: 20px; grid-column: 1 / span 3;`}/>
+ 
+
+---
+
+## Свойства
+
+| Имя   | Допустимые значения | Значение по умолчанию | Комментарий                   |
+| ----- | ------------------- | --------------------- | ----------------------------- |
+| id    | строка              |                       | Уникальный идентификатор поля |
+| error | true \| false       |                       | Ошибка                        |
+
+Можно также передать все нативные аргументы элемента [input](http://htmlbook.ru/html/input).
+
+---------------------------------------
+## Код
+```
+  import { TextFieldRegular } from '@csssr/core-design'
+
+  <TextFieldRegular id="helloField" label="Hello" />
+```

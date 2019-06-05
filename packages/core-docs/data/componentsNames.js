@@ -1,6 +1,7 @@
 export default [
   'Button',
   'ButtonLink',
+  'AnimatedButton',
   'Link',
   'List',
   'Grid',
@@ -8,6 +9,8 @@ export default [
   'SubHeading',
   'Text',
   'Picture',
-  'TextField',
-  'TextareaField',
+  'TextFieldRegular',
+  'TextFieldLight',
+  'TextareaFieldLight',
+  'TextareaFieldRegular',
 ]
