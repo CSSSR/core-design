@@ -11,9 +11,5 @@ const List = styled(ListOrigin)`
   ${styles.base}
 `
 
-List.defaultProps = {
-  kind: 'primary',
-} as Props
-
 export { List }
 export default List
