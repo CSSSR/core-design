@@ -9,14 +9,23 @@ export { default as Root } from './components/Root'
 export { default as SubHeading } from './components/SubHeading'
 export { default as Text } from './components/Text'
 
-export { default as TextFieldLight, UncontrolledTextFieldLight } from './components/TextFieldLight'
+export {
+  default as TextFieldLight,
+  UncontrolledTextFieldLight,
+} from './components/Fields/Light/TextFieldLight'
 export {
   default as TextareaFieldLight,
   UncontrolledTextareaFieldLight,
-} from './components/TextareaFieldLight'
-export { default as TextFieldRegular } from './components/TextFieldRegular'
-export { default as TextareaRegular } from './components/TextareaRegular'
-export { default as TextareaLight } from './components/TextareaLight'
+} from './components/Fields/Light/TextareaFieldLight'
+
+export {
+  default as TextFieldRegular,
+  UncontrolledTextFieldRegular,
+} from './components/Fields/Regular/TextFieldRegular'
+export {
+  default as TextareaFieldRegular,
+  UncontrolledTextareaFieldRegular,
+} from './components/Fields/Regular/TextareaFieldRegular'
 
 export { default as normalize } from './styles/normalize'
 export { default as fonts, paragraph_strong_m } from './styles/fonts'

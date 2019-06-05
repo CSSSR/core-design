@@ -1,6 +1,10 @@
 import { css } from '@emotion/core'
 
 const normalize = css`
+  .js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+  }
+
   html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
