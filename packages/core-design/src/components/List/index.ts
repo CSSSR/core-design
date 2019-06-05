@@ -1,1 +1,1 @@
-export { default, Props, List } from './List'
+export { default, List } from './List'
