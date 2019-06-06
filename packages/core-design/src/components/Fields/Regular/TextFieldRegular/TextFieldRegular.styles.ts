@@ -18,7 +18,7 @@ export default {
     ${InputLabelRegular} {
       position: absolute;
       top: ${isFieldActive({ value, focused }) ? '0.5rem' : 'auto'};
-      left: 1rem;
+      left: 1.125rem;
       pointer-events: none;
       user-select: none;
     }
