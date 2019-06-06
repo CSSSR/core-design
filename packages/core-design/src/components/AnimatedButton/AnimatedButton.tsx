@@ -3,31 +3,40 @@ import { css } from '@emotion/core'
 import styles from './AnimatedButton.styles'
 
 export interface Props {
-  status: 'pending' | 'submitting' | 'success' | 'fail'
+  status: 'pending' | 'submiting' | 'success' | 'fail'
   type: 'button' | 'submit'
+  kind: 'secondary' | 'primary'
 }
 
-function getStylesbyStatus(props: Props) {
-  const { status } = props
+function getStylesByStatusAndKind(props: Props) {
+  const { status, kind } = props
 
   switch (status) {
-    case 'submitting':
-      return styles.status.submiting
+    case 'submiting':
+      return css`
+        ${styles.status.submiting}
+        ${styles.themes[kind].status.submiting(props)}
+      `
 
     case 'success':
       return css`
         ${styles.status.submiting}
         ${styles.status.success}
+        ${styles.themes[kind].status.success(props)}
       `
 
     case 'fail':
       return css`
         ${styles.status.submiting}
         ${styles.status.fail}
+        ${styles.themes[kind].status.fail}
       `
 
     default:
-      return styles.base
+      return css`
+        ${styles.base}
+        ${styles.themes[kind].status.pending(props)}
+      `
   }
 }
 
@@ -66,12 +75,13 @@ const AnimatedButtonOrigin = props => {
 const AnimatedButton = styled(AnimatedButtonOrigin)`
   ${styles.base}
   ${styles.font}
-  ${getStylesbyStatus}
+  ${getStylesByStatusAndKind}
 `
 
 AnimatedButton.defaultProps = {
   status: 'pending',
   type: 'button',
+  kind: 'primary',
 } as Props
 
 export { AnimatedButton }

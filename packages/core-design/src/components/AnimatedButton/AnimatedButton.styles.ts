@@ -21,19 +21,13 @@ export default {
       width: 100%;
       height: 3rem;
       border: none;
-      border: 0.125rem solid transparent;
-      background-color: #0076ff;
+      border: 0.0625rem solid transparent;
       border-radius: 0;
-      color: #fff;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
       transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s,
         border-color 0.3s, border-radius 0.3s;
       cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0254d8;
     }
 
     button:disabled {
@@ -64,7 +58,6 @@ export default {
 
     svg.checkmark path,
     svg.cross path {
-      stroke: #fff;
       stroke-linecap: round;
       stroke-width: 4;
       transition: opacity 0.1s;
@@ -78,11 +71,15 @@ export default {
         border-color: #ddd;
         border-radius: 1.5rem;
         background-color: transparent;
-        color: #fff;
+        pointer-events: none;
       }
 
       button:disabled {
         opacity: 1;
+      }
+
+      button:hover {
+        background-color: none;
       }
 
       span {
@@ -92,17 +89,11 @@ export default {
 
       svg.progress-circle path {
         opacity: 1;
-        stroke: #0076ff;
         stroke-width: 5;
         animation: ${dash} 2s linear forwards;
       }
     `,
     success: css`
-      button {
-        border-color: #0076ff;
-        background-color: #0076ff;
-      }
-
       svg.checkmark path {
         opacity: 1;
         animation: ${dash} 0.25s linear forwards;
@@ -123,6 +114,82 @@ export default {
         animation: ${dash} 0.25s linear forwards;
       }
     `,
+  },
+  themes: {
+    primary: {
+      status: {
+        pending: props => css`
+          button {
+            color: #ffffff;
+            background-color: ${props.theme.colors.primary.origin};
+          }
+
+          button:hover,
+          button:active {
+            background-color: ${props.theme.colors.primary.darken15};
+          }
+        `,
+        submiting: props => css`
+          svg.progress-circle path {
+            stroke: ${props.theme.colors.primary.origin};
+          }
+        `,
+        success: props => css`
+          button {
+            border-color: ${props.theme.colors.primary.origin};
+            background-color: ${props.theme.colors.primary.origin};
+          }
+
+          svg.checkmark path,
+          svg.cross path {
+            stroke: #fff;
+          }
+        `,
+        fail: css`
+          svg.checkmark path,
+          svg.cross path {
+            stroke: #fff;
+          }
+        `,
+      },
+    },
+    secondary: {
+      status: {
+        pending: props => css`
+          button {
+            color: ${props.theme.colors.secondary.origin};
+            border-color: ${props.theme.colors.secondary.darken100};
+          }
+
+          button:hover,
+          button:active {
+            color: ${props.theme.colors.secondary.darken100};
+          }
+        `,
+        submiting: props => css`
+          svg.progress-circle path {
+            stroke: ${props.theme.colors.secondary.origin};
+          }
+        `,
+        success: props => css`
+          button {
+            border-color: ${props.theme.colors.secondary.origin};
+            background-color: #fff;
+          }
+
+          svg.checkmark path,
+          svg.cross path {
+            stroke: ${props.theme.colors.secondary.origin};
+          }
+        `,
+        fail: css`
+          svg.checkmark path,
+          svg.cross path {
+            stroke: #fff;
+          }
+        `,
+      },
+    },
   },
   font: button_label,
 }

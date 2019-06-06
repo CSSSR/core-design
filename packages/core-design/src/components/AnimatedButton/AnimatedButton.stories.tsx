@@ -12,7 +12,8 @@ storiesOf('AnimatedButton', module)
   .addDecorator(withKnobs)
   .add('AnimatedButton', () => {
     const knobs = {
-      status: select('status', ['pending', 'submitting', 'success', 'fail'], 'pending'),
+      status: select('status', ['pending', 'submiting', 'success', 'fail'], 'pending'),
+      kind: select('kind', ['primary', 'secondary'], 'primary'),
       className: text('className', 'button'),
       disabled: boolean('disabled', false),
       children: text('children', 'Кнопка'),

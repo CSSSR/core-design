@@ -1,46 +1,52 @@
 import { css } from '@emotion/core'
 import { AnimatedButton } from '@csssr/core-design'
+import { Grid } from '../../components/docs/Grid'
 
-# Button
+# AnimatedButton
 
-<AnimatedButton 
-  css={css`grid-column: 1 / span 3;`} 
-  onClick={() => alert('Ты кликнул кнопку')}
->
+<AnimatedButton css={css`grid-column: 1 / span 3;`}  onClick={() => alert('Ты кликнул кнопку')}>
   Кнопка
 </AnimatedButton>
 
-<AnimatedButton
-  css={css`grid-column: 4 / span 3;`}
-  status='submitting'
-  onClick={() => alert('Ты кликнул кнопку')}
->
+<AnimatedButton css={css`grid-column: 4 / span 3;`} status='submiting' onClick={() => alert('Ты кликнул кнопку')}>
   Кнопка
 </AnimatedButton>
 
-<AnimatedButton
-  css={css`grid-column: 7 / span 3;`}
-  status='success'
-  onClick={() => alert('Ты кликнул кнопку')}
->
+<AnimatedButton css={css`grid-column: 7 / span 3;`} status='success' onClick={() => alert('Ты кликнул кнопку')}>
   Кнопка
 </AnimatedButton>
 
-<AnimatedButton
-  css={css`grid-column: 10 / span 3;`}
-  status='fail'
-  onClick={() => alert('Ты кликнул кнопку')}
->
+<AnimatedButton css={css`grid-column: 10 / span 3;`} status='fail' onClick={() => alert('Ты кликнул кнопку')}>
+  Кнопка
+</AnimatedButton>
+
+--------------------------------------
+<AnimatedButton css={css`grid-column: 1 / span 3;`} kind='secondary' onClick={() => alert('Ты кликнул кнопку')}>
+  Кнопка
+</AnimatedButton>
+
+<AnimatedButton css={css`grid-column: 4 / span 3;`} kind='secondary' status='submiting' onClick={() => alert('Ты кликнул кнопку')}>
+  Кнопка
+</AnimatedButton>
+
+<AnimatedButton css={css`grid-column: 7 / span 3;`} kind='secondary' status='success' onClick={() => alert('Ты кликнул кнопку')}>
+  Кнопка
+</AnimatedButton>
+
+<AnimatedButton css={css`grid-column: 10 / span 3;`} kind='secondary' status='fail' onClick={() => alert('Ты кликнул кнопку')}>
   Кнопка
 </AnimatedButton>
 
 Анимированная кнопка. Используется в формах для отображения статуса запроса сохранениях данных на сервер.
 
+
 ---------------------------------------
 ## Свойства
-Имя       | Допустимые значения  | Значение по умолчанию | Комментарий
---------- | -------------------- | --------------------- | ----------------
-status    | pending \| submitting \| success \| fail     | Статус запроса
+Имя       | Допустимые значения                          | Значение по умолчанию | Комментарий
+--------- | -------------------------------------------- | --------------------- | ----------------
+kind      | primary \| secondary                         | primary               | Тема кнопки
+status    | pending \| submitting \| success \| fail     | pending               | Статус запроса
+
 
 ---------------------------------------
 ## Хендлеры
