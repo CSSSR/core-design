@@ -3,6 +3,7 @@ export default [
   'ButtonLink',
   'AnimatedButton',
   'Link',
+  'List',
   'Grid',
   'Heading',
   'SubHeading',

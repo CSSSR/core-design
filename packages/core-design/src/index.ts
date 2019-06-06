@@ -27,6 +27,9 @@ export {
   UncontrolledTextareaFieldRegular,
 } from './components/Fields/Regular/TextareaFieldRegular'
 
+export { default as List } from './components/List'
+export { default as ListItem } from './components/List/ListItem'
+
 export { default as normalize } from './styles/normalize'
 export { default as fonts, paragraph_strong_m } from './styles/fonts'
 
