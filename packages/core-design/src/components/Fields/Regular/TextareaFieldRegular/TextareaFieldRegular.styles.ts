@@ -23,9 +23,7 @@ export default {
       isFieldActive({ value, focused }) &&
       css`
         ${InputLabelRegular} {
-          padding-top: 0.5rem;
-          padding-bottom: 0.1rem;
-          top: 0.125rem;
+          top: 0.5rem;
           background-color: #fff;
           width: calc(100% - 2rem);
           box-sizing: border-box;

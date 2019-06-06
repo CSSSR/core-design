@@ -13,6 +13,11 @@ export default {
 
     ${InputRegular} {
       width: 100%;
+      padding-bottom: 0;
+      padding-top: 1.5rem;
+      padding-bottom: 0.5rem;
+      height: 4rem;
+      max-height: 4rem;
     }
 
     ${InputLabelRegular} {
