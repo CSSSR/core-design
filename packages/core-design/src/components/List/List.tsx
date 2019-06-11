@@ -6,21 +6,21 @@ export interface Props {
   size?: 's' | 'm'
 }
 
-const ListOrigin: React.FC<Props> = props => {
+const ListOrigin = styled.ul<Props>`
+  ${styles.base}
+`
+
+const List = props => {
   const processChild = child => React.cloneElement(child, { size: props.size })
 
   const children = React.Children.map(props.children, processChild)
 
   return (
-    <ul className={props.className} {...props}>
+    <ListOrigin className={props.className} {...props}>
       {children}
-    </ul>
+    </ListOrigin>
   )
 }
-
-const List = styled(ListOrigin)`
-  ${styles.base}
-`
 
 List.defaultProps = {
   size: 's',
