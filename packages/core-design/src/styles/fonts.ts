@@ -107,6 +107,24 @@ const paragraph_regular = props => css`
   color: ${props.theme.colors.secondary.origin};
 `
 
+const paragraph_regular_s = props => css`
+  ${paragraph_regular(props)}
+
+  ${props.theme.breakpoints.below.desktop} {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+`
+
+const paragraph_regular_m = props => css`
+  ${paragraph_regular(props)}
+
+  ${props.theme.breakpoints.below.desktop} {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+`
+
 const paragraph_strong = props => css`
   margin-top: 1.5rem;
   font-family: Roboto;
@@ -551,7 +569,8 @@ export {
   subhead_regular,
   paragraph_strong_s,
   paragraph_strong_m,
-  paragraph_regular,
+  paragraph_regular_s,
+  paragraph_regular_m,
   perforator_s,
   perforator_m,
   link_list_s,

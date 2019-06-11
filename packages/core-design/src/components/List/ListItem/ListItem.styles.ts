@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { paragraph_regular } from '../../../styles/fonts'
+import { paragraph_regular_s, paragraph_regular_m } from '../../../styles/fonts'
 
 export default {
   base: props => css`
@@ -22,16 +22,19 @@ export default {
 
     ${props.theme.breakpoints.below.desktop} {
       &:before {
-        top: 0.25rem;
+        ${props.size === 's' &&
+          css`
+            top: 0.25rem;
+          `}
+        ${props.size === 'm' &&
+          css`
+            top: 0.5rem;
+          `}
       }
     }
   `,
   font: props => css`
-    ${paragraph_regular(props)}
-
-    ${props.theme.breakpoints.below.desktop} {
-      font-size: 0.75rem;
-      line-height: 1rem;
-    }
+    ${props.size === 's' && paragraph_regular_s(props)}
+    ${props.size === 'm' && paragraph_regular_m(props)}
   `,
 }
