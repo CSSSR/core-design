@@ -5,6 +5,7 @@
   "license": "MIT",
   "types": "lib/typings",
   "scripts": {
+    "prepublishOnly": "yarn run build",
     "build": "yarn run clean && concurrently 'yarn run build:compile' 'yarn run build:typings' 'yarn run copy:assets'",
     "build:compile": "babel --out-dir ./lib -x .tsx,.ts src",
     "build:typings": "tsc --emitDeclarationOnly",
