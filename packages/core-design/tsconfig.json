@@ -6,11 +6,20 @@
     "jsx": "preserve",
     "module": "commonjs",
     "target": "es5",
+    "allowSyntheticDefaultImports": true,
     "lib": ["es6", "dom"],
+    "noImplicitAny": true,
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "baseUrl": "./",
+    "paths": {
+      // Workaround for https://github.com/emotion-js/emotion/issues/1203
+      // Remove after https://github.com/emotion-js/emotion/pull/1220 gets merged
+      "@original-emotion/styled": ["../../node_modules/@emotion/styled"],
+      "@emotion/styled": ["src/utils/emotion/styled.ts"]
+    },
   },
   "include": ["./src"]
 }

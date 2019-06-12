@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import { PropsOf } from '@emotion/styled-base/types/helper'
+import isFieldActive from '../../../../utils/isFieldActive'
 import styles from './TextFieldRegular.styles'
 import { InputLabelRegular } from '../InputLabelRegular'
 import { InputRegular } from '../InputRegular'
-import isFieldActive from '../../../../utils/isFieldActive'
 
 export interface Props extends PropsOf<typeof InputRegular> {
   label?: string

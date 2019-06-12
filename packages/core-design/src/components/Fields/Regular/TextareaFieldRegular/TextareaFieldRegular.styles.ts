@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 import { InputLabelRegular } from '../InputLabelRegular'
-import isFieldActive from '../../../../utils/isFieldActive'
+import isFieldActive, { IsFieldActiveOptions } from '../../../../utils/isFieldActive'
 
 export default {
   base: css`
@@ -19,7 +19,7 @@ export default {
     }
   `,
   state: {
-    active: ({ value, focused }) =>
+    active: ({ value, focused }: IsFieldActiveOptions) =>
       isFieldActive({ value, focused }) &&
       css`
         ${InputLabelRegular} {

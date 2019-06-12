@@ -1,8 +1,9 @@
 import { css } from '@emotion/core'
 import { paragraph_regular_s, paragraph_regular_m } from '../../../styles/fonts'
+import { ThemeProps } from '../../../themes/types'
 
 export default {
-  base: props => css`
+  base: (props: ThemeProps & { size: 's' | 'm' }) => css`
     position: relative;
     margin-top: 0;
     padding-left: 1rem;
@@ -33,7 +34,7 @@ export default {
       }
     }
   `,
-  font: props => css`
+  font: (props: ThemeProps & { size: 's' | 'm' }) => css`
     ${props.size === 's' && paragraph_regular_s(props)}
     ${props.size === 'm' && paragraph_regular_m(props)}
   `,

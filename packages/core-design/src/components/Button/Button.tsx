@@ -18,7 +18,7 @@ function byKind(props: Props) {
   return styles.themes.secondary
 }
 
-const Button = styled.button`
+const Button = styled.button<Props>`
   ${styles.base}
   ${styles.font}
   ${byKind}
@@ -26,7 +26,7 @@ const Button = styled.button`
 
 Button.defaultProps = {
   kind: 'primary',
-} as Props
+}
 
 export { Button }
 

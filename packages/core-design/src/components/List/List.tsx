@@ -8,8 +8,8 @@ const ListOrigin = styled.ul`
 `
 
 const List: React.FC<Props> = props => {
-  const processChild = child => {
-    if (typeof child === 'object' && child.type.isDesignCoreListItem) {
+  const processChild = (child: React.ReactChild) => {
+    if (typeof child === 'object' && (child.type as any).isDesignCoreListItem) {
       return React.cloneElement(child, { size: child.props.size || props.size })
     }
 

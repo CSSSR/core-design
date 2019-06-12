@@ -1,7 +1,8 @@
 import { css } from '@emotion/core'
+import { ThemeProps } from '../../themes/types'
 
 export default {
-  base: props => css`
+  base: (props: ThemeProps) => css`
     margin-right: auto;
     margin-left: auto;
     display: grid;
@@ -40,7 +41,7 @@ export default {
       width: 20.5rem;
     }
   `,
-  guidelines: props => css`
+  guidelines: (props: ThemeProps) => css`
     background-size: 152px;
     background-image: linear-gradient(
       90deg,

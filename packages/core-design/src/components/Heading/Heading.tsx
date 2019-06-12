@@ -1,4 +1,6 @@
 import styled from '@emotion/styled'
+import { entries } from '../../utils/typesafe-lib'
+import { DefaultProps } from '../../utils/react'
 import styles from './Heading.styles'
 
 export interface Props {
@@ -19,12 +21,12 @@ const OriginHeadings = {
   H6: OriginHeading.withComponent('h6'),
 }
 const Heading: typeof OriginHeading & typeof OriginHeadings = OriginHeading as any
-const HeadingsDefaultProps = {
+const HeadingsDefaultProps: DefaultProps<Props> = {
   type: 'slab',
   size: 's',
-} as Props
+}
 
-Object.entries(OriginHeadings).forEach(([headingTag, headingComponent]) => {
+entries(OriginHeadings).forEach(([headingTag, headingComponent]) => {
   Heading[headingTag] = headingComponent
   Heading[headingTag].defaultProps = HeadingsDefaultProps
 })
