@@ -10,7 +10,7 @@ import { Root } from '../Root'
 
 storiesOf('List', module)
   .addDecorator(withKnobs)
-  .add('One item', () => {
+  .add('Child not <ListItem />', () => {
     const sizeKnob = select('size', ['s', 'm'], 's')
     const cssKnob = text('CSS', 'width: 120px;')
 
@@ -22,7 +22,7 @@ storiesOf('List', module)
             ${cssKnob}
           `}
         >
-          <ListItem>Item 1</ListItem>
+          <h1>¯\_(ツ)_/¯</h1>
         </List>
       </Root>
     )
