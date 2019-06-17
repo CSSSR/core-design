@@ -9,15 +9,11 @@ const ListOrigin = styled.ul`
 
 const List: React.FC<Props> = props => {
   const processChild = child => {
-    if (typeof child === 'object' && child.type.displayName === 'ListItem') {
+    if (typeof child === 'object' && child.type.isDesignCoreListItem) {
       return React.cloneElement(child, { size: child.props.size || props.size })
     }
 
-    return (
-      <li style={{ color: 'red' }}>
-        Каждый элемент списка должен быть компонентом {`<ListItem />`}
-      </li>
-    )
+    return child
   }
 
   const children = React.Children.map(props.children, processChild)

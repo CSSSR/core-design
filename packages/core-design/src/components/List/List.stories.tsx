@@ -22,7 +22,7 @@ storiesOf('List', module)
             ${cssKnob}
           `}
         >
-          <h1>¯\_(ツ)_/¯</h1>
+          <li>¯\_(ツ)_/¯</li>
         </List>
       </Root>
     )
