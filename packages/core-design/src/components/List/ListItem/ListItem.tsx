@@ -1,15 +1,18 @@
 import styled from '@emotion/styled'
 import styles from './ListItem.styles'
 
-const ListItemOrigin = props => (
-  <li className={props.className} {...props}>
-    {props.children}
-  </li>
-)
+export interface Props {
+  size?: 's' | 'm'
+}
 
-const ListItem = styled(ListItemOrigin)`
-  ${styles.base}
-  ${styles.font}
-`
+const ListItem = styled.li<Props>`
+    ${styles.base}
+    ${styles.font}
+  `
+
+  // Нужно для проверки является ли этот компонент ListItem из CoreDesign.
+  // https://overreacted.io/how-does-react-tell-a-class-from-a-function/
+;(ListItem as any).isDesignCoreListItem = true
+
 export { ListItem }
 export default ListItem

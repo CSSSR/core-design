@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from '@emotion/core'
 
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { List } from './List'
@@ -10,27 +10,31 @@ import { Root } from '../Root'
 
 storiesOf('List', module)
   .addDecorator(withKnobs)
-  .add('One item', () => {
+  .add('Child not <ListItem />', () => {
+    const sizeKnob = select('size', ['s', 'm'], 's')
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
       <Root>
         <List
+          size={sizeKnob}
           css={css`
             ${cssKnob}
           `}
         >
-          <ListItem>Item 1</ListItem>
+          <li>¯\_(ツ)_/¯</li>
         </List>
       </Root>
     )
   })
   .add('Three items', () => {
+    const sizeKnob = select('size', ['s', 'm'], 's')
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
       <Root>
         <List
+          size={sizeKnob}
           css={css`
             ${cssKnob}
           `}
@@ -43,11 +47,13 @@ storiesOf('List', module)
     )
   })
   .add('Big items', () => {
+    const sizeKnob = select('size', ['s', 'm'], 's')
     const cssKnob = text('CSS', 'width: 240px;')
 
     return (
       <Root>
         <List
+          size={sizeKnob}
           css={css`
             ${cssKnob}
           `}
