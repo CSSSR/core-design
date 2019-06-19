@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import styles from './SubHeading.styles'
 
-const SubHeading = styled.span`
+const SubHeading = styled.span<{}>`
   ${styles.base}
   ${styles.font}
 `

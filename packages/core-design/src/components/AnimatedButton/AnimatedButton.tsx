@@ -1,14 +1,17 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { ThemeProps } from '../../themes/types'
 import styles from './AnimatedButton.styles'
 
 export interface Props {
   status: 'pending' | 'submiting' | 'success' | 'fail'
-  type: 'button' | 'submit'
+  type?: 'button' | 'submit'
   kind: 'secondary' | 'primary'
+  className?: string
+  children: React.ReactNode
 }
 
-function getStylesByStatusAndKind(props: Props) {
+function getStylesByStatusAndKind(props: Props & ThemeProps) {
   const { status, kind } = props
 
   switch (status) {
@@ -40,7 +43,7 @@ function getStylesByStatusAndKind(props: Props) {
   }
 }
 
-const AnimatedButtonOrigin = props => {
+const AnimatedButtonOrigin: React.FC<Props> = props => {
   const { className, children } = props
 
   return (
@@ -72,7 +75,7 @@ const AnimatedButtonOrigin = props => {
   )
 }
 
-const AnimatedButton = styled(AnimatedButtonOrigin)`
+const AnimatedButton = styled(AnimatedButtonOrigin)<Props>`
   ${styles.base}
   ${styles.font}
   ${getStylesByStatusAndKind}
@@ -82,7 +85,7 @@ AnimatedButton.defaultProps = {
   status: 'pending',
   type: 'button',
   kind: 'primary',
-} as Props
+}
 
 export { AnimatedButton }
 

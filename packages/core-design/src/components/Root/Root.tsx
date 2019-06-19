@@ -4,7 +4,8 @@ import { normalize } from '../../styles/normalize'
 import fonts from '../../styles/fonts'
 
 import { ThemeProvider } from 'emotion-theming'
-import defaultTheme, { Theme as ThemeType } from '../../themes/default'
+import defaultTheme from '../../themes/default'
+import { Theme as ThemeType } from '../../themes/types'
 
 export interface Props {
   theme?: ThemeType
@@ -21,7 +22,7 @@ const Root: React.FC<Props> = props => (
 
 Root.defaultProps = {
   theme: defaultTheme,
-} as Props
+}
 
 export { Root }
 export default Root

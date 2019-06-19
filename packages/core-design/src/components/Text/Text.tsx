@@ -4,7 +4,7 @@ import styles from './Text.styles'
 
 export interface Props {
   type?: keyof typeof styles['font']
-  size?: 's' | 'm' | 'l'
+  size?: 's' | 'm'
 }
 
 const Text = styled.p<Props>`
@@ -14,7 +14,7 @@ const Text = styled.p<Props>`
 Text.defaultProps = {
   type: 'regular',
   size: 's',
-} as Props
+}
 
 export { Text }
 export default Text

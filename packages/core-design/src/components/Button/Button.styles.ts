@@ -1,8 +1,9 @@
 import { css } from '@emotion/core'
 import { button_label } from '../../styles/fonts'
+import { ThemeProps } from '../../themes/types'
 
 export default {
-  base: props => css`
+  base: (props: ThemeProps) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +25,7 @@ export default {
   `,
   font: button_label,
   themes: {
-    primary: props => css`
+    primary: (props: ThemeProps) => css`
       color: #ffffff;
       background-color: ${props.theme.colors.primary.origin};
       transition: background-color 0.3s ease-out;
@@ -33,7 +34,7 @@ export default {
         background-color: ${props.theme.colors.primary.darken15};
       }
     `,
-    secondary: props => css`
+    secondary: (props: ThemeProps) => css`
       color: ${props.theme.colors.secondary.origin};
       border: solid 0.0625rem ${props.theme.colors.secondary.darken100};
       transition: color 0.3s ease-out;

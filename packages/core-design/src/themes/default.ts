@@ -37,4 +37,3 @@ const theme = {
 
 export default theme
 export { theme as defaultTheme }
-export type Theme = typeof theme

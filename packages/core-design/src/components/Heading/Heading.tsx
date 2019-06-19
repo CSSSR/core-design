@@ -7,7 +7,7 @@ export interface Props {
 }
 
 const OriginHeading = styled.h1<Props>`
-  ${({ type, size }) => type && size && styles.font[type][size]}
+  ${({ type = 'slab', size = 's' }) => styles.font[type][size]}
 `
 
 const OriginHeadings = {
@@ -18,18 +18,12 @@ const OriginHeadings = {
   H5: OriginHeading.withComponent('h5'),
   H6: OriginHeading.withComponent('h6'),
 }
-const Heading: typeof OriginHeading & typeof OriginHeadings = OriginHeading as any
-const HeadingsDefaultProps = {
-  type: 'slab',
-  size: 's',
-} as Props
 
-Object.entries(OriginHeadings).forEach(([headingTag, headingComponent]) => {
-  Heading[headingTag] = headingComponent
-  Heading[headingTag].defaultProps = HeadingsDefaultProps
-})
-
-Heading.defaultProps = HeadingsDefaultProps
+// tslint:disable-next-line: prefer-object-spread
+const Heading: typeof OriginHeading & typeof OriginHeadings = Object.assign(
+  OriginHeading,
+  OriginHeadings
+)
 
 export { Heading }
 export default Heading

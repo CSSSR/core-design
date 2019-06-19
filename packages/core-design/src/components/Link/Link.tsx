@@ -22,7 +22,7 @@ const Link: React.FC<PropsOf<typeof OriginLink> & Props> = props => (
 Link.defaultProps = {
   type: 'list',
   size: 's',
-} as Props
+}
 
 export { Link }
 export default Link

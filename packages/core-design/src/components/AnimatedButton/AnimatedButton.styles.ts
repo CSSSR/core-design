@@ -1,5 +1,6 @@
 import { css, keyframes } from '@emotion/core'
 import { button_label } from '../../styles/fonts'
+import { ThemeProps } from '../../themes/types'
 
 const dash = keyframes`
   to {
@@ -118,7 +119,7 @@ export default {
   themes: {
     primary: {
       status: {
-        pending: props => css`
+        pending: (props: ThemeProps) => css`
           button {
             color: #ffffff;
             background-color: ${props.theme.colors.primary.origin};
@@ -129,12 +130,12 @@ export default {
             background-color: ${props.theme.colors.primary.darken15};
           }
         `,
-        submiting: props => css`
+        submiting: (props: ThemeProps) => css`
           svg.progress-circle path {
             stroke: ${props.theme.colors.primary.origin};
           }
         `,
-        success: props => css`
+        success: (props: ThemeProps) => css`
           button {
             border-color: ${props.theme.colors.primary.origin};
             background-color: ${props.theme.colors.primary.origin};
@@ -155,7 +156,7 @@ export default {
     },
     secondary: {
       status: {
-        pending: props => css`
+        pending: (props: ThemeProps) => css`
           button {
             color: ${props.theme.colors.secondary.origin};
             border-color: ${props.theme.colors.secondary.darken100};
@@ -166,12 +167,12 @@ export default {
             color: ${props.theme.colors.secondary.darken100};
           }
         `,
-        submiting: props => css`
+        submiting: (props: ThemeProps) => css`
           svg.progress-circle path {
             stroke: ${props.theme.colors.secondary.origin};
           }
         `,
-        success: props => css`
+        success: (props: ThemeProps) => css`
           button {
             border-color: ${props.theme.colors.secondary.origin};
             background-color: #fff;

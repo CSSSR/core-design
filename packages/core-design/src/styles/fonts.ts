@@ -1,8 +1,9 @@
 /* tslint:disable:variable-name */
 
 import { css } from '@emotion/core'
+import { Theme, ThemeProps } from '../themes/types'
 
-const heading_slab_s = props => css`
+const heading_slab_s = (props: ThemeProps) => css`
   font-family: Roboto Slab;
   font-size: 1rem;
   font-weight: bold;
@@ -18,7 +19,7 @@ const heading_slab_s = props => css`
   }
 `
 
-const heading_slab_m = props => css`
+const heading_slab_m = (props: ThemeProps) => css`
   font-family: Roboto Slab;
   font-size: 3rem;
   line-height: 4rem;
@@ -31,7 +32,7 @@ const heading_slab_m = props => css`
   }
 `
 
-const heading_slab_l = props => css`
+const heading_slab_l = (props: ThemeProps) => css`
   font-family: Roboto Slab;
   font-size: 4rem;
   font-weight: 300;
@@ -44,7 +45,7 @@ const heading_slab_l = props => css`
   }
 `
 
-const heading_regular_s = props => css`
+const heading_regular_s = (props: ThemeProps) => css`
   font-family: Roboto;
   font-size: 1rem;
   font-weight: 900;
@@ -57,7 +58,7 @@ const heading_regular_s = props => css`
   }
 `
 
-const heading_regular_m = props => css`
+const heading_regular_m = (props: ThemeProps) => css`
   font-family: Roboto;
   font-size: 1.5rem;
   font-weight: 900;
@@ -70,7 +71,7 @@ const heading_regular_m = props => css`
   }
 `
 
-const heading_regular_l = props => css`
+const heading_regular_l = (props: ThemeProps) => css`
   font-family: Roboto;
   font-size: 2.5rem;
   font-weight: 900;
@@ -83,7 +84,7 @@ const heading_regular_l = props => css`
   }
 `
 
-const subhead_regular = props => css`
+const subhead_regular = (props: ThemeProps) => css`
   margin-top: 1.5rem;
   font-family: Roboto;
   font-size: 2rem;
@@ -98,7 +99,7 @@ const subhead_regular = props => css`
   }
 `
 
-const paragraph_regular = props => css`
+const paragraph_regular = (props: ThemeProps) => css`
   margin-top: 1rem;
   font-family: Roboto;
   font-size: 1rem;
@@ -107,7 +108,7 @@ const paragraph_regular = props => css`
   color: ${props.theme.colors.secondary.origin};
 `
 
-const paragraph_regular_s = props => css`
+const paragraph_regular_s = (props: ThemeProps) => css`
   ${paragraph_regular(props)}
 
   ${props.theme.breakpoints.below.desktop} {
@@ -116,7 +117,7 @@ const paragraph_regular_s = props => css`
   }
 `
 
-const paragraph_regular_m = props => css`
+const paragraph_regular_m = (props: ThemeProps) => css`
   ${paragraph_regular(props)}
 
   ${props.theme.breakpoints.below.desktop} {
@@ -125,14 +126,14 @@ const paragraph_regular_m = props => css`
   }
 `
 
-const paragraph_strong = props => css`
+const paragraph_strong = (props: ThemeProps) => css`
   margin-top: 1.5rem;
   font-family: Roboto;
   font-size: 1.5rem;
   line-height: 2.5rem;
   color: ${props.theme.colors.secondary.origin};
 `
-const paragraph_strong_s = props => css`
+const paragraph_strong_s = (props: ThemeProps) => css`
   ${paragraph_strong(props)}
 
   ${props.theme.breakpoints.below.desktop} {
@@ -142,7 +143,7 @@ const paragraph_strong_s = props => css`
   }
 `
 
-const paragraph_strong_m = props => css`
+const paragraph_strong_m = (props: ThemeProps) => css`
   ${paragraph_strong(props)}
 
   ${props.theme.breakpoints.below.desktop} {
@@ -152,7 +153,7 @@ const paragraph_strong_m = props => css`
   }
 `
 
-const perforator_s = props => css`
+const perforator_s = (props: ThemeProps) => css`
   font-family: Roboto;
   font-size: 0.625rem;
   font-weight: normal;
@@ -164,7 +165,7 @@ const perforator_s = props => css`
   color: ${props.theme.colors.secondary.origin};
 `
 
-const perforator_m = props => css`
+const perforator_m = (props: ThemeProps) => css`
   font-family: Roboto;
   font-size: 1rem;
   font-weight: 900;
@@ -181,7 +182,7 @@ const perforator_m = props => css`
   }
 `
 
-const link_list = props => css`
+const link_list = (props: ThemeProps) => css`
   position: relative;
   font-family: Roboto;
   font-weight: 300;
@@ -211,7 +212,7 @@ const link_list = props => css`
   }
 `
 
-const link_list_s = props => css`
+const link_list_s = (props: ThemeProps) => css`
   ${link_list(props)}
   font-size: 1rem;
   line-height: 1.5rem;
@@ -225,7 +226,7 @@ const link_list_s = props => css`
   }
 `
 
-const link_list_m = props => css`
+const link_list_m = (props: ThemeProps) => css`
   ${link_list(props)}
   font-size: 1.5rem;
   line-height: 2rem;
@@ -239,7 +240,7 @@ const link_list_m = props => css`
   }
 `
 
-const link_list_l = props => css`
+const link_list_l = (props: ThemeProps) => css`
   ${link_list(props)}
   font-size: 1.75rem;
   font-weight: 300;
@@ -254,7 +255,7 @@ const link_list_l = props => css`
   }
 `
 
-const link_top_menu = props => css`
+const link_top_menu = (props: ThemeProps & { isActive?: boolean }) => css`
   font-family: Roboto;
   font-size: 0.75rem;
   font-weight: bold;
@@ -273,7 +274,7 @@ const link_top_menu = props => css`
   }
 `
 
-const link_burger = props => css`
+const link_burger = (props: ThemeProps & { isActive?: boolean }) => css`
   font-family: Roboto;
   font-size: 1rem;
   font-weight: 900;
@@ -301,7 +302,7 @@ const button_label = css`
   text-transform: uppercase;
 `
 
-const fontFaces = theme => {
+const fontFaces = (theme: Theme) => {
   if (typeof window === 'undefined') {
     return
   }
