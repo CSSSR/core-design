@@ -4,7 +4,7 @@ import { ThemeProps } from '../../themes/types'
 import styles from './AnimatedButton.styles'
 
 export interface Props {
-  status: 'pending' | 'submiting' | 'success' | 'fail'
+  status: 'pending' | 'submitting' | 'success' | 'fail'
   type?: 'button' | 'submit'
   kind: 'secondary' | 'primary'
   className?: string
@@ -15,22 +15,22 @@ function getStylesByStatusAndKind(props: Props & ThemeProps) {
   const { status, kind } = props
 
   switch (status) {
-    case 'submiting':
+    case 'submitting':
       return css`
-        ${styles.status.submiting}
-        ${styles.themes[kind].status.submiting(props)}
+        ${styles.status.submitting}
+        ${styles.themes[kind].status.submitting(props)}
       `
 
     case 'success':
       return css`
-        ${styles.status.submiting}
+        ${styles.status.submitting}
         ${styles.status.success}
         ${styles.themes[kind].status.success(props)}
       `
 
     case 'fail':
       return css`
-        ${styles.status.submiting}
+        ${styles.status.submitting}
         ${styles.status.fail}
         ${styles.themes[kind].status.fail}
       `
@@ -43,37 +43,33 @@ function getStylesByStatusAndKind(props: Props & ThemeProps) {
   }
 }
 
-const AnimatedButtonOrigin: React.FC<Props> = props => {
-  const { className, children } = props
+const AnimatedButtonOrigin: React.FC<Props> = ({ className, children, ...props }) => (
+  <div className={className}>
+    <button {...props}>
+      <span>{children}</span>
+    </button>
 
-  return (
-    <div className={className}>
-      <button {...props}>
-        <span>{children}</span>
-      </button>
+    <svg className="progress-circle" width="70" height="70" viewBox="0 0 70 70">
+      <path
+        d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"
+        strokeDasharray="204.245 204.245"
+        strokeDashoffset="204.245"
+      />
+    </svg>
 
-      <svg className="progress-circle" width="70" height="70" viewBox="0 0 70 70">
-        <path
-          d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"
-          strokeDasharray="204.245 204.245"
-          strokeDashoffset="204.245"
-        />
-      </svg>
+    <svg className="checkmark" width="70" height="70" viewBox="0 0 70 70">
+      <path d="m31.5,46.5l15.3,-23.2" strokeDasharray="27.80 27.80" strokeDashoffset="27.80" />
+      <path d="m31.5,46.5l-8.5,-7.1" strokeDasharray="11.7 11.7" strokeDashoffset="11.7" />
+    </svg>
 
-      <svg className="checkmark" width="70" height="70" viewBox="0 0 70 70">
-        <path d="m31.5,46.5l15.3,-23.2" strokeDasharray="27.80 27.80" strokeDashoffset="27.80" />
-        <path d="m31.5,46.5l-8.5,-7.1" strokeDasharray="11.7 11.7" strokeDashoffset="11.7" />
-      </svg>
-
-      <svg className="cross" width="70" height="70" viewBox="0 0 70 70">
-        <path d="m35,35l-9.3,-9.3" />
-        <path d="m35,35l9.3,9.3" />
-        <path d="m35,35l-9.3,9.3" />
-        <path d="m35,35l9.3,-9.3" />
-      </svg>
-    </div>
-  )
-}
+    <svg className="cross" width="70" height="70" viewBox="0 0 70 70">
+      <path d="m35,35l-9.3,-9.3" />
+      <path d="m35,35l9.3,9.3" />
+      <path d="m35,35l-9.3,9.3" />
+      <path d="m35,35l9.3,-9.3" />
+    </svg>
+  </div>
+)
 
 const AnimatedButton = styled(AnimatedButtonOrigin)<Props>`
   ${styles.base}
