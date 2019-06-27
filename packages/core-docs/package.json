@@ -1,6 +1,6 @@
 {
   "name": "@csssr/core-docs",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "main": "index.js",
   "license": "MIT",
   "private": true,
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.4.3",
-    "@csssr/core-design": "^0.10.3",
+    "@csssr/core-design": "^0.10.4",
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
