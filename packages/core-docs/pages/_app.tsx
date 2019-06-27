@@ -10,6 +10,8 @@ import { Pre } from '../components/docs/Pre'
 import { TD, TH } from '../components/docs/TableCells'
 import { Grid } from '../components/docs/Grid'
 import { ProjectLayout } from '../components/ProjectLayout'
+import { List } from '../components/docs/List'
+import { ListItem } from '../components/docs/ListItem'
 import { Root } from '@csssr/core-design'
 
 const components = {
@@ -26,6 +28,8 @@ const components = {
   th: TH,
   pre: Pre,
   wrapper: Grid,
+  ul: List,
+  li: ListItem,
 }
 
 interface Props {
@@ -55,17 +59,17 @@ class MyApp extends App<Props> {
     return (
       <Container>
         <Root>
-          <Global 
+          <Global
             styles={css`
-              html, body { 
-                height: 100%; 
-                overflow: hidden; 
+              html, body {
+                height: 100%;
+                overflow: hidden;
               }
 
               #__next {
-                height: 100%; 
+                height: 100%;
               }
-            `} 
+            `}
           />
           <ProjectLayout>
             <Component components={pageProps.isDocsPage ? components : null} {...pageProps} />

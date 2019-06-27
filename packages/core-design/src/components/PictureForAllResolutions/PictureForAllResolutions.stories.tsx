@@ -9,14 +9,14 @@ import { Root } from '../Root'
 
 storiesOf('PictureForAllResolutions', module)
   .addDecorator(withKnobs)
-  .add('PictureForAllResolutions', () => {
+  .add('Default', () => {
     const cssKnob = text('CSS', 'width: 200px; background-color: grey;')
     const image = {
-      pathToImagesFolder: './imagesForStories',
+      pathToImagesFolder: '../../static/images',
+      namespace: 'imagesForStories',
       imageName: 'ultramarine',
       alt: 'Сержант Ультрамаринов',
     }
-
     return (
       <Root>
         <PictureForAllResolutions

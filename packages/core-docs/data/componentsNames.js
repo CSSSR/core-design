@@ -9,6 +9,7 @@ export default [
   'SubHeading',
   'Text',
   'Picture',
+  'PictureForAllResolutions',
   'TextFieldRegular',
   'TextFieldLight',
   'TextareaFieldLight',
