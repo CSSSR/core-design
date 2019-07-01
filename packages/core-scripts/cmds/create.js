@@ -48,6 +48,9 @@ async function handler(argv) {
       path: './next.config.js',
       locals: ['name', 'repoName'],
     },
+    './.eslintignore',
+    './.eslintrc.js',
+    './.prettierrc.js',
     answers.initRepo && {
       path: './scripts/deploy.sh',
       mode: 0777 & ~process.umask(),
