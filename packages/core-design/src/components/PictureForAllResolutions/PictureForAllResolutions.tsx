@@ -19,8 +19,24 @@ interface Props {
   customResolutions?: string[]
 }
 
+/**
+ * getRequireContextFilesMap(require.context(...)) // { './file.js': '/public/path/file.hash.js' }
+ */
+function getRequireContextFilesMap(r) {
+  return r
+    .keys()
+    .map(m => {
+      return [m, r(m)]
+    })
+    .reduce((acc, [k, v]) => {
+      acc[k] = v
+      return acc
+    }, {})
+}
+
 const defaultResolutions = ['mobile.all', 'tablet.all', 'desktop.s', 'desktop.m']
 const getSrcSet = (
+  files: any,
   pathToImagesFolder: string,
   namespace: string,
   resolution: string,
@@ -30,10 +46,12 @@ const getSrcSet = (
 ) =>
   sizes
     .map(size => {
-      const imagePath = [pathToImagesFolder, namespace, resolution, imageName]
-        .filter(item => item)
-        .join('/')
-      const srcSetItem = require(`${imagePath}@${size}.${extension}`)
+      // const imagePath = [pathToImagesFolder, namespace, resolution, imageName]
+      //   .filter(item => item)
+      //   .join('/')
+      // const srcSetItem = require(`${imagePath}@${size}.${extension}`)
+      console.log(files)
+      const srcSetItem = files[`./${resolution}/${imageName}@${size}.${extension}`]
 
       if (size !== '1x') {
         return `${srcSetItem} ${size}`
@@ -45,11 +63,12 @@ const getSrcSet = (
 
 const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
   className,
-  image: { pathToImagesFolder, namespace, imageName, alt, extension = 'png' },
+  image: { files: f, pathToImagesFolder, namespace, imageName, alt, extension = 'png' },
   customResolutions = defaultResolutions,
   theme,
 }) => {
   const mediaRulesByResoluton = flattenObj(theme.breakpoints)
+  const files = getRequireContextFilesMap(f)
 
   return (
     <React.Fragment>
@@ -62,20 +81,28 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
               <source
                 media={mediaRule}
                 type="image/webp"
-                srcSet={getSrcSet(pathToImagesFolder, namespace, resolution, imageName, 'webp', [
-                  '1x',
-                  '2x',
-                  '3x',
-                ])}
+                srcSet={getSrcSet(
+                  files,
+                  pathToImagesFolder,
+                  namespace,
+                  resolution,
+                  imageName,
+                  'webp',
+                  ['1x', '2x', '3x']
+                )}
               />
 
               <source
                 media={mediaRule}
-                srcSet={getSrcSet(pathToImagesFolder, namespace, resolution, imageName, extension, [
-                  '1x',
-                  '2x',
-                  '3x',
-                ])}
+                srcSet={getSrcSet(
+                  files,
+                  pathToImagesFolder,
+                  namespace,
+                  resolution,
+                  imageName,
+                  extension,
+                  ['1x', '2x', '3x']
+                )}
               />
             </React.Fragment>
           )
@@ -83,23 +110,37 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
 
         <source
           type="image/webp"
-          srcSet={getSrcSet(pathToImagesFolder, namespace, 'desktop.all', imageName, 'webp', [
-            '1x',
-            '2x',
-            '3x',
-          ])}
+          srcSet={getSrcSet(
+            files,
+            pathToImagesFolder,
+            namespace,
+            'desktop.all',
+            imageName,
+            'webp',
+            ['1x', '2x', '3x']
+          )}
         />
 
         <img
           className={className}
-          srcSet={getSrcSet(pathToImagesFolder, namespace, 'desktop.all', imageName, extension, [
-            '1x',
-            '2x',
-            '3x',
-          ])}
-          src={getSrcSet(pathToImagesFolder, namespace, 'desktop.all', imageName, extension, [
-            '1x',
-          ])}
+          srcSet={getSrcSet(
+            files,
+            pathToImagesFolder,
+            namespace,
+            'desktop.all',
+            imageName,
+            extension,
+            ['1x', '2x', '3x']
+          )}
+          src={getSrcSet(
+            files,
+            pathToImagesFolder,
+            namespace,
+            'desktop.all',
+            imageName,
+            extension,
+            ['1x']
+          )}
           alt={alt}
         />
       </picture>

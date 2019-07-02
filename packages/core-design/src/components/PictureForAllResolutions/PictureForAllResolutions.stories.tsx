@@ -11,12 +11,16 @@ storiesOf('PictureForAllResolutions', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
     const cssKnob = text('CSS', 'width: 200px; background-color: grey;')
+    console.log()
     const image = {
-      pathToImagesFolder: '../../static/images',
-      namespace: 'imagesForStories',
+      files: require.context('../../static/images/imagesForStories', true, /\.(png|webp)$/),
+      // pathToImagesFolder: '../../assets/images',
+      // pathToImagesFolder: '../../static/images',
+      // namespace: 'imagesForStories',
       imageName: 'ultramarine',
       alt: 'Сержант Ультрамаринов',
     }
+
     return (
       <Root>
         <PictureForAllResolutions
