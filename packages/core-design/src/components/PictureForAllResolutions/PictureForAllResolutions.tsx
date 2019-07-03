@@ -26,6 +26,7 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
   className,
   image: { pathToImagesFolder, imageName, alt, extension = 'png' },
   customResolutions = defaultResolutions,
+  theme,
 }) => {
   if (isEmpty(theme) || isEmpty(theme.breakpoints)) {
     throw new Error(
