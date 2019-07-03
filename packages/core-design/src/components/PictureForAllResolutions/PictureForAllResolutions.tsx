@@ -1,13 +1,15 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
+import { isEmpty } from 'ramda'
 import styles from './PictureForAllResolutions.styles'
 import flattenObj from '../../utils/flattenObj'
+import getRequireContextFilesMap from '../../utils/getRequireContextFilesMap'
+import getPictureSrcSet from '../../utils/getPictureSrcSet'
 import { ThemeProps } from '../../themes/types'
 
 interface ImageProps {
-  pathToImagesFolder: string
-  namespace?: string
+  pathToImagesFolder: __WebpackModuleApi.RequireContext
   imageName: string
   extension?: string
   alt: string
@@ -19,56 +21,20 @@ interface Props {
   customResolutions?: string[]
 }
 
-/**
- * getRequireContextFilesMap(require.context(...)) // { './file.js': '/public/path/file.hash.js' }
- */
-function getRequireContextFilesMap(r) {
-  return r
-    .keys()
-    .map(m => {
-      return [m, r(m)]
-    })
-    .reduce((acc, [k, v]) => {
-      acc[k] = v
-      return acc
-    }, {})
-}
-
 const defaultResolutions = ['mobile.all', 'tablet.all', 'desktop.s', 'desktop.m']
-const getSrcSet = (
-  files: any,
-  pathToImagesFolder: string,
-  namespace: string,
-  resolution: string,
-  imageName: string,
-  extension: string,
-  sizes: string[]
-) =>
-  sizes
-    .map(size => {
-      // const imagePath = [pathToImagesFolder, namespace, resolution, imageName]
-      //   .filter(item => item)
-      //   .join('/')
-      // const srcSetItem = require(`${imagePath}@${size}.${extension}`)
-      console.log(files)
-      const srcSetItem = files[`./${resolution}/${imageName}@${size}.${extension}`]
-
-      if (size !== '1x') {
-        return `${srcSetItem} ${size}`
-      }
-
-      return srcSetItem
-    })
-    .join(',\n')
-
 const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
   className,
-  image: { files: f, pathToImagesFolder, namespace, imageName, alt, extension = 'png' },
+  image: { pathToImagesFolder, imageName, alt, extension = 'png' },
   customResolutions = defaultResolutions,
-  theme,
 }) => {
+  if (isEmpty(theme) || isEmpty(theme.breakpoints)) {
+    throw new Error(
+      "Component <PictureForAllResolutions /> doesn't receive 'theme' prop or your 'theme' doesn't have breakpoints"
+    )
+  }
+
   const mediaRulesByResoluton = flattenObj(theme.breakpoints)
-  const files = getRequireContextFilesMap(f)
+  const images = getRequireContextFilesMap(pathToImagesFolder)
 
   return (
     <React.Fragment>
@@ -81,66 +47,29 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
               <source
                 media={mediaRule}
                 type="image/webp"
-                srcSet={getSrcSet(
-                  files,
-                  pathToImagesFolder,
-                  namespace,
-                  resolution,
-                  imageName,
-                  'webp',
-                  ['1x', '2x', '3x']
-                )}
+                srcSet={getPictureSrcSet(images, resolution, imageName, 'webp', ['1x', '2x', '3x'])}
               />
 
               <source
                 media={mediaRule}
-                srcSet={getSrcSet(
-                  files,
-                  pathToImagesFolder,
-                  namespace,
-                  resolution,
-                  imageName,
-                  extension,
-                  ['1x', '2x', '3x']
-                )}
+                srcSet={getPictureSrcSet(images, resolution, imageName, extension, [
+                  '1x',
+                  '2x',
+                  '3x',
+                ])}
               />
             </React.Fragment>
           )
         })}
-
         <source
           type="image/webp"
-          srcSet={getSrcSet(
-            files,
-            pathToImagesFolder,
-            namespace,
-            'desktop.all',
-            imageName,
-            'webp',
-            ['1x', '2x', '3x']
-          )}
+          srcSet={getPictureSrcSet(images, 'desktop.all', imageName, 'webp', ['1x', '2x', '3x'])}
         />
 
         <img
           className={className}
-          srcSet={getSrcSet(
-            files,
-            pathToImagesFolder,
-            namespace,
-            'desktop.all',
-            imageName,
-            extension,
-            ['1x', '2x', '3x']
-          )}
-          src={getSrcSet(
-            files,
-            pathToImagesFolder,
-            namespace,
-            'desktop.all',
-            imageName,
-            extension,
-            ['1x']
-          )}
+          srcSet={getPictureSrcSet(images, 'desktop.all', imageName, extension, ['1x', '2x', '3x'])}
+          src={getPictureSrcSet(images, 'desktop.all', imageName, extension, ['1x'])}
           alt={alt}
         />
       </picture>

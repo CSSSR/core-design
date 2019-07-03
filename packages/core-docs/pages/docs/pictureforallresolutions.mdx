@@ -6,8 +6,7 @@ import { Picture } from '@csssr/core-design'
 
 <PictureForAllResolutions
   image = {{
-    pathToImagesFolder: '../../static/images',
-    namespace: 'docs',
+    pathToImagesFolder: require.context('../../static/images/docs'),
     imageName: 'ultramarine',
     alt: 'Сержант Ультрамаринов',
   }}

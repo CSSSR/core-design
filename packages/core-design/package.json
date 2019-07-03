@@ -43,6 +43,7 @@
     "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__addon-knobs": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
+    "@types/webpack-env": "^1.13.9",
     "babel-loader": "^8.0.5",
     "clean-dir": "^1.0.3",
     "concurrently": "^4.1.0",
