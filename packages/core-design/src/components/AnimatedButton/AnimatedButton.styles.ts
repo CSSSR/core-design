@@ -44,6 +44,7 @@ export default {
     /* Common style of SVGs */
     svg {
       position: absolute;
+      padding: inherit;
       top: 0;
       left: 50%;
       width: 3rem;
@@ -65,7 +66,7 @@ export default {
     }
   `,
   status: {
-    submiting: css`
+    submitting: css`
       button {
         width: 3rem;
         border-width: 0.1875rem;
@@ -130,7 +131,7 @@ export default {
             background-color: ${props.theme.colors.primary.darken15};
           }
         `,
-        submiting: (props: ThemeProps) => css`
+        submitting: (props: ThemeProps) => css`
           svg.progress-circle path {
             stroke: ${props.theme.colors.primary.origin};
           }
@@ -167,7 +168,7 @@ export default {
             color: ${props.theme.colors.secondary.darken100};
           }
         `,
-        submiting: (props: ThemeProps) => css`
+        submitting: (props: ThemeProps) => css`
           svg.progress-circle path {
             stroke: ${props.theme.colors.secondary.origin};
           }
