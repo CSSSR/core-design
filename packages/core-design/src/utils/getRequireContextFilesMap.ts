@@ -1,11 +1,11 @@
 /**
  * ```
- * getRequireContextFilesMap(require.context(...)) => { './file.js': '/public/path/file.hash.js' }
+ * getRequireContextFilesMap(require.context(...)) => { './file.js': * }
  * ```
  */
 const getRequireContextFilesMap = (
   requireContext: __WebpackModuleApi.RequireContext
-): { [key: string]: string } =>
+): { [key: string]: any } =>
   requireContext
     .keys()
     .map(
@@ -13,10 +13,10 @@ const getRequireContextFilesMap = (
         return [relativeFilePath, requireContext(relativeFilePath)]
       }
     )
-    .reduce((acc: { [key: string]: string }, [relativeFilePath, absoluteFilePath]: string[]): {
-      [key: string]: string
+    .reduce((acc: { [key: string]: any }, [relativeFilePath, file]: [string, any]): {
+      [key: string]: any
     } => {
-      acc[relativeFilePath] = absoluteFilePath
+      acc[relativeFilePath] = file
       return acc
     }, {})
 

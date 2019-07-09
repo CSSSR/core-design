@@ -10,7 +10,7 @@ const OriginNav = props => (
   <nav {...props }>
     <Logo />
     <ul>
-      {componentsNames.map(componentsName => <NavItem componentsName={componentsName} />)}
+      {componentsNames.map(componentsName => <NavItem key={componentsName} componentsName={componentsName} />)}
     </ul>
   </nav>
 )
