@@ -36,6 +36,7 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
 
   const mediaRulesByResoluton = flattenObj(theme.breakpoints)
   const images = getRequireContextFilesMap(pathToImagesFolder)
+  const allExtensions = [extension].concat('webp')
 
   return (
     <React.Fragment>
@@ -45,23 +46,21 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
 
           return (
             <React.Fragment key={resolution}>
-              <source
-                media={mediaRule}
-                type="image/webp"
-                srcSet={getPictureSrcSet(images, resolution, imageName, 'webp', ['1x', '2x', '3x'])}
-              />
-
-              <source
-                media={mediaRule}
-                srcSet={getPictureSrcSet(images, resolution, imageName, extension, [
-                  '1x',
-                  '2x',
-                  '3x',
-                ])}
-              />
+              {allExtensions.map(allExtensionsItem => (
+                <source
+                  media={mediaRule}
+                  type={`image/${allExtensionsItem}`}
+                  srcSet={getPictureSrcSet(images, resolution, imageName, allExtensionsItem, [
+                    '1x',
+                    '2x',
+                    '3x',
+                  ])}
+                />
+              ))}
             </React.Fragment>
           )
         })}
+
         <source
           type="image/webp"
           srcSet={getPictureSrcSet(images, 'desktop.all', imageName, 'webp', ['1x', '2x', '3x'])}
