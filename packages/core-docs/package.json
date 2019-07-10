@@ -37,6 +37,10 @@
     "typescript": "^3.4.5"
   },
   "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint . -c .eslintrc.js --ext js,jsx --fix",
+      "git add"
+    ],
     "*.{ts,tsx}": [
       "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} --fix",
       "prettier --write",

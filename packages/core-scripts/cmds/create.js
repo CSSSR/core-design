@@ -31,7 +31,7 @@ async function handler(argv) {
       validate: value => {
         const errorMessage = [
           'Неправильно введен адрес репозитория, он должен быть такого формата:',
-          'git@github.com:palmflip/example-nextjs-sample.git'
+          'git@github.com:palmflip/example-nextjs-sample.git',
         ].join('\n')
 
         return validateRepoAddress(value) || errorMessage
@@ -39,6 +39,7 @@ async function handler(argv) {
     },
   ])
 
+  // eslint-disable-line
   const FILES_TO_CREATE = [
     {
       path: './package.json',
@@ -50,10 +51,11 @@ async function handler(argv) {
     },
     './.eslintignore',
     './.eslintrc.js',
-    './.prettierrc.js',
+    './.vscode/settings.json',
     answers.initRepo && {
       path: './scripts/deploy.sh',
-      mode: 0777 & ~process.umask(),
+      // eslint-disable-next-line
+      mode: '0777' & ~process.umask(),
       locals: ['repoAddress'],
     },
     answers.initRepo && './.gitignore',
@@ -123,7 +125,7 @@ async function handler(argv) {
   console.log(`$ cd ${basename}`)
   console.log(`$ npm run dev\n`)
   console.log(
-    'После того, как запустится сервер нужно открыть в браузере эту станицу: http://localhost:3000'
+    'После того, как запустится сервер нужно открыть в браузере эту станицу: http://localhost:3000',
   )
   console.log('-----------------------')
 }

@@ -1316,10 +1316,10 @@
   dependencies:
     find-up "^2.1.0"
 
-"@csssr/eslint-config-core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@csssr/eslint-config-core/-/eslint-config-core-1.0.0.tgz#5846d7caf7c6ddb1c95bca41cbd1678a12ed8066"
-  integrity sha512-FKwJ7T8pQzsP54w8Ptwz0h5C4Ke9hrXIDPFt/AVbbeWUsacc7t0ZP2H3ztKHZhQtc7oi0tu7Hw1NdxWnVp8nOA==
+"@csssr/eslint-config-core@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@csssr/eslint-config-core/-/eslint-config-core-1.0.2.tgz#a7cada15058f3dd14591ad8b832c1e093837af61"
+  integrity sha512-G3SrHBgTOHesjdhOrZLcrAFjeeTeM7JZY/WJ7SOtmWaK2BROSV5htME9OYIMbWq0bvrFg7o3lQRWBJHa+MDQeg==
   dependencies:
     babel-eslint "^10.0.2"
     eslint-config-prettier "^6.0.0"
