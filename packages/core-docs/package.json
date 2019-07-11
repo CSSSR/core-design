@@ -1,6 +1,6 @@
 {
   "name": "@csssr/core-docs",
-  "version": "0.8.4",
+  "version": "0.9.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.4.3",
-    "@csssr/core-design": "^0.10.4",
+    "@csssr/core-design": "^0.11.0",
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/next": "^8.0.5",
     "@zeit/next-mdx": "^1.2.0",
+    "file-loader": "^4.0.0",
     "fork-ts-checker-webpack-plugin": "^1.0.2",
     "prettier": "^1.17.0",
     "q-i": "^2.0.1",

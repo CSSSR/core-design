@@ -10,13 +10,13 @@ const OriginNav = props => (
   <nav {...props }>
     <Logo />
     <ul>
-      {componentsNames.map(componentsName => <NavItem componentsName={componentsName} />)}
+      {componentsNames.map(componentsName => <NavItem key={componentsName} componentsName={componentsName} />)}
     </ul>
   </nav>
 )
 
 const Nav = styled(OriginNav)`
-  grid-column: 1 / span 2; 
+  grid-column: 1 / span 3;
   height: 100vh;
   border-right: 0.0625rem solid ${props => props.theme.colors.secondary.origin};
 

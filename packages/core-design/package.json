@@ -1,6 +1,6 @@
 {
   "name": "@csssr/core-design",
-  "version": "0.10.4",
+  "version": "0.11.0",
   "main": "lib/index.js",
   "license": "MIT",
   "types": "lib/typings",
@@ -38,11 +38,13 @@
     "@storybook/addon-knobs": "^5.0.10",
     "@storybook/react": "^5.0.9",
     "@types/color": "^3.0.0",
+    "@types/ramda": "^0.26.15",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
     "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__addon-knobs": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
+    "@types/webpack-env": "^1.13.9",
     "babel-loader": "^8.0.5",
     "clean-dir": "^1.0.3",
     "concurrently": "^4.1.0",
@@ -73,6 +75,7 @@
   "dependencies": {
     "@emotion/styled-base": "^10.0.10",
     "color": "^3.1.1",
-    "emotion-theming": "^10.0.10"
+    "emotion-theming": "^10.0.10",
+    "ramda": "^0.26.1"
   }
 }

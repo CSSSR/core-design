@@ -1,7 +1,6 @@
 const withPlugins = require('next-compose-plugins')
 const withFonts = require('next-fonts')
 const withMDX = require('@zeit/next-mdx')()
-
 const withTypescript = require('@zeit/next-typescript')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
@@ -52,10 +51,31 @@ const withTypeChecker = (nextConfig = {}) => ({
   },
 })
 
+const withImages = (nextConfig = {}) => ({
+  ...nextConfig,
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.(jpe?g|png|gif|webp|svg|ico)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            publicPath: '/_next',
+            name: '[path][name]-[hash:8].[ext]',
+          },
+        },
+      ],
+    })
+
+    return config
+  },
+})
+
 module.exports = withPlugins([
+  withImages,
+  withFonts,
   withTypescript,
   withTypeChecker,
   withCoreDesignHMRPatch,
   [withMDX, { pageExtensions: ['tsx', 'mdx'] }],
-  withFonts,
 ])
