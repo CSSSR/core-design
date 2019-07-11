@@ -12,6 +12,7 @@ import { ThemeProps } from '../../themes/types'
 interface ImageProps {
   pathToImagesFolder: __WebpackModuleApi.RequireContext
   imageName: string
+  extension?: string
   alt: string
 }
 
@@ -24,7 +25,7 @@ interface Props {
 const defaultResolutions = ['mobile.all', 'tablet.all', 'desktop.s', 'desktop.m']
 const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
   className,
-  image: { pathToImagesFolder, imageName, alt },
+  image: { pathToImagesFolder, imageName, alt, extension },
   customResolutions = defaultResolutions,
   theme,
 }) => {
@@ -37,7 +38,19 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
   const mediaRulesByResoluton = flattenObj(theme.breakpoints)
   const images = getRequireContextFilesMap(pathToImagesFolder)
   const extensions = getFilesExtensions(pathToImagesFolder)
-  const defaultExtension = extensions.filter(e => e !== 'webp')[0]
+  let defaultExtension
+
+  if (extensions.filter(e => e !== 'webp').length === 1) {
+    defaultExtension = extensions.filter(e => e !== 'webp')[0]
+  } else if (!extension) {
+    throw new Error(
+      `The provided images have ${extensions.length} different extensions,
+      provide the default value using "extension" key of "image" prop or
+      reduce the number of extensions to 2`
+    )
+  } else {
+    defaultExtension = extension
+  }
 
   return (
     <React.Fragment>
@@ -47,12 +60,12 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
 
           return (
             <React.Fragment key={resolution}>
-              {extensions.map(extension => (
+              {extensions.map(extensionValue => (
                 <source
-                  key={extension}
+                  key={extensionValue}
                   media={mediaRule}
-                  type={`image/${extension}`}
-                  srcSet={getPictureSrcSet(images, resolution, imageName, extension, [
+                  type={`image/${extensionValue}`}
+                  srcSet={getPictureSrcSet(images, resolution, imageName, extensionValue, [
                     '1x',
                     '2x',
                     '3x',
