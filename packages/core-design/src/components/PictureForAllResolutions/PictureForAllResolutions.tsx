@@ -5,13 +5,13 @@ import { isEmpty } from 'ramda'
 import styles from './PictureForAllResolutions.styles'
 import flattenObj from '../../utils/flattenObj'
 import getRequireContextFilesMap from '../../utils/getRequireContextFilesMap'
+import getFilesExtensions from '../../utils/getFilesExtensions'
 import getPictureSrcSet from '../../utils/getPictureSrcSet'
 import { ThemeProps } from '../../themes/types'
 
 interface ImageProps {
   pathToImagesFolder: __WebpackModuleApi.RequireContext
   imageName: string
-  extension?: string
   alt: string
 }
 
@@ -24,7 +24,7 @@ interface Props {
 const defaultResolutions = ['mobile.all', 'tablet.all', 'desktop.s', 'desktop.m']
 const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
   className,
-  image: { pathToImagesFolder, imageName, alt, extension = 'png' },
+  image: { pathToImagesFolder, imageName, alt },
   customResolutions = defaultResolutions,
   theme,
 }) => {
@@ -36,7 +36,8 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
 
   const mediaRulesByResoluton = flattenObj(theme.breakpoints)
   const images = getRequireContextFilesMap(pathToImagesFolder)
-  const allExtensions = [extension].concat('webp')
+  const extensions = getFilesExtensions(pathToImagesFolder)
+  const defaultExtension = extensions.filter(e => e !== 'webp')[0]
 
   return (
     <React.Fragment>
@@ -46,11 +47,12 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
 
           return (
             <React.Fragment key={resolution}>
-              {allExtensions.map(allExtensionsItem => (
+              {extensions.map(extension => (
                 <source
+                  key={extension}
                   media={mediaRule}
-                  type={`image/${allExtensionsItem}`}
-                  srcSet={getPictureSrcSet(images, resolution, imageName, allExtensionsItem, [
+                  type={`image/${extension}`}
+                  srcSet={getPictureSrcSet(images, resolution, imageName, extension, [
                     '1x',
                     '2x',
                     '3x',
@@ -68,8 +70,12 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
 
         <img
           className={className}
-          srcSet={getPictureSrcSet(images, 'desktop.all', imageName, extension, ['1x', '2x', '3x'])}
-          src={getPictureSrcSet(images, 'desktop.all', imageName, extension, ['1x'])}
+          srcSet={getPictureSrcSet(images, 'desktop.all', imageName, defaultExtension, [
+            '1x',
+            '2x',
+            '3x',
+          ])}
+          src={getPictureSrcSet(images, 'desktop.all', imageName, defaultExtension, ['1x'])}
           alt={alt}
         />
       </picture>
