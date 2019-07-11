@@ -3,7 +3,7 @@ import { Grid as OriginGrid } from '@csssr/core-design'
 
 const Grid = styled(OriginGrid.withComponent('section'))`
   grid-template-columns: repeat(12, 1fr);
-  grid-column: 3 / span 10;
+  grid-column: 4 / span 10;
   padding-right: 4rem;
   padding-left: 4rem;
   width: auto;
