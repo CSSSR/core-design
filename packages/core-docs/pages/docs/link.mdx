@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 import { Link } from '@csssr/core-design'
 
 # Heading
+
 <Link type="list" size="l" css={css`grid-column: 1 / span 12;`}> Type Slab Size L </Link>
 <Link type="list" size="m" css={css`grid-column: 1 / span 12;`}> Type Slab Size M </Link>
 <Link type="list" size="s" css={css`grid-column: 1 / span 12;`}> Type Slab Size S </Link>
@@ -10,18 +11,22 @@ import { Link } from '@csssr/core-design'
 
 Компонент ссылок. Используется для переходов на другие страницы.
 
----------------------------------------
-## Свойства
-Имя      | Допустимые значения        | Значение по умолчанию | Комментарий
--------- | -------------------------- | --------------------- | ----------------
-type     | list \| top_menu \| burger | list                  | Стиль начертания
-size     | s \| m \| l                | s                     | Размер заголовка
-href     | string                     |                       | Путь на который должна вести ссылка
-external | true \| false              | false                 | Отвечает за то будет открываться ссылка в новом окне или в существующем
+---
 
----------------------------------------
+## Свойства
+
+| Имя      | Допустимые значения        | Значение по умолчанию | Комментарий                                                             |
+| -------- | -------------------------- | --------------------- | ----------------------------------------------------------------------- |
+| type     | list \| top_menu \| burger | list                  | Стиль начертания                                                        |
+| size     | s \| m \| l                | s                     | Размер заголовка                                                        |
+| href     | string                     |                       | Путь на который должна вести ссылка                                     |
+| external | true \| false              | false                 | Отвечает за то будет открываться ссылка в новом окне или в существующем |
+
+---
+
 ## Код
-```js
+
+```
   import { Link } from '@csssr/core-design'
 
   <Link type="slab" size="l"> Link </Link>

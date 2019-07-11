@@ -4,63 +4,116 @@ import { Text } from '@csssr/core-design'
 # Text
 
 ### Type: regular, size: m
-<Text type="regular" size="m" css={css`margin-top: 0 !important; grid-column: 1 / span 12;`}>
+
+<Text
+  type="regular"
+  size="m"
+  css={css`
+    margin-top: 0 !important;
+    grid-column: 1 / span 12;
+  `}
+>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer at
   sagittis sem. Duis laoreet malesuada aliquam. Maecenas ac nunc odio.
 </Text>
 
 ### Type: regular, size: s
-<Text type="regular" size="s" css={css`margin-top: 0 !important; grid-column: 1 / span 12;`}>
+
+<Text
+  type="regular"
+  size="s"
+  css={css`
+    margin-top: 0 !important;
+    grid-column: 1 / span 12;
+  `}
+>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer at
   sagittis sem. Duis laoreet malesuada aliquam. Maecenas ac nunc odio.
 </Text>
 
 ### Type: strong, size: m
-<Text type="strong" size="m" css={css`margin-top: 0 !important; grid-column: 1 / span 12;`}>
+
+<Text
+  type="strong"
+  size="m"
+  css={css`
+    margin-top: 0 !important;
+    grid-column: 1 / span 12;
+  `}
+>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer at
   sagittis sem. Duis laoreet malesuada aliquam. Maecenas ac nunc odio.
 </Text>
 
 ### Type: strong, size: s
-<Text type="strong" size="s" css={css`margin-top: 0 !important; grid-column: 1 / span 12;`}>
+
+<Text
+  type="strong"
+  size="s"
+  css={css`
+    margin-top: 0 !important;
+    grid-column: 1 / span 12;
+  `}
+>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer at
   sagittis sem. Duis laoreet malesuada aliquam. Maecenas ac nunc odio.
 </Text>
 
 ### Type: perforator, size: m
-<Text type="perforator" size="m" css={css`margin-top: 0 !important; grid-column: 1 / span 12;`}>
+
+<Text
+  type="perforator"
+  size="m"
+  css={css`
+    margin-top: 0 !important;
+    grid-column: 1 / span 12;
+  `}
+>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer at
   sagittis sem. Duis laoreet malesuada aliquam. Maecenas ac nunc odio.
 </Text>
 
 ### Type: perforator, size: s
-<Text type="perforator" size="s" css={css`margin-top: 0 !important; grid-column: 1 / span 12;`}>
+
+<Text
+  type="perforator"
+  size="s"
+  css={css`
+    margin-top: 0 !important;
+    grid-column: 1 / span 12;
+  `}
+>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer at
   sagittis sem. Duis laoreet malesuada aliquam. Maecenas ac nunc odio.
 </Text>
 
----------------------------------------
-Тип начертания            | Размер десктопного шрифта | Размер мобильного шрифта
-------------------------- | ------------------------- | ------------------------
-Type: regular, size: m    | 1rem                      | 0.875rem
-Type: regular, size: s    | 1rem                      | 0.75rem
-Type: strong, size: m     | 1.5rem                    | 0.875rem
-Type: strong, size: s     | 1.5rem                    | 0.75rem
-Type: perforator, size: m | 1rem                      | 0.875rem
-Type: perforator, size: s | 0.625rem                  | 0.625rem
+---
+
+| Тип начертания            | Размер десктопного шрифта | Размер мобильного шрифта |
+| ------------------------- | ------------------------- | ------------------------ |
+| Type: regular, size: m    | 1rem                      | 0.875rem                 |
+| Type: regular, size: s    | 1rem                      | 0.75rem                  |
+| Type: strong, size: m     | 1.5rem                    | 0.875rem                 |
+| Type: strong, size: s     | 1.5rem                    | 0.75rem                  |
+| Type: perforator, size: m | 1rem                      | 0.875rem                 |
+| Type: perforator, size: s | 0.625rem                  | 0.625rem                 |
 
 Компонент текста. Используется для отображения текстовых блоков.
 
----------------------------------------
-## Свойства
-Имя  | Допустимые значения             | Значение по умолчанию | Комментарий
----- | ------------------------------- | --------------------- | ----------------
-type | regular \| strong \| perforator | regular               | Стиль начертания
-size | s \| m                          | s                     | Размер заголовка
+---
 
----------------------------------------
+## Свойства
+
+| Имя  | Допустимые значения             | Значение по умолчанию | Комментарий      |
+| ---- | ------------------------------- | --------------------- | ---------------- |
+| type | regular \| strong \| perforator | regular               | Стиль начертания |
+| size | s \| m                          | s                     | Размер заголовка |
+
+---
+
 ## Код
-```js
+
+```
   import { Text } from '@csssr/core-design'
 
   <Text type="regular" size="m">

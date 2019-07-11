@@ -12,7 +12,7 @@ const getPictureSrcSet = (
   resolution: string,
   imageName: string,
   extension: string,
-  sizes: string[]
+  sizes: string[],
 ): string =>
   sizes
     .map(size => {

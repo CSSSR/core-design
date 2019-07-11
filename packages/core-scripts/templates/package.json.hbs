@@ -8,7 +8,8 @@
     "build": "next build",
     "export": "next export && touch ./out/.nojekyll",
     "start": "next start",
-    "deploy": "npm run build && npm run export && ./scripts/deploy.sh"
+    "deploy": "npm run build && npm run export && ./scripts/deploy.sh",
+    "lint": "eslint . -c .eslintrc.js --ext js,jsx"
   },
   "dependencies": {
     "@csssr/core-design": "*",
@@ -24,6 +25,11 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@csssr/eslint-config-core": "^1.0.2",
+    "eslint": "^6.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "prettier": "^1.18.2",
     "file-loader": "^4.0.0"
   }
 }

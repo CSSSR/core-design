@@ -4,14 +4,14 @@
  * ```
  */
 const getRequireContextFilesMap = (
-  requireContext: __WebpackModuleApi.RequireContext
+  requireContext: __WebpackModuleApi.RequireContext,
 ): { [key: string]: any } =>
   requireContext
     .keys()
     .map(
       (relativeFilePath: string): string[] => {
         return [relativeFilePath, requireContext(relativeFilePath)]
-      }
+      },
     )
     .reduce((acc: { [key: string]: any }, [relativeFilePath, file]: [string, any]): {
       [key: string]: any

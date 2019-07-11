@@ -5,7 +5,13 @@ import { TextareaFieldRegular, UncontrolledTextareaFieldRegular } from '@csssr/c
 
 Компонент, представляющий из себя поле для ввода многострочного текста с текстовой меткой снизу.
 
-<TextareaFieldRegular id="helloField" label="Hello" css={css`grid-column: 1 / span 6;`} />
+<TextareaFieldRegular
+  id="helloField"
+  label="Hello"
+  css={css`
+    grid-column: 1 / span 6;
+  `}
+/>
 
 В различных состояниях (uncontrolled):
 
@@ -24,9 +30,11 @@ import { TextareaFieldRegular, UncontrolledTextareaFieldRegular } from '@csssr/c
 | id    | строка              |                       | Уникальный идентификатор поля |
 | error | true \| false       |                       | Ошибка                        |
 
----------------------------------------
+---
+
 ## Код
-```js
+
+```
   import { TextareaFieldRegular } from '@csssr/core-design'
 
   <TextareaFieldRegular id="helloField" label="Hello" />

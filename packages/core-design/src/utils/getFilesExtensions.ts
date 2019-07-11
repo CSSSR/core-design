@@ -12,7 +12,7 @@ const getFilesExtensions = (requireContext: __WebpackModuleApi.RequireContext): 
       const extension = relativePathToImageArray[relativePathToImageArray.length - 1]
 
       return extension
-    }
+    },
   )
 
   return uniq(extensions)

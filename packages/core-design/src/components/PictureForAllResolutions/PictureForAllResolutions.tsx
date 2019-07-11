@@ -31,7 +31,7 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
 }) => {
   if (isEmpty(theme) || isEmpty(theme.breakpoints)) {
     throw new Error(
-      "Component <PictureForAllResolutions /> doesn't receive 'theme' prop or your 'theme' doesn't have breakpoints"
+      "Component <PictureForAllResolutions /> doesn't receive 'theme' prop or your 'theme' doesn't have breakpoints",
     )
   }
 
@@ -46,7 +46,7 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
     throw new Error(
       `The provided images have ${extensions.length} different extensions,
       provide the default value using "extension" key of "image" prop or
-      reduce the number of extensions to 2`
+      reduce the number of extensions to 2`,
     )
   } else {
     defaultExtension = extension

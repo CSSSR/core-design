@@ -1,4 +1,3 @@
-const { print } = require('q-i')
 const withPlugins = require('next-compose-plugins')
 const withFonts = require('next-fonts')
 const withMDX = require('@zeit/next-mdx')()

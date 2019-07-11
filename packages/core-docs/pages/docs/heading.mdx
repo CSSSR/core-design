@@ -4,47 +4,112 @@ import { Heading } from '@csssr/core-design'
 # Heading
 
 ### Type: slab, size: l
-<Heading type="slab" size="l" css={css`margin: 0 0 30px !important; grid-column: 1 / span 12;`}>Lorem ipsum dolor sit amet</Heading>
+
+<Heading
+  type="slab"
+  size="l"
+  css={css`
+    margin: 0 0 30px !important;
+    grid-column: 1 / span 12;
+  `}
+>
+  Lorem ipsum dolor sit amet
+</Heading>
 
 ### Type: slab, size: m
-<Heading type="slab" size="m" css={css`margin: 0 0 30px !important; grid-column: 1 / span 12;`}>Lorem ipsum dolor sit amet</Heading>
+
+<Heading
+  type="slab"
+  size="m"
+  css={css`
+    margin: 0 0 30px !important;
+    grid-column: 1 / span 12;
+  `}
+>
+  Lorem ipsum dolor sit amet
+</Heading>
 
 ### Type: slab, size: s
-<Heading type="slab" size="s" css={css`margin: 0 0 30px !important; grid-column: 1 / span 12;`}>Lorem ipsum dolor sit amet</Heading>
+
+<Heading
+  type="slab"
+  size="s"
+  css={css`
+    margin: 0 0 30px !important;
+    grid-column: 1 / span 12;
+  `}
+>
+  Lorem ipsum dolor sit amet
+</Heading>
 
 ### Type: regular, size: l
-<Heading type="regular" size="l" css={css`margin: 0 0 30px !important; grid-column: 1 / span 12;`}>Lorem ipsum dolor sit amet</Heading>
+
+<Heading
+  type="regular"
+  size="l"
+  css={css`
+    margin: 0 0 30px !important;
+    grid-column: 1 / span 12;
+  `}
+>
+  Lorem ipsum dolor sit amet
+</Heading>
 
 ### Type: regular, size: m
-<Heading type="regular" size="m" css={css`margin: 0 0 30px !important; grid-column: 1 / span 12;`}>Lorem ipsum dolor sit amet</Heading>
+
+<Heading
+  type="regular"
+  size="m"
+  css={css`
+    margin: 0 0 30px !important;
+    grid-column: 1 / span 12;
+  `}
+>
+  Lorem ipsum dolor sit amet
+</Heading>
 
 ### Type: regular, size: s
-<Heading type="regular" size="s" css={css`margin: 0 0 30px !important; grid-column: 1 / span 12;`}>Lorem ipsum dolor sit amet</Heading>
 
----------------------------------------
-Тип начертания         | Размер десктопного шрифта | Размер мобильного шрифта
----------------------- | ------------------------- | ------------------------
-Type: slab, size: l    | 4rem                      | 2rem
-Type: slab, size: m    | 3rem                      | 1.5rem
-Type: slab, size: s    | 1rem                      | 1rem
-Type: regular, size: l | 2.5rem                    | 2rem
-Type: regular, size: m | 1.5rem                    | 1.1875rem
-Type: regular, size: s | 1rem                      | 0.8125rem
+<Heading
+  type="regular"
+  size="s"
+  css={css`
+    margin: 0 0 30px !important;
+    grid-column: 1 / span 12;
+  `}
+>
+  Lorem ipsum dolor sit amet
+</Heading>
+
+---
+
+| Тип начертания         | Размер десктопного шрифта | Размер мобильного шрифта |
+| ---------------------- | ------------------------- | ------------------------ |
+| Type: slab, size: l    | 4rem                      | 2rem                     |
+| Type: slab, size: m    | 3rem                      | 1.5rem                   |
+| Type: slab, size: s    | 1rem                      | 1rem                     |
+| Type: regular, size: l | 2.5rem                    | 2rem                     |
+| Type: regular, size: m | 1.5rem                    | 1.1875rem                |
+| Type: regular, size: s | 1rem                      | 0.8125rem                |
 
 Компонент заголовка. Используется для отображения заголовков. Имеет 6 различных уровней.
 Заголовки разных уровней визуально никак не отличаются друг от друга, но они важны для семантики.
 Может быть только один заголовок первого уровня.
 
----------------------------------------
-## Свойства
-Имя  | Допустимые значения | Значение по умолчанию | Комментарий
----- | ------------------- | --------------------- | ----------------
-type | slab \| regular     | slab                  | Стиль начертания
-size | s \| m \| l         | s                     | Размер заголовка
+---
 
----------------------------------------
+## Свойства
+
+| Имя  | Допустимые значения | Значение по умолчанию | Комментарий      |
+| ---- | ------------------- | --------------------- | ---------------- |
+| type | slab \| regular     | slab                  | Стиль начертания |
+| size | s \| m \| l         | s                     | Размер заголовка |
+
+---
+
 ## Код
-```js
+
+```
   import { Heading } from '@csssr/core-design'
 
   <Heading.H1 type='slab' size='l'>

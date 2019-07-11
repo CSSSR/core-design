@@ -13,7 +13,7 @@ storiesOf('Picture', module)
     const knobs = {
       src: text(
         'src',
-        'https://i.pinimg.com/originals/34/97/32/349732bbec7c5e2a9a55996f84a5bde1.png'
+        'https://i.pinimg.com/originals/34/97/32/349732bbec7c5e2a9a55996f84a5bde1.png',
       ),
     }
 

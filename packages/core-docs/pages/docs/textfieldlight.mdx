@@ -5,7 +5,14 @@ import { UncontrolledTextFieldLight, TextFieldLight } from '@csssr/core-design'
 
 Компонент, представляющий из себя поле для ввода короткого текста.
 
-<TextFieldLight placeholder="Hello world" id="helloField" label="Hello" css={css`grid-column: 1 / span 6;`}/>
+<TextFieldLight
+  placeholder="Hello world"
+  id="helloField"
+  label="Hello"
+  css={css`
+    grid-column: 1 / span 6;
+  `}
+/>
 
 В различных состояниях (uncontrolled):
 
@@ -26,9 +33,11 @@ import { UncontrolledTextFieldLight, TextFieldLight } from '@csssr/core-design'
 
 Можно также передать все нативные аргументы элемента [input](http://htmlbook.ru/html/input).
 
----------------------------------------
+---
+
 ## Код
-```js
+
+```
   import { TextFieldLight } from '@csssr/core-design'
 
   <TextFieldLight placeholder="Hello world" id="helloField" label="Hello" />
