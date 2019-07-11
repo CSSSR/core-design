@@ -3,16 +3,20 @@ import { Button } from '@csssr/core-design'
 
 # Button
 
-<Button 
-  css={css`grid-column: 1 / span 3;`} 
-  kind="primary" 
+<Button
+  css={css`
+    grid-column: 1 / span 3;
+  `}
+  kind="primary"
   onClick={() => alert('Ты кликнул кнопку')}
 >
   Кнопка
 </Button>
 
 <Button
-  css={css`grid-column: 4 / span 3;`}
+  css={css`
+    grid-column: 4 / span 3;
+  `}
   kind="primary"
   onClick={() => alert('Ты кликнул кнопку')}
   disabled
@@ -21,7 +25,9 @@ import { Button } from '@csssr/core-design'
 </Button>
 
 <Button
-  css={css`grid-column: 7 / span 3;`}
+  css={css`
+    grid-column: 7 / span 3;
+  `}
   kind="secondary"
   onClick={() => alert('Ты кликнул кнопку')}
 >
@@ -29,7 +35,9 @@ import { Button } from '@csssr/core-design'
 </Button>
 
 <Button
-  css={css`grid-column: 10 / span 3;`}
+  css={css`
+    grid-column: 10 / span 3;
+  `}
   kind="secondary"
   onClick={() => alert('Ты кликнул кнопку')}
   disabled
@@ -39,21 +47,27 @@ import { Button } from '@csssr/core-design'
 
 Компонент кнопки. Используется как триггер для выполнения определённого действия. Кнопка однозначно сообщает пользователю, что произойдёт после нажатия на неё.
 
----------------------------------------
+---
+
 ## Свойства
-Имя       | Допустимые значения  | Значение по умолчанию | Комментарий
---------- | -------------------- | --------------------- | ----------------
-kind      | primary \| secondary | primary               | Тема кнопки
-disabled  | true \| false        | false                 | Отвечает за disabled состояние кнопки
 
----------------------------------------
+| Имя      | Допустимые значения  | Значение по умолчанию | Комментарий                           |
+| -------- | -------------------- | --------------------- | ------------------------------------- |
+| kind     | primary \| secondary | primary               | Тема кнопки                           |
+| disabled | true \| false        | false                 | Отвечает за disabled состояние кнопки |
+
+---
+
 ## Хендлеры
-Имя       | Аргументы | Комментарий
---------- | --------- | ---------------
-onClick   | event     | Функция, которая будет исполняться при клике на кнопку
 
----------------------------------------
+| Имя     | Аргументы | Комментарий                                            |
+| ------- | --------- | ------------------------------------------------------ |
+| onClick | event     | Функция, которая будет исполняться при клике на кнопку |
+
+---
+
 ## Код
+
 ```
   import { Button } from '@csssr/core-design'
 
