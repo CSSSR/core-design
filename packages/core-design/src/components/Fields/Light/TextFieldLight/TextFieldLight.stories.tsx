@@ -27,7 +27,7 @@ storiesOf('TextFieldLight', module)
       disabled: boolean('disabled', false),
       hovered: boolean('hovered', false),
       focused: boolean('focused', false),
-      error: boolean('error', false),
+      error: text('error', 'Something went wrong'),
     }
 
     const actions = {

@@ -23,13 +23,15 @@ export default {
       css`
         border-color: #9b9b9b;
       `,
-    focused: ({ focused }: Pick<Props, 'focused'>) =>
+    focused: ({ focused, error }: Pick<Props, 'focused' | 'error'>) =>
       focused &&
+      !error &&
       css`
         border-color: #0076ff;
       `,
-    error: ({ error }: Pick<Props, 'error'>) =>
+    error: ({ error, focused }: Pick<Props, 'error' | 'focused'>) =>
       error &&
+      !focused &&
       css`
         padding: calc(1rem - 1px);
         border: 2px solid #d0021b;

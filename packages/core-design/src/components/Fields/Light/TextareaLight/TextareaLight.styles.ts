@@ -15,15 +15,19 @@ const isHovered = (props: Props) =>
 
 const isFocused = (props: Props) =>
   props.focused &&
+  !props.error &&
   css`
     border-color: #0076ff;
   `
 
 const hasError = (props: Props) =>
   props.error &&
+  !props.focused &&
   css`
-    border-color: #d0021b;
-    color: #d0021b;
+    &:not(:focus) {
+      border-color: #d0021b;
+      color: #d0021b;
+    }
   `
 
 export { base, isHovered, isFocused, hasError }

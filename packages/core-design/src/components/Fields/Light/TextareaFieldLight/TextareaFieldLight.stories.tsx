@@ -23,11 +23,12 @@ storiesOf('TextareaFieldLight', module)
   .add('Uncontrolled', () => {
     const knobs = {
       label: text('label', 'Awesome label'),
+      value: text('value', 'Awesome text'),
       placeholder: text('placeholder', 'Placeholder'),
       disabled: boolean('disabled', false),
       hovered: boolean('hovered', false),
       focused: boolean('focused', false),
-      error: boolean('error', false),
+      error: text('error', 'Something went wrong'),
     }
 
     const actions = {

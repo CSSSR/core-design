@@ -18,7 +18,7 @@ import { UncontrolledTextareaFieldLight, TextareaFieldLight } from '@csssr/core-
 
 <UncontrolledTextareaFieldLight label="Empty Field" css={css`grid-column: 1 / span 3;`} value="" placeholder="Empty"/>
 <UncontrolledTextareaFieldLight label="Filled Field" css={css`grid-column: 4 / span 3;`} value="Filled"/>
-<UncontrolledTextareaFieldLight label="Error Field" css={css`grid-column: 7 / span 3;`} error={true} value="Has Error"/>
+<UncontrolledTextareaFieldLight label="Error Field" css={css`grid-column: 7 / span 3;`} value="Has Error" error="Error" />
 <UncontrolledTextareaFieldLight label="Focused Field" css={css`grid-column: 10 / span 3;`} focused={true} value="Focused"/>
 <UncontrolledTextareaFieldLight label="Hovered Field" css={css`margin-top: 20px; grid-column: 1 / span 3;`} hovered={true} value="Hovered"/>
 
@@ -29,7 +29,7 @@ import { UncontrolledTextareaFieldLight, TextareaFieldLight } from '@csssr/core-
 | Имя   | Допустимые значения | Значение по умолчанию | Комментарий                   |
 | ----- | ------------------- | --------------------- | ----------------------------- |
 | id    | строка              |                       | Уникальный идентификатор поля |
-| error | true \| false       |                       | Ошибка                        |
+| error | строка              |                       | Ошибка                        |
 
 ---
 

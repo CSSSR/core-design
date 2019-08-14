@@ -10,7 +10,7 @@ import { withValueState, withFocusedState, withHoveredState } from '../../../../
 import { TextareaLight } from './TextareaLight'
 
 const ControlledTextareaLight = withValueState()(
-  withFocusedState()(withHoveredState()(TextareaLight))
+  withFocusedState()(withHoveredState()(TextareaLight)),
 )
 
 storiesOf('TextareaLight', module)
@@ -37,7 +37,7 @@ storiesOf('TextareaLight', module)
   .add('Uncontrolled', () => {
     const knobs = {
       placeholder: text('placeholder', ''),
-      error: boolean('error', false),
+      error: text('error', 'Something went wrong'),
       hovered: boolean('hovered', false),
       focused: boolean('focused', false),
       value: text('value', 'Awesome text'),

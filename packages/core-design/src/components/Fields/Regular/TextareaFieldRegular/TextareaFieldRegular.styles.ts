@@ -1,5 +1,7 @@
 import { css } from '@emotion/core'
+import { Props } from '../InputRegular/InputRegular'
 import { InputLabelRegular } from '../InputLabelRegular'
+import { ErrorLabel } from '../../ErrorLabel'
 import isFieldActive, { IsFieldActiveOptions } from '../../../../utils/isFieldActive'
 
 export default {
@@ -10,12 +12,25 @@ export default {
     align-items: center;
     position: relative;
 
+    .textarea-regular {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      width: 100%;
+    }
+
     ${InputLabelRegular} {
       position: absolute;
       pointer-events: none;
       user-select: none;
       left: 1.125rem;
       top: 1.5rem;
+    }
+
+    ${ErrorLabel} {
+      margin-top: 0.625rem;
+      align-self: flex-start;
     }
   `,
   state: {
@@ -27,6 +42,17 @@ export default {
           background-color: #fff;
           width: calc(100% - 2rem);
           box-sizing: border-box;
+        }
+      `,
+    error: ({ error, focused }: Pick<Props, 'error' | 'focused'>) =>
+      error &&
+      !focused &&
+      css`
+        .textarea-regular {
+          padding-top: calc(1.5rem - 1px);
+          padding-bottom: calc(1.5rem - 1px);
+          padding-right: calc(1rem - 1px);
+          padding-left: calc(1rem - 1px);
         }
       `,
   },

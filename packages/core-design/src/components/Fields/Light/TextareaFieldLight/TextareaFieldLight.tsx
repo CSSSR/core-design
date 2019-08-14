@@ -3,45 +3,49 @@ import { PropsOf } from '@emotion/styled-base/types/helper'
 
 import { TextareaLight } from '../TextareaLight'
 import { InputLabelLight } from '../InputLabelLight'
+import { ErrorLabel } from '../../ErrorLabel'
 
-import { wrapper, label as labelStyles } from './TextareaFieldLight.styles'
+import styles from './TextareaFieldLight.styles'
 
 export interface Props extends PropsOf<typeof TextareaLight> {
   label?: string
   id?: string
-  error?: boolean
+  error?: string
   hovered?: boolean
   focused?: boolean
   className?: string
 }
 
-const Wrapper = styled.div`
-  ${wrapper}
+const TextareaFieldLightOrigin: React.FC<Props> = ({
+  label,
+  id,
+  error,
+  hovered,
+  focused,
+  className,
+  ...rest
+}) => (
+  <div className={className}>
+    <TextareaLight
+      id={id}
+      className="textarea-light"
+      error={error}
+      hovered={hovered}
+      focused={focused}
+      {...rest}
+    />
+    {label && (
+      <InputLabelLight htmlFor={id} error={error}>
+        {label}
+      </InputLabelLight>
+    )}
+    {error && <ErrorLabel>{error}</ErrorLabel>}
+  </div>
+)
+
+const TextareaFieldLight = styled(TextareaFieldLightOrigin)`
+  ${styles.base}
 `
-
-const Label = styled(InputLabelLight)`
-  ${labelStyles}
-`
-
-const Textarea = styled(TextareaLight)`
-  width: 100%;
-  box-sizing: border-box;
-`
-
-const TextareaFieldLight: React.FC<Props> = props => {
-  const { label, id, error, hovered, focused, className, ...rest } = props
-
-  return (
-    <Wrapper className={className}>
-      <Textarea id={id} error={error} hovered={hovered} focused={focused} {...rest} />
-      {label && (
-        <Label htmlFor={id} error={error}>
-          {label}
-        </Label>
-      )}
-    </Wrapper>
-  )
-}
 
 export { TextareaFieldLight }
 

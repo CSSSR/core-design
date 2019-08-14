@@ -18,7 +18,7 @@ import { UncontrolledTextFieldLight, TextFieldLight } from '@csssr/core-design'
 
 <UncontrolledTextFieldLight label="Empty Field" value="" placeholder="Empty" css={css`grid-column: 1 / span 3;`} />
 <UncontrolledTextFieldLight label="Filled Field" value="Filled" css={css`grid-column: 4 / span 3;`} />
-<UncontrolledTextFieldLight label="Error Field" error={true} value="Has Error" css={css`grid-column: 7 / span 3;`} />
+<UncontrolledTextFieldLight label="Error Field" error="Error" value="Has Error" css={css`grid-column: 7 / span 3;`} />
 <UncontrolledTextFieldLight label="Focused Field" focused={true} value="Focused" css={css`grid-column: 10 / span 3;`} />
 <UncontrolledTextFieldLight label="Hovered Field" hovered={true} value="Hovered" css={css`margin-top: 20px; grid-column: 1 / span 3;`} />
 
@@ -29,7 +29,7 @@ import { UncontrolledTextFieldLight, TextFieldLight } from '@csssr/core-design'
 | Имя   | Допустимые значения | Значение по умолчанию | Комментарий                   |
 | ----- | ------------------- | --------------------- | ----------------------------- |
 | id    | строка              |                       | Уникальный идентификатор поля |
-| error | true \| false       |                       | Ошибка                        |
+| error | строка              |                       | Ошибка                        |
 
 Можно также передать все нативные аргументы элемента [input](http://htmlbook.ru/html/input).
 

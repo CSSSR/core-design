@@ -1,9 +1,12 @@
 import styled from '@emotion/styled'
 import { PropsOf } from '@emotion/styled-base/types/helper'
 import isFieldActive from '../../../../utils/isFieldActive'
-import styles from './TextFieldRegular.styles'
+
 import { InputLabelRegular } from '../InputLabelRegular'
 import { InputRegular } from '../InputRegular'
+import { ErrorLabel } from '../../ErrorLabel'
+
+import styles from './TextFieldRegular.styles'
 
 export interface Props extends PropsOf<typeof InputRegular> {
   label?: string
@@ -30,6 +33,7 @@ const TextFieldRegularOrigin: React.FC<Props> = props => {
           {label}
         </InputLabelRegular>
       )}
+      {error && <ErrorLabel>{error}</ErrorLabel>}
     </div>
   )
 }

@@ -1,21 +1,16 @@
 import styled from '@emotion/styled'
 import { PropsOf } from '@emotion/styled-base/types/helper'
-import { InputLabelRegular } from '../InputLabelRegular'
-import { InputRegular } from '../InputRegular'
-import styles from './TextareaFieldRegular.styles'
 import isFieldActive from '../../../../utils/isFieldActive'
 
-const TextareaOrigin = InputRegular.withComponent('textarea')
-const Textarea = styled(TextareaOrigin)`
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  width: 100%;
-  line-height: 1.75rem;
-`
+import { InputLabelRegular } from '../InputLabelRegular'
+import { InputRegular } from '../InputRegular'
+import { ErrorLabel } from '../../ErrorLabel'
 
-export interface Props extends PropsOf<typeof Textarea> {
+import styles from './TextareaFieldRegular.styles'
+
+const TextareaRegular = InputRegular.withComponent('textarea')
+
+export interface Props extends PropsOf<typeof TextareaRegular> {
   label?: string
   active?: boolean
 }
@@ -26,13 +21,22 @@ const TextareaFieldRegularOrigin: React.FC<Props> = props => {
 
   return (
     <div className={className}>
-      <Textarea id={id} error={error} hovered={hovered} focused={focused} value={value} {...rest} />
+      <TextareaRegular
+        id={id}
+        className="textarea-regular"
+        error={error}
+        hovered={hovered}
+        focused={focused}
+        value={value}
+        {...rest}
+      />
 
       {label && (
         <InputLabelRegular htmlFor={id} error={error} active={isActive}>
           {label}
         </InputLabelRegular>
       )}
+      {error && <ErrorLabel>{error}</ErrorLabel>}
     </div>
   )
 }
@@ -40,7 +44,8 @@ const TextareaFieldRegularOrigin: React.FC<Props> = props => {
 const TextareaFieldRegular = styled(TextareaFieldRegularOrigin)`
   ${styles.base}
   ${styles.state.active}
+  ${styles.state.error}
 `
 
-export { TextareaFieldRegular, Textarea }
+export { TextareaFieldRegular }
 export default TextareaFieldRegular
