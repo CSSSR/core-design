@@ -14,7 +14,7 @@ storiesOf('InputLight', module)
   .addDecorator(withKnobs)
   .add('Empty', () => {
     const knobs = {
-      error: boolean('error', false),
+      error: text('error', 'Something went wrong'),
       hovered: boolean('hovered', false),
       focused: boolean('focused', false),
     }

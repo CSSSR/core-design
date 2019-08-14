@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs, text } from '@storybook/addon-knobs'
 import Root from '../../../Root'
 import { InputLabelLight } from './InputLabelLight'
 
@@ -7,7 +7,7 @@ storiesOf('InputLabelLight', module)
   .addDecorator(withKnobs)
   .add('All (knobs)', () => {
     const knobs = {
-      error: boolean('error', false),
+      error: text('error', 'Something went wrong'),
     }
 
     return (
