@@ -27,7 +27,7 @@ storiesOf('InputLight', module)
   })
   .add('Filled', () => {
     const knobs = {
-      error: boolean('error', false),
+      error: text('error', 'Something went wrong'),
       hovered: boolean('hovered', false),
       focused: boolean('focused', false),
       value: text('value', 'Awesome text'),

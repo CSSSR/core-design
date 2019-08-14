@@ -26,7 +26,7 @@ storiesOf('InputLabelLight', module)
   .add('Has error', () => {
     return (
       <Root>
-        <InputLabelLight error={true}>Awesome Label</InputLabelLight>
+        <InputLabelLight error="Something went wrong">Awesome Label</InputLabelLight>
       </Root>
     )
   })
