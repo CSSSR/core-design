@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import styles from './InputRegular.styles'
 
 export interface Props {
-  error?: boolean
+  error?: string
   hovered?: boolean
   focused?: boolean
 }

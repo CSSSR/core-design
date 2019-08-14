@@ -1,14 +1,26 @@
 import { css } from '@emotion/core'
+import { TextareaLight } from '../TextareaLight'
+import { InputLabelLight } from '../InputLabelLight'
+import { ErrorLabel } from '../../ErrorLabel'
 
-const wrapper = css`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 10rem;
-`
+export default {
+  base: () => css`
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 10rem;
 
-const label = css`
-  margin-top: 0.25rem;
-`
+    ${TextareaLight} {
+      width: 100%;
+      box-sizing: border-box;
+    }
 
-export { wrapper, label }
+    ${InputLabelLight} {
+      margin-top: 0.25rem;
+    }
+
+    ${ErrorLabel} {
+      margin-top: -0.1875rem;
+    }
+  `,
+}

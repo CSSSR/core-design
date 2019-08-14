@@ -4,9 +4,6 @@ import { base, isHovered, hasError, isFocused } from './TextareaLight.styles'
 import { PropsOf } from 'emotion-theming/types/helper'
 
 const InputLightAsTextarea = InputLight.withComponent('textarea')
-
-export type Props = PropsOf<typeof InputLightAsTextarea>
-
 const TextareaLight = styled(InputLightAsTextarea)`
   ${base}
   ${isHovered}
@@ -14,6 +11,6 @@ const TextareaLight = styled(InputLightAsTextarea)`
   ${hasError}
 `
 
+export type Props = PropsOf<typeof InputLightAsTextarea>
 export { TextareaLight }
-
 export default TextareaLight

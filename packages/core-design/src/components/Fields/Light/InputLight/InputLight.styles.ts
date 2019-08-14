@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-
+import { InputLabelLight } from '../InputLabelLight'
 import { Props } from './InputLight'
 
 const base = css`
@@ -36,17 +36,24 @@ const isHovered = ({ hovered }: Pick<Props, 'hovered'>) =>
     border-color: #9b9b9b;
   `
 
-const isFocused = ({ focused }: Pick<Props, 'focused'>) =>
+const isFocused = ({ focused, error }: Pick<Props, 'focused' | 'error'>) =>
   focused &&
+  !error &&
   css`
     border-color: #0076ff;
+
+    & + ${InputLabelLight} {
+      color: #0076ff;
+    }
   `
 
 const hasError = ({ error }: Pick<Props, 'error'>) =>
   error &&
   css`
-    border-bottom-color: #d0021b;
-    color: #d0021b;
+    input:not(:focus) {
+      border-bottom-color: #d0021b;
+      color: #d0021b;
+    }
   `
 
 export { base, isHovered, isFocused, hasError }

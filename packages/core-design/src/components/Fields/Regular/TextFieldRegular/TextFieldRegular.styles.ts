@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
 import { InputLabelRegular } from '../InputLabelRegular'
 import { InputRegular } from '../InputRegular'
+import { ErrorLabel } from '../../ErrorLabel'
 import isFieldActive, { IsFieldActiveOptions } from '../../../../utils/isFieldActive'
 
 export default {
@@ -22,10 +23,15 @@ export default {
 
     ${InputLabelRegular} {
       position: absolute;
-      top: ${isFieldActive({ value, focused }) ? '0.5rem' : 'auto'};
+      top: ${isFieldActive({ value, focused }) ? '0.5rem' : '1.5rem'};
       left: 1.125rem;
       pointer-events: none;
       user-select: none;
+    }
+
+    ${ErrorLabel} {
+      margin-top: 0.625rem;
+      align-self: flex-start;
     }
   `,
 }
