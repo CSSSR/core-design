@@ -34,6 +34,8 @@ storiesOf('TextFieldRegular', module)
       disabled: boolean('disabled', false),
       hovered: boolean('hovered', false),
       focused: boolean('focused', false),
+      fullWidth: boolean('fullWidth', false),
+      fullHeight: boolean('fullHeight', false),
       error: text('error', 'Something went wrong'),
     }
 
