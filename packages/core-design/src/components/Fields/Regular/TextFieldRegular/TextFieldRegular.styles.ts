@@ -2,36 +2,73 @@ import { css } from '@emotion/core'
 import { InputLabelRegular } from '../InputLabelRegular'
 import { InputRegular } from '../InputRegular'
 import { ErrorLabel } from '../../ErrorLabel'
-import isFieldActive, { IsFieldActiveOptions } from '../../../../utils/isFieldActive'
+import isFieldActive from '../../../../utils/isFieldActive'
+
+export interface IFieldOptions {
+  value: string | number | string[]
+  focused: boolean
+  fullSize: boolean
+}
+
+const getInputStyles = (fullSize: boolean) =>
+  fullSize
+    ? css`
+        height: 100%;
+        font-size: inherit;
+      `
+    : css`
+        height: 4rem;
+        max-height: 4rem;
+      `
+const getLabelTop = ({ value, focused, fullSize }: IFieldOptions) => css`
+  top: ${isFieldActive({ value, focused })
+    ? fullSize
+      ? '15%'
+      : '0.5rem'
+    : fullSize
+    ? '50%'
+    : '1.5rem'};
+  ${fullSize ? 'transform: translateY(-50%);' : ''}
+`
+const getErrorStyles = (fullSize: boolean) =>
+  fullSize
+    ? css`
+        position: absolute;
+        bottom: -1.5rem;
+        left: 0;
+      `
+    : css`
+        margin-top: 0.625rem;
+        align-self: flex-start;
+      `
 
 export default {
-  base: ({ value, focused }: IsFieldActiveOptions) => css`
+  base: ({ value, focused, fullSize }: IFieldOptions) => css`
     position: relative;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: ${fullSize ? '100%' : 'auto'};
 
     ${InputRegular} {
       width: 100%;
       padding-bottom: 0;
       padding-top: 1.5rem;
       padding-bottom: 0.5rem;
-      height: 4rem;
-      max-height: 4rem;
+      ${getInputStyles(fullSize)}
     }
 
     ${InputLabelRegular} {
       position: absolute;
-      top: ${isFieldActive({ value, focused }) ? '0.5rem' : '1.5rem'};
+      ${getLabelTop({ value, focused, fullSize })}
       left: 1.125rem;
       pointer-events: none;
       user-select: none;
     }
 
     ${ErrorLabel} {
-      margin-top: 0.625rem;
-      align-self: flex-start;
+      ${getErrorStyles(fullSize)}
     }
   `,
 }

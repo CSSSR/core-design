@@ -14,7 +14,7 @@ export interface Props extends PropsOf<typeof InputRegular> {
 }
 
 const TextFieldRegularOrigin: React.FC<Props> = props => {
-  const { label, id, error, hovered, focused, value, className, ...rest } = props
+  const { label, id, error, hovered, focused, value, className, fullSize, ...rest } = props
   const isActive = isFieldActive({ value, focused })
 
   return (
@@ -25,6 +25,7 @@ const TextFieldRegularOrigin: React.FC<Props> = props => {
         hovered={hovered}
         focused={focused}
         value={value}
+        fullSize
         {...rest}
       />
 
