@@ -11,11 +11,12 @@ import styles from './TextFieldRegular.styles'
 export interface Props extends PropsOf<typeof InputRegular> {
   label?: string
   active?: boolean
-  fullSize?: boolean
+  fullHeight?: boolean
+  fullWidth?: boolean
 }
 
 const TextFieldRegularOrigin: React.FC<Props> = props => {
-  const { label, id, error, hovered, focused, value, className, fullSize, ...rest } = props
+  const { label, id, error, hovered, focused, value, className, fullHeight, fullWidth, ...rest } = props
   const isActive = isFieldActive({ value, focused })
 
   return (
@@ -26,7 +27,8 @@ const TextFieldRegularOrigin: React.FC<Props> = props => {
         hovered={hovered}
         focused={focused}
         value={value}
-        fullSize
+        fullHeight
+        fullWidth
         {...rest}
       />
 

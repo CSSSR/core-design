@@ -5,7 +5,8 @@ export interface Props {
   error?: string
   hovered?: boolean
   focused?: boolean
-  fullSize?: boolean
+  fullHeight?: boolean
+  fullWidth?: boolean
 }
 
 const InputRegular = styled.input<Props>`
