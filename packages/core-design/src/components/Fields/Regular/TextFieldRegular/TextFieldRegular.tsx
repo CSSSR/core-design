@@ -11,6 +11,7 @@ import styles from './TextFieldRegular.styles'
 export interface Props extends PropsOf<typeof InputRegular> {
   label?: string
   active?: boolean
+  fullSize?: boolean
 }
 
 const TextFieldRegularOrigin: React.FC<Props> = props => {
