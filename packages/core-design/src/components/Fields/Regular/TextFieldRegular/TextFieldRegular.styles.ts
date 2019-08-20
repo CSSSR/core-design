@@ -50,6 +50,7 @@ export default {
     justify-content: center;
     align-items: center;
     height: ${fullSize ? '100%' : 'auto'};
+    width: ${fullSize ? '100%' : 'auto'};
 
     ${InputRegular} {
       width: 100%;
