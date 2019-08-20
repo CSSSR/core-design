@@ -7,7 +7,7 @@ import isFieldActive from '../../../../utils/isFieldActive'
 export interface IFieldOptions {
   value: string | number | string[]
   focused: boolean
-  fullSize: boolean
+  fullSize?: boolean
 }
 
 const getInputStyles = (fullSize: boolean) =>
