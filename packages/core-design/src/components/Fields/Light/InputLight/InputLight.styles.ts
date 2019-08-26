@@ -60,9 +60,9 @@ const isSuccessed = (props: Props) =>
   props.success &&
   !props.error &&
   css`
-    border-bottom-color: #64c38f;
+    border-bottom-color: #339900;
     & + ${InputLabelLight} {
-      color: #64c38f;
+      color: #339900;
     }
   `
 

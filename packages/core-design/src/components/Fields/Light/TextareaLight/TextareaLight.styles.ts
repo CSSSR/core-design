@@ -25,7 +25,7 @@ const isSuccessed = (props: Props) =>
   !props.error &&
   css`
     &:not(:focus) {
-      border-color: #64c38f;
+      border-color: #339900;
     }
   `
 

@@ -19,7 +19,7 @@ const isSuccessed = (props: Props) =>
   props.success &&
   !props.error &&
   css`
-    color: #64c38f;
+    color: #339900;
   `
 
 export { base, hasError, isSuccessed }

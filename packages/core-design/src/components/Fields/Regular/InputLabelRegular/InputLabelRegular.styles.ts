@@ -26,7 +26,7 @@ export default {
       !error &&
       success &&
       css`
-        color: #64c38f;
+        color: #339900;
       `,
   },
 }
