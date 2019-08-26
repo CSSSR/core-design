@@ -20,6 +20,15 @@ const isFocused = (props: Props) =>
     border-color: #0076ff;
   `
 
+const isSuccessed = (props: Props) =>
+  props.success &&
+  !props.error &&
+  css`
+    &:not(:focus) {
+      border-color: #339900;
+    }
+  `
+
 const hasError = (props: Props) =>
   props.error &&
   !props.focused &&
@@ -30,4 +39,4 @@ const hasError = (props: Props) =>
     }
   `
 
-export { base, isHovered, isFocused, hasError }
+export { base, isHovered, isFocused, hasError, isSuccessed }

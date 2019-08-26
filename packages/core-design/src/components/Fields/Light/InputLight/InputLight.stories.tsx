@@ -30,6 +30,7 @@ storiesOf('InputLight', module)
       error: text('error', 'Something went wrong'),
       hovered: boolean('hovered', false),
       focused: boolean('focused', false),
+      success: boolean('success', false),
       value: text('value', 'Awesome text'),
     }
 

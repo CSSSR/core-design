@@ -4,12 +4,13 @@ import isFieldActive from '../../../../utils/isFieldActive'
 
 import { InputLabelRegular } from '../InputLabelRegular'
 import { InputRegular } from '../InputRegular'
-import { ErrorLabel } from '../../ErrorLabel'
+import { Hint } from '../../Hint'
 
 import styles from './TextFieldRegular.styles'
 
 export interface Props extends PropsOf<typeof InputRegular> {
   label?: string
+  hint?: string
   active?: boolean
   fullHeight?: boolean
   fullWidth?: boolean
@@ -20,8 +21,10 @@ const TextFieldRegularOrigin: React.FC<Props> = props => {
     label,
     id,
     error,
+    hint,
     hovered,
     focused,
+    success,
     value,
     className,
     fullHeight,
@@ -37,6 +40,7 @@ const TextFieldRegularOrigin: React.FC<Props> = props => {
         error={error}
         hovered={hovered}
         focused={focused}
+        success={success}
         value={value}
         fullHeight
         fullWidth
@@ -44,11 +48,11 @@ const TextFieldRegularOrigin: React.FC<Props> = props => {
       />
 
       {label && (
-        <InputLabelRegular htmlFor={id} error={error} active={isActive}>
+        <InputLabelRegular htmlFor={id} error={error} success={success} active={isActive}>
           {label}
         </InputLabelRegular>
       )}
-      {error && <ErrorLabel>{error}</ErrorLabel>}
+      <Hint success={success} error={error} hint={hint} />
     </div>
   )
 }

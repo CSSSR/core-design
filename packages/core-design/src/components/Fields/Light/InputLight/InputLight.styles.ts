@@ -56,4 +56,14 @@ const hasError = ({ error }: Pick<Props, 'error'>) =>
     }
   `
 
-export { base, isHovered, isFocused, hasError }
+const isSuccessed = (props: Props) =>
+  props.success &&
+  !props.error &&
+  css`
+    border-bottom-color: #339900;
+    & + ${InputLabelLight} {
+      color: #339900;
+    }
+  `
+
+export { base, isHovered, isFocused, hasError, isSuccessed }

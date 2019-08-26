@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { InputLabelRegular } from '../InputLabelRegular'
 import { InputRegular } from '../InputRegular'
-import { ErrorLabel } from '../../ErrorLabel'
+import { Hint } from '../../Hint'
 import isFieldActive from '../../../../utils/isFieldActive'
 
 export interface IFieldOptions {
@@ -31,7 +31,7 @@ const getLabelTop = ({ value, focused, fullHeight }: IFieldOptions) => css`
     : '1.5rem'};
   ${fullHeight ? 'transform: translateY(-50%);' : ''}
 `
-const getErrorStyles = (fullHeight: boolean) =>
+const getHintStyles = (fullHeight: boolean) =>
   fullHeight
     ? css`
         position: absolute;
@@ -69,8 +69,8 @@ export default {
       user-select: none;
     }
 
-    ${ErrorLabel} {
-      ${getErrorStyles(fullHeight)}
+    ${Hint} {
+      ${getHintStyles(fullHeight)}
     }
   `,
 }

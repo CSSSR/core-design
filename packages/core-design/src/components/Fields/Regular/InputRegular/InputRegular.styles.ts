@@ -29,6 +29,12 @@ export default {
       css`
         border-color: #0076ff;
       `,
+    success: ({ success, error }: Pick<Props, 'success' | 'error'>) =>
+      success &&
+      !error &&
+      css`
+        border-color: #339900;
+      `,
     error: ({ error, focused }: Pick<Props, 'error' | 'focused'>) =>
       error &&
       !focused &&

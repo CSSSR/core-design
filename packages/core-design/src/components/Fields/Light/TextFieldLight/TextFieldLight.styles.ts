@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { InputLight } from '../InputLight'
 import { InputLabelLight } from '../InputLabelLight'
-import { ErrorLabel } from '../../ErrorLabel'
+import { Hint } from '../../Hint'
 
 export default {
   base: () => css`
@@ -19,7 +19,7 @@ export default {
       margin-top: 0.25rem;
     }
 
-    ${ErrorLabel} {
+    ${Hint} {
       margin-top: -0.1875rem;
     }
   `,

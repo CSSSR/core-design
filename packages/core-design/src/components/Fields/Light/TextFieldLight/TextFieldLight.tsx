@@ -3,7 +3,7 @@ import { PropsOf } from '@emotion/styled-base/types/helper'
 
 import { InputLight } from '../InputLight'
 import { InputLabelLight } from '../InputLabelLight'
-import { ErrorLabel } from '../../ErrorLabel'
+import { Hint } from '../../Hint'
 
 import styles from './TextFieldLight.styles'
 
@@ -13,7 +13,9 @@ export interface Props extends PropsOf<typeof InputLight> {
   error?: string
   hovered?: boolean
   focused?: boolean
+  success?: boolean
   className?: string
+  hint?: string
 }
 
 const TextFieldLightOrigin: React.FC<Props> = ({
@@ -22,17 +24,19 @@ const TextFieldLightOrigin: React.FC<Props> = ({
   error,
   hovered,
   focused,
+  success,
+  hint,
   className,
   ...rest
 }) => (
   <div className={className}>
     <InputLight id={id} error={error} hovered={hovered} focused={focused} {...rest} />
     {label && (
-      <InputLabelLight htmlFor={id} error={error}>
+      <InputLabelLight htmlFor={id} error={error} success={success}>
         {label}
       </InputLabelLight>
     )}
-    {error && <ErrorLabel>{error}</ErrorLabel>}
+    <Hint success={success} error={error} hint={hint} />
   </div>
 )
 
