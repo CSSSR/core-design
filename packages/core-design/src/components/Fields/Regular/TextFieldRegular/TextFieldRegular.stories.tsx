@@ -37,6 +37,8 @@ storiesOf('TextFieldRegular', module)
       fullWidth: boolean('fullWidth', false),
       fullHeight: boolean('fullHeight', false),
       error: text('error', 'Something went wrong'),
+      success: boolean('success', false),
+      hint: text('hint', 'Some hint'),
     }
 
     const actions = {

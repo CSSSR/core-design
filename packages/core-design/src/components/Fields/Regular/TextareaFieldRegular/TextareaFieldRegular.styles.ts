@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { Props } from '../InputRegular/InputRegular'
 import { InputLabelRegular } from '../InputLabelRegular'
-import { ErrorLabel } from '../../ErrorLabel'
+import { Hint } from '../../Hint'
 import isFieldActive, { IsFieldActiveOptions } from '../../../../utils/isFieldActive'
 
 export default {
@@ -28,7 +28,7 @@ export default {
       top: 1.5rem;
     }
 
-    ${ErrorLabel} {
+    ${Hint} {
       margin-top: 0.625rem;
       align-self: flex-start;
     }
@@ -43,6 +43,12 @@ export default {
           width: calc(100% - 2rem);
           box-sizing: border-box;
         }
+      `,
+    success: ({ success, error }: Pick<Props, 'success' | 'error'>) =>
+      success &&
+      !error &&
+      css`
+        border-color: #64c38f;
       `,
     error: ({ error, focused }: Pick<Props, 'error' | 'focused'>) =>
       error &&

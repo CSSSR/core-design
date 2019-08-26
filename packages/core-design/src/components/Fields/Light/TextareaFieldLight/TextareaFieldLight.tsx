@@ -3,7 +3,7 @@ import { PropsOf } from '@emotion/styled-base/types/helper'
 
 import { TextareaLight } from '../TextareaLight'
 import { InputLabelLight } from '../InputLabelLight'
-import { ErrorLabel } from '../../ErrorLabel'
+import { Hint } from '../../Hint'
 
 import styles from './TextareaFieldLight.styles'
 
@@ -13,7 +13,9 @@ export interface Props extends PropsOf<typeof TextareaLight> {
   error?: string
   hovered?: boolean
   focused?: boolean
+  success?: boolean
   className?: string
+  hint?: string
 }
 
 const TextareaFieldLightOrigin: React.FC<Props> = ({
@@ -22,6 +24,8 @@ const TextareaFieldLightOrigin: React.FC<Props> = ({
   error,
   hovered,
   focused,
+  success,
+  hint,
   className,
   ...rest
 }) => (
@@ -30,16 +34,17 @@ const TextareaFieldLightOrigin: React.FC<Props> = ({
       id={id}
       className="textarea-light"
       error={error}
+      success={success}
       hovered={hovered}
       focused={focused}
       {...rest}
     />
     {label && (
-      <InputLabelLight htmlFor={id} error={error}>
+      <InputLabelLight htmlFor={id} error={error} success={success}>
         {label}
       </InputLabelLight>
     )}
-    {error && <ErrorLabel>{error}</ErrorLabel>}
+    <Hint success={success} error={error} hint={hint} />
   </div>
 )
 

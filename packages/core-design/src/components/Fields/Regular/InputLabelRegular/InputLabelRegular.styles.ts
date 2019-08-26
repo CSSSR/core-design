@@ -22,5 +22,11 @@ export default {
       css`
         color: #d0021b;
       `,
+    success: ({ error, success }: Pick<Props, 'error' | 'success'>) =>
+      !error &&
+      success &&
+      css`
+        color: #64c38f;
+      `,
   },
 }

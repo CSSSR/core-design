@@ -15,4 +15,11 @@ const hasError = ({ error }: Pick<Props, 'error'>) =>
     color: #d0021b;
   `
 
-export { base, hasError }
+const isSuccessed = (props: Props) =>
+  props.success &&
+  !props.error &&
+  css`
+    color: #64c38f;
+  `
+
+export { base, hasError, isSuccessed }

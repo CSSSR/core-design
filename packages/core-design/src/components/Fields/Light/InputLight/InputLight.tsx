@@ -1,10 +1,11 @@
 import styled from '@emotion/styled'
 
-import { base, isHovered, isFocused, hasError } from './InputLight.styles'
+import { base, isHovered, isFocused, hasError, isSuccessed } from './InputLight.styles'
 
 export interface Props {
   focused?: boolean
   hovered?: boolean
+  success?: boolean
   error?: string
 }
 
@@ -13,6 +14,7 @@ const InputLight = styled.input<Props>`
   ${isHovered}
   ${isFocused}
   ${hasError}
+  ${isSuccessed}
 `
 
 InputLight.defaultProps = {
