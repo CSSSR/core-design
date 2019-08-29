@@ -66,7 +66,7 @@ const heading_regular_m = (props: ThemeProps) => css`
   color: ${props.theme.colors.secondary.origin};
 
   ${props.theme.breakpoints.below.desktop} {
-    font-size: 1.1875rem;
+    font-size: 1.25rem;
     line-height: 1.5rem;
   }
 `
@@ -94,7 +94,7 @@ const subhead_regular = (props: ThemeProps) => css`
 
   ${props.theme.breakpoints.below.desktop} {
     margin-top: 1rem;
-    font-size: 1.1875rem;
+    font-size: 1.25rem;
     line-height: 2rem;
   }
 `
@@ -149,7 +149,7 @@ const paragraph_strong_m = (props: ThemeProps) => css`
   ${props.theme.breakpoints.below.desktop} {
     margin-top: 1rem;
     font-size: 0.875rem;
-    line-height: 1.1875rem;
+    line-height: 1.25rem;
   }
 `
 
