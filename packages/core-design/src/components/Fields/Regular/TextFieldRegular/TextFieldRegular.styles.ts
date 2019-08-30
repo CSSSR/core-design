@@ -14,10 +14,12 @@ export interface IFieldOptions {
 const getInputStyles = (fullHeight: boolean) =>
   fullHeight
     ? css`
+        padding-top: 1.2rem;
         height: 100%;
         font-size: inherit;
       `
     : css`
+        padding-top: 1.5rem;
         height: 4rem;
         max-height: 4rem;
       `
@@ -29,13 +31,13 @@ const getLabelTop = ({ value, focused, fullHeight }: IFieldOptions) => css`
     : fullHeight
     ? '50%'
     : '1.5rem'};
-  ${fullHeight ? 'transform: translateY(-50%);' : ''}
+  ${fullHeight && !isFieldActive({ value, focused }) ? 'transform: translateY(-50%);' : ''}
 `
 const getHintStyles = (fullHeight: boolean) =>
   fullHeight
     ? css`
         position: absolute;
-        bottom: -1.5rem;
+        bottom: -1.2rem;
         left: 0;
       `
     : css`
@@ -56,7 +58,6 @@ export default {
     ${InputRegular} {
       width: 100%;
       padding-bottom: 0;
-      padding-top: 1.5rem;
       padding-bottom: 0.5rem;
       ${getInputStyles(fullHeight)}
     }
