@@ -5,18 +5,57 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const nextConfig = {
   webpack: (config, { dev }) => {
     const withImages = () => {
-      config.module.rules.push({
-        test: /\.(jpe?g|png|gif|webp|svg|ico)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              publicPath: '/_next',
-              name: '[path][name]-[hash:8].[ext]',
-            },
+      const svgrLoaderConfig = {
+        loader: '@svgr/webpack',
+        options: {
+          svgoConfig: {
+            plugins: [
+              { inlineStyles: false },
+              { prefixIds: false },
+              {
+                cleanupNumericValues: {
+                  floatPrecision: 3,
+                },
+              },
+            ],
           },
-        ],
-      })
+        },
+      }
+
+      const svgrLoaderConfigWithOutSvgo = {
+        ...svgrLoaderConfig,
+        options: {
+          ...svgrLoaderConfig.options,
+          svgo: false,
+        },
+      }
+
+      const fileLoaderConfig = {
+        loader: 'file-loader',
+        options: {
+          publicPath: '/_next',
+          name: '[path][name]-[hash:8].[ext]',
+        },
+      }
+
+      config.module.rules.push(
+        {
+          test: /\.(jpe?g|png|gif|webp|ico)$/,
+          use: [fileLoaderConfig],
+        },
+        {
+          test: /\.svg$/,
+          oneOf: [
+            {
+              resourceQuery: /original/,
+              use: [svgrLoaderConfigWithOutSvgo, fileLoaderConfig],
+            },
+            {
+              use: [svgrLoaderConfig, fileLoaderConfig],
+            },
+          ],
+        },
+      )
     }
 
     const withCompression = () => {
