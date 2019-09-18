@@ -1,0 +1,45 @@
+require('dotenv').config()
+
+const path = require('path')
+const express = require('express')
+const expressStaticGzip = require('express-static-gzip')
+const next = require('next')
+const { isDevelopment } = require('../utils/app-environment')
+
+const port = parseInt(process.env.PORT, 10) || 3000
+const app = next({ dev: isDevelopment })
+const handle = app.getRequestHandler()
+
+app.prepare().then(() => {
+  const server = express()
+
+  // Отключаем хедер x-powered-by. Зачем разглашать информацию, какой веб-сервер/фреймворк мы используем?
+  server.disable('x-powered-by')
+
+  if (!isDevelopment) {
+    server.get(/^\/_next\/static\/(fonts|icons|images)\//, (req, res, nextHandler) => {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+      nextHandler()
+    })
+
+    server.use(
+      '/_next',
+      expressStaticGzip(path.join(__dirname, '../.next'), {
+        enableBrotli: true,
+        orderPreference: ['br'],
+        setHeaders: res => {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+        },
+      }),
+    )
+  }
+
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  })
+
+  server.listen(port, err => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  })
+})

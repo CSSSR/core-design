@@ -1,41 +1,47 @@
 const withPlugins = require('next-compose-plugins')
 const withFonts = require('next-fonts')
+const CompressionPlugin = require('compression-webpack-plugin')
 
-const withImages = (nextConfig = {}) => ({
-  ...nextConfig,
-  webpack(config, options) {
-    config.module.rules.push({
-      test: /\.(jpe?g|png|gif|webp|svg|ico)$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            publicPath: '/_next',
-            name: '[path][name]-[hash:8].[ext]',
+const nextConfig = {
+  webpack: (config, { dev }) => {
+    const withImages = () => {
+      config.module.rules.push({
+        test: /\.(jpe?g|png|gif|webp|svg|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: '/_next',
+              name: '[path][name]-[hash:8].[ext]',
+            },
           },
-        },
-      ],
-    })
+        ],
+      })
+    }
+
+    const withCompression = () => {
+      if (!dev) {
+        config.plugins.push(
+          new CompressionPlugin({
+            test: /\.js$|\.css$|\.html$/,
+            threshold: 10240,
+          }),
+          new CompressionPlugin({
+            test: /\.js$|\.css$|\.html$/,
+            algorithm: 'brotliCompress',
+            filename: '[path].br[query]',
+            compressionOptions: { level: 11 },
+            threshold: 10240,
+          }),
+        )
+      }
+    }
+
+    withImages()
+    withCompression()
 
     return config
   },
-})
-
-const config = {
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/{{repoName}}' : '',
-  exportPathMap: function() {
-    /*
-      Код ниже следует раскомментить, если вы собираетесь использовать GitHub Pages для деплоя.
-
-      В объект exportPathMap следует добавлять те страницы, которые должны будут экспорироваться и быть видны на GitHub Pages.
-
-      К примеру, после создания файла страницы `examplePage.jsx` в директории `pages`, нужно добавить такую строчку:
-      '/examplePage': { page: '/examplePage' },
-    */
-    return {
-      '/': { page: '/' },
-    }
-  },
 }
 
-module.exports = withPlugins([withImages, withFonts], /* config */ )
+module.exports = withPlugins([withFonts], nextConfig)
