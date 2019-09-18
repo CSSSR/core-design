@@ -1,41 +1,63 @@
 const withPlugins = require('next-compose-plugins')
 const withFonts = require('next-fonts')
 
-const withImages = (nextConfig = {}) => ({
-  ...nextConfig,
-  webpack(config, options) {
-    config.module.rules.push({
-      test: /\.(jpe?g|png|gif|webp|svg|ico)$/,
-      use: [
+const svgrLoaderConfig = {
+  loader: '@svgr/webpack',
+  options: {
+    svgoConfig: {
+      plugins: [
+        { inlineStyles: false },
+        { prefixIds: false },
         {
-          loader: 'file-loader',
-          options: {
-            publicPath: '/_next',
-            name: '[path][name]-[hash:8].[ext]',
+          cleanupNumericValues: {
+            floatPrecision: 3,
           },
         },
       ],
-    })
+    },
+  },
+}
+
+const svgrLoaderConfigWithOutSvgo = {
+  ...svgrLoaderConfig,
+  options: {
+    ...svgrLoaderConfig.options,
+    svgo: false,
+  },
+}
+
+const fileLoaderConfig = {
+  loader: 'file-loader',
+  options: {
+    publicPath: '/_next',
+    name: '[path][name]-[hash:8].[ext]',
+  },
+}
+
+const withImages = (nextConfig = {}) => ({
+  ...nextConfig,
+  webpack(config) {
+    config.module.rules.push(
+      {
+        test: /\.(jpe?g|png|gif|webp|ico)$/,
+        use: [fileLoaderConfig],
+      },
+      {
+        test: /\.svg$/,
+        oneOf: [
+          {
+            resourceQuery: /original/,
+            use: [svgrLoaderConfigWithOutSvgo, fileLoaderConfig],
+          },
+          {
+            use: [svgrLoaderConfig, fileLoaderConfig],
+          },
+        ],
+      },
+    )
 
     return config
   },
 })
 
-const config = {
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/{{repoName}}' : '',
-  exportPathMap: function() {
-    /*
-      Код ниже следует раскомментить, если вы собираетесь использовать GitHub Pages для деплоя.
-
-      В объект exportPathMap следует добавлять те страницы, которые должны будут экспорироваться и быть видны на GitHub Pages.
-
-      К примеру, после создания файла страницы `examplePage.jsx` в директории `pages`, нужно добавить такую строчку:
-      '/examplePage': { page: '/examplePage' },
-    */
-    return {
-      '/': { page: '/' },
-    }
-  },
-}
-
-module.exports = withPlugins([withImages, withFonts], /* config */ )
+module.exports = withPlugins([withImages, withFonts])

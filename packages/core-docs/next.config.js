@@ -4,6 +4,37 @@ const withMDX = require('@zeit/next-mdx')()
 const withTypescript = require('@zeit/next-typescript')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
+const svgrLoaderConfig = {
+  loader: '@svgr/webpack',
+  options: {
+    svgoConfig: {
+      plugins: [
+        { inlineStyles: false },
+        { prefixIds: false },
+        {
+          cleanupNumericValues: {
+            floatPrecision: 3,
+          },
+        },
+      ],
+    },
+  },
+}
+const svgrLoaderConfigWithOutSvgo = {
+  ...svgrLoaderConfig,
+  options: {
+    ...svgrLoaderConfig.options,
+    svgo: false,
+  },
+}
+const fileLoaderConfig = {
+  loader: 'file-loader',
+  options: {
+    publicPath: '/_next',
+    name: '[path][name]-[hash:8].[ext]',
+  },
+}
+
 const patchDefaultNextExternalsFn = defaultNextExternalsFn => {
   return (context, request, callback) => {
     const myCallback = (error, as) => {
@@ -53,19 +84,25 @@ const withTypeChecker = (nextConfig = {}) => ({
 
 const withImages = (nextConfig = {}) => ({
   ...nextConfig,
-  webpack(config, options) {
-    config.module.rules.push({
-      test: /\.(jpe?g|png|gif|webp|svg|ico)$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            publicPath: '/_next',
-            name: '[path][name]-[hash:8].[ext]',
+  webpack(config) {
+    config.module.rules.push(
+      {
+        test: /\.(jpe?g|png|gif|webp|ico)$/,
+        use: [fileLoaderConfig],
+      },
+      {
+        test: /\.svg$/,
+        oneOf: [
+          {
+            resourceQuery: /original/,
+            use: [svgrLoaderConfigWithOutSvgo, fileLoaderConfig],
           },
-        },
-      ],
-    })
+          {
+            use: [svgrLoaderConfig, fileLoaderConfig],
+          },
+        ],
+      },
+    )
 
     return config
   },

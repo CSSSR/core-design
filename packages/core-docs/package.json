@@ -27,6 +27,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@svgr/webpack": "^4.3.2",
     "@types/next": "^8.0.5",
     "@zeit/next-mdx": "^1.2.0",
     "file-loader": "^4.0.0",
