@@ -10,7 +10,7 @@ const base = css`
   caret-color: #4a4a4a;
   color: rgb(74, 74, 74);
 
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1rem;

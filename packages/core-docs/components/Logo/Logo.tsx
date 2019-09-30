@@ -10,7 +10,9 @@ const OriginLogo: React.FC<ILogoProps> = props => {
   return (
     <Link href="/">
       <a {...props}>
-        Core<br/>Design
+        Core
+        <br />
+        Design
       </a>
     </Link>
   )
@@ -20,7 +22,7 @@ const Logo = styled(OriginLogo)`
   margin-top: 0;
   margin-bottom: 0;
   text-transform: uppercase;
-  font-family: Roboto Slab;
+  font-family: 'Roboto Slab', 'Georgia', serif;
   font-size: 2rem;
   line-height: 1.75rem;
   font-weight: 600;
