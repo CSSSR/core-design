@@ -1,13 +1,16 @@
 {
   "name": "{{name}}",
+  "engines": {
+    "node": ">=11.7.0"
+  },
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "sleep 3 && open http://localhost:3000/ & next",
+    "dev": "nodemon --exec node -r esm $NODE_DEBUG_OPTION ./server/index.js",
     "build": "next build",
     "export": "next export && touch ./out/.nojekyll",
-    "start": "next start",
+    "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
     "deploy": "npm run build && npm run export && ./scripts/deploy.sh",
     "lint": "eslint . -c .eslintrc.js --ext js,jsx"
   },
@@ -17,6 +20,9 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
     "color": "^3.1.1",
+    "cross-env": "^5.2.0",
+    "express": "^4.17.1",
+    "express-static-gzip": "^2.0.5",
     "emotion-theming": "^10.0.10",
     "next": "8.0.4",
     "next-compose-plugins": "^2.1.1",
@@ -27,10 +33,14 @@
   "devDependencies": {
     "@csssr/eslint-config-core": "^1.0.2",
     "@svgr/webpack": "^4.3.2",
+    "compression-webpack-plugin": "^3.0.0",
+    "dotenv": "^8.0.0",
     "eslint": "^6.0.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
-    "prettier": "^1.18.2",
-    "file-loader": "^4.0.0"
+    "esm": "^3.2.25",
+    "file-loader": "^4.0.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2"
   }
 }

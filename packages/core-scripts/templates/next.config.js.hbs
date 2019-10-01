@@ -1,5 +1,6 @@
 const withPlugins = require('next-compose-plugins')
 const withFonts = require('next-fonts')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 const svgrLoaderConfig = {
   loader: '@svgr/webpack',
@@ -60,4 +61,4 @@ const withImages = (nextConfig = {}) => ({
   },
 })
 
-module.exports = withPlugins([withImages, withFonts])
+module.exports = withPlugins([withFonts], nextConfig)

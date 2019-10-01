@@ -6,6 +6,7 @@ import { Hint } from '../../Hint'
 export default {
   base: () => css`
     display: inline-flex;
+    height: 4.375rem;
     flex-direction: column;
     align-items: center;
     min-width: 10rem;

@@ -16,7 +16,7 @@ storiesOf('TextFieldLight', module)
   .add('Controlled', () => {
     return (
       <Root>
-        <ControlledTextField id="awesomeField" label="Name" />
+        <ControlledTextField placeholder="Placeholder" id="awesomeField" label="Label" />
       </Root>
     )
   })

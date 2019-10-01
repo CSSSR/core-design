@@ -6,7 +6,7 @@ export default {
     padding: 1rem;
     border: 1px solid #e1e1e1;
     box-sizing: border-box;
-    font-family: Roboto;
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 1.5rem;
     line-height: 1.5rem;
     font-weight: 300;

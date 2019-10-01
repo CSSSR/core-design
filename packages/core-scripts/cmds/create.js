@@ -63,6 +63,9 @@ async function handler(argv) {
     './next.config.js',
     './pages/index.jsx',
     './pages/_app.jsx',
+    './server/index.js',
+    './utils/app-environment.js',
+    './nodemon.json',
   ].filter(Boolean)
 
   const context = {
