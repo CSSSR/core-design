@@ -7,8 +7,8 @@ if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 
   git checkout master
 
-  git remote set-url origin "https://${GITHUB_TOKEN}@github.com/csssr/core-design.git" > /dev/null 2>&1
+  git remote set-url origin "https://${GITHUB_TOKEN}@github.com/csssr-dreamteam/core-design.git" > /dev/null 2>&1
   git fetch --tags
 
-  ./node_modules/.bin/lerna version --conventional-commits --no-changelog --yes
+  ./node_modules/.bin/lerna version --conventional-commits --no-changelog --sign-git-commit --sign-git-tag --yes
 fi
