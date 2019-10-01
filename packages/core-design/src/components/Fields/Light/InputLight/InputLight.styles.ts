@@ -11,7 +11,7 @@ const base = (props: ThemeProps) =>
     padding-right: 1rem;
     width: 100%;
     height: 2.5rem;
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 2rem;

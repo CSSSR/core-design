@@ -4,7 +4,7 @@ import { Props } from './InputLabelRegular'
 export default {
   base: css`
     letter-spacing: 1px;
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 0.875rem;
     font-weight: 300;
     text-transform: uppercase;
