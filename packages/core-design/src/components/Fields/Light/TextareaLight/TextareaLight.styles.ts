@@ -4,6 +4,7 @@ import { Props } from './TextareaLight'
 
 const base = css`
   padding-top: 0.4375rem;
+  height: auto;
   border: 0.0625rem solid #e1e1e1;
   line-height: 2rem;
 `

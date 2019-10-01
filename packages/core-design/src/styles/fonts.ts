@@ -313,21 +313,21 @@ const fontFaces = (theme: Theme) => {
     }
 
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+      font-family: Roboto;
       font-style: normal;
       font-weight: 100;
       src: url('${require('../static/fonts/Roboto_normal_100.woff')}') format('woff');
       font-display: swap;
     }
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+      font-family: Roboto;
       font-style: normal;
       font-weight: 300;
       src: url('${require('../static/fonts/Roboto_normal_300.woff')}') format('woff');
       font-display: swap;
     }
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_normal_400.woff')}') format('woff');
@@ -335,7 +335,7 @@ const fontFaces = (theme: Theme) => {
     }
 
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: italic;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_italic_400.woff')}') format('woff');
@@ -343,35 +343,35 @@ const fontFaces = (theme: Theme) => {
     }
 
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 500;
       src: url('${require('../static/fonts/Roboto_normal_500.woff')}') format('woff');
       font-display: swap;
     }
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 700;
       src: url('${require('../static/fonts/Roboto_normal_700.woff')}') format('woff');
       font-display: swap;
     }
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 900;
       src: url('${require('../static/fonts/Roboto_normal_900.woff')}') format('woff');
       font-display: swap;
     }
     @font-face {
-     font-family: 'Roboto Slab', 'Georgia', serif;
+     font-family: Roboto Slab;
       font-style: normal;
       font-weight: 300;
       src: url('${require('../static/fonts/Roboto_Slab_normal_300.woff')}') format('woff');
       font-display: swap;
     }
     @font-face {
-     font-family: 'Roboto Slab', 'Georgia', serif;
+     font-family: Roboto Slab;
       font-style: normal;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_Slab_normal_400.woff')}') format('woff');
@@ -380,7 +380,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 100;
       src: url('${require('../static/fonts/Roboto_normal_100_ru.woff2')}') format('woff2');
@@ -390,7 +390,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 100;
       src: url('${require('../static/fonts/Roboto_normal_100_en.woff2')}') format('woff2');
@@ -400,7 +400,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 300;
       src: url('${require('../static/fonts/Roboto_normal_300_ru.woff2')}') format('woff2');
@@ -410,7 +410,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 300;
       src: url('${require('../static/fonts/Roboto_normal_300_en.woff2')}') format('woff2');
@@ -420,7 +420,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_normal_400_ru.woff2')}') format('woff2');
@@ -430,7 +430,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_normal_400_en.woff2')}') format('woff2');
@@ -440,7 +440,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: italic;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_italic_400_ru.woff2')}') format('woff2');
@@ -450,7 +450,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: italic;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_italic_400_en.woff2')}') format('woff2');
@@ -460,7 +460,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 500;
       src: url('${require('../static/fonts/Roboto_normal_500_ru.woff2')}') format('woff2');
@@ -470,7 +470,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 500;
       src: url('${require('../static/fonts/Roboto_normal_500_en.woff2')}') format('woff2');
@@ -480,7 +480,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 700;
       src: url('${require('../static/fonts/Roboto_normal_700_ru.woff2')}') format('woff2');
@@ -490,7 +490,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 700;
       src: url('${require('../static/fonts/Roboto_normal_700_en.woff2')}') format('woff2');
@@ -500,7 +500,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 900;
       src: url('${require('../static/fonts/Roboto_normal_900_ru.woff2')}') format('woff2');
@@ -510,7 +510,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: Roboto;
       font-style: normal;
       font-weight: 900;
       src: url('${require('../static/fonts/Roboto_normal_900_en.woff2')}') format('woff2');
@@ -520,7 +520,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto Slab', 'Georgia', serif;
+     font-family: Roboto Slab;
       font-style: normal;
       font-weight: 300;
       src: url('${require('../static/fonts/Roboto_Slab_normal_300_ru.woff2')}') format('woff2');
@@ -530,7 +530,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto Slab', 'Georgia', serif;
+     font-family: Roboto Slab;
       font-style: normal;
       font-weight: 300;
       src: url('${require('../static/fonts/Roboto_Slab_normal_300_en.woff2')}') format('woff2');
@@ -540,7 +540,7 @@ const fontFaces = (theme: Theme) => {
 
     /* cyrillic */
     @font-face {
-     font-family: 'Roboto Slab', 'Georgia', serif;
+     font-family: Roboto Slab;
       font-style: normal;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_Slab_normal_400_ru.woff2')}') format('woff2');
@@ -550,7 +550,7 @@ const fontFaces = (theme: Theme) => {
 
     /* latin */
     @font-face {
-     font-family: 'Roboto Slab', 'Georgia', serif;
+     font-family: Roboto Slab;
       font-style: normal;
       font-weight: 400;
       src: url('${require('../static/fonts/Roboto_Slab_normal_400_en.woff2')}') format('woff2');
