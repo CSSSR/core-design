@@ -5,3 +5,4 @@ lib/
 .sonarlint
 report.*.json
 *.icloud
+.DS_Store
