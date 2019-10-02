@@ -6,7 +6,6 @@ import { ThemeProps } from '../../../../themes/types'
 const base = (props: ThemeProps) => css`
   position: relative;
   ${perforator_s(props)}
-  color: #9b9b9b;
 `
 
 const hasError = ({ error }: Pick<Props, 'error'>) =>
