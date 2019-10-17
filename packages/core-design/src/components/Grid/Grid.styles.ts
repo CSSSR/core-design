@@ -41,28 +41,29 @@ export default {
       width: 20.5rem;
     }
   `,
+  // prettier-ignore
   ie11: (props: ThemeProps) => css`
     display: -ms-grid;
-    -ms-grid-columns: 120px (32px 120px) [11];
+    -ms-grid-columns: 120px (32px 120px)[11];
 
     ${props.theme.breakpoints.desktop.m} {
-      -ms-grid-columns: 96px (16px 96px) [11];
+      -ms-grid-columns: 96px (16px 96px)[11];
     }
 
     ${props.theme.breakpoints.desktop.s} {
-      -ms-grid-columns: 88px (16px 88px) [11];
+      -ms-grid-columns: 88px (16px 88px)[11];
     }
 
     ${props.theme.breakpoints.tablet.m} {
-      -ms-grid-columns: 64px (16px 64px) [11];
+      -ms-grid-columns: 64px (16px 64px)[11];
     }
 
     ${props.theme.breakpoints.tablet.s} {
-      -ms-grid-columns: 4rem (1rem 4rem) [11];
+      -ms-grid-columns: 4rem (1rem 4rem)[11];
     }
 
     ${props.theme.breakpoints.mobile.all} {
-      -ms-grid-columns: 3rem (0.5rem 3rem) [5];
+      -ms-grid-columns: 3rem (0.5rem 3rem)[5];
     }
   `,
   guidelines: (props: ThemeProps) => css`
