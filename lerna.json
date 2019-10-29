@@ -3,9 +3,9 @@
   "npmClient": "yarn",
   "version": "independent",
   "useWorkspaces": true,
-  "lerna": "3.13.3",
   "command": {
     "version": {
+      "allowBranch": "master",
       "ignoreChanges": ["*.md"],
       "message": "chore(release): version [ci skip]"
     }
