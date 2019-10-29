@@ -1,10 +1,16 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { defaultTheme } from '@csssr/core-design'
 
 import NavItem from './NavItem'
 import Logo from '../Logo'
 
 import componentsNames from '../../data/componentsNames'
+
+export type Theme = typeof defaultTheme
+export interface ThemeProps {
+  theme: Theme
+}
 
 const OriginNav = props => (
   <nav {...props }>
@@ -18,7 +24,7 @@ const OriginNav = props => (
 const Nav = styled(OriginNav)`
   grid-column: 1 / span 3;
   height: 100vh;
-  border-right: 0.0625rem solid ${props => props.theme.colors.secondary.origin};
+  border-right: 0.0625rem solid ${(props: ThemeProps) => props.theme.colors.secondary.origin};
 
   ${Logo} {
     position: relative;
