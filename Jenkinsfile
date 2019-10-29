@@ -15,7 +15,7 @@ pipeline {
 
     stage('Run CI script (tests, publishing)') {
       steps {
-        sshagent(credentials: ['e2e-tools-repo']) {
+        sshagent(credentials: ['core-design-repo']) {
           withCredentials([
             string(credentialsId: 'npm-token', variable: 'NPM_TOKEN'),
           ]) {
