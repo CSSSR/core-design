@@ -7,7 +7,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec node -r esm $NODE_DEBUG_OPTION ./server/index.js",
+    "dev": "nodemon --exec node -r esm ./server/index.js",
     "build": "next build",
     "export": "next export && touch ./out/.nojekyll",
     "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
