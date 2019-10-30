@@ -1,0 +1,48 @@
+name: Publish new version
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile --ignore-engines
+
+      - name: Configure Git User
+        run: |
+          git config --local user.email dmitriy.chekin@csssr.io
+          git config --local user.name csssr-team
+
+      - name: Configure commits signing
+        run: |
+          export GPG_TTY=$(tty)
+          echo -e "$GPG_PRIVATE_KEY" | gpg --batch --import
+          echo "" | gpg --clearsign --passphrase $GPG_PASSPHRASE --pinentry-mode loopback
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Publish new version if required
+        run: |
+          yarn lerna version --conventional-commits --allow-branch=master --no-changelog --sign-git-commit --sign-git-tag --yes
+          yarn release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push changes
+        run: |
+          git remote add pub https://csssr-team:${{ secrets.GITHUB_TOKEN }}@github.com/csssr-dreamteam/core-design.git
+          git push pub HEAD:master --follow-tags --no-verify
