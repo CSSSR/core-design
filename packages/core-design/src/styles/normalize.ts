@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
+import { Theme } from '../themes/types'
 
-const normalize = theme => css`
+const normalize = (theme: Theme) => css`
   .js-focus-visible :focus:not(.focus-visible) {
     outline: none;
   }
