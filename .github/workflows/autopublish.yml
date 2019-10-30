@@ -37,7 +37,6 @@ jobs:
 
       - name: Publish new version if required
         run: |
-          git commit -S -m "test" --no-verify --allow-empty
           yarn lerna version --conventional-commits --allow-branch=master --no-changelog --sign-git-commit --sign-git-tag --yes
           yarn release
         env:
