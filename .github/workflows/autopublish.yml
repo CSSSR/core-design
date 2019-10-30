@@ -3,7 +3,7 @@ name: Publish new version
 on:
   push:
     branches:
-      - fix/CORE-100-lerna-auto-version-bump
+      - master
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
@@ -38,12 +38,12 @@ jobs:
       - name: Publish new version if required
         run: |
           git commit -S -m "test" --no-verify --allow-empty
-          # yarn lerna version --conventional-commits --allow-branch=master --no-changelog --sign-git-commit --sign-git-tag --yes
-          # yarn release
+          yarn lerna version --conventional-commits --allow-branch=master --no-changelog --sign-git-commit --sign-git-tag --yes
+          yarn release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push changes
         run: |
           git remote add pub https://csssr-team:${{ secrets.GITHUB_TOKEN }}@github.com/csssr-dreamteam/core-design.git
-          git push pub HEAD:fix/CORE-100-lerna-auto-version-bump --follow-tags --no-verify
+          git push pub HEAD:master --follow-tags --no-verify
