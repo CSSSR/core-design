@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 
-const normalize = css`
+const normalize = theme => css`
   .js-focus-visible :focus:not(.focus-visible) {
     outline: none;
   }
@@ -14,6 +14,19 @@ const normalize = css`
     margin: 0;
     padding: 0;
   }
+
+  ${theme.breakpoints.mobile.all} {
+    html {
+      font-size: 4.44444444444444444444444444444444vw !important;
+    }
+  }
+
+  ${theme.breakpoints.tablet.s} {
+    html {
+      font-size: 1.5625vw !important;
+    }
+  }
+
   main {
     display: block;
   }
