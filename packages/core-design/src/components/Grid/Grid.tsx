@@ -7,8 +7,8 @@ export interface Props {
 }
 
 const Grid = styled.div<Props>`
-  ${styles.base}
   ${styles.ie11}
+  ${styles.base}
   ${({ withGuidelines }) => withGuidelines && styles.guidelines}
 `
 
