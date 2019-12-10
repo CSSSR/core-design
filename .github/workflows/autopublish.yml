@@ -27,8 +27,8 @@ jobs:
 
       - name: Configure Git User
         run: |
-          git config --local user.email dmitriy.chekin@csssr.io
-          git config --local user.name csssr-team
+          git config --local user.email artyom.resh@csssr.com
+          git config --local user.name ArtyomResh
 
       - name: Configure commits signing
         run: |
