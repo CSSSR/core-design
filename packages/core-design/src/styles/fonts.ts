@@ -53,7 +53,7 @@ const heading_regular_s = (props: ThemeProps) => css`
   color: ${props.theme.colors.secondary.origin};
 
   ${props.theme.breakpoints.below.desktop} {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     line-height: 1.5rem;
   }
 `
@@ -62,11 +62,11 @@ const heading_regular_m = (props: ThemeProps) => css`
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
-  line-height: 3rem;
+  line-height: 2rem;
   color: ${props.theme.colors.secondary.origin};
 
   ${props.theme.breakpoints.below.desktop} {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.5rem;
   }
 `
@@ -75,7 +75,7 @@ const heading_regular_l = (props: ThemeProps) => css`
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 2.5rem;
   font-weight: 900;
-  line-height: 3rem;
+  line-height: 3.5rem;
   color: ${props.theme.colors.secondary.origin};
 
   ${props.theme.breakpoints.below.desktop} {
@@ -85,7 +85,6 @@ const heading_regular_l = (props: ThemeProps) => css`
 `
 
 const subhead_regular = (props: ThemeProps) => css`
-  margin-top: 1.5rem;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 2rem;
   font-weight: 100;
@@ -93,14 +92,25 @@ const subhead_regular = (props: ThemeProps) => css`
   color: ${props.theme.colors.secondary.origin};
 
   ${props.theme.breakpoints.below.desktop} {
-    margin-top: 1rem;
     font-size: 1.25rem;
     line-height: 2rem;
   }
 `
 
+const subhead_slab = (props: ThemeProps) => css`
+  font-family: 'Roboto Slab', 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 3rem;
+  color: ${props.theme.colors.secondary.origin};
+
+  ${props.theme.breakpoints.below.desktop} {
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+`
+
 const paragraph_regular = (props: ThemeProps) => css`
-  margin-top: 1rem;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 1rem;
   font-weight: 300;
@@ -127,7 +137,6 @@ const paragraph_regular_m = (props: ThemeProps) => css`
 `
 
 const paragraph_strong = (props: ThemeProps) => css`
-  margin-top: 1.5rem;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 1.5rem;
   line-height: 2.5rem;
@@ -137,7 +146,6 @@ const paragraph_strong_s = (props: ThemeProps) => css`
   ${paragraph_strong(props)}
 
   ${props.theme.breakpoints.below.desktop} {
-    margin-top: 0.75rem;
     font-size: 0.75rem;
     line-height: 1rem;
   }
@@ -147,9 +155,8 @@ const paragraph_strong_m = (props: ThemeProps) => css`
   ${paragraph_strong(props)}
 
   ${props.theme.breakpoints.below.desktop} {
-    margin-top: 1rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 `
 
@@ -163,6 +170,10 @@ const perforator_s = (props: ThemeProps) => css`
   letter-spacing: 0.08125rem;
   text-transform: uppercase;
   color: ${props.theme.colors.secondary.origin};
+
+  ${props.theme.breakpoints.below.desktop} {
+    font-weight: bold;
+  }
 `
 
 const perforator_m = (props: ThemeProps) => css`
@@ -174,7 +185,7 @@ const perforator_m = (props: ThemeProps) => css`
   line-height: 1.5rem;
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
-  color: ${props.theme.colors.secondary.origin};
+  color: ${props.theme.colors.secondary.lighten110};
 
   ${props.theme.breakpoints.below.desktop} {
     font-size: 0.875rem;
@@ -568,6 +579,7 @@ export {
   heading_regular_m,
   heading_regular_l,
   subhead_regular,
+  subhead_slab,
   paragraph_strong_s,
   paragraph_strong_m,
   paragraph_regular_s,

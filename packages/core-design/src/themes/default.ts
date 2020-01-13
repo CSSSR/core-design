@@ -12,6 +12,7 @@ const theme = {
     secondary: {
       origin: secondaryOrigin.hex(),
       darken100: secondaryOrigin.darken(1).hex(),
+      lighten110: secondaryOrigin.lighten(1.1).hex(),
     },
   },
   baseSize: 16,
