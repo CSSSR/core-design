@@ -1,10 +1,13 @@
 import { css } from '@emotion/core'
 
-import { subhead_regular } from '../../styles/fonts'
+import { subhead_regular, subhead_slab } from '../../styles/fonts'
 
 export default {
   base: css`
     display: block;
   `,
-  font: subhead_regular,
+  font: {
+    regular: subhead_regular,
+    slab: subhead_slab,
+  },
 }
