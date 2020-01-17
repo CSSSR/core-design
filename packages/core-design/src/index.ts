@@ -32,6 +32,28 @@ export { default as List } from './components/List'
 export { default as ListItem } from './components/List/ListItem'
 
 export { default as normalize } from './styles/normalize'
-export { default as fonts, paragraph_strong_m } from './styles/fonts'
+export {
+  default as fonts,
+  heading_slab_s,
+  heading_slab_m,
+  heading_slab_l,
+  heading_regular_s,
+  heading_regular_m,
+  heading_regular_l,
+  subhead_regular,
+  subhead_slab,
+  paragraph_strong_s,
+  paragraph_strong_m,
+  paragraph_regular_s,
+  paragraph_regular_m,
+  perforator_s,
+  perforator_m,
+  link_list_s,
+  link_list_m,
+  link_list_l,
+  link_top_menu,
+  link_burger,
+  button_label,
+} from './styles/fonts'
 
 export { default as defaultTheme } from './themes/default'
