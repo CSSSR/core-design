@@ -200,6 +200,10 @@ const link_list = (props: ThemeProps) => css`
   text-decoration: underline;
   color: ${props.theme.colors.primary.origin};
 
+  &:hover {
+    color: #0254d8;
+  }
+
   &[target='_blank']::after {
     position: absolute;
     display: none;
