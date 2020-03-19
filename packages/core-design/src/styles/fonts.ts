@@ -193,6 +193,8 @@ const perforator_m = (props: ThemeProps) => css`
   }
 `
 
+// @media (hover: hover) and (pointer: fine)
+// https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c
 const link_list = (props: ThemeProps) => css`
   position: relative;
   font-family: 'Roboto', 'Arial', sans-serif;
@@ -200,8 +202,10 @@ const link_list = (props: ThemeProps) => css`
   text-decoration: underline;
   color: ${props.theme.colors.primary.origin};
 
-  &:hover {
-    color: #0254d8;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: #0254d8;
+    }
   }
 
   &[target='_blank']::after {
