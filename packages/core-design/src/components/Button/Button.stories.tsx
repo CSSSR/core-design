@@ -12,7 +12,7 @@ storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add('Button', () => {
     const knobs = {
-      kind: select('theme', ['primary', 'secondary'], 'primary'),
+      kind: select('theme', ['primary', 'secondary', 'third'], 'primary'),
       className: text('className', 'button'),
       disabled: boolean('disabled', false),
       children: text('children', 'Кнопка'),
