@@ -44,5 +44,19 @@ export default {
         color: ${props.theme.colors.secondary.darken100};
       }
     `,
+    third: (props: ThemeProps) => css`
+      height: 2.5rem;
+      font-size: 0.75rem;
+      line-height: 2.5rem;
+      color: ${props.theme.colors.primary.origin};
+      border: solid 0.0625rem ${props.theme.colors.primary.origin};
+      transition: border-color 0.3s ease-out, color 0.3s ease-out;
+
+      &:hover,
+      &:active {
+        color: ${props.theme.colors.primary.darken15};
+        border-color: ${props.theme.colors.primary.darken15};
+      }
+    `,
   },
 }

@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import styles from './Button.styles'
 
 export interface Props {
-  kind: 'secondary' | 'primary'
+  kind: 'secondary' | 'primary' | 'third'
 }
 
 function byKind(props: Props) {
@@ -12,6 +12,9 @@ function byKind(props: Props) {
   switch (kind) {
     case 'primary': {
       return styles.themes.primary
+    }
+    case 'third': {
+      return styles.themes.third
     }
   }
 
