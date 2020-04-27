@@ -24,12 +24,14 @@ storiesOf('AnimatedButton', module)
 
     return (
       <Root>
-        <AnimatedButton
-          {...knobs}
-          css={css`
-            ${cssKnob}
-          `}
-        />
+        <div style={{ margin: 10 }}>
+          <AnimatedButton
+            {...knobs}
+            css={css`
+              ${cssKnob}
+            `}
+          />
+        </div>
       </Root>
     )
   })

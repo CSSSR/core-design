@@ -74,6 +74,7 @@ export default {
         border-radius: 1.5rem;
         background-color: transparent;
         pointer-events: none;
+        overflow: hidden;
       }
 
       button:disabled {
