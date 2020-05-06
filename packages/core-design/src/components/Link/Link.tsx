@@ -16,7 +16,11 @@ const OriginLink = styled.a<Props>`
 `
 
 const Link: React.FC<PropsOf<typeof OriginLink> & Props> = props => (
-  <OriginLink target={props.external ? '_blank' : undefined} rel="nooper" {...props} />
+  <OriginLink
+    target={props.external ? '_blank' : undefined}
+    rel={props.external ? 'noopener noreferrer' : undefined}
+    {...props}
+  />
 )
 
 Link.defaultProps = {

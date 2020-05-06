@@ -11,7 +11,11 @@ export interface Props extends ButtonProps {
 const ButtonA = Button.withComponent('a')
 
 const ButtonLink: React.FC<PropsOf<typeof ButtonA> & Props> = props => (
-  <ButtonA target={props.external ? '_blank' : undefined} rel="nooper" {...props} />
+  <ButtonA
+    target={props.external ? '_blank' : undefined}
+    rel={props.external ? 'noopener noreferrer' : undefined}
+    {...props}
+  />
 )
 
 export { ButtonLink }
