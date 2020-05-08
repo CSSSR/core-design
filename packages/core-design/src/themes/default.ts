@@ -1,37 +1,83 @@
 import color from 'color'
 
-const primaryOrigin = color('#0076ff')
-const secondaryOrigin = color('#4a4a4a')
+const primary = color('#0076ff')
+const secondary = color('#4a4a4a')
+
+const xs = 360
+
+const s = 768
+const s_s = s - 1
+
+const m = 1024
+const s_m = m - 1
+
+const l = 1280
+const s_l = l - 1
+
+const xl = 1360
+const s_xl = xl - 1
+
+const xxl = 1920
+const s_xxl = xxl - 1
+
+const breakpoints = {
+  xs,
+  s,
+  s_s,
+  m,
+  s_m,
+  l,
+  s_l,
+  xl,
+  s_xl,
+  xxl,
+  s_xxl,
+}
 
 const theme = {
   colors: {
     primary: {
-      origin: primaryOrigin.hex(),
-      darken15: primaryOrigin.darken(0.15).hex(),
+      origin: primary.hex(),
+      darken15: primary.darken(0.15).hex(),
     },
     secondary: {
-      origin: secondaryOrigin.hex(),
-      darken100: secondaryOrigin.darken(1).hex(),
-      lighten110: secondaryOrigin.lighten(1.1).hex(),
+      origin: secondary.hex(),
+      darken100: '#18191B',
+      lighten110: secondary.lighten(1.1).hex(),
+      gray: '#9B9B9B',
+      lightGray: '#C0C0C0',
     },
   },
   baseSize: 16,
   breakpoints: {
-    desktop: {
-      all: '@media (min-width: 1280px)',
-      m: '@media (min-width: 1360px) and (max-width: 1919px)',
-      s: '@media (min-width: 1280px) and (max-width: 1359px)',
+    mobile: {
+      all: `@media (max-width: ${breakpoints.s_s}px)`,
     },
     tablet: {
-      all: '@media (min-width: 768px) and (max-width: 1279px)',
-      m: '@media (min-width: 1024px) and (max-width: 1279px)',
-      s: '@media (min-width: 768px) and (max-width: 1023px)',
+      s: `@media (min-width: ${breakpoints.s}px) and (max-width: ${breakpoints.s_m}px)`,
+      m: `@media (min-width: ${breakpoints.m}px) and (max-width: ${breakpoints.s_l}px)`,
+      all: `@media (min-width: ${breakpoints.s}px) and (max-width: ${breakpoints.s_l}px)`,
     },
-    mobile: {
-      all: '@media (max-width: 767px)',
+    desktop: {
+      s: `@media (min-width: ${breakpoints.l}px) and (max-width: ${breakpoints.s_xl}px)`,
+      m: `@media (min-width: ${breakpoints.xl}px) and (max-width: ${breakpoints.s_xxl}px)`,
+      l: `@media (min-width: ${breakpoints.xxl}px)`,
+      all: `@media (min-width: ${breakpoints.l}px)`,
     },
     below: {
-      desktop: '@media (max-width: 1279px)',
+      desktop: `@media (max-width: ${breakpoints.s_l}px)`,
+    },
+  },
+  media: {
+    points: breakpoints,
+    from(width: number) {
+      return `@media (min-width: ${width})`
+    },
+    to(width: number) {
+      return `@media (max-width: ${width})`
+    },
+    from_to(minWidth: number, maxWidth: number) {
+      return `@media (min-width: ${minWidth}) and (max-width: ${maxWidth})`
     },
   },
 }

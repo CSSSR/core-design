@@ -10,7 +10,8 @@
     "no-submodule-imports": false,
     "no-unused-variable": true,
     "no-unused-expression": true,
-    "no-object-literal-type-assertion": false
+    "no-object-literal-type-assertion": false,
+    "variable-name": false
   },
   "rulesDirectory": []
 }
