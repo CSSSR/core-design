@@ -7,6 +7,7 @@ import styles from './Link.styles'
 export interface Props {
   type?: keyof typeof styles['font']
   size?: 's' | 'm' | 'l'
+  as?: string
   isActive?: boolean
   external?: boolean
 }

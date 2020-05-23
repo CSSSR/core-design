@@ -3,8 +3,6 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import { action } from '@storybook/addon-actions'
 
-import Root from '../../../Root'
-
 import { withValueState } from '../../../../hocs'
 
 import { TextFieldLight, UncontrolledTextFieldLight } from '.'
@@ -14,11 +12,7 @@ const ControlledTextField = withValueState()(TextFieldLight)
 storiesOf('TextFieldLight', module)
   .addDecorator(withKnobs)
   .add('Controlled', () => {
-    return (
-      <Root>
-        <ControlledTextField placeholder="Placeholder" id="awesomeField" label="Label" />
-      </Root>
-    )
+    return <ControlledTextField placeholder="Placeholder" id="awesomeField" label="Label" />
   })
   .add('Uncontrolled', () => {
     const knobs = {
@@ -38,9 +32,5 @@ storiesOf('TextFieldLight', module)
       onBlur: action('onBlur'),
     }
 
-    return (
-      <Root>
-        <UncontrolledTextFieldLight {...knobs} {...actions} />
-      </Root>
-    )
+    return <UncontrolledTextFieldLight {...knobs} {...actions} />
   })

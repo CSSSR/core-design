@@ -3,8 +3,6 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import { action } from '@storybook/addon-actions'
 
-import Root from '../../../Root'
-
 import { withValueState, withFocusedState, withHoveredState } from '../../../../hocs'
 
 import { TextFieldRegular } from './TextFieldRegular'
@@ -17,14 +15,12 @@ storiesOf('TextFieldRegular', module)
   .addDecorator(withKnobs)
   .add('Controlled', () => {
     return (
-      <Root>
-        <ControlledTextFieldRegular
-          id="awesomeField"
-          label="Awesome field"
-          value="Hello TextFieldRegular"
-          focused={true}
-        />
-      </Root>
+      <ControlledTextFieldRegular
+        id="awesomeField"
+        label="Awesome field"
+        value="Hello TextFieldRegular"
+        focused={true}
+      />
     )
   })
   .add('Uncontrolled', () => {
@@ -48,9 +44,5 @@ storiesOf('TextFieldRegular', module)
       onChange: action('onChange'),
     }
 
-    return (
-      <Root>
-        <TextFieldRegular {...knobs} {...actions} />
-      </Root>
-    )
+    return <TextFieldRegular {...knobs} {...actions} />
   })

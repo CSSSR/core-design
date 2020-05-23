@@ -5,6 +5,7 @@ import styles from './Text.styles'
 export interface Props {
   type?: keyof typeof styles['font']
   size?: 's' | 'm'
+  as?: string
 }
 
 const Text = styled.p<Props>`

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 
 import styles from './Button.styles'
+import { ThemeProps } from '../../themes/types'
 
 export interface Props {
   kind: 'secondary' | 'primary' | 'third'
@@ -21,7 +22,7 @@ function byKind(props: Props) {
   return styles.themes.secondary
 }
 
-const Button = styled.button<Props>`
+const Button = styled.button<Props & ThemeProps>`
   ${styles.base}
   ${styles.font}
   ${byKind}

@@ -5,7 +5,6 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Picture } from './Picture'
-import { Root } from '../Root'
 
 storiesOf('Picture', module)
   .addDecorator(withKnobs)
@@ -20,13 +19,11 @@ storiesOf('Picture', module)
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
-      <Root>
-        <Picture
-          {...knobs}
-          css={css`
-            ${cssKnob}
-          `}
-        />
-      </Root>
+      <Picture
+        {...knobs}
+        css={css`
+          ${cssKnob}
+        `}
+      />
     )
   })

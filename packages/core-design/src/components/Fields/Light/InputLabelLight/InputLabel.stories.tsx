@@ -1,6 +1,5 @@
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
-import Root from '../../../Root'
 import { InputLabelLight } from './InputLabelLight'
 
 storiesOf('InputLabelLight', module)
@@ -10,23 +9,11 @@ storiesOf('InputLabelLight', module)
       error: text('error', 'Something went wrong'),
     }
 
-    return (
-      <Root>
-        <InputLabelLight {...knobs}>Awesome Label</InputLabelLight>
-      </Root>
-    )
+    return <InputLabelLight {...knobs}>Awesome Label</InputLabelLight>
   })
   .add('Default', () => {
-    return (
-      <Root>
-        <InputLabelLight>Awesome Label</InputLabelLight>
-      </Root>
-    )
+    return <InputLabelLight>Awesome Label</InputLabelLight>
   })
   .add('Has error', () => {
-    return (
-      <Root>
-        <InputLabelLight error="Something went wrong">Awesome Label</InputLabelLight>
-      </Root>
-    )
+    return <InputLabelLight error="Something went wrong">Awesome Label</InputLabelLight>
   })

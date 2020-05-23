@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text, select } from '@storybook/addon-knobs'
 
 import { SubHeading } from './SubHeading'
-import { Root } from '../Root'
 
 storiesOf('SubHeading', module)
   .addDecorator(withKnobs)
@@ -17,14 +16,12 @@ storiesOf('SubHeading', module)
     const cssKnob = text('CSS', 'display: block;')
 
     return (
-      <Root>
-        <SubHeading
-          {...knobs}
-          css={css`
-            ${cssKnob}
-          `}
-          children={children}
-        />
-      </Root>
+      <SubHeading
+        {...knobs}
+        css={css`
+          ${cssKnob}
+        `}
+        children={children}
+      />
     )
   })

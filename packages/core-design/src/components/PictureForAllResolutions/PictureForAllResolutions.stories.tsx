@@ -5,7 +5,6 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { PictureForAllResolutions } from './PictureForAllResolutions'
-import { Root } from '../Root'
 
 storiesOf('PictureForAllResolutions', module)
   .addDecorator(withKnobs)
@@ -18,13 +17,11 @@ storiesOf('PictureForAllResolutions', module)
     }
 
     return (
-      <Root>
-        <PictureForAllResolutions
-          image={image}
-          css={css`
-            ${cssKnob}
-          `}
-        />
-      </Root>
+      <PictureForAllResolutions
+        image={image}
+        css={css`
+          ${cssKnob}
+        `}
+      />
     )
   })

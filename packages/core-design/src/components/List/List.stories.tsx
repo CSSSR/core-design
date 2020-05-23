@@ -6,7 +6,6 @@ import { storiesOf } from '@storybook/react'
 
 import { List } from './List'
 import { ListItem } from './ListItem'
-import { Root } from '../Root'
 
 storiesOf('List', module)
   .addDecorator(withKnobs)
@@ -15,16 +14,14 @@ storiesOf('List', module)
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
-      <Root>
-        <List
-          size={sizeKnob}
-          css={css`
-            ${cssKnob}
-          `}
-        >
-          <li>¯\_(ツ)_/¯</li>
-        </List>
-      </Root>
+      <List
+        size={sizeKnob}
+        css={css`
+          ${cssKnob}
+        `}
+      >
+        <li>¯\_(ツ)_/¯</li>
+      </List>
     )
   })
   .add('Three items', () => {
@@ -32,18 +29,16 @@ storiesOf('List', module)
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
-      <Root>
-        <List
-          size={sizeKnob}
-          css={css`
-            ${cssKnob}
-          `}
-        >
-          <ListItem>Item 1</ListItem>
-          <ListItem>Item 2</ListItem>
-          <ListItem>Item 3</ListItem>
-        </List>
-      </Root>
+      <List
+        size={sizeKnob}
+        css={css`
+          ${cssKnob}
+        `}
+      >
+        <ListItem>Item 1</ListItem>
+        <ListItem>Item 2</ListItem>
+        <ListItem>Item 3</ListItem>
+      </List>
     )
   })
   .add('Big items', () => {
@@ -51,26 +46,24 @@ storiesOf('List', module)
     const cssKnob = text('CSS', 'width: 240px;')
 
     return (
-      <Root>
-        <List
-          size={sizeKnob}
-          css={css`
-            ${cssKnob}
-          `}
-        >
-          <ListItem>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer
-            at sagittis sem.
-          </ListItem>
-          <ListItem>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer
-            at sagittis sem.
-          </ListItem>
-          <ListItem>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer
-            at sagittis sem.
-          </ListItem>
-        </List>
-      </Root>
+      <List
+        size={sizeKnob}
+        css={css`
+          ${cssKnob}
+        `}
+      >
+        <ListItem>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer
+          at sagittis sem.
+        </ListItem>
+        <ListItem>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer
+          at sagittis sem.
+        </ListItem>
+        <ListItem>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus augue. Integer
+          at sagittis sem.
+        </ListItem>
+      </List>
     )
   })

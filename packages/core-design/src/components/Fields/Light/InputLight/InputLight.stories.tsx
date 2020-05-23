@@ -2,8 +2,6 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import Root from '../../../Root'
-
 import { InputLight } from './InputLight'
 
 import { withValueState, withFocusedState, withHoveredState } from '../../../../hocs'
@@ -19,11 +17,7 @@ storiesOf('InputLight', module)
       focused: boolean('focused', false),
     }
 
-    return (
-      <Root>
-        <InputLight {...knobs} placeholder={'Type something...'} />
-      </Root>
-    )
+    return <InputLight {...knobs} placeholder={'Type something...'} />
   })
   .add('Filled', () => {
     const knobs = {
@@ -34,22 +28,16 @@ storiesOf('InputLight', module)
       value: text('value', 'Awesome text'),
     }
 
-    return (
-      <Root>
-        <InputLight {...knobs} />
-      </Root>
-    )
+    return <InputLight {...knobs} />
   })
   .add('With focus and hover', () => {
     return (
-      <Root>
-        <ControllerInputLight
-          value="Hello world"
-          placeholder={'Type something...'}
-          onChange={action('onChange')}
-          onFocus={action('onFocus')}
-          onBlur={action('onBlur')}
-        />
-      </Root>
+      <ControllerInputLight
+        value="Hello world"
+        placeholder={'Type something...'}
+        onChange={action('onChange')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+      />
     )
   })

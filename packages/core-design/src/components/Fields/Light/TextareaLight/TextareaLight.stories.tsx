@@ -3,8 +3,6 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import { action } from '@storybook/addon-actions'
 
-import Root from '../../../Root'
-
 import { withValueState, withFocusedState, withHoveredState } from '../../../../hocs'
 
 import { TextareaLight } from './TextareaLight'
@@ -25,13 +23,7 @@ storiesOf('TextareaLight', module)
     }
 
     return (
-      <Root>
-        <ControlledTextareaLight
-          value="Hello world"
-          placeholder={'Type something...'}
-          {...actions}
-        />
-      </Root>
+      <ControlledTextareaLight value="Hello world" placeholder={'Type something...'} {...actions} />
     )
   })
   .add('Uncontrolled', () => {
@@ -43,9 +35,5 @@ storiesOf('TextareaLight', module)
       value: text('value', 'Awesome text'),
     }
 
-    return (
-      <Root>
-        <TextareaLight {...knobs} />
-      </Root>
-    )
+    return <TextareaLight {...knobs} />
   })

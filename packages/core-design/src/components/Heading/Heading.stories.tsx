@@ -5,7 +5,6 @@ import { withKnobs, text, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Heading } from './Heading'
-import { Root } from '../Root'
 
 storiesOf('Heading', module)
   .addDecorator(withKnobs)
@@ -18,14 +17,12 @@ storiesOf('Heading', module)
     const cssKnob = text('CSS', 'display: block;')
 
     return (
-      <Root>
-        <Heading.H1
-          {...knobs}
-          css={css`
-            ${cssKnob}
-          `}
-          children={children}
-        />
-      </Root>
+      <Heading.H1
+        {...knobs}
+        css={css`
+          ${cssKnob}
+        `}
+        children={children}
+      />
     )
   })
