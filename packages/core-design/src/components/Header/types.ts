@@ -35,9 +35,9 @@ export interface LinksProps {
 
 export interface HeaderProps {
   className?: string
-  pathname: string
-  isMobile: boolean
-  isIe11: boolean
+  pathname?: string
+  isMobile?: boolean
+  isIe11?: boolean
   logo?: {
     href?: string
     testId?: string

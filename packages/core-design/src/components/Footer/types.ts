@@ -39,20 +39,20 @@ export interface AddressesProps {
 
 export interface FooterProps {
   className?: string
-  isMobile: boolean
-  isIe11: boolean
+  isMobile?: boolean
+  isIe11?: boolean
   logo?: {
     href?: string
     testId?: string
     linkComponent?: React.ComponentType<LinkComponentProps>
   }
-  video: {
-    src: string
-    type: string
-    errorText: string
+  video?: {
+    src?: string
+    type?: string
+    errorText?: string
   }
-  email: string
-  actionPhrase: string
+  email?: string
+  actionPhrase?: string
   languageLink?: {
     href: string
     text: string

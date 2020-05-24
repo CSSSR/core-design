@@ -14,6 +14,9 @@ import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
+import { socials, nav as defaultNav } from '../../data/footerLinks'
+import footerAddresses from '../../data/footerAddresses'
+
 /* tslint:disable */
 const Logo = require('../../static/icons/csssr_logo.svg')
 /* tslint:enable */
@@ -78,7 +81,7 @@ const Footer: React.FC<Props> = ({
             <Logo />
           </LinkComponent>
 
-          {!isMobile && (
+          {!isMobile && video.src && (
             <video className="video" autoPlay loop muted>
               <source src={video.src} type={video.type} />
 
@@ -127,6 +130,34 @@ const Footer: React.FC<Props> = ({
       )}
     </footer>
   )
+}
+
+Footer.defaultProps = {
+  logo: {
+    href: 'https://csssr.com/en',
+  },
+  actionPhrase: 'Let’s work together!',
+  email: 'sales@csssr.com',
+  video: {
+    src: 'http://s.csssr.ru/U31J879TR/camp.mp4', // TODO: заменить на более надежную ссылку
+    type: 'video/mp4',
+    errorText: 'This browser does not support downloading video files',
+  },
+  languageLink: {
+    href: 'https://csssr.com/ru',
+    text: 'ru',
+  },
+  privacyPolicyLink: {
+    href: 'https://csssr.com/en/privacy-policy',
+    text: 'Privacy policy',
+  },
+  cookiesPolicyLink: {
+    href: 'https://csssr.com/en/cookies-policy',
+    text: 'Website cookie policy',
+  },
+  socialLinks: socials,
+  addresses: footerAddresses,
+  nav: defaultNav,
 }
 
 export default styled(Footer)`

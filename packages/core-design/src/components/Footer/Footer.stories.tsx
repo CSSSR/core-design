@@ -17,7 +17,6 @@ storiesOf('Footer', module)
     }
     const logoKnobs = {
       href: text('Logo href', '/'),
-      testId: text('Logo test id', 'Footer:link.logo'),
     }
     const videoKnobs = {
       src: text('Video src', require(`../../static/video/camp.mp4`)),

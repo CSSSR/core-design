@@ -22,11 +22,11 @@ const Cross = require('../../static/icons/header/close.svg')
 
 const Header: React.FC<Props> = ({
   className,
-  pathname = '',
+  pathname,
   isMobile: isMobileValueFromProps,
   isIe11: isIe11ValueFromProps,
-  menu = { links: defaultMenu, backButtonText: 'Our services' },
-  links = defaultLinks,
+  menu,
+  links,
   actionButton,
   logo,
 }) => {
@@ -170,12 +170,16 @@ const Header: React.FC<Props> = ({
 Header.defaultProps = {
   logo: {
     testId: 'Header:link.logo',
+    href: 'https://csssr.com/en',
   },
   actionButton: {
     isVisible: true,
     text: 'Default text',
     testId: 'Header:button.contactUs',
   },
+  menu: { links: defaultMenu, backButtonText: 'Our services' },
+  links: defaultLinks,
+  pathname: '',
 }
 
 export default styled(Header)`

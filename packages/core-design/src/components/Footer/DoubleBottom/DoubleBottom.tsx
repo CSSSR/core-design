@@ -44,10 +44,11 @@ const DoubleBottom: React.FC<Props> = ({ className, isMobile, isIe11, addresses 
 
       <div className="map-wrapper">
         <div className="map">
+          {/* TODO: заменить на более надежную ссылку */}
           <img
             className="picture"
-            srcSet={`${require('../../../static/images/footer/continents@1x.png')} 1x, ${require('../../../static/images/footer/continents@2x.png')}2x, ${require('../../../static/images/footer/continents@3x.png')} 3x`}
-            src={require('../../../static/images/footer/continents@2x.png')}
+            srcSet="http://s.csssr.ru/U31J879TR/continents1x.jpg 1x, http://s.csssr.ru/U31J879TR/continents2x.jpg 2x, http://s.csssr.ru/U31J879TR/continents3x.jpg 3x"
+            src="http://s.csssr.ru/U31J879TR/continents2x.jpg"
           />
 
           {pins.map(({ id }, index) => (
