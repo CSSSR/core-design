@@ -9,6 +9,7 @@ module.exports = api => {
       require.resolve('@emotion/babel-preset-css-prop'),
     ],
     plugins: [
+      'inline-react-svg',
       [
         '@babel/plugin-transform-runtime',
         {

@@ -4,6 +4,7 @@ import styles from './Heading.styles'
 export interface Props {
   type?: keyof typeof styles['font']
   size?: 's' | 'm' | 'l'
+  as?: string
 }
 
 const OriginHeading = styled.h1<Props>`
@@ -22,7 +23,7 @@ const OriginHeadings = {
 // tslint:disable-next-line: prefer-object-spread
 const Heading: typeof OriginHeading & typeof OriginHeadings = Object.assign(
   OriginHeading,
-  OriginHeadings
+  OriginHeadings,
 )
 
 export { Heading }

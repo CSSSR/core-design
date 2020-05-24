@@ -6,7 +6,6 @@ import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 
 import { Button } from './Button'
-import { Root } from '../Root'
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
@@ -22,13 +21,11 @@ storiesOf('Button', module)
     const cssKnob = text('CSS', 'width: 120px;')
 
     return (
-      <Root>
-        <Button
-          {...knobs}
-          css={css`
-            ${cssKnob}
-          `}
-        />
-      </Root>
+      <Button
+        {...knobs}
+        css={css`
+          ${cssKnob}
+        `}
+      />
     )
   })

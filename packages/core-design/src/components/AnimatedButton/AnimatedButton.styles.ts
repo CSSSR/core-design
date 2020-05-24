@@ -60,8 +60,8 @@ export default {
 
     svg.checkmark path,
     svg.cross path {
-      stroke-linecap: round;
-      stroke-width: 4;
+      strokelinecap: round;
+      strokewidth: 4;
       transition: opacity 0.1s;
     }
   `,
@@ -92,7 +92,7 @@ export default {
 
       svg.progress-circle path {
         opacity: 1;
-        stroke-width: 5;
+        strokewidth: 5;
         animation: ${dash} 2s linear forwards;
       }
     `,
