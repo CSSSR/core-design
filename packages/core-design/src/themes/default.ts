@@ -68,6 +68,45 @@ const theme = {
       desktop: `@media (max-width: ${breakpoints.s_l}px)`,
     },
   },
+  breakpointsOrdered: [
+    {
+      name: 'mobile.all',
+      maxWidth: breakpoints.s_s,
+    },
+    {
+      name: 'tablet.s',
+      minWidth: breakpoints.s,
+      maxWidth: breakpoints.s_m,
+    },
+    {
+      name: 'tablet.m',
+      minWidth: breakpoints.m,
+      maxWidth: breakpoints.s_l,
+    },
+    {
+      name: 'tablet.all',
+      minWidth: breakpoints.s,
+      maxWidth: breakpoints.s_l,
+    },
+    {
+      name: 'desktop.s',
+      minWidth: breakpoints.l,
+      maxWidth: breakpoints.s_xl,
+    },
+    {
+      name: 'desktop.m',
+      minWidth: breakpoints.xl,
+      maxWidth: breakpoints.s_xxl,
+    },
+    {
+      name: 'desktop.l',
+      minWidth: breakpoints.xxl,
+    },
+    {
+      name: 'desktop.all',
+      minWidth: breakpoints.l,
+    },
+  ],
   media: {
     points: breakpoints,
     from(width: number) {
