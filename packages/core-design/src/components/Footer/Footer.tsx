@@ -139,7 +139,7 @@ Footer.defaultProps = {
   actionPhrase: 'Let’s work together!',
   email: 'sales@csssr.com',
   video: {
-    src: 'http://s.csssr.ru/U31J879TR/camp.mp4', // TODO: заменить на более надежную ссылку
+    src: 'https://static.csssr.com/camp-e1d4f932.mp4',
     type: 'video/mp4',
     errorText: 'This browser does not support downloading video files',
   },
