@@ -25,6 +25,10 @@ const base = (props: ThemeProps) => {
       position: relative;
     }
 
+    .picture {
+      display: block;
+    }
+
     .pin {
       position: absolute;
       display: block;
