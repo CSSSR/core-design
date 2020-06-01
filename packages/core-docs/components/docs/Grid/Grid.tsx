@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { Grid as OriginGrid } from '@csssr/core-design'
+import { ThemeProps } from '@csssr/core-design/src/themes/types'
 
 const Grid = styled(OriginGrid.withComponent('section'))`
   grid-template-columns: repeat(12, 1fr);
@@ -10,31 +11,31 @@ const Grid = styled(OriginGrid.withComponent('section'))`
   height: 100vh;
   overflow-y: auto;
 
-  ${props => props.theme.breakpoints.desktop.m} {
+  ${(props: ThemeProps) => props.theme.breakpoints.desktop.m} {
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 0 16px;
     width: auto;
   }
 
-  ${props => props.theme.breakpoints.desktop.s} {
+  ${(props: ThemeProps) => props.theme.breakpoints.desktop.s} {
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 0 16px;
     width: auto;
   }
 
-  ${props => props.theme.breakpoints.tablet.m} {
+  ${(props: ThemeProps) => props.theme.breakpoints.tablet.m} {
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 0 16px;
     width: auto;
   }
 
-  ${props => props.theme.breakpoints.tablet.s} {
+  ${(props: ThemeProps) => props.theme.breakpoints.tablet.s} {
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 0 1rem;
     width: auto;
   }
 
-  ${props => props.theme.breakpoints.mobile.all} {
+  ${(props: ThemeProps) => props.theme.breakpoints.mobile.all} {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 0 0.5rem;
     width: auto;
