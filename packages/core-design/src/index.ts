@@ -11,7 +11,7 @@ export { default as PictureForAllResolutions } from './components/PictureForAllR
 export { default as Root } from './components/Root'
 export { default as SubHeading } from './components/SubHeading'
 export { default as Text } from './components/Text'
-
+export { default as ErrorPage } from './components/ErrorPage'
 export {
   default as TextFieldLight,
   UncontrolledTextFieldLight,
