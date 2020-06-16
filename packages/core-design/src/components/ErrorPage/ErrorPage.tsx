@@ -10,11 +10,7 @@ const LogoIcon = require('../../static/icons/csssr_logo.svg')
 const ServerError = require('../../static/icons/serverError.svg')
 /* tslint:enable */
 
-const codeIconByStatusCode: object = {
-  500: <ServerError width="100%" height="100%" />,
-}
-
-const ErrorPage: React.FC<Props> = ({ className, title, subTitle, statusCode, Img }) => {
+const ErrorPage: React.FC<Props> = ({ className, title, subTitle, Img }) => {
   return (
     <div className={className}>
       <Grid className="header">
@@ -23,12 +19,14 @@ const ErrorPage: React.FC<Props> = ({ className, title, subTitle, statusCode, Im
         </a>
       </Grid>
 
-      <Grid className={`error-code_${statusCode}`}>
+      <Grid className="error-code_500">
         <h1 className="font_h1-slab title" dangerouslySetInnerHTML={{ __html: title }} />
 
         {Img && <Img className="picture" />}
 
-        <div className={'code-wrapper'}>{codeIconByStatusCode[statusCode]}</div>
+        <div className="code-wrapper">
+          <ServerError width="100%" height="100%" />
+        </div>
 
         <h2 className="font_subhead-slab subtitle" dangerouslySetInnerHTML={{ __html: subTitle }} />
       </Grid>
