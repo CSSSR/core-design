@@ -73,7 +73,7 @@
     "classnames": "^2.2.6",
     "color": "^3.1.1",
     "emotion-theming": "^10.0.27",
-    "ramda": "^0.26.1",
+    "ramda": "^0.27.0",
     "react-reveal": "^1.2.2",
     "scroll-lock": "^2.1.4"
   }
