@@ -10,7 +10,7 @@
     "build:compile": "babel --out-dir ./lib -x .tsx,.ts src",
     "build:typings": "tsc --emitDeclarationOnly",
     "clean": "cleandir ./lib",
-    "copy:assets": "cpx './src/**/*.{png,jpg,jpeg,svg,woff,woff2,eot,ttf,otf}' lib",
+    "copy:assets": "cpx './src/**/*.{png,jpg,jpeg,svg}' lib",
     "dev": "yarn run clean && concurrently 'yarn run build:typings --watch' 'yarn run build:compile --watch' 'yarn run copy:assets --watch'",
     "lint": "tslint --project ./tsconfig.json --exclude ./__tests__/**/*.{ts,tsx} ./src/**/*.{ts,tsx}",
     "precommit": "lint-staged",
