@@ -8,8 +8,9 @@ const base = (props: ThemeProps) => {
 
   return css`
     & {
-      position: absolute;
+      position: fixed;
       z-index: 9999;
+      top: 0;
       left: 0;
       display: flex;
       flex-wrap: wrap;
@@ -23,20 +24,6 @@ const base = (props: ThemeProps) => {
 
     .logo-wrapper {
       font-size: 0;
-    }
-
-    &.invisible,
-    &.visible {
-      position: fixed;
-    }
-
-    &.invisible {
-      top: -4rem;
-    }
-
-    &.visible {
-      position: fixed;
-      top: 0;
     }
 
     .logo {
