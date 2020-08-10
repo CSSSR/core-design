@@ -1,8 +1,8 @@
 /* tslint:disable */
-const Facebook = require('../static/icons/footer/Facebook.svg')
-const Linkedin = require('../static/icons/footer/Linkedin.svg')
-const Instagram = require('../static/icons/footer/Instagram.svg')
-const Youtube = require('../static/icons/footer/Youtube.svg')
+const Facebook = require('../static/icons/footer/facebook.svg')
+const Linkedin = require('../static/icons/footer/linkedin.svg')
+const Instagram = require('../static/icons/footer/instagram.svg')
+const Youtube = require('../static/icons/footer/youtube.svg')
 // const Soundcloud = require('../static/icons/footer/Soundcloud.svg')
 // const Telegram = require('../static/icons/footer/Telegram.svg')
 // const Twitter = require('../static/icons/footer/Twitter.svg')

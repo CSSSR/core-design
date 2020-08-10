@@ -31,6 +31,7 @@ const Header: React.FC<Props> = ({
   logo,
 }) => {
   const [isDropdownOpened, toggleDropdown] = useState(false)
+  const [isReady, toggleIsReady] = useState(false)
   const isIe11 = useIe11Status(isIe11ValueFromProps)
   const isMobile = useMobileStatus(isMobileValueFromProps)
 
@@ -42,6 +43,7 @@ const Header: React.FC<Props> = ({
 
     getVhSize()
     window.addEventListener('resize', getVhSize)
+    toggleIsReady(true)
 
     return () => window.removeEventListener('resize', getVhSize)
   })
@@ -102,7 +104,7 @@ const Header: React.FC<Props> = ({
         <Logo className="logo" />
       </LinkComponent>
 
-      {isMobile ? (
+      {isReady && isMobile && (
         <Fragment>
           <button className="burger" onClick={() => toggleDropdown(!isDropdownOpened)}>
             <Icon />
@@ -117,9 +119,9 @@ const Header: React.FC<Props> = ({
             <CommonHeaderContent />
           </div>
         </Fragment>
-      ) : (
-        <CommonHeaderContent />
       )}
+
+      {isReady && !isMobile && <CommonHeaderContent />}
     </header>
   )
 }
