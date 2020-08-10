@@ -26,8 +26,8 @@ export const menu = [
         testId: 'Header:nav:link.outsourcing',
         icon: Circle,
         component: Link,
-        title: 'Outsourcing <span style="white-space: nowrap;">Front-end</span>',
-        description: 'Web development to&nbsp;complement core competencies.',
+        title: 'Web Development',
+        description: 'Fast, reliable and professional web development services.',
         href: 'https://csssr.com/en/service/outsourcing-front-end',
       },
       {
@@ -35,8 +35,9 @@ export const menu = [
         testId: 'Header:nav:link.express',
         icon: Triangle,
         component: Link,
-        title: 'Express Web Development',
-        description: 'Fixed rates for straight-forward, time-sensitive services.',
+        title: 'PSD to HTML Conversion',
+        description:
+          'Turn your design (PSD, Sketch, Figma) into <span style="white-space: nowrap;">HTML-pages</span>.',
         href: 'https://csssr.com/en/service/express-front-end',
       },
       {
@@ -126,9 +127,9 @@ export const menu = [
     ],
   },
   {
-    id: 'products',
+    id: 'solutions',
     testId: 'Header:nav:button.products',
-    title: 'Products',
+    title: 'Solutions',
     links: [
       {
         id: 'lms',

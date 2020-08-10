@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import useIe11Status from '../../utils/hooks/useIe11Status'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
 import { HeaderProps as Props } from './types'
@@ -30,9 +30,7 @@ const Header: React.FC<Props> = ({
   actionButton,
   logo,
 }) => {
-  const lastScrollTopValue = useRef(0)
   const [isDropdownOpened, toggleDropdown] = useState(false)
-  const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
   const isIe11 = useIe11Status(isIe11ValueFromProps)
   const isMobile = useMobileStatus(isMobileValueFromProps)
 
@@ -56,41 +54,6 @@ const Header: React.FC<Props> = ({
       } else {
         enablePageScroll(document.body)
       }
-    }
-
-    const handleScroll = (event: any) => {
-      const headerHeight = 64
-      const {
-        target: { scrollingElement },
-      } = event
-
-      const isScrollingElementHtmlOrBodyNode =
-        scrollingElement === document.documentElement || scrollingElement === document.body
-      const scrollTopValue = isScrollingElementHtmlOrBodyNode && scrollingElement.scrollTop
-      const isScrollingDown =
-        scrollTopValue > lastScrollTopValue.current && scrollTopValue > headerHeight
-
-      if (isScrollingDown) {
-        if (isMobile && isDropdownOpened) {
-          toggleHeaderVisibility(true)
-        } else if (isHeaderVisible) {
-          toggleHeaderVisibility(false)
-        }
-      } else {
-        if (!isHeaderVisible) {
-          toggleHeaderVisibility(true)
-          toggleDropdown(false)
-        }
-      }
-
-      lastScrollTopValue.current =
-        scrollTopValue === lastScrollTopValue.current ? scrollTopValue - 1 : scrollTopValue
-    }
-
-    if (!isIe11) {
-      document.addEventListener('scroll', handleScroll)
-
-      return () => document.removeEventListener('scroll', handleScroll)
     }
   })
 
@@ -134,13 +97,7 @@ const Header: React.FC<Props> = ({
   )
 
   return (
-    <header
-      data-testid="Header:block"
-      className={cn(className, {
-        visible: isHeaderVisible,
-        invisible: !isHeaderVisible,
-      })}
-    >
+    <header data-testid="Header:block" className={className}>
       <LinkComponent href={logo.href} className="logo-wrapper" data-testid={logo.testId}>
         <Logo className="logo" />
       </LinkComponent>

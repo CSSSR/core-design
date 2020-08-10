@@ -18,7 +18,6 @@ const base = (props: ThemeProps) => {
       overflow: hidden;
       will-change: height;
       transition: height 75ms ease-out;
-      background-color: ${colors.secondary.darken100};
     }
 
     &.visible {
@@ -64,7 +63,7 @@ const base = (props: ThemeProps) => {
     }
 
     .nav_howWeWork,
-    .nav_products,
+    .nav_solutions,
     .nav_industries {
       .nav-item {
         width: 50%;
@@ -147,7 +146,7 @@ const base = (props: ThemeProps) => {
 
     .nav_services_children_number_3,
     .nav_howWeWork,
-    .nav_products {
+    .nav_solutions {
       .icon {
         top: ${calcRem(68)};
       }
@@ -202,7 +201,7 @@ const base = (props: ThemeProps) => {
 
     @media (pointer: fine) {
       .nav_howWeWork,
-      .nav_products,
+      .nav_solutions,
       .nav_industries {
         .link:hover {
           color: #5695ed;
@@ -257,7 +256,7 @@ const base = (props: ThemeProps) => {
     }
 
     .nav_howWeWork,
-    .nav_products,
+    .nav_solutions,
     .nav_industries {
       .nav-item_active .link {
         color: #5695ed;
@@ -282,8 +281,8 @@ const base = (props: ThemeProps) => {
       }
     }
 
-    .nav_products .link:hover,
-    .nav_products .nav-item_active .link {
+    .nav_solutions .link:hover,
+    .nav_solutions .nav-item_active .link {
       .icon_lms {
         fill: #5695ed;
 
@@ -331,9 +330,11 @@ const base = (props: ThemeProps) => {
         .description {
           width: calc(100% - ${calcRem(25)});
         }
+
         .link {
           padding-left: ${calcRem(72)};
         }
+
         .nav-item {
           width: 33%;
         }
@@ -344,12 +345,15 @@ const base = (props: ThemeProps) => {
           width: 21.875%;
           margin-left: ${calcRem(16)};
         }
+
         .icon {
           left: ${calcRem(23)};
         }
+
         .title {
           width: 100%;
         }
+
         .description {
           width: calc(100% - ${calcRem(15)});
         }
@@ -360,13 +364,14 @@ const base = (props: ThemeProps) => {
           padding-top: ${calcRem(64)};
           padding-left: ${calcRem(89)};
         }
+
         .icon {
           top: ${calcRem(81)};
         }
       }
 
       .nav_howWeWork,
-      .nav_products {
+      .nav_solutions {
         .description {
           width: calc(100% - ${calcRem(92)});
         }
@@ -429,20 +434,21 @@ const base = (props: ThemeProps) => {
         padding-left: 0;
       }
 
-      .title {
-        margin-top: ${calcRem(8)};
-        font-size: ${calcRem(16)};
-        line-height: ${calcRem(24)};
-      }
-
       .nav_services {
         .link {
           padding-top: 0;
           padding-left: 0;
         }
+
         .nav-item {
           margin-left: 0;
         }
+      }
+
+      .title {
+        margin-top: ${calcRem(8)};
+        font-size: ${calcRem(16)};
+        line-height: ${calcRem(24)};
       }
 
       .description {
@@ -459,7 +465,7 @@ const base = (props: ThemeProps) => {
 
       .nav_industries,
       .nav_howWeWork,
-      .nav_products,
+      .nav_solutions,
       .nav_services {
         .nav-item {
           width: 100%;
@@ -473,7 +479,7 @@ const base = (props: ThemeProps) => {
       }
 
       .nav_howWeWork,
-      .nav_products {
+      .nav_solutions {
         ul {
           margin-top: ${calcRem(27)};
         }
@@ -492,13 +498,16 @@ const base = (props: ThemeProps) => {
         ul {
           margin-top: ${calcRem(19)};
         }
+
         .nav-item {
           width: 100%;
           height: auto;
         }
+
         .title {
           margin-top: 0;
         }
+
         .nav-item:not(:first-of-type) {
           margin-top: ${calcRem(35)};
         }
