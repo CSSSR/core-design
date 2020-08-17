@@ -1,6 +1,6 @@
 {
   "name": "@csssr/core-design",
-  "version": "5.6.2",
+  "version": "5.7.0",
   "main": "lib/index.js",
   "license": "MIT",
   "types": "lib/typings",
