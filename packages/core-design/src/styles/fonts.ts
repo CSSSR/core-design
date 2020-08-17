@@ -205,11 +205,14 @@ const link_list = (props: ThemeProps) => css`
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: #0254d8;
+
+    &:hover[target='_blank']::after {
+      border-color: #0254d8;
     }
   }
 
   &[target='_blank']::after {
-    position: absolute;
+    position: relative;
     display: none;
     box-sizing: border-box;
     content: '';
@@ -217,7 +220,7 @@ const link_list = (props: ThemeProps) => css`
 
   &:hover::after,
   &:focus::after {
-    display: block;
+    display: inline-block;
   }
 
   ${props.theme.breakpoints.below.desktop} {
@@ -237,8 +240,9 @@ const link_list_s = (props: ThemeProps) => css`
   line-height: 1.5rem;
 
   &[target='_blank']::after {
-    bottom: 1rem;
-    right: -0.3125rem;
+    bottom: 0.625rem;
+    right: -0.0625rem;
+    margin-right: -0.25rem;
     width: 0.25rem;
     height: 0.25rem;
     border: 0.125rem solid ${props.theme.colors.primary.origin};
@@ -251,8 +255,9 @@ const link_list_m = (props: ThemeProps) => css`
   line-height: 2rem;
 
   &[target='_blank']::after {
-    bottom: 1.5625rem;
-    right: -0.625rem;
+    bottom: 0.875rem;
+    right: -0.125rem;
+    margin-right: -0.375rem;
     width: 0.375rem;
     height: 0.375rem;
     border: 0.0625rem solid ${props.theme.colors.primary.origin};
@@ -266,8 +271,9 @@ const link_list_l = (props: ThemeProps) => css`
   line-height: 2.5rem;
 
   &[target='_blank']::after {
-    bottom: 1.9375rem;
-    right: -0.625rem;
+    bottom: 0.8125rem;
+    right: -0.1875rem;
+    margin-right: -0.5rem;
     width: 0.5rem;
     height: 0.5rem;
     border: 0.125rem solid ${props.theme.colors.primary.origin};
