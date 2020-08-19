@@ -29,6 +29,7 @@ export {
   default as TextareaFieldRegular,
   UncontrolledTextareaFieldRegular,
 } from './components/Fields/Regular/TextareaFieldRegular'
+export { default as Fonts } from './components/Fonts'
 
 export { default as List } from './components/List'
 export { default as ListItem } from './components/List/ListItem'
