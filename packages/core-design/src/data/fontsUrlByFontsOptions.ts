@@ -1,8 +1,7 @@
 const fontsUrlByFontsOptions = {
   Amita_400_normal: 'https://static.csssr.com/fonts-subsets/Amita-Regular_normal-ca065d1f.woff2',
   Roboto_100_normal: 'https://static.csssr.com/fonts-subsets/Roboto-Thin_normal-b81f5c09.woff2',
-  Roboto_300_normal:
-    'https://static.csssr.com/fonts-subsets/RobotoSlab-Light_normal-3b8d53ef.woff2',
+  Roboto_300_normal: 'https://static.csssr.com/fonts-subsets/Roboto-Light_normal-2c576038.woff2',
   Roboto_400_normal: 'https://static.csssr.com/fonts-subsets/Roboto-Regular_normal-ca1979e0.woff2',
   Roboto_400_italic: 'https://static.csssr.com/fonts-subsets/Roboto-Regular_italic-8c754e28.woff2',
   Roboto_500_normal: 'https://static.csssr.com/fonts-subsets/Roboto-Medium_normal-a773d16d.woff2',
