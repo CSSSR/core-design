@@ -205,6 +205,7 @@ const link_list = (props: ThemeProps) => css`
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: #0254d8;
+    }
 
     &:hover[target='_blank']::after {
       border-color: #0254d8;
