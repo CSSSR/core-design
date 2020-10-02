@@ -3,7 +3,7 @@ import { ThemeProps } from '../../../../themes/types'
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = (props: ThemeProps) => {
-  const { desktop, tablet, mobile } = props.theme.breakpoints
+  const { desktop, tablet, above, mobile } = props.theme.breakpoints
   const colors = props.theme.colors
 
   return css`
@@ -355,7 +355,7 @@ const base = (props: ThemeProps) => {
         }
 
         .description {
-          width: calc(100% - ${calcRem(15)});
+          width: calc(100% - ${calcRem(10)});
         }
       }
 
@@ -380,6 +380,18 @@ const base = (props: ThemeProps) => {
       .nav_services {
         .nav-item_active .icon path {
           stroke: #5695ed;
+        }
+      }
+    }
+
+    ${above.mobile} {
+      .nav-item_design {
+        .link {
+          padding-top: ${calcRem(56)};
+        }
+
+        .description {
+          width: ${calcRem(144)};
         }
       }
     }

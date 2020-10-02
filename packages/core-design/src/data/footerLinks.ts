@@ -63,9 +63,9 @@ export const nav = [
         href: 'https://csssr.com/en/service/outsourcing-front-end',
       },
       {
-        id: 'express',
-        title: 'Express',
-        href: 'https://csssr.com/en/service/express-front-end',
+        id: 'backend',
+        title: 'Back-end</br>and DevOps',
+        href: 'https://csssr.com/en/service/back-end-and-devops',
       },
       {
         id: 'mvp',
@@ -73,9 +73,9 @@ export const nav = [
         href: 'https://csssr.com/en/service/mvp-development',
       },
       {
-        id: 'backend',
-        title: 'Back-end</br>and DevOps',
-        href: 'https://csssr.com/en/service/back-end-and-devops',
+        id: 'design',
+        title: 'DesignLab',
+        href: 'https://csssr.com/en/service/design-lab',
       },
     ],
   },

@@ -107,7 +107,7 @@ const Nav: React.FC<Props> = ({
               }) => (
                 <Wrapper key={id} {...animationProps}>
                   <li
-                    className={cn('nav-item', {
+                    className={cn('nav-item', `nav-item_${id}`, {
                       'nav-item_active': pathname === href,
                     })}
                   >
