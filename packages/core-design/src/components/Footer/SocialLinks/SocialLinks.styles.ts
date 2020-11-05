@@ -54,6 +54,7 @@ const base = (props: ThemeProps) => {
       margin-right: auto;
       max-width: ${calcRem(168)};
       flex-wrap: wrap;
+      justify-content: center;
 
       li {
         font-size: 0;
