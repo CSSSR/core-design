@@ -74,11 +74,14 @@ const base = (props: ThemeProps) => {
       }
     }
 
-    .nav_services_children_number_3 {
+    .nav_services_children_number_3,
+    .nav_courses_children_number_3 {
       .nav-item {
         width: 33%;
       }
+    }
 
+    .nav_services_children_number_3 {
       .title {
         width: 45%;
       }
@@ -129,7 +132,8 @@ const base = (props: ThemeProps) => {
       }
     }
 
-    .nav_services {
+    .nav_services,
+    .nav_courses {
       .nav-item_active .icon path {
         stroke: #5695ed;
       }
@@ -145,6 +149,7 @@ const base = (props: ThemeProps) => {
     }
 
     .nav_services_children_number_3,
+    .nav_courses,
     .nav_howWeWork,
     .nav_solutions {
       .icon {
@@ -240,7 +245,8 @@ const base = (props: ThemeProps) => {
         }
       }
 
-      .nav_services {
+      .nav_services,
+      .nav_courses {
         .link:hover {
           color: #5695ed;
         }
@@ -267,7 +273,8 @@ const base = (props: ThemeProps) => {
       }
     }
 
-    .nav_services {
+    .nav_services,
+    .nav_courses {
       .nav-item_active .link {
         color: #5695ed;
       }
@@ -308,10 +315,35 @@ const base = (props: ThemeProps) => {
       }
     }
 
+    ${desktop.all} {
+      .nav_courses_children_number_3 {
+        .title {
+          margin-top: 22px;
+          width: 90%;
+
+          br {
+            display: none;
+          }
+        }
+
+        .description {
+          width: 75%;
+        }
+      }
+    }
+
     ${desktop.l} {
       .nav_services_children_number_4 {
         .nav-item {
           margin-left: ${calcRem(24)};
+        }
+      }
+    }
+
+    ${desktop.s} {
+      .nav_courses_children_number_3 {
+        .description {
+          width: 85%;
         }
       }
     }
@@ -340,6 +372,16 @@ const base = (props: ThemeProps) => {
         }
       }
 
+      .nav_courses {
+        .title {
+          width: 75%;
+        }
+
+        .description {
+          width: calc(100% - ${calcRem(40)});
+        }
+      }
+
       .nav_services_children_number_4 {
         .nav-item {
           width: 21.875%;
@@ -359,14 +401,30 @@ const base = (props: ThemeProps) => {
         }
       }
 
+      .nav_services_children_number_3,
+      .nav_courses_children_number_3 {
+        .link {
+          padding-left: ${calcRem(89)};
+        }
+      }
+
       .nav_services_children_number_3 {
         .link {
           padding-top: ${calcRem(64)};
-          padding-left: ${calcRem(89)};
         }
 
         .icon {
           top: ${calcRem(81)};
+        }
+      }
+
+      .nav_courses_children_number_3 {
+        .link {
+          padding-top: ${calcRem(56)};
+        }
+
+        .icon {
+          top: ${calcRem(61)};
         }
       }
 
@@ -377,7 +435,8 @@ const base = (props: ThemeProps) => {
         }
       }
 
-      .nav_services {
+      .nav_services,
+      .nav_courses {
         .nav-item_active .icon path {
           stroke: #5695ed;
         }
@@ -446,7 +505,8 @@ const base = (props: ThemeProps) => {
         padding-left: 0;
       }
 
-      .nav_services {
+      .nav_services,
+      .nav_courses {
         .link {
           padding-top: 0;
           padding-left: 0;
@@ -478,7 +538,8 @@ const base = (props: ThemeProps) => {
       .nav_industries,
       .nav_howWeWork,
       .nav_solutions,
-      .nav_services {
+      .nav_services,
+      .nav_courses {
         .nav-item {
           width: 100%;
           height: auto;
@@ -506,7 +567,8 @@ const base = (props: ThemeProps) => {
         }
       }
 
-      .nav_services {
+      .nav_services,
+      .nav_courses {
         ul {
           margin-top: ${calcRem(19)};
         }

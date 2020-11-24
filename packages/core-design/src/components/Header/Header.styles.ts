@@ -30,6 +30,11 @@ const base = (props: ThemeProps) => {
       margin-left: ${calcRem(32)};
       order: 1;
       color: white;
+
+      &_school {
+        width: ${calcRem(158)};
+        height: ${calcRem(28)};
+      }
     }
 
     .button_action {
@@ -52,6 +57,11 @@ const base = (props: ThemeProps) => {
         width: ${calcRem(64)};
         height: ${calcRem(16)};
         order: 1;
+
+        &_school {
+          width: ${calcRem(104)};
+          height: ${calcRem(18)};
+        }
       }
 
       .burger {

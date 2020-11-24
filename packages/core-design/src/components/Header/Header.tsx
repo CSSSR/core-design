@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import useIe11Status from '../../utils/hooks/useIe11Status'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
+import presets from '../../data/headerPresets'
+import { menu as defaultMenu, links as defaultLinks } from '../../data/headerLinks'
 import { HeaderProps as Props } from './types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import { clearQueueScrollLocks, disablePageScroll, enablePageScroll } from 'scroll-lock'
-import { menu as defaultMenu, links as defaultLinks } from '../../data/headerLinks'
 import styles from './Header.styles'
 
 import Menu from './Menu'
@@ -15,10 +16,15 @@ import ButtonLink from '../ButtonLink'
 
 /* tslint:disable */
 const Logo = require('../../static/icons/csssr_logo.svg')
-// import Logo from '../../static/icons/csssr_logo.svg'
+const LogoSchool = require('../../static/icons/csssr_logo_school.svg')
 const Burger = require('../../static/icons/header/burger.svg')
 const Cross = require('../../static/icons/header/close.svg')
 /* tslint:enable */
+
+const logoHashMap = {
+  default: <Logo className="logo" />,
+  school: <LogoSchool className="logo logo_school" />,
+}
 
 const Header: React.FC<Props> = ({
   className,
@@ -29,6 +35,7 @@ const Header: React.FC<Props> = ({
   links,
   actionButton,
   logo,
+  preset,
 }) => {
   const [isDropdownOpened, toggleDropdown] = useState(false)
   const [isReady, toggleIsReady] = useState(false)
@@ -68,30 +75,30 @@ const Header: React.FC<Props> = ({
           isMobile={isMobile}
           isIe11={isIe11}
           pathname={pathname}
-          links={menu.links}
-          backButtonText={menu.backButtonText}
+          links={presets[preset]?.menu.links || menu.links}
+          backButtonText={presets[preset]?.menu.backButtonText || menu.backButtonText}
         />
       )}
-      {links && <Links links={links} pathname={pathname} />}
-      {actionButton.isVisible &&
-        (isIe11 ? (
+      {links && <Links links={presets[preset]?.links || links} pathname={pathname} />}
+      {(presets[preset]?.actionButton.isVisible || actionButton.isVisible) &&
+        (isIe11 || actionButton.href ? (
           <ButtonLink
             kind="primary"
             className="button_action"
-            data-testid={actionButton.testId}
-            href={actionButton.href}
+            data-testid={presets[preset]?.actionButton.testId || actionButton.testId}
+            href={presets[preset]?.actionButton.href || actionButton.href}
             dangerouslySetInnerHTML={{
-              __html: actionButton.text,
+              __html: presets[preset]?.actionButton.text || actionButton.text,
             }}
           />
         ) : (
           <Button
             kind="primary"
             className="button_action"
-            data-testid={actionButton.testId}
+            data-testid={presets[preset]?.actionButton.testId || actionButton.testId}
             onClick={actionButton.onClick}
             dangerouslySetInnerHTML={{
-              __html: actionButton.text,
+              __html: presets[preset]?.actionButton.text || actionButton.text,
             }}
           />
         ))}
@@ -100,8 +107,12 @@ const Header: React.FC<Props> = ({
 
   return (
     <header data-testid="Header:block" className={className}>
-      <LinkComponent href={logo.href} className="logo-wrapper" data-testid={logo.testId}>
-        <Logo className="logo" />
+      <LinkComponent
+        href={presets[preset]?.logo.href || logo.href}
+        className="logo-wrapper"
+        data-testid={presets[preset]?.logo.testId || logo.testId}
+      >
+        {logoHashMap[presets[preset]?.logo.type] || logoHashMap[logo.type]}
       </LinkComponent>
 
       {isReady && isMobile && (
@@ -139,6 +150,7 @@ Header.defaultProps = {
   menu: { links: defaultMenu, backButtonText: 'Our services' },
   links: defaultLinks,
   pathname: '',
+  preset: '',
 }
 
 export default styled(Header)`
