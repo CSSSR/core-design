@@ -81,7 +81,7 @@ const Header: React.FC<Props> = ({
       )}
       {links && <Links links={presets[preset]?.links || links} pathname={pathname} />}
       {(presets[preset]?.actionButton.isVisible || actionButton.isVisible) &&
-        (isIe11 || actionButton.href ? (
+        (isIe11 || presets[preset]?.actionButton.href || actionButton.href ? (
           <ButtonLink
             kind="primary"
             className="button_action"

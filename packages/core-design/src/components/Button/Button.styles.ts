@@ -13,6 +13,7 @@ export default {
     border: none;
     cursor: pointer;
     user-select: none;
+    text-decoration: none;
 
     &:disabled {
       pointer-events: none;
