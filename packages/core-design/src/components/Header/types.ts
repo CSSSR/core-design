@@ -42,6 +42,7 @@ export interface HeaderProps {
     href?: string
     testId?: string
     linkComponent?: React.ComponentType<LinkComponentProps>
+    type?: 'default' | 'school'
   }
   actionButton?: {
     isVisible?: boolean
@@ -56,4 +57,5 @@ export interface HeaderProps {
   }
   links?: LinksProps[]
   theme?: ThemeProps
+  preset?: '' | 'default' | 'school'
 }

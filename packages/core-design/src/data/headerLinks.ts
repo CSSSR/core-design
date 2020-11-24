@@ -13,7 +13,68 @@ const CPU = require('../static/icons/header/cpu.svg')
 const Repeat = require('../static/icons/header/repeat.svg')
 const LMS = require('../static/icons/header/lms.svg')
 const Tracker = require('../static/icons/header/tracker.svg')
+const React = require('../static/icons/header/react.svg')
+const Eda = require('../static/icons/header/eda.svg')
 /* tslint:enable */
+
+export const schoolMenu = [
+  {
+    id: 'courses',
+    testId: 'Header:nav:button.courses',
+    title: 'Курсы',
+    links: [
+      {
+        id: 'junior',
+        testId: 'Header:nav:link.junior',
+        icon: React,
+        component: Link,
+        title: 'React</br> Getting Started',
+        description: 'Курс для разработчиков, которые хотят кодить на React.',
+        href: 'https://school.csssr.com/ru/course/react/junior',
+      },
+      {
+        id: 'middle',
+        testId: 'Header:nav:link.middle',
+        icon: React,
+        component: Link,
+        title: 'React</br> Under the Hood',
+        description: 'Курс для React-джунов и тех, кто хочет заглянуть под капот фреймворка.',
+        href: 'https://school.csssr.com/ru/course/react/react-under-the-hood/',
+      },
+      {
+        id: 'eda',
+        testId: 'Header:nav:link.eda',
+        icon: Eda,
+        component: Link,
+        title: 'Event-Driven Applications',
+        description:
+          'Курс для начинающих и уже работающих Junior <span style="white-space: nowrap">React-разработчиков</span>.',
+        href: 'https://school.csssr.com/ru/course/event-driven-apps/',
+      },
+    ],
+  },
+]
+
+export const schoolLinks = [
+  {
+    href: 'https://csssr.com/ru',
+    title: 'О компании',
+    testId: 'Header:link.careers',
+    component: Link,
+  },
+  {
+    href: 'https://csssr.com/ru-ru/jobs',
+    title: 'Вакансии',
+    testId: 'Header:link.blog',
+    component: Link,
+  },
+  {
+    href: 'https://blog.csssr.com/ru',
+    title: 'Блог',
+    testId: 'Header:link.blog',
+    component: Link,
+  },
+]
 
 export const menu = [
   {
