@@ -39,7 +39,7 @@ export const schoolMenu = [
         component: Link,
         title: 'React</br> Under the Hood',
         description: 'Курс для React-джунов и тех, кто хочет заглянуть под капот фреймворка.',
-        href: '/ru/course/react/react-under-the-hood/',
+        href: '/ru/course/react/react-under-the-hood',
       },
       {
         id: 'eda',
@@ -49,7 +49,7 @@ export const schoolMenu = [
         title: 'Event-Driven Applications',
         description:
           'Курс для начинающих и уже работающих Junior <span style="white-space: nowrap">React-разработчиков</span>.',
-        href: '/ru/course/event-driven-apps/',
+        href: '/ru/course/event-driven-apps',
       },
     ],
   },
