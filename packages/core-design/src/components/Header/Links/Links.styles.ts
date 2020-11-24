@@ -22,6 +22,7 @@ const base = (props: ThemeProps) => {
       letter-spacing: 0;
       color: white;
       text-transform: capitalize;
+      text-decoration: none;
     }
 
     a:hover {
