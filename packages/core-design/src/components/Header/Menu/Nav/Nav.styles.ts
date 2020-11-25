@@ -567,8 +567,7 @@ const base = (props: ThemeProps) => {
         }
       }
 
-      .nav_services,
-      .nav_courses {
+      .nav_services {
         ul {
           margin-top: ${calcRem(19)};
         }
@@ -584,6 +583,29 @@ const base = (props: ThemeProps) => {
 
         .nav-item:not(:first-of-type) {
           margin-top: ${calcRem(35)};
+        }
+      }
+
+      .nav_courses {
+        ul {
+          margin-top: ${calcRem(28)};
+        }
+
+        .nav-item {
+          width: 100%;
+          height: auto;
+        }
+
+        .nav-item:not(:first-of-type) {
+          margin-top: ${calcRem(67)};
+        }
+
+        .title {
+          margin-top: ${calcRem(8)};
+
+          br {
+            display: none;
+          }
         }
       }
 
