@@ -1,6 +1,6 @@
 {
   "name": "@csssr/core-scripts",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
