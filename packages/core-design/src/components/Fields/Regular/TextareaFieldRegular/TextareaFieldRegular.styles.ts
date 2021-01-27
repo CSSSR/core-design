@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Props } from '../InputRegular/InputRegular'
 import { InputLabelRegular } from '../InputLabelRegular'
 import { Hint } from '../../Hint'

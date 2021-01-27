@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Props } from './InputLabelLight'
 import { perforator_s } from '../../../../styles/fonts'
 import { ThemeProps } from '../../../../themes/types'

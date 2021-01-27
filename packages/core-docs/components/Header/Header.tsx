@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from '@emotion/styled'
 
 import { Grid } from '@csssr/core-design'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { Logo } from '../Logo'
 
@@ -21,7 +21,11 @@ interface IHeaderProps {
 const Header: React.FC<IHeaderProps> = ({ className }) => (
   <StyledHeader className={className}>
     <Grid>
-      <Logo css={css` grid-column: 1 / span 2; `}/>
+      <Logo
+        css={css`
+          grid-column: 1 / span 2;
+        `}
+      />
     </Grid>
   </StyledHeader>
 )

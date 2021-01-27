@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { InputLabelLight } from '../InputLabelLight'
 import { Props } from './InputLight'
 import { ThemeProps } from '../../../../themes/types'

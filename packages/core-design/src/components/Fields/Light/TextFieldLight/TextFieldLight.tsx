@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
-import { PropsOf } from '@emotion/styled-base/types/helper'
+// import { PropsOf } from '@emotion/styled/base/types/helper'
+import { PropsOf } from '@emotion/react'
 
 import { InputLight } from '../InputLight'
 import { InputLabelLight } from '../InputLabelLight'

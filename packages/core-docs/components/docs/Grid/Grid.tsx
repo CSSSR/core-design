@@ -42,5 +42,4 @@ const Grid = styled(OriginGrid.withComponent('section'))`
   }
 `
 
-
 export { Grid }

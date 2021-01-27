@@ -1,9 +1,10 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { paragraph_regular_s, paragraph_regular_m } from '../../../styles/fonts'
 import { ThemeProps } from '../../../themes/types'
+import { Props } from './ListItem'
 
 export default {
-  base: (props: ThemeProps & { size: 's' | 'm' }) => css`
+  base: (props: ThemeProps & Props) => css`
     position: relative;
     margin-top: 0;
     padding-left: 1rem;
@@ -24,17 +25,17 @@ export default {
     ${props.theme.breakpoints.below.desktop} {
       &:before {
         ${props.size === 's' &&
-          css`
-            top: 0.25rem;
-          `}
+        css`
+          top: 0.25rem;
+        `}
         ${props.size === 'm' &&
-          css`
-            top: 0.5rem;
-          `}
+        css`
+          top: 0.5rem;
+        `}
       }
     }
   `,
-  font: (props: ThemeProps & { size: 's' | 'm' }) => css`
+  font: (props: ThemeProps & Props) => css`
     ${props.size === 's' && paragraph_regular_s(props)}
     ${props.size === 'm' && paragraph_regular_m(props)}
   `,

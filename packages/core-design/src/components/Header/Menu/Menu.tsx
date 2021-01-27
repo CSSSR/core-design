@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { MenuLinksProps } from '../types'
-import { ThemeProps } from '../../../themes/types'
+import { Theme } from '../../../themes/types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Menu.styles'
@@ -16,7 +16,7 @@ export interface Props {
   isIe11: boolean
   backButtonText: string
   links: MenuLinksProps[]
-  theme?: ThemeProps
+  theme?: Theme
 }
 
 const Menu: React.FC<Props> = ({

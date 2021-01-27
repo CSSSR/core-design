@@ -6,8 +6,10 @@ module.exports = {
     node: true,
     es6: true,
   },
+  extends: '@csssr/eslint-config-core',
+  plugins: ['@emotion'],
   rules: {
     'prettier/prettier': ['error', prettierConfig],
+    '@emotion/pkg-renaming': 'error',
   },
-  extends: '@csssr/eslint-config-core',
 }

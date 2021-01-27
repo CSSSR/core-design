@@ -1,7 +1,7 @@
 import React from 'react'
 import { configure, addDecorator } from '@storybook/react'
 import { Root } from '../src/components/Root'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import styles from './styles/global'
 
 const req = require.context('../src/components', true, /\.stories\.tsx?$/)

@@ -1,6 +1,6 @@
 /* tslint:disable:variable-name */
 
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Theme, ThemeProps } from '../themes/types'
 
 const heading_slab_s = (props: ThemeProps) => css`

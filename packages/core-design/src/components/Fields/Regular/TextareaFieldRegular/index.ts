@@ -5,7 +5,7 @@ import { withFocusedState, withHoveredState } from '../../../../hocs'
 export { TextareaFieldRegular as UncontrolledTextareaFieldRegular } from './TextareaFieldRegular'
 
 const TextareaFieldRegular = withFocusedState()(
-  withHoveredState()(UncontrolledTextareaFieldRegular)
+  withHoveredState()(UncontrolledTextareaFieldRegular),
 )
 
 export { TextareaFieldRegular }

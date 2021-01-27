@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Theme } from '../themes/types'
 
 const normalize = (theme: Theme) => css`

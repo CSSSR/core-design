@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { perforator_s } from '../../../styles/fonts'
 import { Props } from './Hint'
 import { ThemeProps } from '../../../themes/types'

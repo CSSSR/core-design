@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
-import { PropsOf } from '@emotion/styled-base/types/helper'
+// import { PropsOf } from '@emotion/styled/base/types/helper'
+import { PropsOf } from '@emotion/react'
 import isFieldActive from '../../../../utils/isFieldActive'
 
 import { InputLabelRegular } from '../InputLabelRegular'
@@ -16,7 +17,7 @@ export interface Props extends PropsOf<typeof TextareaRegular> {
   active?: boolean
 }
 
-const TextareaFieldRegularOrigin: React.FC<Props> = props => {
+const TextareaFieldRegularOrigin: React.FC<Props> = (props) => {
   const { label, id, error, hovered, focused, value, className, success, hint, ...rest } = props
   const isActive = isFieldActive({ value, focused })
 

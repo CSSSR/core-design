@@ -1,6 +1,6 @@
 import { chain, type, map, toPairs, fromPairs } from 'ramda'
 
-const go = (obj: { [key: string]: any }): Array<[string, any]> =>
+const go = (obj: { [key: string]: any }): [string, any][] =>
   chain(([key, value]: [string, {}]) => {
     if (type(value) === 'Object' || type(value) === 'Array') {
       return map(([k, v]) => [`${key}.${k}`, v], go(value))

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'

@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { subhead_regular, subhead_slab } from '../../styles/fonts'
 

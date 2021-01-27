@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { TextareaLight } from '../TextareaLight'
 import { InputLabelLight } from '../InputLabelLight'
 import { Hint } from '../../Hint'

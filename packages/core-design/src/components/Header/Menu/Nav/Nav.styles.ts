@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { ThemeProps } from '../../../../themes/types'
 import calcRem from '../../../../utils/style/calcRem'
 

@@ -26,7 +26,7 @@
 ### Зависимости
 
 Ожидается, что у проекта, где будет использоваться библиотека, уже установлены следующие зависимости:
-* [@emotion/core](https://www.npmjs.com/package/@emotion/core)
+* [@emotion/react](https://www.npmjs.com/package/@emotion/react)
 * [@emotion/styled](https://www.npmjs.com/package/@emotion/styled)
 * [react](https://www.npmjs.com/package/react)
 * [react-dom](https://www.npmjs.com/package/react-dom)

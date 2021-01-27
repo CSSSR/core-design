@@ -6,13 +6,13 @@ export interface Props {
 }
 
 const ListItem = styled.li<Props>`
-    ${styles.base}
-    ${styles.font}
-  `
+  ${styles.base}
+  ${styles.font}
+`
 
-  // Нужно для проверки является ли этот компонент ListItem из CoreDesign.
-  // https://overreacted.io/how-does-react-tell-a-class-from-a-function/
-;(ListItem as any).isDesignCoreListItem = true
+//   // Нужно для проверки является ли этот компонент ListItem из CoreDesign.
+//   // https://overreacted.io/how-does-react-tell-a-class-from-a-function/
+// ;(ListItem as any).isDesignCoreListItem = true
 
 export { ListItem }
 export default ListItem

@@ -142,7 +142,7 @@ export default NewPage
 ```
 
 Обратите внимание что пропс должен css принимать функцию `css`, которая в свою очеред принимает строку с описаными css правилами. Эту функцию нужно импортировать так же как компоненты на страницу где вы её собираетесь приминять:
-`import { css } from '@emotion/core'`
+`import { css } from '@emotion/react'`
 
 ## Создание новых компонентов
 
@@ -173,7 +173,7 @@ export default MyNewComponent
 и стилями для него:
 
 ```jsx
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 export default {
   base: css`

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
-import { PropsOf } from '@emotion/styled-base/types/helper'
+// import { PropsOf } from '@emotion/styled/base/types/helper'
+import { PropsOf } from '@emotion/react'
 import isFieldActive from '../../../../utils/isFieldActive'
 
 import { InputLabelRegular } from '../InputLabelRegular'
@@ -16,7 +17,7 @@ export interface Props extends PropsOf<typeof InputRegular> {
   fullWidth?: boolean
 }
 
-const TextFieldRegularOrigin: React.FC<Props> = props => {
+const TextFieldRegularOrigin: React.FC<Props> = (props) => {
   const {
     label,
     id,

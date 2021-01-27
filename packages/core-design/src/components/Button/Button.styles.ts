@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { button_label } from '../../styles/fonts'
 import { ThemeProps } from '../../themes/types'
 

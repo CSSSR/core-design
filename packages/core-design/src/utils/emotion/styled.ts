@@ -1,5 +1,6 @@
-// tslint:disable-next-line: no-implicit-dependencies
-import styled, { CreateStyled } from '@emotion/styled'
-import { Theme } from '../../themes/types'
+import '@emotion/react'
+import { Theme as ThemeType } from '../../themes/types'
 
-export default styled as CreateStyled<Theme>
+declare module '@emotion/react' {
+  export type Theme = ThemeType
+}
