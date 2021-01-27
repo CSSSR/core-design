@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { withTheme } from 'emotion-theming'
+import { withTheme } from '@emotion/react'
 import { isEmpty } from 'ramda'
 import styles from './PictureForAllResolutions.styles'
 import flattenObj from '../../utils/flattenObj'
@@ -40,8 +40,8 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
   const extensions = getFilesExtensions(pathToImagesFolder)
   let defaultExtension
 
-  if (extensions.filter(e => e !== 'webp').length === 1) {
-    defaultExtension = extensions.filter(e => e !== 'webp')[0]
+  if (extensions.filter((e) => e !== 'webp').length === 1) {
+    defaultExtension = extensions.filter((e) => e !== 'webp')[0]
   } else if (!extension) {
     throw new Error(
       `The provided images have ${extensions.length} different extensions,
@@ -55,12 +55,12 @@ const PictureForAllResolutionsOrigin: React.FC<Props & ThemeProps> = ({
   return (
     <React.Fragment>
       <picture className={className}>
-        {customResolutions.map(resolution => {
+        {customResolutions.map((resolution) => {
           const mediaRule = mediaRulesByResoluton[resolution].slice(7)
 
           return (
             <React.Fragment key={resolution}>
-              {extensions.map(extensionValue => (
+              {extensions.map((extensionValue) => (
                 <source
                   key={extensionValue}
                   media={mediaRule}
