@@ -1,6 +1,8 @@
+/* tslint:disable */
 import '@emotion/react'
 import { Theme as ThemeType } from '../../themes/types'
 
 declare module '@emotion/react' {
-  export type Theme = ThemeType
+  export interface Theme extends ThemeType {}
 }
+/* tslint:enable */
