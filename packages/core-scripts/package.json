@@ -10,7 +10,7 @@
     "core-design": "./bin/core-design.js"
   },
   "dependencies": {
-    "cross-spawn": "^6.0.5",
+    "cross-spawn": "^7.0.3",
     "fs-extra": "^7.0.1",
     "handlebars": "^4.3.0",
     "inquirer": "^6.3.1",
