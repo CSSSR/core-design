@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
 import useIe11Status from '../../utils/hooks/useIe11Status'
+import presets from '../../data/footerPresets'
 import { FooterProps as Props } from './types'
 import styled from '@emotion/styled'
 // import styled from '../../utils/emotion/styled'
@@ -14,7 +15,7 @@ import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
-import { socials, nav as defaultNav } from '../../data/footerLinks'
+import { socialsEn, nav as defaultNav } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
@@ -35,6 +36,7 @@ const Footer: React.FC<Props> = ({
   socialLinks,
   nav,
   addresses,
+  preset,
 }) => {
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const isMobile = useMobileStatus(isMobileValueFromProps)
@@ -112,7 +114,7 @@ const Footer: React.FC<Props> = ({
             </Link>
           )}
 
-          {socialLinks && <SocialLinks links={socialLinks} />}
+          {socialLinks && <SocialLinks links={presets[preset]?.links || socialLinks} />}
         </div>
 
         {nav && <Nav nav={nav} />}
@@ -155,9 +157,10 @@ Footer.defaultProps = {
     href: 'https://csssr.com/en/cookies-policy',
     text: 'Website cookie policy',
   },
-  socialLinks: socials,
+  socialLinks: socialsEn,
   addresses: footerAddresses,
   nav: defaultNav,
+  preset: '',
 }
 
 export default styled(Footer)`
