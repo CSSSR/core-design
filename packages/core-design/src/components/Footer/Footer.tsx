@@ -15,7 +15,7 @@ import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
-import { socialsEn, nav as defaultNav } from '../../data/footerLinks'
+import { socials, nav as defaultNav } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
@@ -74,6 +74,7 @@ const Footer: React.FC<Props> = ({
   }, [isMobile, IsDoubleBottomVisible])
 
   const LinkComponent = logo.linkComponent || 'a'
+  const socialLinksPreset = presets[preset]?.socialLinks || socialLinks
 
   return (
     <footer className={className} ref={footerRef}>
@@ -114,7 +115,7 @@ const Footer: React.FC<Props> = ({
             </Link>
           )}
 
-          {socialLinks && <SocialLinks links={presets[preset]?.links || socialLinks} />}
+          {socialLinksPreset && <SocialLinks links={socialLinksPreset} />}
         </div>
 
         {nav && <Nav nav={nav} />}
@@ -157,7 +158,7 @@ Footer.defaultProps = {
     href: 'https://csssr.com/en/cookies-policy',
     text: 'Website cookie policy',
   },
-  socialLinks: socialsEn,
+  socialLinks: socials,
   addresses: footerAddresses,
   nav: defaultNav,
   preset: '',

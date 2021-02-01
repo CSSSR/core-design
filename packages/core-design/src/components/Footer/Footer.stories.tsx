@@ -9,7 +9,7 @@ storiesOf('Footer', module)
   .addDecorator(withKnobs)
   .add('Footer', () => {
     const knobs = {
-      preset: select('Preset', ['en', 'ru', ''], 'en'),
+      preset: select('Preset', ['defaultEn', 'defaultRu', ''], 'defaultEn'),
       isIe11: boolean('Is IE11', false),
       isMobile: boolean('Is Mobile', false),
       actionPhrase: text('Action phrase', 'Let’s work together!'),

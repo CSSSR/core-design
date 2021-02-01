@@ -9,7 +9,7 @@ const Twitter = require('../static/icons/footer/Twitter.svg')
 const Vk = require('../static/icons/footer/Vk.svg')
 /* tslint:enable */
 
-export const socialsRu = [
+export const socials = [
   {
     id: 'facebook',
     href: 'https://www.facebook.com/csssr',
@@ -49,29 +49,6 @@ export const socialsRu = [
     id: 'vk',
     href: 'https://vk.com/csssr_dev',
     icon: Vk,
-  },
-]
-
-export const socialsEn = [
-  {
-    id: 'facebook',
-    href: 'https://www.facebook.com/csssr',
-    icon: Facebook,
-  },
-  {
-    id: 'linkedin',
-    href: 'https://www.linkedin.com/company/csssr',
-    icon: Linkedin,
-  },
-  {
-    id: 'instagram',
-    href: 'https://www.instagram.com/csssr.dev',
-    icon: Instagram,
-  },
-  {
-    id: 'youtube',
-    href: 'https://www.youtube.com/channel/UCdkZ6ckHOJ3DjAYxoGeMG0w',
-    icon: Youtube,
   },
 ]
 

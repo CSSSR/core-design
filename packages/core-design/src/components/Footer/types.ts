@@ -70,5 +70,5 @@ export interface FooterProps {
   socialLinks?: SocialLinksProps[]
   addresses?: AddressesProps[]
   nav?: NavProps[]
-  preset?: '' | 'en' | 'ru'
+  preset?: '' | 'defaultEn' | 'defaultRu'
 }

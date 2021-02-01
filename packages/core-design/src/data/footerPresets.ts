@@ -1,12 +1,12 @@
-import { nav, socialsEn, socialsRu } from './footerLinks'
+import { nav, socials } from './footerLinks'
 
 const presets = {
-  en: {
-    links: socialsEn,
+  defaultEn: {
+    socialLinks: socials.slice(0, 4),
     nav,
   },
-  ru: {
-    links: socialsRu,
+  defaultRu: {
+    socialLinks: socials,
     nav,
   },
 }
