@@ -57,17 +57,24 @@ export interface FooterProps {
     href: string
     text: string
   }
-  privacyPolicyLink?: {
+  privacyPolicy?: {
     href: string
     text: string
     component?: React.ComponentType<LinkComponentProps>
   }
-  cookiesPolicyLink?: {
+  cookiesPolicy?: {
     href: string
     text: string
+    component?: React.ComponentType<LinkComponentProps>
+  }
+  alliance?: {
+    text: string
+    title: string
+    href: string
     component?: React.ComponentType<LinkComponentProps>
   }
   socialLinks?: SocialLinksProps[]
   addresses?: AddressesProps[]
   nav?: NavProps[]
+  preset?: '' | 'en' | 'ru'
 }

@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
 import useIe11Status from '../../utils/hooks/useIe11Status'
+import presets from '../../data/footerPresets'
 import { FooterProps as Props } from './types'
 import styled from '@emotion/styled'
 // import styled from '../../utils/emotion/styled'
 import styles from './Footer.styles'
 
 import SocialLinks from './SocialLinks'
-import PrivacyAndLanguageLinks from './PrivacyAndLanguageLinks'
+import BottomLinksAndLanguages from './BottomLinksAndLanguages'
 import Nav from './Nav'
 import DoubleBottom from './DoubleBottom'
 import Link from '../Link'
@@ -30,11 +31,13 @@ const Footer: React.FC<Props> = ({
   email,
   actionPhrase,
   languageLink,
-  privacyPolicyLink,
-  cookiesPolicyLink,
+  privacyPolicy,
+  cookiesPolicy,
+  alliance,
   socialLinks,
   nav,
   addresses,
+  preset,
 }) => {
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const isMobile = useMobileStatus(isMobileValueFromProps)
@@ -102,10 +105,10 @@ const Footer: React.FC<Props> = ({
           </Link>
 
           {isMobile && languageLink && (
-            <Link className="link-lng" href={languageLink.href}>
+            <Link className="link-lng" href={presets[preset].languageLink.href}>
               <Text
                 className="link-text"
-                dangerouslySetInnerHTML={{ __html: languageLink.text }}
+                dangerouslySetInnerHTML={{ __html: presets[preset].languageLink.text }}
                 type="perforator"
                 size="s"
               />
@@ -118,10 +121,11 @@ const Footer: React.FC<Props> = ({
         {nav && <Nav nav={nav} />}
       </div>
       <div className="bottom-content">
-        <PrivacyAndLanguageLinks
-          languageLink={languageLink}
-          privacyPolicyLink={privacyPolicyLink}
-          cookiesPolicyLink={cookiesPolicyLink}
+        <BottomLinksAndLanguages
+          alliance={preset ? presets[preset].alliance : alliance}
+          languageLink={preset ? presets[preset].languageLink : languageLink}
+          privacyPolicy={preset ? presets[preset].privacyPolicy : privacyPolicy}
+          cookiesPolicy={preset ? presets[preset].cookiesPolicy : cookiesPolicy}
         />
       </div>
 
@@ -147,17 +151,23 @@ Footer.defaultProps = {
     href: 'https://csssr.com/ru',
     text: 'ru',
   },
-  privacyPolicyLink: {
+  privacyPolicy: {
     href: 'https://csssr.com/en/privacy-policy',
     text: 'Privacy policy',
   },
-  cookiesPolicyLink: {
+  cookiesPolicy: {
     href: 'https://csssr.com/en/cookies-policy',
     text: 'Website cookie policy',
+  },
+  alliance: {
+    text: 'часть альянса',
+    title: 'frontend.digital',
+    href: 'https://frontend.digital',
   },
   socialLinks: socials,
   addresses: footerAddresses,
   nav: defaultNav,
+  preset: '',
 }
 
 export default styled(Footer)`
