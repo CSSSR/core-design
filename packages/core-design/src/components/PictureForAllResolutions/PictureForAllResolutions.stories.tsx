@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { PictureForAllResolutions } from './PictureForAllResolutions'
-const test = 'test'
+
 storiesOf('PictureForAllResolutions', module)
   .addDecorator(withKnobs)
   .add('Default', () => {
@@ -14,7 +14,6 @@ storiesOf('PictureForAllResolutions', module)
       pathToImagesFolder: require.context('../../static/images/imagesForStories'),
       imageName: 'ultramarine',
       alt: 'Сержант Ультрамаринов',
-      test,
     }
 
     return (
