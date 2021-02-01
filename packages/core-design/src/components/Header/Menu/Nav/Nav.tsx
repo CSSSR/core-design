@@ -102,6 +102,7 @@ const Nav: React.FC<Props> = ({
                 component: Component = Link,
                 title,
                 description,
+                listTitle,
                 href,
                 target,
               }) => (
@@ -111,35 +112,46 @@ const Nav: React.FC<Props> = ({
                       'nav-item_active': pathname === href,
                     })}
                   >
-                    <Component
-                      data-testid={testId}
-                      className="link"
-                      href={href}
-                      target={target || linkRegExp.test(href) ? '_blank' : '_self'}
-                      rel="noopener noreferrer"
-                    >
-                      <Icon className={cn('icon', `icon_${id}`)} />
-
-                      <Heading
-                        className="title"
-                        as="div"
-                        type="regular"
-                        size="m"
-                        dangerouslySetInnerHTML={{
-                          __html: title,
-                        }}
-                      />
-
-                      {description && (
-                        <Text
-                          className="description"
-                          as="p"
+                    <div style={{ position: 'relative' }}>
+                      {id === 'mediaAndMarketing' && (
+                        <Heading.H3
                           type="regular"
-                          size="m"
-                          dangerouslySetInnerHTML={{ __html: description }}
+                          dangerouslySetInnerHTML={{
+                            __html: listTitle,
+                          }}
+                          className="industry-title"
                         />
                       )}
-                    </Component>
+                      <Component
+                        data-testid={testId}
+                        className="link"
+                        href={href}
+                        target={target || linkRegExp.test(href) ? '_blank' : '_self'}
+                        rel="noopener noreferrer"
+                      >
+                        <Icon className={cn('icon', `icon_${id}`)} />
+
+                        <Heading
+                          className="title"
+                          as="div"
+                          type="regular"
+                          size="m"
+                          dangerouslySetInnerHTML={{
+                            __html: title,
+                          }}
+                        />
+
+                        {description && (
+                          <Text
+                            className="description"
+                            as="p"
+                            type="regular"
+                            size="m"
+                            dangerouslySetInnerHTML={{ __html: description }}
+                          />
+                        )}
+                      </Component>
+                    </div>
                   </li>
                 </Wrapper>
               ),
