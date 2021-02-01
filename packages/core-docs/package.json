@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^4.3.3",
-    "@types/next": "^8.0.5",
+    "@types/next": "^9.0.0",
     "@zeit/next-mdx": "^1.2.0",
     "file-loader": "^4.0.0",
     "fork-ts-checker-webpack-plugin": "^1.6.0",
