@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
 import useIe11Status from '../../utils/hooks/useIe11Status'
+import presets from '../../data/footerPresets'
 import { FooterProps as Props } from './types'
 import styled from '@emotion/styled'
 // import styled from '../../utils/emotion/styled'
@@ -35,6 +36,7 @@ const Footer: React.FC<Props> = ({
   socialLinks,
   nav,
   addresses,
+  preset,
 }) => {
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const isMobile = useMobileStatus(isMobileValueFromProps)
@@ -72,6 +74,8 @@ const Footer: React.FC<Props> = ({
   }, [isMobile, IsDoubleBottomVisible])
 
   const LinkComponent = logo.linkComponent || 'a'
+
+  const navLinks = presets[preset]?.nav || nav.en
 
   return (
     <footer className={className} ref={footerRef}>
@@ -115,7 +119,7 @@ const Footer: React.FC<Props> = ({
           {socialLinks && <SocialLinks links={socialLinks} />}
         </div>
 
-        {nav && <Nav nav={nav} />}
+        {navLinks && <Nav nav={navLinks} />}
       </div>
       <div className="bottom-content">
         <PrivacyAndLanguageLinks
@@ -157,7 +161,8 @@ Footer.defaultProps = {
   },
   socialLinks: socials,
   addresses: footerAddresses,
-  nav: defaultNav,
+  nav: defaultNav.en,
+  preset: '',
 }
 
 export default styled(Footer)`

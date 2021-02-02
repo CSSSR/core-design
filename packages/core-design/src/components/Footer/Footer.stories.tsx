@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import Footer from './Footer'
 import { socials, nav } from '../../data/footerLinks'
@@ -10,6 +10,7 @@ storiesOf('Footer', module)
   .addDecorator(withKnobs)
   .add('Footer', () => {
     const knobs = {
+      preset: select('Preset', ['defaultEn', 'defaultRu', ''], 'defaultEn'),
       isIe11: boolean('Is IE11', false),
       isMobile: boolean('Is Mobile', false),
       actionPhrase: text('Action phrase', 'Let’s work together!'),
@@ -46,7 +47,7 @@ storiesOf('Footer', module)
         cookiesPolicyLink={cookiesPolicyLink}
         socialLinks={socials}
         addresses={footerAddresses}
-        nav={nav}
+        nav={nav.en}
       />
     )
   })
