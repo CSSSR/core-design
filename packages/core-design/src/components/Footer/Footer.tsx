@@ -31,9 +31,6 @@ const Footer: React.FC<Props> = ({
   email,
   actionPhrase,
   languageLink,
-  privacyPolicy,
-  cookiesPolicy,
-  alliance,
   socialLinks,
   nav,
   addresses,
@@ -75,6 +72,10 @@ const Footer: React.FC<Props> = ({
   }, [isMobile, IsDoubleBottomVisible])
 
   const LinkComponent = logo.linkComponent || 'a'
+  const allianceLinkPreset = presets[preset].allianceLink
+  const languageLinkPreset = presets[preset].languageLink
+  const privacyPolicyLinkPreset = presets[preset].privacyPolicyLink
+  const cookiesPolicyLinkPreset = presets[preset].cookiesPolicyLink
 
   return (
     <footer className={className} ref={footerRef}>
@@ -122,10 +123,10 @@ const Footer: React.FC<Props> = ({
       </div>
       <div className="bottom-content">
         <BottomLinksAndLanguages
-          alliance={preset ? presets[preset].alliance : alliance}
-          languageLink={preset ? presets[preset].languageLink : languageLink}
-          privacyPolicy={preset ? presets[preset].privacyPolicy : privacyPolicy}
-          cookiesPolicy={preset ? presets[preset].cookiesPolicy : cookiesPolicy}
+          allianceLink={allianceLinkPreset}
+          languageLink={languageLinkPreset}
+          privacyPolicyLink={privacyPolicyLinkPreset}
+          cookiesPolicyLink={cookiesPolicyLinkPreset}
         />
       </div>
 
@@ -151,18 +152,13 @@ Footer.defaultProps = {
     href: 'https://csssr.com/ru',
     text: 'ru',
   },
-  privacyPolicy: {
+  privacyPolicyLink: {
     href: 'https://csssr.com/en/privacy-policy',
     text: 'Privacy policy',
   },
-  cookiesPolicy: {
+  cookiesPolicyLink: {
     href: 'https://csssr.com/en/cookies-policy',
     text: 'Website cookie policy',
-  },
-  alliance: {
-    text: 'часть альянса',
-    title: 'frontend.digital',
-    href: 'https://frontend.digital',
   },
   socialLinks: socials,
   addresses: footerAddresses,

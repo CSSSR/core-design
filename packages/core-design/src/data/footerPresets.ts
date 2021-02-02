@@ -1,36 +1,17 @@
-import { nav } from './footerLinks'
+import { nav, bottomLinks } from './footerLinks'
 
 const presets = {
-  en: {
+  defaultEn: {
     nav,
-    privacyPolicy: {
-      text: 'PRIVACY POLICY',
-      href: 'https://csssr.com/en/privacy-policy',
-    },
-    cookiesPolicy: {
-      text: 'WEBSITE COOKIE POLICY',
-      href: 'https://csssr.com/en/cookies-policy',
-    },
-    languageLink: {
-      text: 'ru',
-      href: 'http://csssr.com/ru',
-    },
+    privacyPolicyLink: bottomLinks.en.privacyPolicyLink,
+    cookiesPolicyLink: bottomLinks.en.cookiesPolicyLink,
+    languageLink: bottomLinks.en.languageLink,
   },
-  ru: {
+  defaultRu: {
     nav,
-    privacyPolicy: {
-      text: 'ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ',
-      href: 'https://csssr.com/ru/privacy-policy',
-    },
-    alliance: {
-      text: 'часть альянса',
-      title: 'FRONTEND.DIGITAL',
-      href: 'https://frontend.digital',
-    },
-    languageLink: {
-      text: 'en',
-      href: 'http://csssr.com/en',
-    },
+    privacyPolicyLink: bottomLinks.ru.privacyPolicyLink,
+    allianceLink: bottomLinks.ru.allianceLink,
+    languageLink: bottomLinks.ru.languageLink,
   },
 }
 

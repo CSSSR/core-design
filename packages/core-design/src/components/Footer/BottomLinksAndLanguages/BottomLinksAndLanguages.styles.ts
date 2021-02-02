@@ -40,7 +40,7 @@ const base = (props: ThemeProps) => {
       margin-left: ${calcRem(50)};
     }
 
-    .policy-link {
+    .cookies-link {
       margin-left: 40px;
     }
 
@@ -72,12 +72,8 @@ const base = (props: ThemeProps) => {
         align-items: center;
       }
 
-      & li a {
-        font-size: ${calcRem(16)};
-      }
-
-      .policy-link {
-        margin-left: ${calcRem(32)};
+      .cookies-link {
+        margin-left: ${calcRem(24)};
       }
 
       .alliance {

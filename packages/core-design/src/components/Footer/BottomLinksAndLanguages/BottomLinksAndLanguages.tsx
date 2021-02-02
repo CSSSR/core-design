@@ -12,7 +12,7 @@ const Icon = require('../../../static/icons/footer/alliance.svg')
 
 export interface Props {
   className?: string
-  alliance?: {
+  allianceLink?: {
     text: string
     title: string
     href: string
@@ -22,12 +22,12 @@ export interface Props {
     text: string
     href: string
   }
-  privacyPolicy?: {
+  privacyPolicyLink?: {
     text: string
     href: string
     component?: React.ComponentType<LinkComponentProps>
   }
-  cookiesPolicy?: {
+  cookiesPolicyLink?: {
     text: string
     href: string
     component?: React.ComponentType<LinkComponentProps>
@@ -37,13 +37,13 @@ export interface Props {
 
 const PrivacyAndLanguageLinks: React.FC<Props> = ({
   className,
-  alliance,
+  allianceLink,
   languageLink,
-  privacyPolicy,
-  cookiesPolicy,
+  privacyPolicyLink,
+  cookiesPolicyLink,
 }) => {
-  const PrivacyPolicyComponent = (privacyPolicy && privacyPolicy.component) || Link
-  const CookiesPolicyComponent = (cookiesPolicy && cookiesPolicy.component) || Link
+  const PrivacyPolicyComponent = (privacyPolicyLink && privacyPolicyLink.component) || Link
+  const CookiesPolicyComponent = (cookiesPolicyLink && cookiesPolicyLink.component) || Link
 
   return (
     <ul className={className}>
@@ -59,18 +59,18 @@ const PrivacyAndLanguageLinks: React.FC<Props> = ({
       </li>
 
       <li>
-        {privacyPolicy && (
-          <PrivacyPolicyComponent className="link" href={privacyPolicy.href}>
+        {privacyPolicyLink && (
+          <PrivacyPolicyComponent className="link" href={privacyPolicyLink.href}>
             <Text
               className="link-text"
-              dangerouslySetInnerHTML={{ __html: privacyPolicy.text }}
+              dangerouslySetInnerHTML={{ __html: privacyPolicyLink.text }}
               type="perforator"
               size="s"
             />
           </PrivacyPolicyComponent>
         )}
 
-        {alliance && (
+        {allianceLink && (
           <a
             className="link alliance"
             href="https://frontend.digital"
@@ -80,25 +80,25 @@ const PrivacyAndLanguageLinks: React.FC<Props> = ({
           >
             <Text
               className="link-text alliance-text"
-              dangerouslySetInnerHTML={{ __html: alliance.text }}
+              dangerouslySetInnerHTML={{ __html: allianceLink.text }}
               type="perforator"
               size="s"
             />
             <Icon className="alliance-icon" />
             <Text
               className="link-text alliance-link"
-              dangerouslySetInnerHTML={{ __html: alliance.title }}
+              dangerouslySetInnerHTML={{ __html: allianceLink.title }}
               type="perforator"
               size="s"
             />
           </a>
         )}
 
-        {cookiesPolicy && (
-          <CookiesPolicyComponent className="link policy-link" href={cookiesPolicy.href}>
+        {cookiesPolicyLink && (
+          <CookiesPolicyComponent className="link cookies-link" href={cookiesPolicyLink.href}>
             <Text
               className="link-text"
-              dangerouslySetInnerHTML={{ __html: cookiesPolicy.text }}
+              dangerouslySetInnerHTML={{ __html: cookiesPolicyLink.text }}
               type="perforator"
               size="s"
             />
