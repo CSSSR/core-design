@@ -159,3 +159,12 @@ export const nav = [
     ],
   },
 ]
+
+export const contactUs = {
+  en: {
+    copyMessage: 'Copied!',
+  },
+  ru: {
+    copyMessage: 'Скопировано!',
+  },
+}

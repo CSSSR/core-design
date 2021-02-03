@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
 import useIe11Status from '../../utils/hooks/useIe11Status'
+import presets from '../../data/footerPresets'
 import { FooterProps as Props } from './types'
 import styled from '@emotion/styled'
 // import styled from '../../utils/emotion/styled'
@@ -19,6 +20,7 @@ import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
 const Logo = require('../../static/icons/csssr_logo.svg')
+const CopyIcon = require('../../static/icons/footer/copy.svg')
 /* tslint:enable */
 
 const Footer: React.FC<Props> = ({
@@ -35,11 +37,14 @@ const Footer: React.FC<Props> = ({
   socialLinks,
   nav,
   addresses,
+  preset,
 }) => {
+  const [isMessageShown, setIsMessageShown] = useState(false)
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const isMobile = useMobileStatus(isMobileValueFromProps)
   const isIe11 = useIe11Status(isIe11ValueFromProps)
   const footerRef = useRef<HTMLDivElement>(null)
+  const emailRef = useRef(null)
 
   useEffect(() => {
     if (isMobile) {
@@ -71,6 +76,26 @@ const Footer: React.FC<Props> = ({
     }
   }, [isMobile, IsDoubleBottomVisible])
 
+  const copyButtonClickHandler = () => {
+    function timerFunction() {
+      const timer = setTimeout(() => {
+        setIsMessageShown(false)
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+
+    if (window.isSecureContext) {
+      navigator.clipboard.writeText(email)
+      setIsMessageShown(true)
+      timerFunction()
+    } else {
+      emailRef.current.select() // для локальной работы копирования текста
+      document.execCommand('copy')
+      setIsMessageShown(true)
+      timerFunction()
+    }
+  }
+
   const LinkComponent = logo.linkComponent || 'a'
 
   return (
@@ -97,20 +122,40 @@ const Footer: React.FC<Props> = ({
             dangerouslySetInnerHTML={{ __html: actionPhrase }}
           />
 
-          <Link className="email" href={`mailto:${email}`}>
-            {email}
-          </Link>
+          <div className="email-container">
+            <div className="email-wrapper">
+              <input className="input-email" ref={emailRef} value={email} />
+              <Link className="email" href={`mailto:${email}`} data-testid="Footer.link.email">
+                {email}
+              </Link>
 
-          {isMobile && languageLink && (
-            <Link className="link-lng" href={languageLink.href}>
-              <Text
-                className="link-text"
-                dangerouslySetInnerHTML={{ __html: languageLink.text }}
-                type="perforator"
-                size="s"
-              />
-            </Link>
-          )}
+              {isMessageShown && (
+                <Text as="span" className="copy-message">
+                  {presets[preset].contactUs.copyMessage}
+                </Text>
+              )}
+            </div>
+
+            <button
+              className="copy-icon-button"
+              type="button"
+              disabled={isMessageShown}
+              onClick={copyButtonClickHandler}
+            >
+              <CopyIcon className="copy-icon" />
+            </button>
+
+            {isMobile && (
+              <Link className="link-language" href={languageLink.href}>
+                <Text
+                  className="link-text"
+                  dangerouslySetInnerHTML={{ __html: languageLink.text }}
+                  type="perforator"
+                  size="s"
+                />
+              </Link>
+            )}
+          </div>
 
           {socialLinks && <SocialLinks links={socialLinks} />}
         </div>
@@ -158,6 +203,7 @@ Footer.defaultProps = {
   socialLinks: socials,
   addresses: footerAddresses,
   nav: defaultNav,
+  preset: '',
 }
 
 export default styled(Footer)`

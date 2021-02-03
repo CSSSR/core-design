@@ -1,6 +1,5 @@
 import * as React from 'react'
-
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import Footer from './Footer'
 import { socials, nav } from '../../data/footerLinks'
@@ -10,10 +9,11 @@ storiesOf('Footer', module)
   .addDecorator(withKnobs)
   .add('Footer', () => {
     const knobs = {
+      preset: select('Preset', ['defaultEn', 'defaultRu', ''], 'defaultEn'),
       isIe11: boolean('Is IE11', false),
       isMobile: boolean('Is Mobile', false),
       actionPhrase: text('Action phrase', 'Let’s work together!'),
-      email: text('Email', 'sales@csssr.com'),
+      email: text('Email', 'launch@csssr.com'),
     }
     const logoKnobs = {
       href: text('Logo href', '/'),
@@ -27,14 +27,6 @@ storiesOf('Footer', module)
       href: text('Language link href', 'https://csssr.com/ru'),
       text: text('Language link text', 'ru'),
     }
-    const privacyPolicyLink = {
-      href: text('Privacy Policy link href', 'https://csssr.com/en/privacy-policy'),
-      text: text('Privacy Policy link text', 'Privacy policy'),
-    }
-    const cookiesPolicyLink = {
-      href: text('Cookies Policy href', 'https://csssr.com/en/cookies-policy'),
-      text: text('Cookies Policy text', 'Website cookie policy'),
-    }
 
     return (
       <Footer
@@ -42,8 +34,6 @@ storiesOf('Footer', module)
         logo={logoKnobs}
         video={videoKnobs}
         languageLink={languageLinkKnobs}
-        privacyPolicyLink={privacyPolicyLink}
-        cookiesPolicyLink={cookiesPolicyLink}
         socialLinks={socials}
         addresses={footerAddresses}
         nav={nav}
