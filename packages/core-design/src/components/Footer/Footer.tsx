@@ -4,7 +4,6 @@ import useIe11Status from '../../utils/hooks/useIe11Status'
 import presets from '../../data/footerPresets'
 import { FooterProps as Props } from './types'
 import styled from '@emotion/styled'
-// import styled from '../../utils/emotion/styled'
 import styles from './Footer.styles'
 
 import SocialLinks from './SocialLinks'
@@ -76,6 +75,7 @@ const Footer: React.FC<Props> = ({
   const languageLinkPreset = presets[preset].languageLink
   const privacyPolicyLinkPreset = presets[preset].privacyPolicyLink
   const cookiesPolicyLinkPreset = presets[preset].cookiesPolicyLink
+  const socialLinksPreset = presets[preset]?.socialLinks || socialLinks
 
   return (
     <footer className={className} ref={footerRef}>
@@ -116,7 +116,7 @@ const Footer: React.FC<Props> = ({
             </Link>
           )}
 
-          {socialLinks && <SocialLinks links={socialLinks} />}
+          {socialLinksPreset && <SocialLinks links={socialLinksPreset} />}
         </div>
 
         {nav && <Nav nav={nav} />}
