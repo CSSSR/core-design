@@ -74,8 +74,9 @@ const Footer: React.FC<Props> = ({
   }, [isMobile, IsDoubleBottomVisible])
 
   const LinkComponent = logo.linkComponent || 'a'
+  const socialLinksPreset = presets[preset]?.socialLinks || socialLinks
 
-  const navLinks = presets[preset]?.nav || nav.en
+  const navLinks = presets[preset]?.nav
 
   return (
     <footer className={className} ref={footerRef}>
@@ -116,7 +117,7 @@ const Footer: React.FC<Props> = ({
             </Link>
           )}
 
-          {socialLinks && <SocialLinks links={socialLinks} />}
+          {socialLinksPreset && <SocialLinks links={socialLinksPreset} />}
         </div>
 
         {navLinks && <Nav nav={navLinks} />}
