@@ -14,7 +14,7 @@ import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
-import { socials, nav as defaultNav } from '../../data/footerLinks'
+import { nav as defaultNav } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
