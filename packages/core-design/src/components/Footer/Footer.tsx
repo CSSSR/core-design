@@ -76,7 +76,7 @@ const Footer: React.FC<Props> = ({
   const LinkComponent = logo.linkComponent || 'a'
   const socialLinksPreset = presets[preset]?.socialLinks || socialLinks
 
-  const navLinks = presets[preset]?.nav
+  const navLinks = presets[preset]?.nav || nav
 
   return (
     <footer className={className} ref={footerRef}>
