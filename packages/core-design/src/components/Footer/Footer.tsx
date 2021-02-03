@@ -76,6 +76,7 @@ const Footer: React.FC<Props> = ({
   const privacyPolicyLinkPreset = presets[preset].privacyPolicyLink
   const cookiesPolicyLinkPreset = presets[preset].cookiesPolicyLink
   const socialLinksPreset = presets[preset]?.socialLinks || socialLinks
+  
 
   return (
     <footer className={className} ref={footerRef}>
