@@ -172,7 +172,7 @@ export const bottomLinks = {
     },
     languageLink: {
       text: 'ru',
-      href: 'http://csssr.com/ru',
+      href: '/ru',
     },
   },
   ru: {
@@ -187,7 +187,7 @@ export const bottomLinks = {
     },
     languageLink: {
       text: 'en',
-      href: 'http://csssr.com/en',
+      href: '/en',
     },
   },
 }

@@ -29,7 +29,10 @@ const Footer: React.FC<Props> = ({
   video,
   email,
   actionPhrase,
+  allianceLink,
   languageLink,
+  privacyPolicyLink,
+  cookiesPolicyLink,
   socialLinks,
   nav,
   addresses,
@@ -71,10 +74,10 @@ const Footer: React.FC<Props> = ({
   }, [isMobile, IsDoubleBottomVisible])
 
   const LinkComponent = logo.linkComponent || 'a'
-  const allianceLinkPreset = presets[preset].allianceLink
-  const languageLinkPreset = presets[preset].languageLink
-  const privacyPolicyLinkPreset = presets[preset].privacyPolicyLink
-  const cookiesPolicyLinkPreset = presets[preset].cookiesPolicyLink
+  const allianceLinkPreset = presets[preset]?.allianceLink || allianceLink
+  const languageLinkPreset = presets[preset]?.languageLink || languageLink
+  const privacyPolicyLinkPreset = presets[preset]?.privacyPolicyLink || privacyPolicyLink
+  const cookiesPolicyLinkPreset = presets[preset]?.cookiesPolicyLink || cookiesPolicyLink
   const socialLinksPreset = presets[preset]?.socialLinks || socialLinks
 
   return (
@@ -148,22 +151,9 @@ Footer.defaultProps = {
     type: 'video/mp4',
     errorText: 'This browser does not support downloading video files',
   },
-  languageLink: {
-    href: 'https://csssr.com/ru',
-    text: 'ru',
-  },
-  privacyPolicyLink: {
-    href: 'https://csssr.com/en/privacy-policy',
-    text: 'Privacy policy',
-  },
-  cookiesPolicyLink: {
-    href: 'https://csssr.com/en/cookies-policy',
-    text: 'Website cookie policy',
-  },
-  socialLinks: socials,
   addresses: footerAddresses,
-  nav: defaultNav,
-  preset: '',
+  nav: defaultNav, // убрать в релизной ветке
+  preset: 'defaultEn',
 }
 
 export default styled(Footer)`
