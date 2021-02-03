@@ -3,10 +3,10 @@ const Facebook = require('../static/icons/footer/facebook.svg')
 const Linkedin = require('../static/icons/footer/linkedin.svg')
 const Instagram = require('../static/icons/footer/instagram.svg')
 const Youtube = require('../static/icons/footer/youtube.svg')
-// const Soundcloud = require('../static/icons/footer/Soundcloud.svg')
-// const Telegram = require('../static/icons/footer/Telegram.svg')
-// const Twitter = require('../static/icons/footer/Twitter.svg')
-// const Vk = require('../static/icons/footer/Vk.svg')
+const Soundcloud = require('../static/icons/footer/Soundcloud.svg')
+const Telegram = require('../static/icons/footer/Telegram.svg')
+const Twitter = require('../static/icons/footer/Twitter.svg')
+const Vk = require('../static/icons/footer/Vk.svg')
 /* tslint:enable */
 
 export const socials = [
@@ -30,26 +30,26 @@ export const socials = [
     href: 'https://www.youtube.com/channel/UCdkZ6ckHOJ3DjAYxoGeMG0w',
     icon: Youtube,
   },
-  // {
-  //   id: 'soundcloud',
-  //   href: 'https://soundcloud.com/csssr',
-  //   icon: Soundcloud,
-  // },
-  // {
-  //   id: 'telegram',
-  //   href: 'https://t.me/csssr',
-  //   icon: Telegram,
-  // },
-  // {
-  //   id: 'twitter',
-  //   href: 'https://twitter.com/csssr_dev',
-  //   icon: Twitter,
-  // },
-  // {
-  //   id: 'vk',
-  //   href: 'https://vk.com/csssr_dev',
-  //   icon: Vk,
-  // },
+  {
+    id: 'soundcloud',
+    href: 'https://soundcloud.com/csssr',
+    icon: Soundcloud,
+  },
+  {
+    id: 'telegram',
+    href: 'https://t.me/csssr',
+    icon: Telegram,
+  },
+  {
+    id: 'twitter',
+    href: 'https://twitter.com/csssr_dev',
+    icon: Twitter,
+  },
+  {
+    id: 'vk',
+    href: 'https://vk.com/csssr_dev',
+    icon: Vk,
+  },
 ]
 
 export const nav = [
