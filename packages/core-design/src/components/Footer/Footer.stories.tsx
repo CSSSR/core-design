@@ -3,7 +3,6 @@ import * as React from 'react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import Footer from './Footer'
-import { nav } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 storiesOf('Footer', module)
@@ -46,7 +45,6 @@ storiesOf('Footer', module)
         privacyPolicyLink={privacyPolicyLink}
         cookiesPolicyLink={cookiesPolicyLink}
         addresses={footerAddresses}
-        nav={nav.en}
       />
     )
   })

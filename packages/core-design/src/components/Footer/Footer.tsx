@@ -15,7 +15,7 @@ import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
-import { socials, nav as defaultNav } from '../../data/footerLinks'
+import { socials } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
@@ -74,8 +74,8 @@ const Footer: React.FC<Props> = ({
   }, [isMobile, IsDoubleBottomVisible])
 
   const LinkComponent = logo.linkComponent || 'a'
-  const socialLinksPreset = presets[preset]?.socialLinks || socialLinks
-  const navLinks = presets[preset]?.nav || nav
+  const socialLinksPreset = socialLinks || presets[preset]?.socialLinks
+  const navLinks = nav || presets[preset]?.nav
 
   return (
     <footer className={className} ref={footerRef}>
@@ -161,7 +161,6 @@ Footer.defaultProps = {
   },
   socialLinks: socials,
   addresses: footerAddresses,
-  nav: defaultNav.en,
   preset: '',
 }
 
