@@ -27,14 +27,6 @@ storiesOf('Footer', module)
       href: text('Language link href', 'https://csssr.com/ru'),
       text: text('Language link text', 'ru'),
     }
-    const privacyPolicyLink = {
-      href: text('Privacy Policy link href', 'https://csssr.com/en/privacy-policy'),
-      text: text('Privacy Policy link text', 'Privacy policy'),
-    }
-    const cookiesPolicyLink = {
-      href: text('Cookies Policy href', 'https://csssr.com/en/cookies-policy'),
-      text: text('Cookies Policy text', 'Website cookie policy'),
-    }
 
     return (
       <Footer
@@ -42,8 +34,6 @@ storiesOf('Footer', module)
         logo={logoKnobs}
         video={videoKnobs}
         languageLink={languageLinkKnobs}
-        privacyPolicyLink={privacyPolicyLink}
-        cookiesPolicyLink={cookiesPolicyLink}
         addresses={footerAddresses}
       />
     )
