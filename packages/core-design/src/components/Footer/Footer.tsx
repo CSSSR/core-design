@@ -74,12 +74,11 @@ const Footer: React.FC<Props> = ({
   }, [isMobile, IsDoubleBottomVisible])
 
   const LinkComponent = logo.linkComponent || 'a'
-  const allianceLinkPreset = presets[preset]?.allianceLink || allianceLink
-  const languageLinkPreset = presets[preset]?.languageLink || languageLink
-  const privacyPolicyLinkPreset = presets[preset]?.privacyPolicyLink || privacyPolicyLink
-  const cookiesPolicyLinkPreset = presets[preset]?.cookiesPolicyLink || cookiesPolicyLink
-  const socialLinksPreset = presets[preset]?.socialLinks || socialLinks
-  
+  const allianceLinkPreset = allianceLink || presets[preset]?.allianceLink
+  const languageLinkPreset = languageLink || presets[preset]?.languageLink
+  const privacyPolicyLinkPreset = privacyPolicyLink || presets[preset]?.privacyPolicyLink
+  const cookiesPolicyLinkPreset = cookiesPolicyLink || presets[preset]?.cookiesPolicyLink
+  const socialLinksPreset = socialLinks || presets[preset]?.socialLinks
 
   return (
     <footer className={className} ref={footerRef}>
@@ -153,7 +152,7 @@ Footer.defaultProps = {
     errorText: 'This browser does not support downloading video files',
   },
   addresses: footerAddresses,
-  nav: defaultNav, // убрать в релизной ветке
+  nav: defaultNav, // TODO: положить в nav в пресет, а так же addresses, email, actionPhrase и logo href в релизной ветке
   preset: 'defaultEn',
 }
 
