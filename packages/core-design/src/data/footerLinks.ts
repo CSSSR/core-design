@@ -262,3 +262,35 @@ export const nav = {
     },
   ],
 }
+
+export const bottomLinks = {
+  en: {
+    privacyPolicyLink: {
+      text: 'PRIVACY POLICY',
+      href: 'https://csssr.com/en/privacy-policy',
+    },
+    cookiesPolicyLink: {
+      text: 'WEBSITE COOKIE POLICY',
+      href: 'https://csssr.com/en/cookies-policy',
+    },
+    languageLink: {
+      text: 'ru',
+      href: '/ru',
+    },
+  },
+  ru: {
+    privacyPolicyLink: {
+      text: 'ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ',
+      href: 'https://csssr.com/ru/privacy-policy',
+    },
+    allianceLink: {
+      text: 'часть альянса',
+      title: 'FRONTEND.DIGITAL',
+      href: 'https://frontend.digital',
+    },
+    languageLink: {
+      text: 'en',
+      href: '/en',
+    },
+  },
+}

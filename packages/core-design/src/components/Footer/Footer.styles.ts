@@ -8,6 +8,7 @@ const base = (props: ThemeProps) => {
 
   return css`
     & {
+      background-color: red;
       position: relative;
       margin-bottom: ${calcRem(344)};
       padding-top: ${calcRem(32)};
@@ -124,7 +125,8 @@ const base = (props: ThemeProps) => {
       .link-lng {
         position: relative;
         top: ${calcRem(-3)};
-        margin-left: ${calcRem(127)};
+        margin-top: 0;
+        margin-left: ${calcRem(100)};
         text-decoration: none;
       }
 
