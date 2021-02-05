@@ -126,7 +126,7 @@ const Footer: React.FC<Props> = ({
             size="s"
             dangerouslySetInnerHTML={{ __html: actionPhrase }}
           />
-
+          
           <div className="email-container">
             <div className="email-wrapper">
               <input className="input-email" ref={emailRef} defaultValue={email} />

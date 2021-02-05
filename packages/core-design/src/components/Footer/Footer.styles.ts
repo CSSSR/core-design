@@ -8,6 +8,7 @@ const base = (props: ThemeProps) => {
 
   return css`
     & {
+      background-color: red;
       position: relative;
       margin-bottom: ${calcRem(344)};
       padding-top: ${calcRem(32)};
