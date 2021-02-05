@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import Footer from './Footer'
@@ -13,7 +12,7 @@ storiesOf('Footer', module)
       isIe11: boolean('Is IE11', false),
       isMobile: boolean('Is Mobile', false),
       actionPhrase: text('Action phrase', 'Let’s work together!'),
-      email: text('Email', 'sales@csssr.com'),
+      email: text('Email', 'launch@csssr.com'),
     }
     const logoKnobs = {
       href: text('Logo href', '/'),

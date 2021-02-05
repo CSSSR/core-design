@@ -18,6 +18,7 @@ import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
 const Logo = require('../../static/icons/csssr_logo.svg')
+const CopyIcon = require('../../static/icons/footer/copy.svg')
 /* tslint:enable */
 
 const Footer: React.FC<Props> = ({
@@ -37,10 +38,12 @@ const Footer: React.FC<Props> = ({
   addresses,
   preset,
 }) => {
+  const [isMessageShown, setIsMessageShown] = useState(false)
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const isMobile = useMobileStatus(isMobileValueFromProps)
   const isIe11 = useIe11Status(isIe11ValueFromProps)
   const footerRef = useRef<HTMLDivElement>(null)
+  const emailRef = useRef(null)
 
   useEffect(() => {
     if (isMobile) {
@@ -71,6 +74,26 @@ const Footer: React.FC<Props> = ({
       window.removeEventListener('resize', listener)
     }
   }, [isMobile, IsDoubleBottomVisible])
+
+  const copyButtonClickHandler = () => {
+    function timerFunction() {
+      const timer = setTimeout(() => {
+        setIsMessageShown(false)
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+
+    if (window.isSecureContext) {
+      navigator.clipboard.writeText(email)
+      setIsMessageShown(true)
+      timerFunction()
+    } else {
+      emailRef.current.select() // для локальной работы копирования текста
+      document.execCommand('copy')
+      setIsMessageShown(true)
+      timerFunction()
+    }
+  }
 
   const LinkComponent = logo.linkComponent || 'a'
   const allianceLinkPreset = allianceLink || presets[preset]?.allianceLink
@@ -103,21 +126,41 @@ const Footer: React.FC<Props> = ({
             size="s"
             dangerouslySetInnerHTML={{ __html: actionPhrase }}
           />
+          
+          <div className="email-container">
+            <div className="email-wrapper">
+              <input className="input-email" ref={emailRef} defaultValue={email} />
+              <Link className="email" href={`mailto:${email}`} data-testid="Footer.link.email">
+                {email}
+              </Link>
 
-          <Link className="email" href={`mailto:${email}`}>
-            {email}
-          </Link>
+              {isMessageShown && (
+                <Text as="span" className="copy-message">
+                  {presets[preset].copyMessage}
+                </Text>
+              )}
+            </div>
 
-          {isMobile && languageLink && (
-            <Link className="link-lng" href={presets[preset].languageLink.href}>
-              <Text
-                className="link-text"
-                dangerouslySetInnerHTML={{ __html: presets[preset].languageLink.text }}
-                type="perforator"
-                size="s"
-              />
-            </Link>
-          )}
+            <button
+              className="copy-icon-button"
+              type="button"
+              disabled={isMessageShown}
+              onClick={copyButtonClickHandler}
+            >
+              <CopyIcon className="copy-icon" />
+            </button>
+
+            {isMobile && (
+              <Link className="link-language" href={languageLink.href}>
+                <Text
+                  className="link-text"
+                  dangerouslySetInnerHTML={{ __html: languageLink.text }}
+                  type="perforator"
+                  size="s"
+                />
+              </Link>
+            )}
+          </div>
 
           {socialLinksPreset && <SocialLinks links={socialLinksPreset} />}
         </div>
