@@ -14,7 +14,6 @@ import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
-import { nav as defaultNav } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
@@ -79,6 +78,7 @@ const Footer: React.FC<Props> = ({
   const privacyPolicyLinkPreset = privacyPolicyLink || presets[preset]?.privacyPolicyLink
   const cookiesPolicyLinkPreset = cookiesPolicyLink || presets[preset]?.cookiesPolicyLink
   const socialLinksPreset = socialLinks || presets[preset]?.socialLinks
+  const navLinks = nav || presets[preset]?.nav
 
   return (
     <footer className={className} ref={footerRef}>
@@ -122,7 +122,7 @@ const Footer: React.FC<Props> = ({
           {socialLinksPreset && <SocialLinks links={socialLinksPreset} />}
         </div>
 
-        {nav && <Nav nav={nav} />}
+        {navLinks && <Nav nav={navLinks} />}
       </div>
       <div className="bottom-content">
         <BottomLinksAndLanguages
@@ -152,7 +152,6 @@ Footer.defaultProps = {
     errorText: 'This browser does not support downloading video files',
   },
   addresses: footerAddresses,
-  nav: defaultNav, // TODO: положить в nav в пресет, а так же addresses, email, actionPhrase и logo href в релизной ветке
   preset: 'defaultEn',
 }
 
