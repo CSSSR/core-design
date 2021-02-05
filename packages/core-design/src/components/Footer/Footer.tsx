@@ -131,7 +131,7 @@ const Footer: React.FC<Props> = ({
 
               {isMessageShown && (
                 <Text as="span" className="copy-message">
-                  {presets[preset].contactUs.copyMessage}
+                  {presets[preset].copyMessage}
                 </Text>
               )}
             </div>

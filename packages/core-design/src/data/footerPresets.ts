@@ -1,13 +1,13 @@
-import { nav, contactUs } from './footerLinks'
+import { nav } from './footerLinks'
 
 const presets = {
   defaultEn: {
     nav,
-    contactUs: contactUs.en,
+    copyMessage: 'Copied!',
   },
   defaultRu: {
     nav,
-    contactUs: contactUs.ru,
+    copyMessage: 'Скопировано!',
   },
 }
 
