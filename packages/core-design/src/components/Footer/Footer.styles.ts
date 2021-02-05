@@ -71,8 +71,6 @@ const base = (props: ThemeProps) => {
 
     .input-email {
       position: absolute;
-      width: 0;
-      height: 0;
       pointer-events: none;
       opacity: 0;
       clip: rect(0 0 0 0);
@@ -180,7 +178,8 @@ const base = (props: ThemeProps) => {
         display: inline-block;
         position: relative;
         top: ${calcRem(-3)};
-        margin-left: ${calcRem(127)};
+        margin-top: 0;
+        margin-left: ${calcRem(100)};
         text-decoration: none;
       }
 

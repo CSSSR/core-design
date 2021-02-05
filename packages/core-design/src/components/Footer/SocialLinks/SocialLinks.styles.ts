@@ -54,14 +54,12 @@ const base = (props: ThemeProps) => {
       margin-right: auto;
       max-width: ${calcRem(168)};
       flex-wrap: wrap;
-      justify-content: center;
 
       li {
+        display: flex;
+        flex-basis: 25%;
+        justify-content: center;
         font-size: 0;
-      }
-
-      li:not(:first-of-type):not(:nth-of-type(5)) {
-        margin-left: ${calcRem(24)};
       }
 
       li:nth-of-type(n + 5) {

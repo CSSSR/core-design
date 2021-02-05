@@ -4,18 +4,16 @@ import useIe11Status from '../../utils/hooks/useIe11Status'
 import presets from '../../data/footerPresets'
 import { FooterProps as Props } from './types'
 import styled from '@emotion/styled'
-// import styled from '../../utils/emotion/styled'
 import styles from './Footer.styles'
 
 import SocialLinks from './SocialLinks'
-import PrivacyAndLanguageLinks from './PrivacyAndLanguageLinks'
+import BottomLinksAndLanguages from './BottomLinksAndLanguages'
 import Nav from './Nav'
 import DoubleBottom from './DoubleBottom'
 import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
-import { socials, nav as defaultNav } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
@@ -31,6 +29,7 @@ const Footer: React.FC<Props> = ({
   video,
   email,
   actionPhrase,
+  allianceLink,
   languageLink,
   privacyPolicyLink,
   cookiesPolicyLink,
@@ -97,6 +96,12 @@ const Footer: React.FC<Props> = ({
   }
 
   const LinkComponent = logo.linkComponent || 'a'
+  const allianceLinkPreset = allianceLink || presets[preset]?.allianceLink
+  const languageLinkPreset = languageLink || presets[preset]?.languageLink
+  const privacyPolicyLinkPreset = privacyPolicyLink || presets[preset]?.privacyPolicyLink
+  const cookiesPolicyLinkPreset = cookiesPolicyLink || presets[preset]?.cookiesPolicyLink
+  const socialLinksPreset = socialLinks || presets[preset]?.socialLinks
+  const navLinks = nav || presets[preset]?.nav
 
   return (
     <footer className={className} ref={footerRef}>
@@ -124,7 +129,7 @@ const Footer: React.FC<Props> = ({
 
           <div className="email-container">
             <div className="email-wrapper">
-              <input className="input-email" ref={emailRef} value={email} />
+              <input className="input-email" ref={emailRef} defaultValue={email} />
               <Link className="email" href={`mailto:${email}`} data-testid="Footer.link.email">
                 {email}
               </Link>
@@ -157,16 +162,17 @@ const Footer: React.FC<Props> = ({
             )}
           </div>
 
-          {socialLinks && <SocialLinks links={socialLinks} />}
+          {socialLinksPreset && <SocialLinks links={socialLinksPreset} />}
         </div>
 
-        {nav && <Nav nav={nav} />}
+        {navLinks && <Nav nav={navLinks} />}
       </div>
       <div className="bottom-content">
-        <PrivacyAndLanguageLinks
-          languageLink={languageLink}
-          privacyPolicyLink={privacyPolicyLink}
-          cookiesPolicyLink={cookiesPolicyLink}
+        <BottomLinksAndLanguages
+          allianceLink={allianceLinkPreset}
+          languageLink={languageLinkPreset}
+          privacyPolicyLink={privacyPolicyLinkPreset}
+          cookiesPolicyLink={cookiesPolicyLinkPreset}
         />
       </div>
 
@@ -188,22 +194,8 @@ Footer.defaultProps = {
     type: 'video/mp4',
     errorText: 'This browser does not support downloading video files',
   },
-  languageLink: {
-    href: 'https://csssr.com/ru',
-    text: 'ru',
-  },
-  privacyPolicyLink: {
-    href: 'https://csssr.com/en/privacy-policy',
-    text: 'Privacy policy',
-  },
-  cookiesPolicyLink: {
-    href: 'https://csssr.com/en/cookies-policy',
-    text: 'Website cookie policy',
-  },
-  socialLinks: socials,
   addresses: footerAddresses,
-  nav: defaultNav,
-  preset: '',
+  preset: 'defaultEn',
 }
 
 export default styled(Footer)`

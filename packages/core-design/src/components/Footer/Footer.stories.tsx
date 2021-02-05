@@ -2,7 +2,6 @@ import * as React from 'react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import Footer from './Footer'
-import { socials, nav } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 storiesOf('Footer', module)
@@ -34,9 +33,7 @@ storiesOf('Footer', module)
         logo={logoKnobs}
         video={videoKnobs}
         languageLink={languageLinkKnobs}
-        socialLinks={socials}
         addresses={footerAddresses}
-        nav={nav}
       />
     )
   })

@@ -67,8 +67,14 @@ export interface FooterProps {
     text: string
     component?: React.ComponentType<LinkComponentProps>
   }
+  allianceLink?: {
+    text: string
+    title: string
+    href: string
+    component?: React.ComponentType<LinkComponentProps>
+  }
   socialLinks?: SocialLinksProps[]
   addresses?: AddressesProps[]
   nav?: NavProps[]
-  preset?: string
+  preset?: '' | 'defaultEn' | 'defaultRu'
 }
