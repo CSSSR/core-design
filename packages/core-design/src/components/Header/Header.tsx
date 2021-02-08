@@ -73,7 +73,7 @@ const Header: React.FC<Props> = ({
     <Fragment>
       {menu && <Menu isMobile={isMobile} isIe11={isIe11} pathname={pathname} menu={menu} />}
       {links && <Links links={links} pathname={pathname} />}
-      {(actionButton.isVisible || presets[preset]?.actionButton.isVisible) &&
+      {(actionButton?.isVisible || presets[preset]?.actionButton?.isVisible) &&
         (isIe11 || actionButton.href || presets[preset]?.actionButton.href ? (
           <ButtonLink
             kind="primary"
