@@ -1,24 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
 import useIe11Status from '../../utils/hooks/useIe11Status'
+import presets from '../../data/footerPresets'
 import { FooterProps as Props } from './types'
 import styled from '@emotion/styled'
-// import styled from '../../utils/emotion/styled'
 import styles from './Footer.styles'
 
 import SocialLinks from './SocialLinks'
-import PrivacyAndLanguageLinks from './PrivacyAndLanguageLinks'
+import BottomLinksAndLanguages from './BottomLinksAndLanguages'
 import Nav from './Nav'
 import DoubleBottom from './DoubleBottom'
 import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
-import { socials, nav as defaultNav } from '../../data/footerLinks'
 import footerAddresses from '../../data/footerAddresses'
 
 /* tslint:disable */
 const Logo = require('../../static/icons/csssr_logo.svg')
+const CopyIcon = require('../../static/icons/footer/copy.svg')
 /* tslint:enable */
 
 const Footer: React.FC<Props> = ({
@@ -29,17 +29,21 @@ const Footer: React.FC<Props> = ({
   video,
   email,
   actionPhrase,
+  allianceLink,
   languageLink,
   privacyPolicyLink,
   cookiesPolicyLink,
   socialLinks,
   nav,
   addresses,
+  preset,
 }) => {
+  const [isMessageShown, setIsMessageShown] = useState(false)
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const isMobile = useMobileStatus(isMobileValueFromProps)
   const isIe11 = useIe11Status(isIe11ValueFromProps)
   const footerRef = useRef<HTMLDivElement>(null)
+  const emailRef = useRef(null)
 
   useEffect(() => {
     if (isMobile) {
@@ -71,7 +75,33 @@ const Footer: React.FC<Props> = ({
     }
   }, [isMobile, IsDoubleBottomVisible])
 
+  const copyButtonClickHandler = () => {
+    function timerFunction() {
+      const timer = setTimeout(() => {
+        setIsMessageShown(false)
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+
+    if (window.isSecureContext) {
+      navigator.clipboard.writeText(email)
+      setIsMessageShown(true)
+      timerFunction()
+    } else {
+      emailRef.current.select() // для локальной работы копирования текста
+      document.execCommand('copy')
+      setIsMessageShown(true)
+      timerFunction()
+    }
+  }
+
   const LinkComponent = logo.linkComponent || 'a'
+  const allianceLinkPreset = allianceLink || presets[preset]?.allianceLink
+  const languageLinkPreset = languageLink || presets[preset]?.languageLink
+  const privacyPolicyLinkPreset = privacyPolicyLink || presets[preset]?.privacyPolicyLink
+  const cookiesPolicyLinkPreset = cookiesPolicyLink || presets[preset]?.cookiesPolicyLink
+  const socialLinksPreset = socialLinks || presets[preset]?.socialLinks
+  const navLinks = nav || presets[preset]?.nav
 
   return (
     <footer className={className} ref={footerRef}>
@@ -96,32 +126,53 @@ const Footer: React.FC<Props> = ({
             size="s"
             dangerouslySetInnerHTML={{ __html: actionPhrase }}
           />
+          
+          <div className="email-container">
+            <div className="email-wrapper">
+              <input className="input-email" ref={emailRef} defaultValue={email} />
+              <Link className="email" href={`mailto:${email}`} data-testid="Footer.link.email">
+                {email}
+              </Link>
 
-          <Link className="email" href={`mailto:${email}`}>
-            {email}
-          </Link>
+              {isMessageShown && (
+                <Text as="span" className="copy-message">
+                  {presets[preset].copyMessage}
+                </Text>
+              )}
+            </div>
 
-          {isMobile && languageLink && (
-            <Link className="link-lng" href={languageLink.href}>
-              <Text
-                className="link-text"
-                dangerouslySetInnerHTML={{ __html: languageLink.text }}
-                type="perforator"
-                size="s"
-              />
-            </Link>
-          )}
+            <button
+              className="copy-icon-button"
+              type="button"
+              disabled={isMessageShown}
+              onClick={copyButtonClickHandler}
+            >
+              <CopyIcon className="copy-icon" />
+            </button>
 
-          {socialLinks && <SocialLinks links={socialLinks} />}
+            {isMobile && (
+              <Link className="link-language" href={languageLink.href}>
+                <Text
+                  className="link-text"
+                  dangerouslySetInnerHTML={{ __html: languageLink.text }}
+                  type="perforator"
+                  size="s"
+                />
+              </Link>
+            )}
+          </div>
+
+          {socialLinksPreset && <SocialLinks links={socialLinksPreset} />}
         </div>
 
-        {nav && <Nav nav={nav} />}
+        {navLinks && <Nav nav={navLinks} />}
       </div>
       <div className="bottom-content">
-        <PrivacyAndLanguageLinks
-          languageLink={languageLink}
-          privacyPolicyLink={privacyPolicyLink}
-          cookiesPolicyLink={cookiesPolicyLink}
+        <BottomLinksAndLanguages
+          allianceLink={allianceLinkPreset}
+          languageLink={languageLinkPreset}
+          privacyPolicyLink={privacyPolicyLinkPreset}
+          cookiesPolicyLink={cookiesPolicyLinkPreset}
         />
       </div>
 
@@ -143,21 +194,8 @@ Footer.defaultProps = {
     type: 'video/mp4',
     errorText: 'This browser does not support downloading video files',
   },
-  languageLink: {
-    href: 'https://csssr.com/ru',
-    text: 'ru',
-  },
-  privacyPolicyLink: {
-    href: 'https://csssr.com/en/privacy-policy',
-    text: 'Privacy policy',
-  },
-  cookiesPolicyLink: {
-    href: 'https://csssr.com/en/cookies-policy',
-    text: 'Website cookie policy',
-  },
-  socialLinks: socials,
   addresses: footerAddresses,
-  nav: defaultNav,
+  preset: 'defaultEn',
 }
 
 export default styled(Footer)`

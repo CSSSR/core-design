@@ -8,6 +8,7 @@ const base = (props: ThemeProps) => {
 
   return css`
     & {
+      background-color: red;
       position: relative;
       margin-bottom: ${calcRem(344)};
       padding-top: ${calcRem(32)};
@@ -47,14 +48,14 @@ const base = (props: ThemeProps) => {
       pointer-events: none;
     }
 
-    @media (pointer: fine) {
-      .logo:hover {
-        color: white;
-      }
+    .email-container {
+      display: flex;
+      align-items: baseline;
+      margin-top: ${calcRem(16)};
+    }
 
-      .logo:hover ~ .video {
-        opacity: 1;
-      }
+    .email-wrapper {
+      position: relative;
     }
 
     .action-phrase {
@@ -65,6 +66,65 @@ const base = (props: ThemeProps) => {
     .email {
       margin-top: ${calcRem(16)};
       display: block;
+      font-family: 'Roboto', 'Arial', sans-serif;
+      font-weight: 300;
+    }
+
+    .input-email {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0;
+      clip: rect(0 0 0 0);
+    }
+
+    .copy-message {
+      position: absolute;
+      bottom: ${calcRem(5)};
+      left: calc(100% + ${calcRem(36)});
+      font-size: ${calcRem(10)};
+      line-height: ${calcRem(10)};
+      font-weight: normal;
+      letter-spacing: ${calcRem(1.3)};
+      color: ${colors.primary.origin};
+      text-transform: uppercase;
+    }
+
+    .copy-icon-button {
+      position: relative;
+      bottom: ${calcRem(5)};
+      width: ${calcRem(16)};
+      height: ${calcRem(16)};
+      margin-left: ${calcRem(10)};
+      border: none;
+      background: none;
+      color: ${colors.primary.origin};
+      cursor: pointer;
+
+      &[disabled] {
+        cursor: default;
+      }
+    }
+
+    .copy-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (pointer: fine) {
+      .logo:hover {
+        color: white;
+      }
+
+      .logo:hover ~ .video {
+        opacity: 1;
+      }
+
+      .copy-icon-button:hover {
+        color: ${colors.primary.darken15};
+      }
     }
 
     ${desktop.s} {
@@ -105,8 +165,7 @@ const base = (props: ThemeProps) => {
         width: 100%;
       }
 
-      .action-phrase,
-      .email {
+      .action-phrase {
         margin-left: ${calcRem(31)};
         align-self: flex-start;
       }
@@ -115,22 +174,42 @@ const base = (props: ThemeProps) => {
         margin-top: 0;
       }
 
-      .link-lng,
-      .email {
+      .link-lng {
         margin-top: ${calcRem(8)};
         display: inline-block;
-      }
-
-      .link-lng {
         position: relative;
         top: ${calcRem(-3)};
-        margin-left: ${calcRem(127)};
+        margin-top: 0;
+        margin-left: ${calcRem(100)};
         text-decoration: none;
       }
 
       .link-text {
         color: ${colors.primary.origin};
         font-weight: 300;
+      }
+
+      .email-container {
+        margin-top: ${calcRem(8)};
+        margin-left: ${calcRem(32)};
+        margin-right: ${calcRem(32)};
+      }
+
+      .copy-message {
+        bottom: ${calcRem(-18)};
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .link-language {
+        display: inline-block;
+        margin-left: auto;
+        text-decoration: none;
+      }
+
+      .link-text {
+        color: ${colors.primary.origin};
+        font-weight: 400;
       }
     }
   `
