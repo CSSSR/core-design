@@ -11,13 +11,13 @@ interface LinkComponentProps {
 
 export interface MenuLinksProps {
   id: string
+  listTitle?: string
   testId: string
   title: string
   links: {
     id: string
     testId: string
     title: string
-    listTitle?: string
     icon: React.ComponentType<{ className?: string }>
     component?: React.ComponentType<LinkComponentProps>
     href: string
@@ -43,7 +43,7 @@ export interface HeaderProps {
     href?: string
     testId?: string
     linkComponent?: React.ComponentType<LinkComponentProps>
-    type?: 'default' | 'school'
+    type?: '' | 'default' | 'school'
   }
   actionButton?: {
     isVisible?: boolean
@@ -52,11 +52,8 @@ export interface HeaderProps {
     href?: string
     onClick?: () => void
   }
-  menu?: {
-    links: MenuLinksProps[]
-    backButtonText: string
-  }
+  menu?: MenuLinksProps[]
   links?: LinksProps[]
   theme?: ThemeProps
-  preset?: '' | 'default' | 'school'
+  preset?: '' | 'defaultEn' | 'defaultRu' | 'school'
 }

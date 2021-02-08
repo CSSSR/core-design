@@ -15,6 +15,7 @@ const LMS = require('../static/icons/header/lms.svg')
 const Tracker = require('../static/icons/header/tracker.svg')
 const React = require('../static/icons/header/react.svg')
 const Eda = require('../static/icons/header/eda.svg')
+const OurProjects = require('../static/icons/header/ourProjects.svg')
 /* tslint:enable */
 
 export const schoolMenu = [
@@ -76,7 +77,7 @@ export const schoolLinks = [
   },
 ]
 
-export const menu = [
+export const menuEn = [
   {
     id: 'services',
     testId: 'Header:nav:button.services',
@@ -87,8 +88,8 @@ export const menu = [
         testId: 'Header:nav:link.outsourcing',
         icon: Circle,
         component: Link,
-        title: 'Web Development',
-        description: 'Fast, reliable and professional web development services.',
+        title: 'Outsourcing Front-end',
+        description: 'Web development to&nbsp;complement core competencies',
         href: 'https://csssr.com/en/service/outsourcing-front-end',
       },
       {
@@ -117,22 +118,32 @@ export const menu = [
         title: 'DesignLab',
         description:
           'Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue.',
-        href: 'https://csssr.com/en/service/design-lab',
+        href: 'https://csssr.com/en/service/design',
       },
     ],
   },
   {
-    id: 'industries',
-    testId: 'Header:nav:button.industries',
-    title: 'Industries',
+    id: 'portfolio',
+    testId: 'Header:nav:button.portfolio',
+    title: 'Portfolio',
+    listTitle: 'Clients by industry',
     links: [
       {
-        id: 'fintech',
-        testId: 'Header:nav:link.fintech',
-        icon: PieChart,
+        id: 'ourProjects',
+        testId: 'Header:nav:link.ourProjects',
+        icon: OurProjects,
         component: Link,
-        title: 'Fintech',
-        href: 'https://csssr.com/en/industry/fintech',
+        title: 'Our projects',
+        description: 'Take a look at solutions we have developed for some of our clients',
+        href: 'https://csssr.com/en/projects',
+      },
+      {
+        id: 'mediaAndMarketing',
+        testId: 'Header:nav:link.mediaAndMarketing',
+        icon: Message,
+        component: Link,
+        title: 'Media and marketing',
+        href: 'https://csssr.com/en/industry/media-and-marketing',
       },
       {
         id: 'eCommerce',
@@ -147,16 +158,16 @@ export const menu = [
         testId: 'Header:nav:link.information',
         icon: Computer,
         component: Link,
-        title: 'Information Technology',
+        title: 'IT industry',
         href: 'https://csssr.com/en/industry/information-technology',
       },
       {
-        id: 'mediaAndMarketing',
-        testId: 'Header:nav:link.mediaAndMarketing',
-        icon: Message,
+        id: 'fintech',
+        testId: 'Header:nav:link.fintech',
+        icon: PieChart,
         component: Link,
-        title: 'Media & Marketing',
-        href: 'https://csssr.com/en/industry/media-and-marketing',
+        title: 'Fintech',
+        href: 'https://csssr.com/en/industry/fintech',
       },
     ],
   },
@@ -200,7 +211,7 @@ export const menu = [
         title: 'Modular LMS Platform',
         description:
           'Start you E-Learning business with or&nbsp;LMS. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and customization',
-        href: 'https://csssr.com/en/products/lms',
+        href: 'https://csssr.com/en/solutions/lms',
       },
       {
         id: 'tracker',
@@ -209,16 +220,129 @@ export const menu = [
         component: Link,
         title: 'Time-tracking Software',
         description:
-          'Powerful time tracking app for teams. Track working hours across projects and get detailed reports to&nbsp;improve budgeting efficiency',
+          'We&rsquo;ve created an&nbsp;app that helps&nbsp;us manage time on&nbsp;our projects. Give it&nbsp;a&nbsp;try',
         href: 'https://tracker.csssr.com',
       },
     ],
   },
 ]
 
-export const links = [
+export const menuRu = [
   {
-    href: 'https://blog.csssr.com',
+    id: 'services',
+    testId: 'Header:nav:button.services',
+    title: 'Услуги',
+    links: [
+      {
+        id: 'outsourcing',
+        testId: 'Header:nav:link.outsourcing',
+        icon: Circle,
+        component: Link,
+        title: 'Фронтенд аутсорсинг',
+        description: 'Работа над веб-проектами для крупных компаний.',
+        href: 'https://csssr.com/ru/service/outsourcing-front-end',
+      },
+      {
+        id: 'backend',
+        testId: 'Header:nav:link.backend',
+        icon: Arc,
+        component: Link,
+        title: 'Бэкенд и&nbsp;DevOps',
+        description: 'Разработка полного цикла и&nbsp;настройка окружения.',
+        href: 'https://csssr.com/ru/service/back-end-and-devops',
+      },
+      {
+        id: 'mvp',
+        testId: 'Header:nav:link.mvp',
+        icon: Square,
+        component: Link,
+        title: 'Разработка MVP',
+        description: 'Ключевой функционал для проверки бизнес-идей.',
+        href: 'https://csssr.com/ru/service/mvp-development',
+      },
+    ],
+  },
+  {
+    id: 'portfolio',
+    testId: 'Header:nav:button.portfolio',
+    title: 'Портфолио',
+    listTitle: 'Делаем проекты для',
+    links: [
+      {
+        id: 'ourProjects',
+        testId: 'Header:nav:link.ourProjects',
+        icon: OurProjects,
+        component: Link,
+        title: 'Наши проекты',
+        description: 'Посмотрите на решения для некоторых из наших клиентов',
+        href: 'https://csssr.com/ru/projects',
+      },
+      {
+        id: 'mediaAndMarketing',
+        testId: 'Header:nav:link.mediaAndMarketing',
+        icon: Message,
+        component: Link,
+        title: 'Медиа и&nbsp;маркетинга',
+        href: 'https://csssr.com/ru/industry/media-and-marketing',
+      },
+      {
+        id: 'eCommerce',
+        testId: 'Header:nav:link.eCommerce',
+        icon: Bag,
+        component: Link,
+        title: 'E-Commerce',
+        href: 'https://csssr.com/ru/industry/ecommerce',
+      },
+      {
+        id: 'information',
+        testId: 'Header:nav:link.information',
+        icon: Computer,
+        component: Link,
+        title: 'IT-отрасли',
+        href: 'https://csssr.com/ru/industry/information-technology',
+      },
+      {
+        id: 'fintech',
+        testId: 'Header:nav:link.fintech',
+        icon: PieChart,
+        component: Link,
+        title: 'Финтеха',
+        href: 'https://csssr.com/ru/industry/fintech',
+      },
+    ],
+  },
+  {
+    id: 'howWeWork',
+    testId: 'Header:nav:button.howWeWork',
+    title: 'Как мы&nbsp;работаем',
+    links: [
+      {
+        id: 'technologies',
+        testId: 'Header:nav:link.technologies',
+        icon: CPU,
+        component: Link,
+        title: 'Технологии',
+        description:
+          'Мы&nbsp;внимательно следим за&nbsp;новинками веб-разработки и&nbsp;не&nbsp;забываем про лучшие стандарты.',
+        href: 'https://csssr.com/ru/tech-stack',
+      },
+      {
+        id: 'processes',
+        testId: 'Header:nav:link.processes',
+        icon: Repeat,
+        component: Link,
+        title: 'Процессы',
+        description:
+          'Отлаженные процессы, опыт и&nbsp;внимание к&nbsp;деталям помогают нам создавать успешные проекты.',
+        href: 'https://csssr.com/ru/way-of-work',
+      },
+    ],
+  },
+]
+
+export const linksEn = [
+  {
+    href: '/en',
     title: 'Blog',
     testId: 'Header:link.blog',
     component: Link,
@@ -227,6 +351,33 @@ export const links = [
     href: 'https://csssr.com/en/jobs',
     title: 'Careers',
     testId: 'Header:link.careers',
+    component: Link,
+  },
+  {
+    href: 'https://csssr.com/en/contacts',
+    title: 'Contacts',
+    testId: 'Header:link.contacts',
+    component: Link,
+  },
+]
+
+export const linksRu = [
+  {
+    href: '/ru',
+    title: 'Блог',
+    testId: 'Header:link.blog',
+    component: Link,
+  },
+  {
+    href: 'https://csssr.com/ru/jobs',
+    title: 'Вакансии',
+    testId: 'Header:link.careers',
+    component: Link,
+  },
+  {
+    href: 'https://csssr.com/ru/contacts',
+    title: 'Контакты',
+    testId: 'Header:link.contacts',
     component: Link,
   },
 ]
