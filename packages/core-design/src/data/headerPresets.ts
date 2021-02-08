@@ -1,4 +1,4 @@
-import { menu, schoolMenu, links, schoolLinks } from './headerLinks'
+import { menuEn, menuRu, linksEn, linksRu, schoolMenu, schoolLinks } from './headerLinks'
 
 const presets = {
   school: {
@@ -7,7 +7,7 @@ const presets = {
       testId: 'Header:link.logo',
       type: 'school',
     },
-    menu: { links: schoolMenu, backButtonText: 'Курсы' },
+    menu: schoolMenu,
     links: schoolLinks,
     actionButton: {
       isVisible: true,
@@ -16,19 +16,28 @@ const presets = {
       testId: 'Header:button.signIn',
     },
   },
-  default: {
+  defaultEn: {
     logo: {
       href: 'https://csssr.com/en',
       testId: 'Header:link.logo',
       type: 'default',
     },
-    menu: { links: menu, backButtonText: 'Our services' },
-    links,
+    menu: menuEn,
+    links: linksEn,
     actionButton: {
-      isVisible: true,
-      text: 'Hire us',
-      href: '',
-      testId: 'Header:button.hireUs',
+      isVisible: false,
+    },
+  },
+  defaultRu: {
+    logo: {
+      href: 'https://csssr.com/ru',
+      testId: 'Header:link.logo',
+      type: 'default',
+    },
+    menu: menuRu,
+    links: linksRu,
+    actionButton: {
+      isVisible: false,
     },
   },
 }

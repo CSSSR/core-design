@@ -35,12 +35,9 @@ export interface Props {
   isMobile: boolean
   isIe11: boolean
   activeItem: string
-  backButton: {
-    text: string
-    onClick: () => void
-  }
+  onBackButtonClick: () => void
   animationDirection: 'right' | 'left'
-  links: MenuLinksProps[]
+  menu: MenuLinksProps[]
   theme?: ThemeProps
 }
 
@@ -50,9 +47,9 @@ const Nav: React.FC<Props> = ({
   isMobile,
   isIe11,
   activeItem,
-  backButton,
+  onBackButtonClick,
   animationDirection,
-  links,
+  menu,
 }) => {
   const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
   const Wrapper = isIe11 ? Fragment : Fade
@@ -69,8 +66,7 @@ const Nav: React.FC<Props> = ({
         duration: 200,
         distance: '20px',
       }
-  const activeItemLinks =
-    links.find(({ id }) => id === activeItem) && links.find(({ id }) => id === activeItem).links
+  const activeItemLinks = menu.find(({ id }) => id === activeItem)?.links
   const activeItemLinksNumber = activeItemLinks && activeItemLinks.length
 
   return (
@@ -80,9 +76,16 @@ const Nav: React.FC<Props> = ({
       })}
     >
       {isMobile && (
-        <button className="button_back" onClick={backButton.onClick}>
+        <button className="button_back" onClick={onBackButtonClick}>
           <Back className="icon_back" />
-          {backButton.text}
+
+          {activeItem !== null && (
+            <span
+              dangerouslySetInnerHTML={{
+                __html: menu.find(({ id }) => id === activeItem)?.title,
+              }}
+            />
+          )}
         </button>
       )}
 
@@ -111,35 +114,46 @@ const Nav: React.FC<Props> = ({
                       'nav-item_active': pathname === href,
                     })}
                   >
-                    <Component
-                      data-testid={testId}
-                      className="link"
-                      href={href}
-                      target={target || linkRegExp.test(href) ? '_blank' : '_self'}
-                      rel="noopener noreferrer"
-                    >
-                      <Icon className={cn('icon', `icon_${id}`)} />
-
-                      <Heading
-                        className="title"
-                        as="div"
-                        type="regular"
-                        size="m"
-                        dangerouslySetInnerHTML={{
-                          __html: title,
-                        }}
-                      />
-
-                      {description && (
-                        <Text
-                          className="description"
-                          as="p"
+                    <div style={{ position: 'relative' }}>
+                      {id === 'mediaAndMarketing' && (
+                        <Heading.H3
                           type="regular"
-                          size="m"
-                          dangerouslySetInnerHTML={{ __html: description }}
+                          dangerouslySetInnerHTML={{
+                            __html: menu.find((item) => item.id === activeItem)?.listTitle,
+                          }}
+                          className="industry-title"
                         />
                       )}
-                    </Component>
+                      <Component
+                        data-testid={testId}
+                        className="link"
+                        href={href}
+                        target={target || linkRegExp.test(href) ? '_blank' : '_self'}
+                        rel="noopener noreferrer"
+                      >
+                        <Icon className={cn('icon', `icon_${id}`)} />
+
+                        <Heading
+                          className="title"
+                          as="div"
+                          type="regular"
+                          size="m"
+                          dangerouslySetInnerHTML={{
+                            __html: title,
+                          }}
+                        />
+
+                        {description && (
+                          <Text
+                            className="description"
+                            as="p"
+                            type="regular"
+                            size="m"
+                            dangerouslySetInnerHTML={{ __html: description }}
+                          />
+                        )}
+                      </Component>
+                    </div>
                   </li>
                 </Wrapper>
               ),

@@ -11,9 +11,10 @@ interface LinkComponentProps {
 
 export interface MenuLinksProps {
   id: string
+  listTitle?: string
   testId: string
   title: string
-  links: Array<{
+  links: {
     id: string
     testId: string
     title: string
@@ -22,7 +23,7 @@ export interface MenuLinksProps {
     href: string
     description?: string
     target?: string
-  }>
+  }[]
 }
 
 export interface LinksProps {
@@ -42,7 +43,7 @@ export interface HeaderProps {
     href?: string
     testId?: string
     linkComponent?: React.ComponentType<LinkComponentProps>
-    type?: 'default' | 'school'
+    type?: '' | 'default' | 'school'
   }
   actionButton?: {
     isVisible?: boolean
@@ -51,11 +52,8 @@ export interface HeaderProps {
     href?: string
     onClick?: () => void
   }
-  menu?: {
-    links: MenuLinksProps[]
-    backButtonText: string
-  }
+  menu?: MenuLinksProps[]
   links?: LinksProps[]
   theme?: ThemeProps
-  preset?: '' | 'default' | 'school'
+  preset?: '' | 'defaultEn' | 'defaultRu' | 'school'
 }

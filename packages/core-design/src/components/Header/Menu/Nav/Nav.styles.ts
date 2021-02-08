@@ -63,8 +63,7 @@ const base = (props: ThemeProps) => {
     }
 
     .nav_howWeWork,
-    .nav_solutions,
-    .nav_industries {
+    .nav_solutions {
       .nav-item {
         width: 50%;
       }
@@ -87,7 +86,7 @@ const base = (props: ThemeProps) => {
       }
     }
 
-    .nav_industries {
+    .nav_portfolio {
       padding-top: ${calcRem(36)};
       padding-bottom: ${calcRem(28)};
 
@@ -103,6 +102,20 @@ const base = (props: ThemeProps) => {
 
       .icon {
         top: ${calcRem(4)};
+      }
+
+      .industry-title {
+        position: absolute;
+        top: ${calcRem(-48)};
+        left: ${calcRem(34)};
+        grid-column: 2;
+        grid-row: 1;
+        font-size: ${calcRem(10)};
+        line-height: ${calcRem(16)};
+        font-weight: normal;
+        letter-spacing: ${calcRem(1.3)};
+        color: white;
+        text-transform: uppercase;
       }
 
       .nav-item_active .icon_fintech path:last-of-type {
@@ -207,7 +220,7 @@ const base = (props: ThemeProps) => {
     @media (pointer: fine) {
       .nav_howWeWork,
       .nav_solutions,
-      .nav_industries {
+      .nav_portfolio {
         .link:hover {
           color: #5695ed;
         }
@@ -217,7 +230,7 @@ const base = (props: ThemeProps) => {
         }
       }
 
-      .nav_industries {
+      .nav_portfolio {
         .link:hover .icon_fintech path:last-of-type {
           fill: #5695ed;
         }
@@ -263,7 +276,7 @@ const base = (props: ThemeProps) => {
 
     .nav_howWeWork,
     .nav_solutions,
-    .nav_industries {
+    .nav_portfolio {
       .nav-item_active .link {
         color: #5695ed;
       }
@@ -338,12 +351,74 @@ const base = (props: ThemeProps) => {
           margin-left: ${calcRem(24)};
         }
       }
+
+      .nav_portfolio {
+        ul {
+          grid-column-gap: 32px;
+        }
+
+        .link {
+          white-space: nowrap;
+        }
+
+        .nav-item_mediaAndMarketing {
+          padding-top: ${calcRem(48)};
+          padding-bottom: 0;
+        }
+
+        .nav-item_eCommerce {
+          padding-top: ${calcRem(48)};
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    ${desktop.m} {
+      .nav_portfolio {
+        ul {
+          grid-column-gap: 12px;
+        }
+
+        .link {
+          white-space: nowrap;
+        }
+
+        .nav-item_mediaAndMarketing {
+          padding-top: ${calcRem(48)};
+          padding-bottom: 0;
+        }
+
+        .nav-item_eCommerce {
+          padding-top: ${calcRem(48)};
+          padding-bottom: 0;
+        }
+      }
     }
 
     ${desktop.s} {
       .nav_courses_children_number_3 {
         .description {
           width: 85%;
+        }
+      }
+
+      .nav_portfolio {
+        ul {
+          grid-column-gap: 12px;
+        }
+
+        .link {
+          white-space: nowrap;
+        }
+
+        .nav-item_mediaAndMarketing {
+          padding-top: ${calcRem(48)};
+          padding-bottom: 0;
+        }
+
+        .nav-item_eCommerce {
+          padding-top: ${calcRem(48)};
+          padding-bottom: 0;
         }
       }
     }
@@ -441,6 +516,22 @@ const base = (props: ThemeProps) => {
           stroke: #5695ed;
         }
       }
+
+      .nav_portfolio {
+        ul {
+          padding-left: 4%;
+        }
+
+        .nav-item_mediaAndMarketing {
+          padding-top: ${calcRem(48)};
+          padding-bottom: 0;
+        }
+
+        .nav-item_eCommerce {
+          padding-top: ${calcRem(48)};
+          padding-bottom: 0;
+        }
+      }
     }
 
     ${above.mobile} {
@@ -451,6 +542,86 @@ const base = (props: ThemeProps) => {
 
         .description {
           width: ${calcRem(144)};
+        }
+      }
+
+      .nav_portfolio {
+        ul {
+          width: 100%;
+          max-width: 1360px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 0.5fr 0.5fr;
+          grid-row-gap: ${calcRem(32)};
+          align-content: center;
+          padding-left: 4%;
+        }
+
+        .title {
+          font-weight: 900;
+          font-size: ${calcRem(16)};
+          line-height: ${calcRem(24)};
+        }
+
+        .icon {
+          top: ${calcRem(3)};
+          left: ${calcRem(34)};
+          width: ${calcRem(18)};
+          height: ${calcRem(18)};
+        }
+
+        .nav-item_mediaAndMarketing {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        .nav-item_eCommerce {
+          grid-column: 3;
+          grid-row: 1;
+        }
+
+        .nav-item_information {
+          grid-column: 2;
+          grid-row: 2;
+          padding: 0;
+        }
+
+        .nav-item_fintech {
+          grid-column: 3;
+          grid-row: 2;
+          padding: 0;
+        }
+
+        .link {
+          padding-left: ${calcRem(68)};
+        }
+
+        .nav-item_ourProjects {
+          grid-column: 1;
+          grid-row: 1 / span 2;
+          padding: 0;
+
+          .link {
+            padding-left: ${calcRem(111)};
+            transform: translateY(${calcRem(7)});
+          }
+
+          .icon {
+            left: ${calcRem(64)};
+            width: ${calcRem(24)};
+            height: ${calcRem(24)};
+          }
+
+          .title {
+            font-weight: 900;
+            font-size: ${calcRem(24)};
+            line-height: ${calcRem(32)};
+          }
+
+          .description {
+            font-size: ${calcRem(14)};
+            line-height: ${calcRem(24)};
+          }
         }
       }
     }
@@ -535,7 +706,7 @@ const base = (props: ThemeProps) => {
         height: ${calcRem(24)};
       }
 
-      .nav_industries,
+      .nav_portfolio,
       .nav_howWeWork,
       .nav_solutions,
       .nav_services,
@@ -609,8 +780,13 @@ const base = (props: ThemeProps) => {
         }
       }
 
-      .nav_industries {
+      .nav_portfolio {
         padding-top: ${calcRem(8)};
+        padding-bottom: ${calcRem(32)};
+
+        .industry-title {
+          left: 0;
+        }
 
         .nav-item {
           padding-top: 0;
@@ -619,8 +795,8 @@ const base = (props: ThemeProps) => {
           height: auto;
         }
 
-        .nav-item:not(:first-of-type) {
-          margin-top: ${calcRem(20)};
+        .nav-item:not(:last-of-type) {
+          margin-bottom: ${calcRem(25)};
         }
 
         .link {
@@ -628,16 +804,32 @@ const base = (props: ThemeProps) => {
           padding-bottom: ${calcRem(16)};
           display: flex;
           align-items: center;
+          flex-wrap: wrap;
         }
 
         .title {
           margin-top: 0;
           margin-left: ${calcRem(24)};
+          width: calc(100% - ${calcRem(52)});
+        }
+
+        .description {
+          width: 100%;
+          margin-top: ${calcRem(8)};
+          padding-left: ${calcRem(47)};
+          padding-right: ${calcRem(8)};
+          font-size: ${calcRem(14)};
+          line-height: ${calcRem(24)};
+          font-weight: normal;
         }
 
         .icon {
-          width: ${calcRem(28)};
-          height: ${calcRem(28)};
+          width: ${calcRem(24)};
+          height: ${calcRem(24)};
+        }
+
+        .nav-item_mediaAndMarketing {
+          padding-top: ${calcRem(79)};
         }
       }
     }

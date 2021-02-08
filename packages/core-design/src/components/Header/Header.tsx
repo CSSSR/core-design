@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from 'react'
 import useIe11Status from '../../utils/hooks/useIe11Status'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
 import presets from '../../data/headerPresets'
-import { menu as defaultMenu, links as defaultLinks } from '../../data/headerLinks'
 import { HeaderProps as Props } from './types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -31,8 +30,8 @@ const Header: React.FC<Props> = ({
   pathname,
   isMobile: isMobileValueFromProps,
   isIe11: isIe11ValueFromProps,
-  menu,
-  links,
+  menu: menuFromProps,
+  links: linksFromProps,
   actionButton,
   logo,
   preset,
@@ -68,37 +67,31 @@ const Header: React.FC<Props> = ({
 
   const Icon = isDropdownOpened ? Cross : Burger
   const LinkComponent = logo.linkComponent || 'a'
+  const menu = menuFromProps || presets[preset]?.menu
+  const links = linksFromProps || presets[preset]?.links
   const CommonHeaderContent = () => (
     <Fragment>
-      {menu && (
-        <Menu
-          isMobile={isMobile}
-          isIe11={isIe11}
-          pathname={pathname}
-          links={presets[preset]?.menu.links || menu.links}
-          backButtonText={presets[preset]?.menu.backButtonText || menu.backButtonText}
-        />
-      )}
-      {links && <Links links={presets[preset]?.links || links} pathname={pathname} />}
-      {(presets[preset]?.actionButton.isVisible || actionButton.isVisible) &&
-        (isIe11 || presets[preset]?.actionButton.href || actionButton.href ? (
+      {menu && <Menu isMobile={isMobile} isIe11={isIe11} pathname={pathname} menu={menu} />}
+      {links && <Links links={links} pathname={pathname} />}
+      {(actionButton?.isVisible || presets[preset]?.actionButton?.isVisible) &&
+        (isIe11 || actionButton.href || presets[preset]?.actionButton.href ? (
           <ButtonLink
             kind="primary"
             className="button_action"
-            data-testid={presets[preset]?.actionButton.testId || actionButton.testId}
-            href={presets[preset]?.actionButton.href || actionButton.href}
+            data-testid={actionButton.testId || presets[preset]?.actionButton.testId}
+            href={actionButton.href || presets[preset]?.actionButton.href}
             dangerouslySetInnerHTML={{
-              __html: presets[preset]?.actionButton.text || actionButton.text,
+              __html: actionButton.text || presets[preset]?.actionButton.text,
             }}
           />
         ) : (
           <Button
             kind="primary"
             className="button_action"
-            data-testid={presets[preset]?.actionButton.testId || actionButton.testId}
+            data-testid={actionButton.testId || presets[preset]?.actionButton.testId}
             onClick={actionButton.onClick}
             dangerouslySetInnerHTML={{
-              __html: presets[preset]?.actionButton.text || actionButton.text,
+              __html: actionButton.text || presets[preset]?.actionButton.text,
             }}
           />
         ))}
@@ -108,11 +101,11 @@ const Header: React.FC<Props> = ({
   return (
     <header data-testid="Header:block" className={className}>
       <LinkComponent
-        href={presets[preset]?.logo.href || logo.href}
+        href={logo.href || presets[preset]?.logo.href}
         className="logo-wrapper"
-        data-testid={presets[preset]?.logo.testId || logo.testId}
+        data-testid={logo.testId || presets[preset]?.logo.testId}
       >
-        {logoHashMap[presets[preset]?.logo.type] || logoHashMap[logo.type]}
+        {logoHashMap[logo.type] || logoHashMap[presets[preset]?.logo.type]}
       </LinkComponent>
 
       {isReady && isMobile && (
@@ -138,19 +131,7 @@ const Header: React.FC<Props> = ({
 }
 
 Header.defaultProps = {
-  logo: {
-    testId: 'Header:link.logo',
-    href: 'https://csssr.com/en',
-  },
-  actionButton: {
-    isVisible: true,
-    text: 'Default text',
-    testId: 'Header:button.contactUs',
-  },
-  menu: { links: defaultMenu, backButtonText: 'Our services' },
-  links: defaultLinks,
-  pathname: '',
-  preset: '',
+  preset: 'defaultEn',
 }
 
 export default styled(Header)`

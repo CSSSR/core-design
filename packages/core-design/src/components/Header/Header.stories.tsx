@@ -9,22 +9,20 @@ storiesOf('Header', module)
   .addDecorator(withKnobs)
   .add('Header', () => {
     const knobs = {
-      preset: select('Preset', ['school', 'default', ''], 'school'),
+      preset: select('Preset', ['school', 'defaultEn', 'defaultRu', ''], 'defaultEn'),
       isIe11: boolean('Is IE11', false),
       isMobile: boolean('Is Mobile', false),
     }
 
     const actionButtonKnobs = {
-      isVisible: boolean('Action Button is Visible', true),
-      text: text('Action Button text', 'Default text'),
-      href: text('Action Button href', '/'),
-      testId: text('Action Button test id', 'Header:button.contactUs'),
+      isVisible: boolean('Action Button is Visible', false),
+      text: text('Action Button text', ''),
+      href: text('Action Button href', ''),
       onClick: action('Action Button click'),
     }
 
     const logo = {
-      href: text('Logo href', '/'),
-      type: select('Logo type', ['default', 'school'], 'default'),
+      href: text('Logo href', ''),
     }
 
     return (
@@ -32,7 +30,7 @@ storiesOf('Header', module)
         {...knobs}
         logo={logo}
         actionButton={actionButtonKnobs}
-        pathname={text('Pathname', '/')}
+        pathname={text('Pathname', '')}
       />
     )
   })
