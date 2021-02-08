@@ -13,16 +13,17 @@ export interface MenuLinksProps {
   id: string
   testId: string
   title: string
-  links: Array<{
+  links: {
     id: string
     testId: string
     title: string
+    listTitle?: string
     icon: React.ComponentType<{ className?: string }>
     component?: React.ComponentType<LinkComponentProps>
     href: string
     description?: string
     target?: string
-  }>
+  }[]
 }
 
 export interface LinksProps {
