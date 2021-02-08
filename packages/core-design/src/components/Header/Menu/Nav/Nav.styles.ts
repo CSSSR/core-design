@@ -795,8 +795,8 @@ const base = (props: ThemeProps) => {
           height: auto;
         }
 
-        .nav-item:not(:first-of-type) {
-          margin-top: ${calcRem(20)};
+        .nav-item:not(:last-of-type) {
+          margin-bottom: ${calcRem(25)};
         }
 
         .link {
@@ -804,16 +804,28 @@ const base = (props: ThemeProps) => {
           padding-bottom: ${calcRem(16)};
           display: flex;
           align-items: center;
+          flex-wrap: wrap;
         }
 
         .title {
           margin-top: 0;
           margin-left: ${calcRem(24)};
+          width: calc(100% - ${calcRem(52)});
+        }
+
+        .description {
+          width: 100%;
+          margin-top: ${calcRem(8)};
+          padding-left: ${calcRem(47)};
+          padding-right: ${calcRem(8)};
+          font-size: ${calcRem(14)};
+          line-height: ${calcRem(24)};
+          font-weight: normal;
         }
 
         .icon {
-          width: ${calcRem(28)};
-          height: ${calcRem(28)};
+          width: ${calcRem(24)};
+          height: ${calcRem(24)};
         }
 
         .nav-item_mediaAndMarketing {

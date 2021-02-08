@@ -14,19 +14,11 @@ export interface Props {
   pathname: string
   isMobile: boolean
   isIe11: boolean
-  backButtonText: string
-  links: MenuLinksProps[]
+  menu: MenuLinksProps[]
   theme?: Theme
 }
 
-const Menu: React.FC<Props> = ({
-  className,
-  isMobile,
-  isIe11,
-  pathname,
-  backButtonText,
-  links,
-}) => {
+const Menu: React.FC<Props> = ({ className, isMobile, isIe11, pathname, menu }) => {
   const menuRef = useRef(null)
   const [activeItem, setActiveItem] = useState(null)
   const [animationDirection, setAnimationDirection] = useState(null)
@@ -37,10 +29,10 @@ const Menu: React.FC<Props> = ({
       return
     }
 
-    const prevActiveItemIndex: number = links.findIndex(
+    const prevActiveItemIndex: number = menu.findIndex(
       ({ id }: { id: string }) => id === activeItem,
     )
-    const activeItemIndex: number = links.findIndex(({ id }: { id: string }) => id === item)
+    const activeItemIndex: number = menu.findIndex(({ id }: { id: string }) => id === item)
 
     setAnimationDirection(prevActiveItemIndex < activeItemIndex ? 'right' : 'left')
     setActiveItem(item)
@@ -81,7 +73,7 @@ const Menu: React.FC<Props> = ({
         data-scroll-lock-scrollable
       >
         <MenuWrapperTag className="menu">
-          {links.map(({ id, title, testId }) => (
+          {menu.map(({ id, title, testId }) => (
             <Link
               key={title}
               className={cn('menu-item', {
@@ -102,9 +94,9 @@ const Menu: React.FC<Props> = ({
         <Nav
           activeItem={activeItem}
           animationDirection={animationDirection}
-          backButton={{ text: backButtonText, onClick: handleResetActiveItem }}
+          onBackButtonClick={handleResetActiveItem}
           pathname={pathname}
-          links={links}
+          menu={menu}
           isIe11={isIe11}
           isMobile={isMobile}
         />
