@@ -1,4 +1,21 @@
 {
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#f285a6",
+    "activityBar.activeBorder": "#d5f9c5",
+    "activityBar.background": "#f285a6",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#d5f9c5",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBar.background": "#ed5785",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#e82964",
+    "titleBar.activeBackground": "#ed5785",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#ed578599",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#ED5785",
   "editor.formatOnSave": false,
   "eslint.autoFixOnSave": true,
   "[handlebars]": {
