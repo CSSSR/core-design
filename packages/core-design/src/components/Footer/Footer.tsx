@@ -14,8 +14,6 @@ import Link from '../Link'
 import Text from '../Text'
 import Heading from '../Heading'
 
-import footerAddresses from '../../data/footerAddresses'
-
 /* tslint:disable */
 const Logo = require('../../static/icons/csssr_logo.svg')
 const CopyIcon = require('../../static/icons/footer/copy.svg')
@@ -25,17 +23,17 @@ const Footer: React.FC<Props> = ({
   className,
   isMobile: isMobileValueFromProps,
   isIe11: isIe11ValueFromProps,
-  logo,
-  video,
-  email,
-  actionPhrase,
-  allianceLink,
-  languageLink,
-  privacyPolicyLink,
-  cookiesPolicyLink,
-  socialLinks,
-  nav,
-  addresses,
+  logo: logoFromProps,
+  video: videoFromProps,
+  email: emailFromProps,
+  actionPhrase: actionPhraseFromProps,
+  allianceLink: allianceLinkFromProps,
+  languageLink: languageLinkFromProps,
+  privacyPolicyLink: privacyPolicyLinkFromProps,
+  cookiesPolicyLink: cookiesPolicyLinkFromProps,
+  socialLinks: socialLinksFromProps,
+  nav: navFromProps,
+  addresses: addressesFromProps,
   preset,
 }) => {
   const [isMessageShown, setIsMessageShown] = useState(false)
@@ -95,13 +93,19 @@ const Footer: React.FC<Props> = ({
     }
   }
 
+  const logo = logoFromProps || presets[preset]?.logo
+  const video = videoFromProps || presets[preset]?.video
+  const email = emailFromProps || presets[preset]?.email
+  const actionPhrase = actionPhraseFromProps || presets[preset]?.actionPhrase
+  const allianceLink = allianceLinkFromProps || presets[preset]?.allianceLink
+  const languageLink = languageLinkFromProps || presets[preset]?.languageLink
+  const privacyPolicyLink = privacyPolicyLinkFromProps || presets[preset]?.privacyPolicyLink
+  const cookiesPolicyLink = cookiesPolicyLinkFromProps || presets[preset]?.cookiesPolicyLink
+  const socialLinks = socialLinksFromProps || presets[preset]?.socialLinks
+  const nav = navFromProps || presets[preset]?.nav
+  const addresses = addressesFromProps || presets[preset]?.addresses
+
   const LinkComponent = logo.linkComponent || 'a'
-  const allianceLinkPreset = allianceLink || presets[preset]?.allianceLink
-  const languageLinkPreset = languageLink || presets[preset]?.languageLink
-  const privacyPolicyLinkPreset = privacyPolicyLink || presets[preset]?.privacyPolicyLink
-  const cookiesPolicyLinkPreset = cookiesPolicyLink || presets[preset]?.cookiesPolicyLink
-  const socialLinksPreset = socialLinks || presets[preset]?.socialLinks
-  const navLinks = nav || presets[preset]?.nav
 
   return (
     <footer className={className} ref={footerRef}>
@@ -126,7 +130,7 @@ const Footer: React.FC<Props> = ({
             size="s"
             dangerouslySetInnerHTML={{ __html: actionPhrase }}
           />
-          
+
           <div className="email-container">
             <div className="email-wrapper">
               <input className="input-email" ref={emailRef} defaultValue={email} />
@@ -162,17 +166,17 @@ const Footer: React.FC<Props> = ({
             )}
           </div>
 
-          {socialLinksPreset && <SocialLinks links={socialLinksPreset} />}
+          {socialLinks && <SocialLinks links={socialLinks} />}
         </div>
 
-        {navLinks && <Nav nav={navLinks} />}
+        {nav && <Nav nav={nav} />}
       </div>
       <div className="bottom-content">
         <BottomLinksAndLanguages
-          allianceLink={allianceLinkPreset}
-          languageLink={languageLinkPreset}
-          privacyPolicyLink={privacyPolicyLinkPreset}
-          cookiesPolicyLink={cookiesPolicyLinkPreset}
+          allianceLink={allianceLink}
+          languageLink={languageLink}
+          privacyPolicyLink={privacyPolicyLink}
+          cookiesPolicyLink={cookiesPolicyLink}
         />
       </div>
 
@@ -184,17 +188,6 @@ const Footer: React.FC<Props> = ({
 }
 
 Footer.defaultProps = {
-  logo: {
-    href: 'https://csssr.com/en',
-  },
-  actionPhrase: 'Let’s work together!',
-  email: 'sales@csssr.com',
-  video: {
-    src: 'https://static.csssr.com/camp-e1d4f932.mp4',
-    type: 'video/mp4',
-    errorText: 'This browser does not support downloading video files',
-  },
-  addresses: footerAddresses,
   preset: 'defaultEn',
 }
 
