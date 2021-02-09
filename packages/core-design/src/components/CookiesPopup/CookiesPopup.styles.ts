@@ -51,7 +51,7 @@ const base = ({ media }) => css`
     bottom: ${calcRem(-8)};
     width: ${calcRem(62)};
     height: ${calcRem(53)};
-    background-image: url(${require('../../static/icons/cookiesPopup/cookie_ready.svg')});
+    background-image: url(${require('../../static/icons/cookiesPopup/cookie_ready.svg').default});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
