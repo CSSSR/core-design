@@ -81,15 +81,29 @@ const Footer: React.FC<Props> = ({
       return () => clearTimeout(timer)
     }
 
+    const dataLayerHandler = () => {
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'footer_mail_copy' })
+      }
+    }
+
     if (window.isSecureContext) {
+      dataLayerHandler()
       navigator.clipboard.writeText(email)
       setIsMessageShown(true)
       timerFunction()
     } else {
+      dataLayerHandler()
       emailRef.current.select() // для локальной работы копирования текста
       document.execCommand('copy')
       setIsMessageShown(true)
       timerFunction()
+    }
+  }
+
+  const emailLinkClickHandler = () => {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'footer_mail_link' })
     }
   }
 
@@ -134,7 +148,12 @@ const Footer: React.FC<Props> = ({
           <div className="email-container">
             <div className="email-wrapper">
               <input className="input-email" ref={emailRef} defaultValue={email} />
-              <Link className="email" href={`mailto:${email}`} data-testid="Footer.link.email">
+              <Link
+                className="email"
+                href={`mailto:${email}`}
+                data-testid="Footer.link.email"
+                onClick={emailLinkClickHandler}
+              >
                 {email}
               </Link>
 
