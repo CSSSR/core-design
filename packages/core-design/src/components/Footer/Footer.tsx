@@ -81,31 +81,33 @@ const Footer: React.FC<Props> = ({
       return () => clearTimeout(timer)
     }
 
+    /* tslint:disable */
     const dataLayerHandler = () => {
       if (window.dataLayer) {
         window.dataLayer.push({ event: 'footer_mail_copy' })
       }
     }
+    /* tslint:enable */
 
     if (window.isSecureContext) {
       dataLayerHandler()
       navigator.clipboard.writeText(email)
-      setIsMessageShown(true)
-      timerFunction()
     } else {
       dataLayerHandler()
       emailRef.current.select() // для локальной работы копирования текста
       document.execCommand('copy')
-      setIsMessageShown(true)
-      timerFunction()
     }
+    setIsMessageShown(true)
+    timerFunction()
   }
 
+  /* tslint:disable */
   const emailLinkClickHandler = () => {
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'footer_mail_link' })
     }
   }
+  /* tslint:enable */
 
   const logo = logoFromProps || presets[preset]?.logo
   const video = videoFromProps || presets[preset]?.video
