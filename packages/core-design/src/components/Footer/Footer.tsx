@@ -19,6 +19,8 @@ const Logo = require('../../static/icons/csssr_logo.svg')
 const CopyIcon = require('../../static/icons/footer/copy.svg')
 /* tslint:enable */
 
+declare const window: any
+
 const Footer: React.FC<Props> = ({
   className,
   isMobile: isMobileValueFromProps,
