@@ -2,7 +2,7 @@ import cookiesPopupLinks from './cookiesPopupLinks'
 
 const dataTestIds = {
   blocks: {
-    main: 'CookiesPopup::block',
+    main: 'CookiesPopup:block',
   },
   buttons: {
     close: 'CookiesPopup:button.close',
