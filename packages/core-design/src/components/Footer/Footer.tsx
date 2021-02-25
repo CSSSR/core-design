@@ -83,13 +83,11 @@ const Footer: React.FC<Props> = ({
       return () => clearTimeout(timer)
     }
 
-    /* tslint:disable */
     const dataLayerHandler = () => {
       if (window.dataLayer) {
         window.dataLayer.push({ event: 'footer_mail_copy' })
       }
     }
-    /* tslint:enable */
 
     if (window.isSecureContext) {
       dataLayerHandler()
@@ -103,13 +101,11 @@ const Footer: React.FC<Props> = ({
     timerFunction()
   }
 
-  /* tslint:disable */
   const emailLinkClickHandler = () => {
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'footer_mail_link' })
     }
   }
-  /* tslint:enable */
 
   const logo = logoFromProps || presets[preset]?.logo
   const video = videoFromProps || presets[preset]?.video
