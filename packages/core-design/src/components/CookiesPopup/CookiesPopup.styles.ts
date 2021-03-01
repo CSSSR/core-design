@@ -51,7 +51,12 @@ const base = ({ media }) => css`
     bottom: ${calcRem(-8)};
     width: ${calcRem(62)};
     height: ${calcRem(53)};
-    background-image: url(${require('../../static/icons/cookiesPopup/cookie_ready.svg').default});
+    /*  В качестве временного решения тут будет прямая ссылка на изображение с com
+
+        TODO: когда везде будет использоваться кукисы с core-design, будем раздавать изображения
+        из core-design
+    */
+    background-image: url('https://csssr.com/static/icons/cookies-banner/cookie_ready.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
