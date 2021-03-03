@@ -159,7 +159,7 @@ export const nav = {
         },
         {
           id: 'contactUs',
-          title: 'Contact us',
+          title: 'Contacts',
           href: 'https://csssr.com/en/contacts',
         },
       ],
