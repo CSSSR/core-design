@@ -76,8 +76,8 @@ export const nav = {
       ],
     },
     {
-      id: 'industries',
-      title: 'Industries',
+      id: 'portfolio',
+      title: 'Portfolio',
       links: [
         {
           id: 'fintech',
@@ -188,8 +188,8 @@ export const nav = {
       ],
     },
     {
-      id: 'industries',
-      title: 'Индустрии',
+      id: 'portfolio',
+      title: 'Портфолио',
       links: [
         {
           id: 'fintech',
