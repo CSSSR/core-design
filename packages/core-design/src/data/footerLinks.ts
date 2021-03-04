@@ -3,10 +3,10 @@ const Facebook = require('../static/icons/footer/facebook.svg')
 const Linkedin = require('../static/icons/footer/linkedin.svg')
 const Instagram = require('../static/icons/footer/instagram.svg')
 const Youtube = require('../static/icons/footer/youtube.svg')
-const Soundcloud = require('../static/icons/footer/Soundcloud.svg')
-const Telegram = require('../static/icons/footer/Telegram.svg')
-const Twitter = require('../static/icons/footer/Twitter.svg')
-const Vk = require('../static/icons/footer/Vk.svg')
+const Soundcloud = require('../static/icons/footer/soundcloud.svg')
+const Telegram = require('../static/icons/footer/telegram.svg')
+const Twitter = require('../static/icons/footer/twitter.svg')
+const Vk = require('../static/icons/footer/vk.svg')
 /* tslint:enable */
 
 export const socials = [
