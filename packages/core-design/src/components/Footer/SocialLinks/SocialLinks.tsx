@@ -14,7 +14,7 @@ const SocialLinks: React.FC<Props> = ({ className, links }) => (
   <ul className={className}>
     {links.map(({ id, href, icon: Icon }) => (
       <li key={id}>
-        <a href={href} target="_blank" rel="noopener nofollow">
+        <a href={href} target="_blank" rel="noopener nofollow" data-testid={`Footer:link:${id}`}>
           <Icon />
         </a>
       </li>

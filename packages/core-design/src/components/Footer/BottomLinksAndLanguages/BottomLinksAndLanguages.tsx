@@ -60,7 +60,11 @@ const PrivacyAndLanguageLinks: React.FC<Props> = ({
 
       <li>
         {privacyPolicyLink && (
-          <PrivacyPolicyComponent className="link" href={privacyPolicyLink.href}>
+          <PrivacyPolicyComponent
+            className="link"
+            href={privacyPolicyLink.href}
+            data-testid="Footer:link:privacyPolicy"
+          >
             <Text
               className="link-text"
               dangerouslySetInnerHTML={{ __html: privacyPolicyLink.text }}
@@ -76,7 +80,7 @@ const PrivacyAndLanguageLinks: React.FC<Props> = ({
             href="https://frontend.digital"
             target="_blank"
             rel="noopener noreferrer"
-            data-testid="Footer:link.aliance-digital"
+            data-testid="Footer:link.allianceDigital"
           >
             <Text
               className="link-text alliance-text"
@@ -95,7 +99,11 @@ const PrivacyAndLanguageLinks: React.FC<Props> = ({
         )}
 
         {cookiesPolicyLink && (
-          <CookiesPolicyComponent className="link cookies-link" href={cookiesPolicyLink.href}>
+          <CookiesPolicyComponent
+            className="link cookies-link"
+            href={cookiesPolicyLink.href}
+            data-testid="Footer:link:cookiesPolicy"
+          >
             <Text
               className="link-text"
               dangerouslySetInnerHTML={{ __html: cookiesPolicyLink.text }}

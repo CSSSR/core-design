@@ -76,7 +76,11 @@ const Nav: React.FC<Props> = ({
       })}
     >
       {isMobile && (
-        <button className="button_back" onClick={onBackButtonClick}>
+        <button
+          className="button_back"
+          onClick={onBackButtonClick}
+          data-testid="Header:button:menu.back"
+        >
           <Back className="icon_back" />
 
           {activeItem !== null && (

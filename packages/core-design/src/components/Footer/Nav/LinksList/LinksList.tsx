@@ -24,6 +24,7 @@ const LinksList: React.FC<Props> = ({ className, links }) => (
           size="s"
           target={target || linkRegExp.test(href) ? '_blank' : '_self'}
           rel="noopener nofollow"
+          data-testid={`Footer:link:${id}`}
           dangerouslySetInnerHTML={{ __html: title }}
         />
       </li>

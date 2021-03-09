@@ -111,7 +111,7 @@ const Footer: React.FC<Props> = ({
     <footer className={className} ref={footerRef}>
       <div className="top-content">
         <div className="top-content-left-wrapper">
-          <LinkComponent className="logo" href={logo.href}>
+          <LinkComponent className="logo" href={logo.href} data-testid="Footer:link:logo">
             <Logo />
           </LinkComponent>
 
@@ -134,7 +134,7 @@ const Footer: React.FC<Props> = ({
           <div className="email-container">
             <div className="email-wrapper">
               <input className="input-email" ref={emailRef} defaultValue={email} />
-              <Link className="email" href={`mailto:${email}`} data-testid="Footer.link.email">
+              <Link className="email" href={`mailto:${email}`} data-testid="Footer:link:email">
                 {email}
               </Link>
 
@@ -149,13 +149,18 @@ const Footer: React.FC<Props> = ({
               className="copy-icon-button"
               type="button"
               disabled={isMessageShown}
+              data-testid="Footer:button:copy"
               onClick={copyButtonClickHandler}
             >
               <CopyIcon className="copy-icon" />
             </button>
 
             {isMobile && (
-              <Link className="link-language" href={languageLink.href}>
+              <Link
+                className="link-language"
+                href={languageLink.href}
+                data-testid="Footer:link:language"
+              >
                 <Text
                   className="link-text"
                   dangerouslySetInnerHTML={{ __html: languageLink.text }}

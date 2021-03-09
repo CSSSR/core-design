@@ -34,7 +34,7 @@ const DoubleBottom: React.FC<Props> = ({ className, isMobile, isIe11, addresses 
   const [hoveredAddress, setHoveredAddress] = useState(null)
 
   return (
-    <div className={className}>
+    <div className={className} data-testid="Footer:block:DoubleBottom">
       <Addresses
         setHoveredAddress={setHoveredAddress}
         isMobile={isMobile}
