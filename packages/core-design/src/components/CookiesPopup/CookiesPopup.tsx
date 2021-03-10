@@ -17,9 +17,33 @@ const COOKIES_POLICY_ALERT_HIDDEN = 'hidden'
 export interface Props {
   className?: string
   preset?: string
+  text?: string
+  links?: {
+    id: string
+    title: string
+    href: string
+  }[]
+  dataTestIds?: {
+    blocks: {
+      main: string
+    }
+    buttons: {
+      close: string
+    }
+    links: {
+      privacyPolicy: string
+      cookiesPolicy: string
+    }
+  }
 }
 
-const CookiesPopup: React.FC<Props> = ({ className, preset }) => {
+const CookiesPopup: React.FC<Props> = ({
+  className,
+  preset,
+  links: linksFromProps,
+  dataTestIds: dataTestIdsFromProps,
+  text: textFromProps,
+}) => {
   const [isHidden, setIsHidden] = useState(true)
 
   const handleClick = () => {
@@ -37,16 +61,18 @@ const CookiesPopup: React.FC<Props> = ({ className, preset }) => {
     }
   }, [])
 
-  const links = presets[preset].links
+  const links = linksFromProps || presets[preset].links
+  const dataTestIds = dataTestIdsFromProps || presets[preset].dataTestIds
+  const text = textFromProps || presets[preset].text
 
   return (
-    <div className={cn(className, { hide: isHidden })}>
-      <button className="close" onClick={handleClick}>
+    <div className={cn(className, { hide: isHidden })} data-testid={dataTestIds.blocks.main}>
+      <button className="close" onClick={handleClick} data-testid={dataTestIds.buttons.close}>
         <CrossIcon />
       </button>
       <div className="wrap">
         <Text type="regular" size="m" className="cookies-text">
-          <span dangerouslySetInnerHTML={{ __html: presets[preset].text }} />
+          <span dangerouslySetInnerHTML={{ __html: text }} />
 
           {links.map((link) => (
             <a
@@ -54,6 +80,7 @@ const CookiesPopup: React.FC<Props> = ({ className, preset }) => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              data-testid={dataTestIds.links[link.id]}
               className="cookies-link"
               dangerouslySetInnerHTML={{
                 __html: link.title,
