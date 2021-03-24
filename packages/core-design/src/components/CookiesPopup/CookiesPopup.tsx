@@ -68,7 +68,7 @@ const CookiesPopup: React.FC<Props> = ({
   return (
     <div className={cn(className, { hide: isHidden })} data-testid={dataTestIds.blocks.main}>
       <button className="close" onClick={handleClick} data-testid={dataTestIds.buttons.close}>
-        <CrossIcon class="icon_close" />
+        <CrossIcon className="icon_close" />
       </button>
 
       <div className="wrap">
