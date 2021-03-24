@@ -38,6 +38,14 @@ const base = ({ media }) => css`
     cursor: pointer;
   }
 
+  .icon_close {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   .cookies-text {
     position: relative;
     color: #ffffff;
