@@ -6,12 +6,12 @@ export default {
       {
         id: 'privacyPolicy',
         title: 'Privacy Policy,',
-        href: '/en/privacy-policy',
+        href: 'https://csssr.com/en/privacy-policy',
       },
       {
         id: 'cookiesPolicy',
         title: 'Website Cookie Policy.',
-        href: '/en/cookies-policy',
+        href: 'https://csssr.com/en/cookies-policy',
       },
     ],
   },
@@ -22,7 +22,7 @@ export default {
       {
         id: 'privacyPolicy',
         title: 'Политике конфиденциальности.',
-        href: '/ru/privacy-policy',
+        href: 'https://csssr.com/ru/privacy-policy',
       },
     ],
   },
