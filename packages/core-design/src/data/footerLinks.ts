@@ -76,9 +76,14 @@ export const nav = {
       ],
     },
     {
-      id: 'industries',
-      title: 'Industries',
+      id: 'portfolio',
+      title: 'Portfolio',
       links: [
+        {
+          id: 'projects',
+          title: 'Our projects',
+          href: 'https://csssr.com/en/projects',
+        },
         {
           id: 'fintech',
           title: 'Fintech',
@@ -119,11 +124,6 @@ export const nav = {
           id: 'coreValues',
           title: 'Core values',
           href: 'https://csssr.com/en/core-values',
-        },
-        {
-          id: 'projects',
-          title: 'Our projects',
-          href: 'https://csssr.com/en/projects',
         },
       ],
     },
@@ -188,9 +188,14 @@ export const nav = {
       ],
     },
     {
-      id: 'industries',
-      title: 'Индустрии',
+      id: 'portfolio',
+      title: 'Портфолио',
       links: [
+        {
+          id: 'projects',
+          title: 'Наши проекты',
+          href: 'https://csssr.com/ru/projects',
+        },
         {
           id: 'fintech',
           title: 'Финтех',
@@ -231,11 +236,6 @@ export const nav = {
           id: 'coreValues',
           title: 'Ценности',
           href: 'https://csssr.com/ru/core-values',
-        },
-        {
-          id: 'projects',
-          title: 'Наши проекты',
-          href: 'https://csssr.com/ru/projects',
         },
       ],
     },
