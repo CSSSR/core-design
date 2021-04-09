@@ -17,9 +17,18 @@ const base = (props: ThemeProps) => {
       flex-direction: column;
     }
 
+    .title {
+      margin-top: 0;
+    }
+
+    .picture img {
+      width: 100%;
+      height: 100%;
+    }
+
     ${mobile.all} {
       & {
-        margin-top: ${calcRem(32)};
+        margin-top: ${calcRem(70)};
       }
 
       .sticky {
@@ -35,7 +44,7 @@ const base = (props: ThemeProps) => {
         z-index: 2;
       }
 
-      .img {
+      .picture {
         position: absolute;
         top: ${calcRem(8)};
         right: 0;
@@ -58,7 +67,7 @@ const base = (props: ThemeProps) => {
 
     ${tablet.all} {
       & {
-        margin-top: ${calcRem(72)};
+        margin-top: ${calcRem(136)};
       }
 
       .sticky {
@@ -71,11 +80,11 @@ const base = (props: ThemeProps) => {
         margin-left: ${calcRem(80)};
       }
 
-      .img {
+      .picture {
         grid-row: 2;
         width: ${calcRem(384)};
         height: ${calcRem(226)};
-        margin-top: ${calcRem(16)};
+        margin-top: ${calcRem(32)};
       }
 
       .content {
@@ -95,7 +104,7 @@ const base = (props: ThemeProps) => {
 
     ${desktop.all} {
       & {
-        margin-top: 88px;
+        margin-top: 152px;
       }
 
       .sticky {
@@ -104,7 +113,7 @@ const base = (props: ThemeProps) => {
         grid-column: 1 / span 6;
       }
 
-      .img {
+      .picture {
         height: 358px;
         margin-top: 16px;
       }
@@ -129,7 +138,7 @@ const base = (props: ThemeProps) => {
     }
 
     ${desktop.s} {
-      .img {
+      .picture {
         width: 608px;
       }
     }
@@ -139,7 +148,7 @@ const base = (props: ThemeProps) => {
         margin-left: 112px;
       }
 
-      .img {
+      .picture {
         width: 656px;
       }
     }
@@ -149,7 +158,7 @@ const base = (props: ThemeProps) => {
         margin-left: 189px;
       }
 
-      .img {
+      .picture {
         width: 880px;
         height: 506px;
       }
