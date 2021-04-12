@@ -20,7 +20,7 @@ const ErrorPage404: React.FC<Props> = ({ className, title, subTitle, Img, childr
           dangerouslySetInnerHTML={{ __html: title }}
         />
 
-        {Img && <Img className="picture" />}
+        {Img && <Img className="img-wrap" />}
       </div>
 
       <div className="content">

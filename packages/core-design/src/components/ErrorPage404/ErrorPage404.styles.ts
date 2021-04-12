@@ -21,14 +21,14 @@ const base = (props: ThemeProps) => {
       margin-top: 0;
     }
 
-    .picture img {
+    .img-wrap img {
       width: 100%;
       height: 100%;
     }
 
     ${mobile.all} {
       & {
-        margin-top: ${calcRem(70)};
+        margin-top: ${calcRem(77)};
       }
 
       .sticky {
@@ -37,19 +37,19 @@ const base = (props: ThemeProps) => {
         grid-column: 1 / span 6;
         grid-row: 1;
         position: relative;
-        min-height: ${calcRem(88)};
+        min-height: ${calcRem(99)};
       }
 
       .title {
         z-index: 2;
       }
 
-      .picture {
+      .img-wrap {
         position: absolute;
-        top: ${calcRem(8)};
+        bottom: ${calcRem(11)};
         right: 0;
         width: ${calcRem(160)};
-        height: ${calcRem(60)};
+        height: ${calcRem(51)};
         z-index: 1;
       }
 
@@ -61,7 +61,6 @@ const base = (props: ThemeProps) => {
 
       .children {
         margin-top: ${calcRem(56)};
-        padding-bottom: ${calcRem(64)};
       }
     }
 
@@ -72,7 +71,7 @@ const base = (props: ThemeProps) => {
 
       .sticky {
         position: sticky;
-        top: ${calcRem(70)};
+        top: ${calcRem(136)};
         grid-column: 1 / span 4;
       }
 
@@ -80,7 +79,7 @@ const base = (props: ThemeProps) => {
         margin-left: ${calcRem(80)};
       }
 
-      .picture {
+      .img-wrap {
         grid-row: 2;
         width: ${calcRem(384)};
         height: ${calcRem(226)};
@@ -98,7 +97,6 @@ const base = (props: ThemeProps) => {
 
       .children {
         margin-top: ${calcRem(32)};
-        padding-bottom: ${calcRem(96)};
       }
     }
 
@@ -109,13 +107,13 @@ const base = (props: ThemeProps) => {
 
       .sticky {
         position: sticky;
-        top: 88px;
+        top: 153px;
         grid-column: 1 / span 6;
       }
 
-      .picture {
+      .img-wrap {
         height: 358px;
-        margin-top: 16px;
+        margin-top: 32px;
       }
 
       .content {
@@ -133,12 +131,11 @@ const base = (props: ThemeProps) => {
 
       .children {
         margin-top: 40px;
-        padding-bottom: 120px;
       }
     }
 
     ${desktop.s} {
-      .picture {
+      .img-wrap {
         width: 608px;
       }
     }
@@ -148,17 +145,17 @@ const base = (props: ThemeProps) => {
         margin-left: 112px;
       }
 
-      .picture {
+      .img-wrap {
         width: 656px;
       }
     }
 
     ${desktop.l} {
       .title {
-        margin-left: 189px;
+        margin-left: 188px;
       }
 
-      .picture {
+      .img-wrap {
         width: 880px;
         height: 506px;
       }
