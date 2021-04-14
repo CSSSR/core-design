@@ -13,6 +13,7 @@ export { default as Root } from './components/Root'
 export { default as SubHeading } from './components/SubHeading'
 export { default as Text } from './components/Text'
 export { default as ErrorPage } from './components/ErrorPage'
+export { default as ErrorPage404 } from './components/ErrorPage404'
 export {
   default as TextFieldLight,
   UncontrolledTextFieldLight,
