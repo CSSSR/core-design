@@ -8,7 +8,7 @@ import { ErrorPage404Props as Props } from './types'
 
 import styles from './ErrorPage404.styles'
 
-const ErrorPage404: React.FC<Props> = ({ className, title, subTitle, Img, children }) => {
+const ErrorPage404: React.FC<Props> = ({ className, title, subTitle, leftContent, children }) => {
   return (
     <Grid className={className} data-testid="ErrorPage404:block">
       <div className="sticky" data-testid="ErrorPage404:block:sticky">
@@ -21,7 +21,7 @@ const ErrorPage404: React.FC<Props> = ({ className, title, subTitle, Img, childr
           data-testid="ErrorPage404:text:title"
         />
 
-        {Img && <Img className="img-wrap" />}
+        {leftContent && <div className="left-content">{leftContent}</div>}
       </div>
 
       <div className="content" data-testid="ErrorPage404:block:content">

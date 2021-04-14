@@ -21,11 +21,6 @@ const base = (props: ThemeProps) => {
       margin-top: 0;
     }
 
-    .img-wrap img {
-      width: 100%;
-      height: 100%;
-    }
-
     ${mobile.all} {
       & {
         margin-top: ${calcRem(77)};
@@ -44,12 +39,10 @@ const base = (props: ThemeProps) => {
         z-index: 2;
       }
 
-      .img-wrap {
+      .left-content {
         position: absolute;
         bottom: ${calcRem(11)};
         right: 0;
-        width: ${calcRem(160)};
-        height: ${calcRem(51)};
         z-index: 1;
       }
 
@@ -79,13 +72,6 @@ const base = (props: ThemeProps) => {
         margin-left: ${calcRem(80)};
       }
 
-      .img-wrap {
-        grid-row: 2;
-        width: ${calcRem(384)};
-        height: ${calcRem(226)};
-        margin-top: ${calcRem(32)};
-      }
-
       .content {
         grid-column: 6 / span 7;
         grid-row: 1 / span 2;
@@ -111,11 +97,6 @@ const base = (props: ThemeProps) => {
         grid-column: 1 / span 6;
       }
 
-      .img-wrap {
-        height: 358px;
-        margin-top: 32px;
-      }
-
       .content {
         grid-column: 7 / span 6;
         grid-row: 1 / span 2;
@@ -134,30 +115,15 @@ const base = (props: ThemeProps) => {
       }
     }
 
-    ${desktop.s} {
-      .img-wrap {
-        width: 608px;
-      }
-    }
-
     ${desktop.m} {
       .title {
         margin-left: 112px;
-      }
-
-      .img-wrap {
-        width: 656px;
       }
     }
 
     ${desktop.l} {
       .title {
         margin-left: 188px;
-      }
-
-      .img-wrap {
-        width: 880px;
-        height: 506px;
       }
 
       .content {
