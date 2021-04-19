@@ -112,10 +112,20 @@ const school = [
   },
 ]
 
+const blog = [
+  ...school,
+  {
+    family: 'Roboto',
+    weight: 100,
+    style: 'normal',
+    rel: 'preload',
+  },
+]
+
 const presets = {
   com,
   school,
-  blog: school,
+  blog,
 }
 
 export default presets
