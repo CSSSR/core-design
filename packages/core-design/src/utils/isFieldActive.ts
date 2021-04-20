@@ -1,5 +1,5 @@
 export interface IsFieldActiveOptions {
-  value: string | number | string[]
+  value: string | number | any
   focused: boolean
 }
 
