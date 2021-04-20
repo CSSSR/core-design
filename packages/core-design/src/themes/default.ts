@@ -1,8 +1,3 @@
-import color from 'color'
-
-const primary = color('#0076ff')
-const secondary = color('#4a4a4a')
-
 const xs = 360
 
 const s = 768
@@ -37,13 +32,13 @@ const breakpoints = {
 const theme = {
   colors: {
     primary: {
-      origin: primary.hex(),
-      darken15: primary.darken(0.15).hex(),
+      origin: '#0076ff',
+      darken15: '#0064D9',
     },
     secondary: {
-      origin: secondary.hex(),
+      origin: '#4a4a4a',
       darken100: '#18191B',
-      lighten110: secondary.lighten(1.1).hex(),
+      lighten110: '#9B9B9B',
       gray: '#9B9B9B',
       lightGray: '#C0C0C0',
     },
