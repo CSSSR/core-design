@@ -10,11 +10,11 @@
     "core-design": "./bin/core-design.js"
   },
   "dependencies": {
-    "cross-spawn": "^6.0.5",
-    "fs-extra": "^7.0.1",
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^9.1.0",
     "handlebars": "^4.3.0",
-    "inquirer": "^6.3.1",
-    "yargs": "^13.2.2"
+    "inquirer": "^8.0.0",
+    "yargs": "^16.2.0"
   },
   "publishConfig": {
     "access": "public"
