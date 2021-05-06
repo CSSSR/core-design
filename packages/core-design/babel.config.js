@@ -1,5 +1,6 @@
-const { extendDefaultPlugins } = require('svgo');
-module.exports = api => {
+const { extendDefaultPlugins } = require('svgo')
+
+module.exports = (api) => {
   api.cache(true)
 
   return {
@@ -17,11 +18,11 @@ module.exports = api => {
             plugins: extendDefaultPlugins([
               {
                 name: 'removeViewBox',
-                active: false
-              }
-            ])
-          }
-        }
+                active: false,
+              },
+            ]),
+          },
+        },
       ],
       [
         '@babel/plugin-transform-runtime',
