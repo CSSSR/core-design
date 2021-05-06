@@ -75,6 +75,11 @@ const base = (props: ThemeProps) => {
         cursor: pointer;
       }
 
+      .burger svg {
+        width: ${calcRem(24)};
+        height: ${calcRem(24)};
+      }
+
       .dropdown {
         position: absolute;
         top: 100%;

@@ -1,3 +1,4 @@
+const { extendDefaultPlugins } = require('svgo');
 module.exports = api => {
   api.cache(true)
 
@@ -9,7 +10,19 @@ module.exports = api => {
       require.resolve('@emotion/babel-preset-css-prop'),
     ],
     plugins: [
-      'inline-react-svg',
+      [
+        'inline-react-svg',
+        {
+          svgo: {
+            plugins: extendDefaultPlugins([
+              {
+                name: 'removeViewBox',
+                active: false
+              }
+            ])
+          }
+        }
+      ],
       [
         '@babel/plugin-transform-runtime',
         {
