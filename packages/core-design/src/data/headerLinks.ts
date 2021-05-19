@@ -348,7 +348,7 @@ export const linksEn = [
     component: Link,
   },
   {
-    href: 'https://csssr.com/en/jobs',
+    href: 'https://csssr.com/en-us/jobs',
     title: 'Careers',
     testId: 'Header:link.careers',
     component: Link,
@@ -369,7 +369,7 @@ export const linksRu = [
     component: Link,
   },
   {
-    href: 'https://csssr.com/ru/jobs',
+    href: 'https://csssr.com/ru-ru/jobs',
     title: 'Вакансии',
     testId: 'Header:link.careers',
     component: Link,
