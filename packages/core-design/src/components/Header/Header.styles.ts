@@ -27,7 +27,7 @@ const base = (props: ThemeProps) => {
     }
 
     .logo {
-      margin-left: ${calcRem(32)};
+      margin-left: ${calcRem(16)};
       order: 1;
       color: white;
 
