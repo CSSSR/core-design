@@ -73,6 +73,7 @@ const Addresses: React.FC<Props> = ({
               type="regular"
               size="s"
               dangerouslySetInnerHTML={{ __html: title }}
+              data-testid={`Footer:text:address.title.${id}`}
             />
 
             <Text
@@ -80,6 +81,7 @@ const Addresses: React.FC<Props> = ({
               dangerouslySetInnerHTML={{ __html: address }}
               size={textSize}
               type="regular"
+              data-testid={`Footer:text:address.${id}`}
             />
 
             {phone && (
@@ -89,6 +91,7 @@ const Addresses: React.FC<Props> = ({
                 href={`tel:${phone}`}
                 size={textSize}
                 type="list"
+                data-testid={`Footer:link:address.phone.${id}`}
               />
             )}
 
@@ -98,11 +101,17 @@ const Addresses: React.FC<Props> = ({
                 dangerouslySetInnerHTML={{ __html: status }}
                 type="regular"
                 size={textSize}
+                data-testid={`Footer:text:address.status.${id}`}
               />
             )}
 
             {!isIe11 && (
-              <Text className="time" type="regular" size={textSize}>
+              <Text
+                className="time"
+                type="regular"
+                size={textSize}
+                data-testid={`Footer:text:address.time.${id}`}
+              >
                 {time.toLocaleTimeString([], {
                   timeZone,
                   hour: '2-digit',
