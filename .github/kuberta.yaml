@@ -5,6 +5,8 @@ releases:
     name: Core-design Storybook
     autodeploy-on: default
     chart: csssr/static-site@~1.1.6
+    slack:
+      - CKF42GD36 # #csssr_builds
     static-params:
       projectID: core-design-storybook
       tlsSecret: core-design-storybook-tls
