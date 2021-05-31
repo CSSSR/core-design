@@ -77,4 +77,5 @@ export interface FooterProps {
   addresses?: AddressesProps[]
   nav?: NavProps[]
   preset?: '' | 'defaultEn' | 'defaultRu'
+  baseNavUrl?: string
 }
