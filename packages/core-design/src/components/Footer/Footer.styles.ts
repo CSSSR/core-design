@@ -19,7 +19,7 @@ const base = (props: ThemeProps) => {
       flex-direction: column;
       height: ${calcRem(344)};
       background-color: white;
-      box-shadow: 0px 10px 12px rgba(50, 60, 72, 0.15);
+      box-shadow: 0px 12px 12px rgba(50, 60, 72, 0.15);
       overflow: hidden;
     }
 
