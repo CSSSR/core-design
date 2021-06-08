@@ -19,10 +19,14 @@ const base = (props: ThemeProps) => {
 
     .map-wrapper {
       margin-left: auto;
+      position: relative;
+      z-index: 1;
     }
 
     .map {
-      position: relative;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
 
     .picture {
@@ -77,86 +81,59 @@ const base = (props: ThemeProps) => {
     }
 
     ${desktop.all} {
+      & {
+        padding-right: ${calcRem(52)};
+      }
+
+      .map {
+        width: 492px;
+        height: 280px;
+      }
+
       .picture {
         width: 492px;
         height: 280px;
       }
-    }
-
-    ${desktop.l} {
-      & {
-        padding-right: ${calcRem(42)};
-      }
 
       .pin_singapore {
-        top: 41%;
+        top: 40%;
         right: 14.5%;
       }
 
       .pin_estonia {
-        top: 21%;
+        top: 15.7%;
         right: 36%;
       }
 
       .pin_russia,
       .pin_russia_2 {
-        top: 26%;
-        right: 30%;
+        top: 22%;
+        right: 31.7%;
       }
     }
 
     ${desktop.m} {
       & {
         padding-top: ${calcRem(59)};
-        padding-right: ${calcRem(48)};
-      }
-
-      .pin_singapore {
-        top: 42%;
-        right: 15%;
-      }
-
-      .pin_estonia {
-        top: 20%;
-        right: 36%;
-      }
-
-      .pin_russia,
-      .pin_russia_2 {
-        top: 25%;
-        right: 30%;
-      }
-    }
-
-    ${desktop.s} {
-      .pin_singapore {
-        top: 41%;
-        right: 15%;
-      }
-
-      .pin_estonia {
-        top: 16%;
-        right: 36%;
-      }
-
-      .pin_russia,
-      .pin_russia_2 {
-        top: 23%;
-        right: 31%;
       }
     }
 
     ${tablet.all} {
       & {
         padding-top: ${calcRem(41)};
-        padding-right: ${calcRem(21)};
+        padding-right: ${calcRem(32)};
         padding-bottom: ${calcRem(29)};
         padding-left: ${calcRem(30)};
       }
 
+      .map {
+        width: ${calcRem(424)};
+        height: ${calcRem(242)};
+      }
+
       .picture {
-        width: ${calcRem(386)};
-        height: ${calcRem(225)};
+        width: ${calcRem(424)};
+        height: ${calcRem(242)};
       }
 
       .pin_singapore {
@@ -183,6 +160,10 @@ const base = (props: ThemeProps) => {
         margin-top: ${calcRem(42)};
         padding: 0;
         flex-direction: column;
+      }
+
+      .map {
+        position: relative;
       }
 
       .picture {

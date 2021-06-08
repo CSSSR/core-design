@@ -34,14 +34,14 @@ const base = (props: Props & ThemeProps) => {
 
     ${desktop.m} {
       & {
-        width: ${navSectionsNumber === 4 ? '622px' : '752px'};
+        width: ${navSectionsNumber === 4 ? '622px' : '741px'};
       }
     }
 
     ${desktop.s} {
       & {
         margin-right: 50px;
-        width: ${navSectionsNumber === 4 ? '655px' : '785px'};
+        width: ${navSectionsNumber === 4 ? '655px' : '781px'};
       }
     }
 
