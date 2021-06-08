@@ -37,6 +37,7 @@ const Footer: React.FC<Props> = ({
   nav: navFromProps,
   addresses: addressesFromProps,
   preset,
+  baseNavUrl = '',
 }) => {
   const [isMessageShown, setIsMessageShown] = useState(false)
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
@@ -116,7 +117,7 @@ const Footer: React.FC<Props> = ({
   const privacyPolicyLink = privacyPolicyLinkFromProps || presets[preset]?.privacyPolicyLink
   const cookiesPolicyLink = cookiesPolicyLinkFromProps || presets[preset]?.cookiesPolicyLink
   const socialLinks = socialLinksFromProps || presets[preset]?.socialLinks
-  const nav = navFromProps || presets[preset]?.nav
+  const nav = navFromProps || presets[preset]?.nav(baseNavUrl)
   const addresses = addressesFromProps || presets[preset]?.addresses
 
   const LinkComponent = logo.linkComponent || 'a'
