@@ -8,7 +8,6 @@ const base = (props: ThemeProps) => {
 
   return css`
     & {
-      background-color: red;
       position: relative;
       margin-bottom: ${calcRem(344)};
       padding-top: ${calcRem(32)};
@@ -17,9 +16,9 @@ const base = (props: ThemeProps) => {
       padding-left: ${calcRem(32)};
       display: flex;
       flex-direction: column;
-      height: ${calcRem(344)};
+      height: ${calcRem(358)};
       background-color: white;
-      box-shadow: 0px 8px 12px rgba(50, 60, 72, 0.15);
+      box-shadow: 0px 12px 12px rgba(50, 60, 72, 0.15);
       overflow: hidden;
     }
 
@@ -51,7 +50,6 @@ const base = (props: ThemeProps) => {
     .email-container {
       display: flex;
       align-items: baseline;
-      margin-top: ${calcRem(16)};
     }
 
     .email-wrapper {
@@ -127,6 +125,12 @@ const base = (props: ThemeProps) => {
       }
     }
 
+    ${desktop.all} {
+      .bottom-content {
+        margin-top: 16px;
+      }
+    }
+
     ${desktop.s} {
       padding-right: ${calcRem(52)};
     }
@@ -134,7 +138,11 @@ const base = (props: ThemeProps) => {
     ${tablet.all} {
       & {
         margin-bottom: ${calcRem(288)};
-        padding-right: ${calcRem(41)};
+        padding-right: ${calcRem(32)};
+      }
+
+      .bottom-content {
+        margin-top: ${calcRem(16)};
       }
     }
 
@@ -193,6 +201,10 @@ const base = (props: ThemeProps) => {
         margin-top: ${calcRem(8)};
         margin-left: ${calcRem(32)};
         margin-right: ${calcRem(32)};
+      }
+
+      .email {
+        margin-top: 0;
       }
 
       .copy-message {

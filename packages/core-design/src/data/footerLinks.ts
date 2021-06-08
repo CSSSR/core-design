@@ -53,7 +53,7 @@ export const socials = [
 ]
 
 export const nav = {
-  en: [
+  en: (baseNavUrl) => [
     {
       id: 'services',
       title: 'Services',
@@ -61,17 +61,22 @@ export const nav = {
         {
           id: 'outsourcing',
           title: 'Outsourcing',
-          href: 'https://csssr.com/en/service/outsourcing-front-end',
+          href: `${baseNavUrl}/en/service/outsourcing-front-end`,
         },
         {
           id: 'backend',
           title: 'Back-end</br>and DevOps',
-          href: 'https://csssr.com/en/service/back-end-and-devops',
+          href: `${baseNavUrl}/en/service/back-end-and-devops`,
         },
         {
           id: 'mvp',
           title: 'MVP',
-          href: 'https://csssr.com/en/service/mvp-development',
+          href: `${baseNavUrl}/en/service/mvp-development`,
+        },
+        {
+          id: 'design',
+          title: 'DesignLab',
+          href: 'https://csssr.com/en/service/design',
         },
       ],
     },
@@ -82,27 +87,27 @@ export const nav = {
         {
           id: 'projects',
           title: 'Our projects',
-          href: 'https://csssr.com/en/projects',
+          href: `${baseNavUrl}/en/projects`,
         },
         {
           id: 'fintech',
           title: 'Fintech',
-          href: 'https://csssr.com/en/industry/fintech',
+          href: `${baseNavUrl}/en/industry/fintech`,
         },
         {
           id: 'information',
           title: 'IT companies',
-          href: 'https://csssr.com/en/industry/information-technology',
+          href: `${baseNavUrl}/en/industry/information-technology`,
         },
         {
           id: 'eCommerce',
           title: 'E-Commerce',
-          href: 'https://csssr.com/en/industry/ecommerce',
+          href: `${baseNavUrl}/en/industry/ecommerce`,
         },
         {
           id: 'mediaAndMarketing',
           title: 'Media and marketing',
-          href: 'https://csssr.com/en/industry/media-and-marketing',
+          href: `${baseNavUrl}/en/industry/media-and-marketing`,
         },
       ],
     },
@@ -113,17 +118,17 @@ export const nav = {
         {
           id: 'technologies',
           title: 'Technologies',
-          href: 'https://csssr.com/en/tech-stack',
+          href: `${baseNavUrl}/en/tech-stack`,
         },
         {
           id: 'wayOfWork',
-          title: 'Process',
-          href: 'https://csssr.com/en/way-of-work',
+          title: 'Processes',
+          href: `${baseNavUrl}/en/way-of-work`,
         },
         {
           id: 'coreValues',
           title: 'Core values',
-          href: 'https://csssr.com/en/core-values',
+          href: `${baseNavUrl}/en/core-values`,
         },
       ],
     },
@@ -134,7 +139,7 @@ export const nav = {
         {
           id: 'lms',
           title: 'Modular LMS system',
-          href: 'https://csssr.com/en/products/lms',
+          href: `${baseNavUrl}/en/products/lms`,
         },
         {
           id: 'tracker',
@@ -150,7 +155,7 @@ export const nav = {
         {
           id: 'careers',
           title: 'Careers',
-          href: 'https://csssr.com/en/jobs',
+          href: `${baseNavUrl}/en/jobs`,
         },
         {
           id: 'blog',
@@ -160,12 +165,12 @@ export const nav = {
         {
           id: 'contactUs',
           title: 'Contacts',
-          href: 'https://csssr.com/en/contacts',
+          href: `${baseNavUrl}/en/contacts`,
         },
       ],
     },
   ],
-  ru: [
+  ru: (baseNavUrl) => [
     {
       id: 'services',
       title: 'Сервисы',
@@ -173,17 +178,17 @@ export const nav = {
         {
           id: 'web-development',
           title: 'Aутсорсинг',
-          href: 'https://csssr.com/ru/service/outsourcing-front-end',
+          href: `${baseNavUrl}/ru/service/outsourcing-front-end`,
         },
         {
           id: 'backend',
           title: 'Бэкенд</br>и DevOps',
-          href: 'https://csssr.com/ru/service/back-end-and-devops',
+          href: `${baseNavUrl}/ru/service/back-end-and-devops`,
         },
         {
           id: 'mvp',
           title: 'MVP',
-          href: 'https://csssr.com/ru/service/mvp-development',
+          href: `${baseNavUrl}/ru/service/mvp-development`,
         },
       ],
     },
@@ -194,27 +199,27 @@ export const nav = {
         {
           id: 'projects',
           title: 'Наши проекты',
-          href: 'https://csssr.com/ru/projects',
+          href: `${baseNavUrl}/ru/projects`,
         },
         {
           id: 'fintech',
           title: 'Финтех',
-          href: 'https://csssr.com/ru/industry/fintech',
+          href: `${baseNavUrl}/ru/industry/fintech`,
         },
         {
           id: 'information',
           title: 'ИТ компании',
-          href: 'https://csssr.com/ru/industry/information-technology',
+          href: `${baseNavUrl}/ru/industry/information-technology`,
         },
         {
           id: 'eCommerce',
           title: 'Электронная</br> коммерция',
-          href: 'https://csssr.com/ru/industry/ecommerce',
+          href: `${baseNavUrl}/ru/industry/ecommerce`,
         },
         {
           id: 'mediaAndMarketing',
           title: 'Медиа и&nbsp;маркетинг',
-          href: 'https://csssr.com/ru/industry/media-and-marketing',
+          href: `${baseNavUrl}/ru/industry/media-and-marketing`,
         },
       ],
     },
@@ -225,17 +230,17 @@ export const nav = {
         {
           id: 'technologies',
           title: 'Технологии',
-          href: 'https://csssr.com/ru/tech-stack',
+          href: `${baseNavUrl}/ru/tech-stack`,
         },
         {
           id: 'wayOfWork',
           title: 'Процессы',
-          href: 'https://csssr.com/ru/way-of-work',
+          href: `${baseNavUrl}/ru/way-of-work`,
         },
         {
           id: 'coreValues',
           title: 'Ценности',
-          href: 'https://csssr.com/ru/core-values',
+          href: `${baseNavUrl}/ru/core-values`,
         },
       ],
     },
@@ -246,7 +251,7 @@ export const nav = {
         {
           id: 'careers',
           title: 'Вакансии',
-          href: 'https://csssr.com/ru/jobs',
+          href: `${baseNavUrl}/ru/jobs`,
         },
         {
           id: 'blog',
@@ -256,7 +261,7 @@ export const nav = {
         {
           id: 'contactUs',
           title: 'Контакты',
-          href: 'https://csssr.com/ru/contacts',
+          href: `${baseNavUrl}/ru/contacts`,
         },
       ],
     },

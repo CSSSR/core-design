@@ -49,10 +49,10 @@ const base = (props: ThemeProps) => {
     }
 
     ${mobile.all} {
-      margin-top: ${calcRem(41)};
+      margin-top: ${calcRem(39)};
       margin-left: auto;
       margin-right: auto;
-      max-width: ${calcRem(168)};
+      max-width: ${calcRem(194)};
       flex-wrap: wrap;
 
       li {

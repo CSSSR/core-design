@@ -9,6 +9,7 @@ const base = (props: ThemeProps) => {
   return css`
     & {
       display: flex;
+      z-index: 2;
     }
 
     .title {
@@ -56,12 +57,13 @@ const base = (props: ThemeProps) => {
       }
 
       .phone {
-        margin-top: ${calcRem(8)};
+        font-weight: 300;
       }
 
+      .phone,
       .time,
       .status {
-        margin-top: ${calcRem(8)};
+        margin-top: ${calcRem(6)};
       }
 
       .address-item {
@@ -73,34 +75,29 @@ const base = (props: ThemeProps) => {
       }
 
       .address-item:nth-of-type(2) {
-        margin-right: ${calcRem(40)};
+        margin-right: ${calcRem(42)};
       }
 
       .address-item:nth-of-type(3) {
         margin-top: ${calcRem(86)};
-        margin-right: ${calcRem(72)};
+        margin-right: ${calcRem(83)};
       }
 
       .address-item:nth-of-type(3) .address {
-        margin-top: ${calcRem(0)};
+        margin-top: 0;
       }
 
       .address,
-      .phone,
-      .status,
-      .time {
+      .phone {
+        font-weight: 400;
         font-size: ${calcRem(14)};
         line-height: ${calcRem(22)};
       }
-    }
 
-    ${desktop.s} {
-      .address-item:not(:last-of-type) {
-        margin-right: ${calcRem(40)};
-      }
-
-      .address-item:first-of-type {
-        margin-right: ${calcRem(50)};
+      .status,
+      .time {
+        font-size: ${calcRem(14)};
+        line-height: ${calcRem(24)};
       }
     }
 

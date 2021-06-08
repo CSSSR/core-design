@@ -6,6 +6,10 @@ export const base = css`
     margin: 0;
     padding: 0;
   }
+  /* padding: 1rem; мешал при тестировании компонентов */
+  .sb-show-main.sb-main-padded {
+    padding: 0;
+  }
 
   html:not(.disable-smooth-scroll) {
     scroll-behavior: smooth;
