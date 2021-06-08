@@ -8,7 +8,6 @@ const base = (props: ThemeProps) => {
 
   return css`
     & {
-      margin-top: ${calcRem(11)};
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-between;
