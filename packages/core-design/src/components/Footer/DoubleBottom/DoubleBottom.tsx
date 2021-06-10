@@ -25,22 +25,16 @@ const pins = [
 export interface Props {
   className?: string
   isMobile: boolean
-  isIe11: boolean
   addresses: AddressesProps[]
   theme?: ThemeProps
 }
 
-const DoubleBottom: React.FC<Props> = ({ className, isMobile, isIe11, addresses }) => {
+const DoubleBottom: React.FC<Props> = ({ className, isMobile, addresses }) => {
   const [hoveredAddress, setHoveredAddress] = useState(null)
 
   return (
     <div className={className} data-testid="Footer:block:DoubleBottom">
-      <Addresses
-        setHoveredAddress={setHoveredAddress}
-        isMobile={isMobile}
-        isIe11={isIe11}
-        addresses={addresses}
-      />
+      <Addresses setHoveredAddress={setHoveredAddress} isMobile={isMobile} addresses={addresses} />
 
       <div className="map-wrapper">
         <div className="map">

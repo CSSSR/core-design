@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useMobileStatus from '../../utils/hooks/useMobileStatus'
-import useIe11Status from '../../utils/hooks/useIe11Status'
 import presets from '../../data/footerPresets'
 import { FooterProps as Props } from './types'
 import styled from '@emotion/styled'
@@ -24,7 +23,6 @@ declare const window: any
 const Footer: React.FC<Props> = ({
   className,
   isMobile: isMobileValueFromProps,
-  isIe11: isIe11ValueFromProps,
   logo: logoFromProps,
   video: videoFromProps,
   email: emailFromProps,
@@ -42,7 +40,6 @@ const Footer: React.FC<Props> = ({
   const [isMessageShown, setIsMessageShown] = useState(false)
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const isMobile = useMobileStatus(isMobileValueFromProps)
-  const isIe11 = useIe11Status(isIe11ValueFromProps)
   const footerRef = useRef<HTMLDivElement>(null)
   const emailRef = useRef(null)
 
@@ -66,6 +63,8 @@ const Footer: React.FC<Props> = ({
         }
       }
     }
+
+    listener()
 
     window.addEventListener('scroll', listener)
     window.addEventListener('resize', listener)
@@ -205,9 +204,7 @@ const Footer: React.FC<Props> = ({
         />
       </div>
 
-      {IsDoubleBottomVisible && (
-        <DoubleBottom isMobile={isMobile} isIe11={isIe11} addresses={addresses} />
-      )}
+      {IsDoubleBottomVisible && <DoubleBottom isMobile={isMobile} addresses={addresses} />}
     </footer>
   )
 }
