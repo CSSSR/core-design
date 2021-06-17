@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
+import { Global, css } from '@emotion/react'
 import Footer from './Footer'
 
 storiesOf('Footer', module)
@@ -21,5 +22,23 @@ storiesOf('Footer', module)
       errorText: text('Video error text', 'This browser does not support downloading video files'),
     }
 
-    return <Footer {...knobs} video={videoKnobs} />
+    return (
+      <div style={{ marginTop: 'auto' }}>
+        <Footer {...knobs} video={videoKnobs} />
+        <Global
+          styles={css`
+            html,
+            body {
+              height: 100%;
+            }
+
+            #root {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+            }
+          `}
+        />
+      </div>
+    )
   })
