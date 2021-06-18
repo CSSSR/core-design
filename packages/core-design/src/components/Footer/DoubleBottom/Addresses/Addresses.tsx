@@ -12,19 +12,12 @@ import ClickOutside from '../../../ClickOutside'
 export interface Props {
   className?: string
   isMobile: boolean
-  isIe11: boolean
   addresses: AddressesProps[]
   setHoveredAddress: (address: string) => void
   theme?: ThemeProps
 }
 
-const Addresses: React.FC<Props> = ({
-  className,
-  isMobile,
-  isIe11,
-  addresses,
-  setHoveredAddress,
-}) => {
+const Addresses: React.FC<Props> = ({ className, isMobile, addresses, setHoveredAddress }) => {
   const [time, setTime] = useState(new Date())
 
   useEffect(() => {
@@ -105,21 +98,19 @@ const Addresses: React.FC<Props> = ({
               />
             )}
 
-            {!isIe11 && (
-              <Text
-                className="time"
-                type="regular"
-                size={textSize}
-                data-testid={`Footer:text:address.time.${id}`}
-              >
-                {time.toLocaleTimeString([], {
-                  timeZone,
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}{' '}
-                {/* show only hours and minutes, use options with the default locale - use an empty array, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString */}
-              </Text>
-            )}
+            <Text
+              className="time"
+              type="regular"
+              size={textSize}
+              data-testid={`Footer:text:address.time.${id}`}
+            >
+              {time.toLocaleTimeString([], {
+                timeZone,
+                hour: '2-digit',
+                minute: '2-digit',
+              })}{' '}
+              {/* show only hours and minutes, use options with the default locale - use an empty array, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString */}
+            </Text>
           </div>
         ))}
       </div>
