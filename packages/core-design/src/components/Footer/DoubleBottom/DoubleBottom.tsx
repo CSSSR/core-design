@@ -5,6 +5,11 @@ import styled from '@emotion/styled'
 import styles from './DoubleBottom.styles'
 import { ThemeProps } from '../../../themes/types'
 
+/* tslint:disable */
+const PinSingapore = require('../../../static/icons/footer/pin_singapore.svg')
+const Pin = require('../../../static/icons/footer/pin.svg')
+/* tslint:enable */
+
 import Addresses from './Addresses'
 
 const pins = [
@@ -50,7 +55,9 @@ const DoubleBottom: React.FC<Props> = ({ className, isMobile, addresses }) => {
               className={cn(`pin pin_${id}`, {
                 pin_hovered: id === hoveredAddress,
               })}
-            />
+            >
+              {id === 'singapore' ? <PinSingapore /> : <Pin />}
+            </span>
           ))}
         </div>
       </div>

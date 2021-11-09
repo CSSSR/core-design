@@ -10,6 +10,7 @@ import presets from '../../data/cookiesPopupPresets'
 
 /* tslint:disable */
 const CrossIcon = require('../../static/icons/cookiesPopup/cross_white.svg')
+const CookiesReady = require('../../static/icons/cookiesPopup/cookie_ready.svg')
 /* tslint:enable */
 
 const COOKIES_POLICY_ALERT_HIDDEN = 'hidden'
@@ -73,6 +74,8 @@ const CookiesPopup: React.FC<Props> = ({
 
       <div className="wrap">
         <Text type="regular" size="m" className="cookies-text">
+          <CookiesReady className="cookies-ready" />
+
           <span dangerouslySetInnerHTML={{ __html: text }} />
 
           {links.map((link) => (
