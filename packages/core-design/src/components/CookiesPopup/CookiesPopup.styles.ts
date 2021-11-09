@@ -52,22 +52,13 @@ const base = ({ media }) => css`
     -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
   }
 
-  .cookies-text::after {
+  cookies-ready {
     content: '';
     position: absolute;
     right: -172px;
     bottom: ${calcRem(-8)};
     width: ${calcRem(62)};
     height: ${calcRem(53)};
-    /*  В качестве временного решения тут будет прямая ссылка на изображение с com
-
-        TODO: когда везде будет использоваться кукисы с core-design, будем раздавать изображения
-        из core-design
-    */
-    background-image: url('https://csssr.com/static/icons/cookies-banner/cookie_ready.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
   }
 
   .cookies-link {
@@ -100,7 +91,7 @@ const base = ({ media }) => css`
       max-width: ${calcRem(790)};
     }
 
-    .cookies-text::after {
+    cookies-ready {
       bottom: -0.5rem;
     }
   }
@@ -110,7 +101,7 @@ const base = ({ media }) => css`
       max-width: ${calcRem(692)};
     }
 
-    .cookies-text::after {
+    cookies-ready {
       right: ${calcRem(-133)};
     }
 
@@ -133,7 +124,7 @@ const base = ({ media }) => css`
       padding-bottom: ${calcRem(16)};
     }
 
-    .cookies-text::after {
+    cookies-ready {
       display: none;
     }
 

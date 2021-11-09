@@ -38,16 +38,6 @@ const base = (props: ThemeProps) => {
       display: block;
       width: 20px;
       height: 26px;
-      /*  В качестве временного решения тут будет прямая ссылка на изображение с com
-
-          TODO: когда везде будет использоваться футер с core-design, будем раздавать изображения
-          из core-design
-      */
-      background-image: url('https://csssr.com/_next/static/icons/footer/pin-926628e5.svg');
-      background-repeat: no-repeat;
-      background-color: transparent;
-      background-size: 100%;
-      background-position: 100%;
 
       &_russia,
       &_russia_2 {
@@ -65,12 +55,6 @@ const base = (props: ThemeProps) => {
         right: 117px;
         width: 38px;
         height: 48px;
-        /*  В качестве временного решения тут будет прямая ссылка на изображение с com
-
-            TODO: когда везде будет использоваться футер с core-design, будем раздавать изображения
-            из core-design
-        */
-        background-image: url('https://csssr.com/_next/static/icons/footer/pin_singapore-3dbbb457.svg');
       }
 
       &_hovered {
