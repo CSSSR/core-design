@@ -16,15 +16,9 @@ storiesOf('Footer', module)
       baseNavUrl: text('baseNavUrl', 'https://csssr.com'),
     }
 
-    const videoKnobs = {
-      src: text('Video src', require(`../../static/video/camp.mp4`).default),
-      type: text('Video type', 'video/mp4'),
-      errorText: text('Video error text', 'This browser does not support downloading video files'),
-    }
-
     return (
       <div style={{ marginTop: 'auto' }}>
-        <Footer {...knobs} video={videoKnobs} />
+        <Footer {...knobs} />
         <Global
           styles={css`
             html,

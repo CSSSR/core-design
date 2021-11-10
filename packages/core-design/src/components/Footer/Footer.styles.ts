@@ -35,18 +35,6 @@ const base = (props: ThemeProps) => {
       transition: color 100ms ease-out;
     }
 
-    .video {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      z-index: 1;
-      width: 100%;
-      opacity: 0;
-      transform: translateY(-50%);
-      transition: opacity 100ms ease-out;
-      pointer-events: none;
-    }
-
     .email-container {
       display: flex;
       align-items: baseline;
@@ -112,14 +100,6 @@ const base = (props: ThemeProps) => {
     }
 
     @media (pointer: fine) {
-      .logo:hover {
-        color: white;
-      }
-
-      .logo:hover ~ .video {
-        opacity: 1;
-      }
-
       .copy-icon-button:hover {
         color: ${colors.primary.darken15};
       }
