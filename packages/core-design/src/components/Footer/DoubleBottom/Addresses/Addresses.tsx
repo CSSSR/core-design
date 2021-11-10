@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 import styles from './Addresses.styles'
 import { ThemeProps } from '../../../../themes/types'
@@ -8,6 +8,7 @@ import Heading from '../../../Heading'
 import Text from '../../../Text'
 import Link from '../../../Link'
 import ClickOutside from '../../../ClickOutside'
+import {Time} from './Time'
 
 export interface Props {
   className?: string
@@ -18,16 +19,6 @@ export interface Props {
 }
 
 const Addresses: React.FC<Props> = ({ className, isMobile, addresses, setHoveredAddress }) => {
-  const [time, setTime] = useState(new Date())
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setTime(new Date())
-    }, 1000)
-
-    return () => clearTimeout(timeout)
-  })
-
   const handleResetHoveredAddress = () => setHoveredAddress(null)
 
   const handleMouseOver = (address: string) => (event: any) => {
@@ -98,19 +89,13 @@ const Addresses: React.FC<Props> = ({ className, isMobile, addresses, setHovered
               />
             )}
 
-            <Text
+            <Time
               className="time"
-              type="regular"
-              size={textSize}
-              data-testid={`Footer:text:address.time.${id}`}
-            >
-              {time.toLocaleTimeString([], {
-                timeZone,
-                hour: '2-digit',
-                minute: '2-digit',
-              })}{' '}
-              {/* show only hours and minutes, use options with the default locale - use an empty array, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString */}
-            </Text>
+              timeZone={timeZone}
+              textSize={textSize}
+              id={id}
+            />
+
           </div>
         ))}
       </div>
