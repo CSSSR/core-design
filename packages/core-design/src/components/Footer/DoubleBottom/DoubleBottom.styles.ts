@@ -67,6 +67,7 @@ const base = (props: ThemeProps) => {
     ${desktop.all} {
       & {
         padding-right: ${calcRem(52)};
+        padding-bottom: ${calcRem(71)};
       }
 
       .map {
@@ -106,7 +107,7 @@ const base = (props: ThemeProps) => {
       & {
         padding-top: ${calcRem(41)};
         padding-right: ${calcRem(32)};
-        padding-bottom: ${calcRem(29)};
+        padding-bottom: ${calcRem(48)};
         padding-left: ${calcRem(30)};
       }
 
