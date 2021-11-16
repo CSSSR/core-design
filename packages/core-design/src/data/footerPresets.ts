@@ -1,10 +1,5 @@
 import { nav, socials, bottomLinks } from './footerLinks'
 
-const video = {
-  src: 'https://static.csssr.com/camp-e1d4f932.mp4',
-  type: 'video/mp4',
-  errorText: 'This browser does not support downloading video files',
-}
 const email = 'launch@csssr.com'
 const addresses = {
   ru: [
@@ -72,7 +67,6 @@ const presets = {
     logo: {
       href: 'https://csssr.com/en',
     },
-    video,
     email,
     actionPhrase: 'Let’s work together!',
     socialLinks: socials.slice(0, 4),
@@ -87,7 +81,6 @@ const presets = {
     logo: {
       href: 'https://csssr.com/ru',
     },
-    video,
     email,
     actionPhrase: 'Давайте поработаем!',
     socialLinks: socials,

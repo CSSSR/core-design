@@ -86,7 +86,7 @@ export const nav = {
       links: [
         {
           id: 'projects',
-          title: 'Our projects',
+          title: 'Our Projects',
           href: `${baseNavUrl}/en/projects`,
         },
         {
@@ -101,19 +101,19 @@ export const nav = {
         },
         {
           id: 'eCommerce',
-          title: 'E-Commerce',
+          title: 'E-commerce',
           href: `${baseNavUrl}/en/industry/ecommerce`,
         },
         {
           id: 'mediaAndMarketing',
-          title: 'Media and marketing',
+          title: 'Media and Marketing',
           href: `${baseNavUrl}/en/industry/media-and-marketing`,
         },
       ],
     },
     {
       id: 'howWeWork',
-      title: 'How we work',
+      title: 'How We Work',
       links: [
         {
           id: 'technologies',
@@ -127,7 +127,7 @@ export const nav = {
         },
         {
           id: 'coreValues',
-          title: 'Core values',
+          title: 'Core Values',
           href: `${baseNavUrl}/en/core-values`,
         },
       ],
@@ -138,7 +138,7 @@ export const nav = {
       links: [
         {
           id: 'lms',
-          title: 'Modular LMS system',
+          title: 'Modular LMS System',
           href: `${baseNavUrl}/en/products/lms`,
         },
         {
@@ -173,7 +173,7 @@ export const nav = {
   ru: (baseNavUrl) => [
     {
       id: 'services',
-      title: 'Сервисы',
+      title: 'Услуги',
       links: [
         {
           id: 'web-development',

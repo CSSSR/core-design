@@ -24,7 +24,6 @@ const Footer: React.FC<Props> = ({
   className,
   isMobile: isMobileValueFromProps,
   logo: logoFromProps,
-  video: videoFromProps,
   email: emailFromProps,
   actionPhrase: actionPhraseFromProps,
   allianceLink: allianceLinkFromProps,
@@ -108,7 +107,6 @@ const Footer: React.FC<Props> = ({
   }
 
   const logo = logoFromProps || presets[preset]?.logo
-  const video = videoFromProps || presets[preset]?.video
   const email = emailFromProps || presets[preset]?.email
   const actionPhrase = actionPhraseFromProps || presets[preset]?.actionPhrase
   const allianceLink = allianceLinkFromProps || presets[preset]?.allianceLink
@@ -128,14 +126,6 @@ const Footer: React.FC<Props> = ({
           <LinkComponent className="logo" href={logo.href} data-testid="Footer:link:logo">
             <Logo />
           </LinkComponent>
-
-          {!isMobile && video.src && (
-            <video className="video" autoPlay loop muted>
-              <source src={video.src} type={video.type} />
-
-              <p>{video.errorText}</p>
-            </video>
-          )}
 
           <Heading
             as="p"
@@ -195,6 +185,7 @@ const Footer: React.FC<Props> = ({
 
         {nav && <Nav nav={nav} />}
       </div>
+
       <div className="bottom-content">
         <BottomLinksAndLanguages
           allianceLink={allianceLink}

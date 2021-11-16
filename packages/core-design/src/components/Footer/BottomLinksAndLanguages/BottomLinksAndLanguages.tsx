@@ -48,7 +48,7 @@ const PrivacyAndLanguageLinks: React.FC<Props> = ({
   return (
     <ul className={className}>
       <li>
-        <Link className="link lng-link" href={languageLink.href}>
+        <Link className="link lng-link" href={languageLink.href} data-testid="Footer:link.language-link">
           <Text
             className="link-text"
             dangerouslySetInnerHTML={{ __html: languageLink.text }}
