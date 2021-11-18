@@ -86,7 +86,7 @@ export const nav = {
       links: [
         {
           id: 'projects',
-          title: 'Our Projects',
+          title: 'Our projects',
           href: `${baseNavUrl}/en/projects`,
         },
         {
@@ -106,14 +106,14 @@ export const nav = {
         },
         {
           id: 'mediaAndMarketing',
-          title: 'Media and Marketing',
+          title: 'Media and marketing',
           href: `${baseNavUrl}/en/industry/media-and-marketing`,
         },
       ],
     },
     {
       id: 'howWeWork',
-      title: 'How We Work',
+      title: 'How we work',
       links: [
         {
           id: 'technologies',
@@ -127,7 +127,7 @@ export const nav = {
         },
         {
           id: 'coreValues',
-          title: 'Core Values',
+          title: 'Core values',
           href: `${baseNavUrl}/en/core-values`,
         },
       ],
@@ -138,7 +138,7 @@ export const nav = {
       links: [
         {
           id: 'lms',
-          title: 'Modular LMS System',
+          title: 'Modular LMS system',
           href: `${baseNavUrl}/en/products/lms`,
         },
         {
