@@ -73,11 +73,11 @@ export const nav = {
           title: 'MVP',
           href: `${baseNavUrl}/en/service/mvp-development`,
         },
-        {
-          id: 'design',
-          title: 'DesignLab',
-          href: 'https://csssr.com/en/service/design',
-        },
+        // {
+        //   id: 'design',
+        //   title: 'DesignLab',
+        //   href: 'https://csssr.com/en/service/design',
+        // },
       ],
     },
     {
