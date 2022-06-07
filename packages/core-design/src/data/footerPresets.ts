@@ -14,12 +14,6 @@ const addresses = {
     {
       id: 'russia',
       title: 'Россия',
-      address: '22 Большой Козихинский пер.,<br>стр. 2, офис 28,<br> г. Москва, 123001,<br>Россия',
-      phone: '+7 (499) 113-16-17',
-      timeZone: 'Europe/Moscow',
-    },
-    {
-      id: 'russia_2',
       address: '30 Лесная ул.,<br>стр. 1, офис 303,<br> г. Дзержинский, 140090,<br>Россия',
       phone: '+7 (499) 113-16-17',
       timeZone: 'Europe/Moscow',
@@ -43,12 +37,6 @@ const addresses = {
     {
       id: 'russia',
       title: 'Russia',
-      address: "22 Bol'shoj Kozihinskij Lane,<br>bld. 2, office 28,<br> Moscow, 123001,<br>Russia",
-      phone: '+7 (499) 113-16-17',
-      timeZone: 'Europe/Moscow',
-    },
-    {
-      id: 'russia_2',
       address: '30 Lesnaya St.,<br>bld. 1, office 303,<br> Dzerzhinsky, 140090, <br>Russia',
       phone: '+7 (499) 113-16-17',
       timeZone: 'Europe/Moscow',
