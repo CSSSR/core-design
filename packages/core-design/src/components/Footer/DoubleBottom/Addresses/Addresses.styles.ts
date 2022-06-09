@@ -79,12 +79,7 @@ const base = (props: ThemeProps) => {
       }
 
       .address-item:nth-of-type(3) {
-        margin-top: ${calcRem(86)};
         margin-right: ${calcRem(83)};
-      }
-
-      .address-item:nth-of-type(3) .address {
-        margin-top: 0;
       }
 
       .address,
@@ -137,12 +132,7 @@ const base = (props: ThemeProps) => {
       }
 
       .address-item:nth-of-type(3) {
-        margin-top: ${calcRem(72)};
         margin-right: ${calcRem(33)};
-      }
-
-      .address-item:nth-of-type(3) .address {
-        margin-top: ${calcRem(0)};
       }
     }
 
@@ -182,10 +172,6 @@ const base = (props: ThemeProps) => {
 
       .address-item:last-of-type {
         margin-top: ${calcRem(24)};
-      }
-
-      .address-item:nth-of-type(3) .address {
-        margin-top: ${calcRem(0)};
       }
     }
   `

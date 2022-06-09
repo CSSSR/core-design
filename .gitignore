@@ -7,3 +7,4 @@ report.*.json
 *.icloud
 .DS_Store
 .vscode/
+.idea/
