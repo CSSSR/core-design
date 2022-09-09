@@ -8,6 +8,9 @@ jobs:
   build:
     name: Build Storybook
     runs-on: ubuntu-latest
+    permissions:
+        contents: read
+        id-token: write
 
     steps:
       - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
@@ -19,23 +22,26 @@ jobs:
           ssh-key: ${{ secrets.DOWNLOAD_ACTIONS_SSH_KEY }}
           path: actions
 
-      - uses: actions/checkout@v2
+      - name: Import secrets
+        id: secrets
+        uses: hashicorp/vault-action@v2.4.0
         with:
-          path: core-design
+            url: https://vault.csssr.com:8200
+            jwtGithubAudience: ${{secrets.VAULT_JWT_KEY}}
+            role: s3-cdn-upload
+            method: jwt
+            exportEnv: false
+            secrets: |
+                aws/sts/s3-cdn-upload access_key | AWS_ACCESS_KEY_ID ;
+                aws/sts/s3-cdn-upload secret_key | AWS_SECRET_ACCESS_KEY ;
+                aws/sts/s3-cdn-upload security_token | AWS_SESSION_TOKEN
 
-      - uses: actions/setup-node@v1
+      - name: Build and push storybook
+        uses: ./actions/build-and-deploy-static-site/v1beta1
         with:
-          node-version: '12.x'
-
-      - run: yarn install --freeze-lockfile --no-interactive
-        working-directory: core-design/packages/core-design
-
-      - run: yarn run build-storybook -o static
-        working-directory: core-design/packages/core-design
-
-      - uses: ./actions/upload-static/v1beta1
-        with:
-          project-id: core-design-storybook
-          files: ./core-design/packages/core-design/static
-          auth: ${{ secrets.CDN_UPLOAD_SECRET }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+            project-id: core-design-storybook
+            install: cd packages/core-design && yarn install --freeze-lockfile --no-interactive
+            build: cd packages/core-design && yarn run build-storybook -o static
+            files: ./packages/core-design/static
+            node-version: "12.x"
+            auth: "aws:${{steps.secrets.outputs.AWS_ACCESS_KEY_ID}}:${{steps.secrets.outputs.AWS_SECRET_ACCESS_KEY}}:${{steps.secrets.outputs.AWS_SESSION_TOKEN}}"
