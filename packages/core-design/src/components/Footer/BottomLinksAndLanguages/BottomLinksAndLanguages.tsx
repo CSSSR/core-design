@@ -8,6 +8,7 @@ import Text from '../../Text'
 
 /* tslint:disable */
 const Icon = require('../../../static/icons/footer/alliance.svg')
+const ArdaIcon = require('../../../static/icons/footer/arda.svg')
 /* tslint:enable */
 
 export interface Props {
@@ -48,7 +49,11 @@ const PrivacyAndLanguageLinks: React.FC<Props> = ({
   return (
     <ul className={className}>
       <li>
-        <Link className="link lng-link" href={languageLink.href} data-testid="Footer:link.language-link">
+        <Link
+          className="link lng-link"
+          href={languageLink.href}
+          data-testid="Footer:link.language-link"
+        >
           <Text
             className="link-text"
             dangerouslySetInnerHTML={{ __html: languageLink.text }}
@@ -97,6 +102,10 @@ const PrivacyAndLanguageLinks: React.FC<Props> = ({
             />
           </a>
         )}
+
+        <span>
+          <ArdaIcon className="arda" />
+        </span>
 
         {cookiesPolicyLink && (
           <CookiesPolicyComponent

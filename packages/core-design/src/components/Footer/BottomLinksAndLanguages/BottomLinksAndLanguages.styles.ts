@@ -31,6 +31,11 @@ const base = (props: ThemeProps) => {
       margin-left: ${calcRem(40)};
     }
 
+    .arda {
+      height: 10px;
+      padding-right: 60%;
+    }
+
     .alliance-icon {
       margin: 0 ${calcRem(4)};
     }
@@ -78,6 +83,12 @@ const base = (props: ThemeProps) => {
       .alliance {
         margin-top: ${calcRem(37)};
         margin-left: 0;
+      }
+
+      .arda {
+        height: 10px;
+        padding-right: 0;
+        margin-top: 24px;
       }
 
       .lng-link {
