@@ -22,7 +22,7 @@ export const schoolMenu = [
   {
     id: 'courses',
     testId: 'Header:nav:button.courses',
-    title: 'Курсы',
+    title: 'Материалы',
     links: [
       {
         id: 'junior',
@@ -30,7 +30,7 @@ export const schoolMenu = [
         icon: React,
         component: Link,
         title: 'React</br> Getting Started',
-        description: 'Курс для разработчиков, которые хотят кодить на React.',
+        description: 'Для разработчиков, которые хотят кодить на React.',
         href: '/ru/course/react/junior',
       },
       {
@@ -39,7 +39,7 @@ export const schoolMenu = [
         icon: React,
         component: Link,
         title: 'React</br> Under the Hood',
-        description: 'Курс для React-джунов и тех, кто хочет заглянуть под капот фреймворка.',
+        description: 'Для React-джунов и тех, кто хочет заглянуть под капот фреймворка.',
         href: '/ru/course/react/react-under-the-hood',
       },
       {
@@ -49,7 +49,7 @@ export const schoolMenu = [
         component: Link,
         title: 'Event-Driven Applications',
         description:
-          'Курс для начинающих и уже работающих Junior <span style="white-space: nowrap">React-разработчиков</span>.',
+          'Для начинающих и уже работающих Junior <span style="white-space: nowrap">React-разработчиков</span>.',
         href: '/ru/course/event-driven-apps',
       },
     ],
