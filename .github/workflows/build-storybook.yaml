@@ -16,7 +16,7 @@ jobs:
       - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
 
       - name: Download CSSSR actions
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: CSSSR/actions
           ssh-key: ${{ secrets.DOWNLOAD_ACTIONS_SSH_KEY }}
@@ -24,17 +24,9 @@ jobs:
 
       - name: Import secrets
         id: secrets
-        uses: hashicorp/vault-action@v2.4.0
+        uses: ./actions/get-aws-s3-upload-creds/v1beta1
         with:
-            url: https://vault.csssr.com:8200
-            jwtGithubAudience: ${{secrets.VAULT_JWT_KEY}}
-            role: s3-cdn-upload
-            method: jwt
-            exportEnv: false
-            secrets: |
-                aws/sts/s3-cdn-upload access_key | AWS_ACCESS_KEY_ID ;
-                aws/sts/s3-cdn-upload secret_key | AWS_SECRET_ACCESS_KEY ;
-                aws/sts/s3-cdn-upload security_token | AWS_SESSION_TOKEN
+          VAULT_JWT_KEY: ${{secrets.VAULT_JWT_KEY}}
 
       - name: Build and push storybook
         uses: ./actions/build-and-deploy-static-site/v1beta1
