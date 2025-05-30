@@ -1,6 +1,6 @@
 import { nav, socials, bottomLinks } from './footerLinks'
 
-const email = ' sales@csssr.io'
+const email = 'sales@csssr.io'
 const addresses = {
   ru: [
     {
