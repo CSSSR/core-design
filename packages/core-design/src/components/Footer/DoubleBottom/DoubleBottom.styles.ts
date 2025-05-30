@@ -47,7 +47,7 @@ const base = (props: ThemeProps) => {
 
       &_estonia {
         top: 86px;
-        right: 219px;
+        right: 249px;
       }
 
       &_singapore {
@@ -87,7 +87,7 @@ const base = (props: ThemeProps) => {
 
       .pin_estonia {
         top: 15.7%;
-        right: 36%;
+        right: 40%;
       }
 
       .pin_russia,
@@ -128,7 +128,7 @@ const base = (props: ThemeProps) => {
 
       .pin_estonia {
         top: ${calcRem(32)};
-        right: ${calcRem(135)};
+        right: ${calcRem(170)};
       }
 
       .pin_russia,
@@ -170,7 +170,7 @@ const base = (props: ThemeProps) => {
 
         &_estonia {
           top: ${calcRem(37)};
-          right: ${calcRem(119)};
+          right: ${calcRem(143)};
         }
 
         &_russia,

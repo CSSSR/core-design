@@ -73,42 +73,6 @@ export const nav = {
           title: 'MVP',
           href: `${baseNavUrl}/en/service/mvp-development`,
         },
-        // {
-        //   id: 'design',
-        //   title: 'DesignLab',
-        //   href: 'https://csssr.com/en/service/design',
-        // },
-      ],
-    },
-    {
-      id: 'portfolio',
-      title: 'Portfolio',
-      links: [
-        {
-          id: 'projects',
-          title: 'Our projects',
-          href: `${baseNavUrl}/en/projects`,
-        },
-        {
-          id: 'fintech',
-          title: 'Fintech',
-          href: `${baseNavUrl}/en/industry/fintech`,
-        },
-        {
-          id: 'information',
-          title: 'IT companies',
-          href: `${baseNavUrl}/en/industry/information-technology`,
-        },
-        {
-          id: 'eCommerce',
-          title: 'E-commerce',
-          href: `${baseNavUrl}/en/industry/ecommerce`,
-        },
-        {
-          id: 'mediaAndMarketing',
-          title: 'Media and marketing',
-          href: `${baseNavUrl}/en/industry/media-and-marketing`,
-        },
       ],
     },
     {
@@ -193,37 +157,6 @@ export const nav = {
       ],
     },
     {
-      id: 'portfolio',
-      title: 'Портфолио',
-      links: [
-        {
-          id: 'projects',
-          title: 'Наши проекты',
-          href: `${baseNavUrl}/ru/projects`,
-        },
-        {
-          id: 'fintech',
-          title: 'Финтех',
-          href: `${baseNavUrl}/ru/industry/fintech`,
-        },
-        {
-          id: 'information',
-          title: 'ИТ компании',
-          href: `${baseNavUrl}/ru/industry/information-technology`,
-        },
-        {
-          id: 'eCommerce',
-          title: 'Электронная</br> коммерция',
-          href: `${baseNavUrl}/ru/industry/ecommerce`,
-        },
-        {
-          id: 'mediaAndMarketing',
-          title: 'Медиа и&nbsp;маркетинг',
-          href: `${baseNavUrl}/ru/industry/media-and-marketing`,
-        },
-      ],
-    },
-    {
       id: 'howWeWork',
       title: 'Как мы&nbsp;работаем',
       links: [
@@ -278,24 +211,11 @@ export const bottomLinks = {
       text: 'WEBSITE COOKIE POLICY',
       href: 'https://csssr.com/en/cookies-policy',
     },
-    languageLink: {
-      text: 'ru',
-      href: '/ru',
-    },
   },
   ru: {
     privacyPolicyLink: {
       text: 'ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ',
       href: 'https://csssr.com/ru/privacy-policy',
-    },
-    allianceLink: {
-      text: 'часть альянса',
-      title: 'FRONTEND.DIGITAL',
-      href: 'https://frontend.digital',
-    },
-    languageLink: {
-      text: 'en',
-      href: '/en',
     },
   },
 }
