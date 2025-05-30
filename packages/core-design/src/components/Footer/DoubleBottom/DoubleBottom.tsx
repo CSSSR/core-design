@@ -12,30 +12,40 @@ const Pin = require('../../../static/icons/footer/pin.svg')
 
 import Addresses from './Addresses'
 
-const pins = [
-  {
-    id: 'singapore',
-  },
-  {
-    id: 'russia',
-  },
-  {
-    id: 'russia_2',
-  },
-  {
-    id: 'estonia',
-  },
-]
-
 export interface Props {
   className?: string
   isMobile: boolean
   addresses: AddressesProps[]
   theme?: ThemeProps
+  preset?: '' | 'defaultEn' | 'defaultRu'
 }
 
-const DoubleBottom: React.FC<Props> = ({ className, isMobile, addresses }) => {
+const DoubleBottom: React.FC<Props> = ({
+  className,
+  isMobile,
+  addresses,
+  preset = 'defaultEn',
+}) => {
   const [hoveredAddress, setHoveredAddress] = useState(null)
+
+  const pins =
+    preset === 'defaultEn'
+      ? [
+          {
+            id: 'singapore',
+          },
+          {
+            id: 'estonia',
+          },
+        ]
+      : [
+          {
+            id: 'russia',
+          },
+          {
+            id: 'russia_2',
+          },
+        ]
 
   return (
     <div className={className} data-testid="Footer:block:DoubleBottom">

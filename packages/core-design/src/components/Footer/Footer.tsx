@@ -164,20 +164,6 @@ const Footer: React.FC<Props> = ({
               <CopyIcon className="copy-icon" />
             </button>
 
-            {isMobile && (
-              <Link
-                className="link-language"
-                href={languageLink.href}
-                data-testid="Footer:link:language"
-              >
-                <Text
-                  className="link-text"
-                  dangerouslySetInnerHTML={{ __html: languageLink.text }}
-                  type="perforator"
-                  size="s"
-                />
-              </Link>
-            )}
           </div>
 
           {socialLinks && <SocialLinks links={socialLinks} />}
@@ -195,7 +181,7 @@ const Footer: React.FC<Props> = ({
         />
       </div>
 
-      {IsDoubleBottomVisible && <DoubleBottom isMobile={isMobile} addresses={addresses} />}
+      {IsDoubleBottomVisible && <DoubleBottom isMobile={isMobile} addresses={addresses} preset={preset}/>}
     </footer>
   )
 }

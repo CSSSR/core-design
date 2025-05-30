@@ -5,17 +5,12 @@ const Square = require('../static/icons/header/square.svg')
 const Triangle = require('../static/icons/header/triangle.svg')
 const Circle = require('../static/icons/header/circle.svg')
 const Arc = require('../static/icons/header/arc.svg')
-const PieChart = require('../static/icons/header/pieChart.svg')
-const Bag = require('../static/icons/header/bag.svg')
-const Computer = require('../static/icons/header/computer.svg')
-const Message = require('../static/icons/header/message.svg')
 const CPU = require('../static/icons/header/cpu.svg')
 const Repeat = require('../static/icons/header/repeat.svg')
 const LMS = require('../static/icons/header/lms.svg')
 const Tracker = require('../static/icons/header/tracker.svg')
 const React = require('../static/icons/header/react.svg')
 const Eda = require('../static/icons/header/eda.svg')
-const OurProjects = require('../static/icons/header/ourProjects.svg')
 /* tslint:enable */
 
 export const schoolMenu = [
@@ -123,55 +118,6 @@ export const menuEn = [
     ],
   },
   {
-    id: 'portfolio',
-    testId: 'Header:nav:button.portfolio',
-    title: 'Portfolio',
-    listTitle: 'Clients by industry',
-    links: [
-      {
-        id: 'ourProjects',
-        testId: 'Header:nav:link.ourProjects',
-        icon: OurProjects,
-        component: Link,
-        title: 'Our projects',
-        description: 'Take a look at solutions we have developed for some of our clients',
-        href: 'https://csssr.com/en/projects',
-      },
-      {
-        id: 'mediaAndMarketing',
-        testId: 'Header:nav:link.mediaAndMarketing',
-        icon: Message,
-        component: Link,
-        title: 'Media and marketing',
-        href: 'https://csssr.com/en/industry/media-and-marketing',
-      },
-      {
-        id: 'eCommerce',
-        testId: 'Header:nav:link.eCommerce',
-        icon: Bag,
-        component: Link,
-        title: 'E-Commerce',
-        href: 'https://csssr.com/en/industry/ecommerce',
-      },
-      {
-        id: 'information',
-        testId: 'Header:nav:link.information',
-        icon: Computer,
-        component: Link,
-        title: 'IT industry',
-        href: 'https://csssr.com/en/industry/information-technology',
-      },
-      {
-        id: 'fintech',
-        testId: 'Header:nav:link.fintech',
-        icon: PieChart,
-        component: Link,
-        title: 'Fintech',
-        href: 'https://csssr.com/en/industry/fintech',
-      },
-    ],
-  },
-  {
     id: 'howWeWork',
     testId: 'Header:nav:button.howWeWork',
     title: 'How we work',
@@ -259,55 +205,6 @@ export const menuRu = [
         title: 'Разработка MVP',
         description: 'Ключевой функционал для проверки бизнес-идей.',
         href: 'https://csssr.com/ru/service/mvp-development',
-      },
-    ],
-  },
-  {
-    id: 'portfolio',
-    testId: 'Header:nav:button.portfolio',
-    title: 'Портфолио',
-    listTitle: 'Делаем проекты для',
-    links: [
-      {
-        id: 'ourProjects',
-        testId: 'Header:nav:link.ourProjects',
-        icon: OurProjects,
-        component: Link,
-        title: 'Наши проекты',
-        description: 'Посмотрите на решения для некоторых из наших клиентов',
-        href: 'https://csssr.com/ru/projects',
-      },
-      {
-        id: 'mediaAndMarketing',
-        testId: 'Header:nav:link.mediaAndMarketing',
-        icon: Message,
-        component: Link,
-        title: 'Медиа и&nbsp;маркетинга',
-        href: 'https://csssr.com/ru/industry/media-and-marketing',
-      },
-      {
-        id: 'eCommerce',
-        testId: 'Header:nav:link.eCommerce',
-        icon: Bag,
-        component: Link,
-        title: 'E-Commerce',
-        href: 'https://csssr.com/ru/industry/ecommerce',
-      },
-      {
-        id: 'information',
-        testId: 'Header:nav:link.information',
-        icon: Computer,
-        component: Link,
-        title: 'IT-отрасли',
-        href: 'https://csssr.com/ru/industry/information-technology',
-      },
-      {
-        id: 'fintech',
-        testId: 'Header:nav:link.fintech',
-        icon: PieChart,
-        component: Link,
-        title: 'Финтеха',
-        href: 'https://csssr.com/ru/industry/fintech',
       },
     ],
   },

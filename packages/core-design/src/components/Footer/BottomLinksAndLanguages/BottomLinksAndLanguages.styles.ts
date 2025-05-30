@@ -9,7 +9,6 @@ const base = (props: ThemeProps) => {
   return css`
     & {
       display: flex;
-      flex-direction: row-reverse;
       justify-content: space-between;
 
       & > li {
@@ -38,10 +37,6 @@ const base = (props: ThemeProps) => {
 
     .alliance-icon {
       margin: 0 ${calcRem(4)};
-    }
-
-    .language-link {
-      margin-left: ${calcRem(50)};
     }
 
     .cookies-link {
