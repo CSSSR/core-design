@@ -37,7 +37,7 @@ export const socials = [
   },
   {
     id: 'telegram',
-    href: 'https://t.me/csssr',
+    href: 'https://t.me/csssr_dev',
     icon: Telegram,
   },
   {
