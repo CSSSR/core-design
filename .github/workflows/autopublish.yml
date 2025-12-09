@@ -5,21 +5,31 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: reattach HEAD
         run: |
           git checkout "${GITHUB_REF:11}"
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: 10.x
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: |
@@ -39,12 +49,13 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
+      - name: npm whoami (debug)
+        run: npm whoami
+
       - name: Publish new version if required
         run: |
-          yarn lerna version --conventional-commits --allow-branch=master --no-changelog --sign-git-commit --sign-git-tag --yes
+          yarn lerna version --conventional-commits --allow-branch=master --no-changelog --sign-git-commit --sign-git-tag --no-push --yes
           yarn release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push changes
         run: |
