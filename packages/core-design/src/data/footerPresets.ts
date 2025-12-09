@@ -16,7 +16,6 @@ const addresses = {
       id: 'singapore',
       title: 'Singapore',
       address: '68 Circular Road,<br> #02-01,<br>Singapore, 049422',
-      phone: '+65 3159 4531',
       status: 'Head Office',
       timeZone: 'Asia/Singapore',
     },
